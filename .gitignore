@@ -19,6 +19,8 @@ ipch
 *.idb
 *.vcxproj
 *.sln
+*.pdb
+.vs/*
 
 # OSX/Linux build products
 *.mak
