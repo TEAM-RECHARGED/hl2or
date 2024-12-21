@@ -39,6 +39,9 @@
     <Library Include="..\..\lib\public\choreoobjects.lib">
       <Filter>Link Libraries</Filter>
     </Library>
+    <Library Include="..\..\lib\public\discord-rpc.lib">
+      <Filter>Link Libraries</Filter>
+    </Library>
     <Library Include="..\..\lib\public\dmxloader.lib">
       <Filter>Link Libraries</Filter>
     </Library>
@@ -3267,6 +3270,9 @@
     </ClCompile>
     <ClCompile Include="hl2\weapon_flaregun.cpp">
       <Filter>Source Files\HL2 DLL\Unused</Filter>
+    </ClCompile>
+    <ClCompile Include="hl2or\weapon_iontau.cpp">
+      <Filter>Source Files\HL2OR</Filter>
     </ClCompile>
     <ClCompile Include="stdafx.cpp">
       <Filter>Source Files\Precompiled Header</Filter>

@@ -6,7 +6,7 @@
 
 #include "cbase.h"
 
-#if 1
+#if _WIN32
 #include "mp3player.h"
 #include "KeyValues.h"
 #include "filesystem.h"
@@ -2471,5 +2471,7 @@ void MP3Player_Create( vgui::VPANEL parent )
 void MP3Player_Destroy()
 {
 }
+
+Msg("Only available in WINDOWS not MacOS and Linux")
 
 #endif
