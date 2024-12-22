@@ -27,6 +27,15 @@ $Project "Client (HL2OR)"
 		$File	"c_team_objectiveresource.cpp"
 		$File	"c_team_objectiveresource.h"
 
+		$Folder "HL2OR DLL"
+		{
+			$Folder "Weapons"
+			{
+				$File	"$SRCDIR\game\shared\hl2mp\weapon_slam.cpp"
+				$File	"$SRCDIR\game\shared\hl2mp\weapon_slam.h"
+			}
+		}
+
 		$Folder	"HL2 DLL"
 		{
 			$File	"$SRCDIR\game\shared\hl2\basehlcombatweapon_shared.cpp"
