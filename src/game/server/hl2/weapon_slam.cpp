@@ -457,7 +457,6 @@ void CWeapon_SLAM::SatchelThrow( void )
 	pSatchel->ApplyAbsVelocityImpulse( vecThrow );
 	pSatchel->SetLocalAngularVelocity( QAngle( 0, 400, 0 ) );
 	pSatchel->m_bIsLive = true;
-	pSatchel->m_pMyWeaponSLAM = this;
 
 	pPlayer->RemoveAmmo( 1, m_iSecondaryAmmoType );
 
@@ -537,7 +536,6 @@ void CWeapon_SLAM::SatchelAttach( void )
 			pSatchel->m_bIsLive			= true;
 			pSatchel->SetThrower( GetOwner() );
 			pSatchel->SetOwnerEntity( ((CBaseEntity*)GetOwner()) );
-			pSatchel->m_pMyWeaponSLAM	= this;
 
 			pOwner->RemoveAmmo( 1, m_iSecondaryAmmoType );
 		}
