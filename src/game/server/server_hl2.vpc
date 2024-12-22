@@ -265,11 +265,5 @@ $Project "Server (HL2)"
 				$File	"hl2\weapon_flaregun.h"
 			}
 		}
-
-		$Folder "HL2OR"
-		{
-			$File	"hl2or\weapon_iontau.cpp"
-		}
-		
 	}
 }

@@ -113,10 +113,5 @@ $Project "Client (HL2)"
 			$File	"hl2\vgui_rootpanel_hl2.cpp"
 			$File 	"episodic\c_vort_charge_token.cpp"
 		}
-
-		$Folder "HL2OR"
-		{
-			$File	"hl2or\c_weapon_iontau.cpp"
-		}
 	}
 }
