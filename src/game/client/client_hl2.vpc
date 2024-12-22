@@ -33,6 +33,8 @@ $Project "Client (HL2OR)"
 			{
 				$File	"$SRCDIR\game\shared\hl2mp\weapon_slam.cpp"
 				$File	"$SRCDIR\game\shared\hl2mp\weapon_slam.h"
+				$File 	"hl2or\c_weapon_grapple.cpp"
+				$File 	"hl2or\c_weapon_grapple.h"
 			}
 		}
 
