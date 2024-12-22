@@ -89,7 +89,9 @@
 #include "tier3/tier3.h"
 #include "serverbenchmark_base.h"
 #include "querycache.h"
-
+#ifdef OVERCHARGED
+#include "mapadd.h"
+#endif
 
 #ifdef TF_DLL
 #include "gc_clientsystem.h"

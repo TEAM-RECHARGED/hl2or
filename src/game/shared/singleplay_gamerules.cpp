@@ -16,6 +16,9 @@
 	#include "gamerules.h"
 	#include "game.h"
 	#include "items.h"
+#ifdef OVERCHARGED
+	#include "mapadd.h"
+#endif
 
 #endif
 

@@ -1,0 +1,32 @@
+"MapAdd"
+{
+    "1"
+    {
+        "entity"       "npc_citizen"
+        "x"            "2399.123047"
+        "y"            "-1702.060181"
+        "z"            "68.293995"
+        "pitch"        "0"
+        "yaw"          "0"
+        "roll"         "0"
+        "KeyValues"
+        {
+            "model"    "models/humans/group01/male_01.mdl"
+            "additionalequipment" "weapon_smg1"
+        }
+        "Flags"
+        {
+            "spawnflags"    "1"
+        }
+    }
+	"2"
+	{
+        "entity"       "item_suit"
+        "x"            "2575.363281"
+        "y"            "-1801.156006"
+        "z"            "60.370480"
+        "pitch"        "0"
+        "yaw"          "0"
+        "roll"         "0"
+    }
+}
