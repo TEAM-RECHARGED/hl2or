@@ -1,0 +1,22 @@
+"MapAdd"
+{
+    "1"
+    {
+        "entity"       "weapon_slam"
+        "x"            "-721.443848"
+        "y"            "-7403.820801"
+        "z"            "-63.968750"
+        "pitch"        "0"
+        "yaw"          "0"
+        "roll"         "0"
+        "KeyValues"
+        {
+            "model"    "models/weapons/w_slam.mdl"
+            "additionalequipment" ""
+        }
+        "Flags"
+        {
+            "spawnflags"    "1"
+        }
+    }
+}
