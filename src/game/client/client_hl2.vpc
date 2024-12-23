@@ -29,7 +29,6 @@ $Project "Client (HL2OR)"
 
 		$Folder "HL2OR DLL"
 		{
-			$File "$SRCDIR\game\shared\hl2or\cmds.cpp"
 			$Folder "Weapons"
 			{
 				$File	"$SRCDIR\game\shared\hl2mp\weapon_slam.cpp"

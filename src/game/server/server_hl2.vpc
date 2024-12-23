@@ -55,7 +55,6 @@ $Project "Server (HL2OR)"
 			$File "hl2or\mapadd.h"
 			$File "hl2or\weapon_grapple.cpp"
 			$File "hl2or\weapon_grapple.h"
-			$File "$SRCDIR\game\shared\hl2or\cmds.cpp"
 			
 			$File	"hl2mp\grenade_satchel.cpp"
 			$File	"hl2mp\grenade_satchel.h"
