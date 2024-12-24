@@ -392,6 +392,17 @@ public:
 	virtual void			Activate( void );
 
 	virtual bool ShouldUseLargeViewModelVROverride() { return false; }
+#ifdef OVERCHARGED
+	Vector					GetIronsightPositionOffset(void) const;
+	QAngle					GetIronsightAngleOffset(void) const;
+	float					GetIronsightFOVOffset(void) const;
+	virtual bool				HasIronsights(void) { return true; } //default yes; override and return false for weapons with no ironsights (like weapon_crowbar)
+	bool					IsIronsighted(void);
+	void					ToggleIronsights(void);
+	void					EnableIronsights(void);
+	void					DisableIronsights(void);
+	void					SetIronsightTime(void);
+#endif
 public:
 // Server Only Methods
 #if !defined( CLIENT_DLL )
@@ -520,10 +531,14 @@ public:
 
 	virtual void			HideThink( void );
 	virtual bool			CanReload( void );
+#ifdef OVERCHARGED
+	CNetworkVar(bool, m_bIsIronsighted);
+	CNetworkVar(float, m_flIronsightedTime);
+#endif // OVERCHARGED
 
 private:
 	typedef CHandle< CBaseCombatCharacter > CBaseCombatCharacterHandle;
-	CNetworkVar( CBaseCombatCharacterHandle, m_hOwner );				// Player carrying this weapon
+	CNetworkVar( CBaseCombatCharacterHandle, m_hOwner );	// Player carrying this weapon
 
 protected:
 #if defined ( TF_CLIENT_DLL ) || defined ( TF_DLL )

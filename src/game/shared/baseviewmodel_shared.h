@@ -76,6 +76,9 @@ public:
 	void					DestroyControlPanels();
 	void					SetControlPanelsActive( bool bState );
 	void					ShowControlPanells( bool show );
+#ifdef OVERCHARGED
+	void		CalcIronsights(Vector& pos, QAngle& ang);
+#endif // OVERCHARGED
 
 	virtual CBaseCombatWeapon *GetOwningWeapon( void );
 	
