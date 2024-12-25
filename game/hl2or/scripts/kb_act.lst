@@ -1,4 +1,11 @@
 "blank"			"=========================="
+"blank"			"HL2 OVERCHARGED REDUX"
+"blank"			"=========================="
+"toggle_ironsight"		"IronSight Key"
+"sv_cheats 1;impulse 111"			"Get all weapons"
+
+
+"blank"			"=========================="
 "blank"			"#Valve_Movement_Title"
 "blank"			"=========================="
 "+forward"				"#Valve_Move_Forward"
@@ -11,7 +18,6 @@
 "blank"			"=========================="
 "blank"			"#Valve_Combat_Title"
 "blank"			"=========================="
-"toggle_ironsight"		"#MOD_Toggle_Ironsight" 
 "+attack"				"#Valve_Primary_Attack"
 "+attack2"				"#Valve_Secondary_Attack"
 "+reload"				"#Valve_Reload_Weapon"

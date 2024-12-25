@@ -77,10 +77,10 @@ WeaponData
 	}
 	IronSight
 	{
-		"forward"	"-10"
-		"right"		"-6.91"
-		"up"		"0.185"
-		"roll"		"-20"
-		"fov"		"-20"
+		"right"		"-5.80"
+		"up"		"2.2"
+		"forward"	"-7"
+		"fov"		"-15"
+		"AdjustAccuracy"	"0.1"
 	}
 }
