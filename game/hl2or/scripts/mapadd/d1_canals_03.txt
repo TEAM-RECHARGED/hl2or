@@ -1,0 +1,21 @@
+"MapAdd"
+{
+    "1"
+    {
+        "entity"       "weapon_rpg"
+        "x"            "-486.881256"
+        "y"            "3474.500488"
+        "z"            "783.968750"
+        "pitch"        "0"
+        "yaw"          "0"
+        "roll"         "0"
+        "KeyValues"
+        {
+            "model"    "models/weapons/w_rocket_launcher.mdl"
+        }
+        "Flags"
+        {
+            "spawnflags"    "1"
+        }
+    }
+}
