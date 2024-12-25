@@ -36,6 +36,9 @@ $Project "Client (HL2OR)"
 				$File 	"hl2or\c_weapon_grapple.cpp"
 				$File 	"hl2or\c_weapon_grapple.h"
 				$File 	"hl2or\cmds.cpp"
+				$File	"$SRCDIR\game\shared\hl2or\weapon_ak47.cpp"
+				$File	"$SRCDIR\game\shared\hl2or\weapon_grease.cpp"
+				$File	"$SRCDIR\game\shared\hl2or\weapon_mp5.cpp"
 			}
 		}
 
