@@ -67,9 +67,6 @@ $Project "Server (HL2OR)"
 				$File	"hl2\weapon_stunstick.h"
 				$File	"$SRCDIR\game\shared\hl2mp\weapon_slam.cpp"
 				$File	"$SRCDIR\game\shared\hl2mp\weapon_slam.h"
-				$File	"$SRCDIR\game\shared\hl2or\weapon_ak47.cpp"
-				$File	"$SRCDIR\game\shared\hl2or\weapon_grease.cpp"
-				$File	"$SRCDIR\game\shared\hl2or\weapon_mp5.cpp"
 			}
 		}
 
