@@ -1,8 +1,8 @@
 "GameInfo"
 {
 	game 		"HALF-LIFE 2: OVERCHARGED REDUX"
-	title 		"HALF-LIFE'"
-	title2		""
+	title 		"HALF-LIFE 2: OVERCHARGED"
+	title2		"REDUX"
 	supportsvr	0
 
 	type		singleplayer_only
