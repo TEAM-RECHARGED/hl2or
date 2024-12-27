@@ -1,0 +1,8 @@
+"editor_shader"
+{
+	"$shadername"	"postproc_flare_naive_eyes"
+	//"$dust"			"shadereditor\screen-dirt6"
+     "$basetexture"	"shadereditor\screen-dirt4"
+"$basetexture2"	"_rt_FullFrameFB"
+     "$noise"	"shadereditor\noise_2d"
+}

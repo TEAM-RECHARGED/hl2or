@@ -1,0 +1,16 @@
+"Spritecard"
+{
+"$basetexture" "effects/gun_flash/muzzle_rifle"
+"$surfaceprop"	"no_decal"
+"$additive"	"1"
+"$vertexcolor"     "1"
+"$vertexalpha"     "1"
+"Proxies"
+{
+     "AnimatedTexture"
+     {
+    "animatedtexturevar" "$basetexture"
+    "animatedtextureframenumvar" "$frame"
+    "animatedtextureframerate" "18"
+     }
+}

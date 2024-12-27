@@ -1,5 +1,4 @@
-"VertexLitGeneric"
+"SDK_VertexLitGeneric"
 {
-	// Original shader: VertexLitTexture
 	"$basetexture" "models/Weapons/V_slam/retexture trigger"
 }

@@ -1,0 +1,7 @@
+"SDK_LightmappedGeneric"
+{
+	"$basetexture" "effects/dirt_rocks_01a"
+	"$bumpmap" "effects/dirt_rocks_ssbump"
+	"$ssbump" "1"
+	"$surfaceprop" "brick"
+}

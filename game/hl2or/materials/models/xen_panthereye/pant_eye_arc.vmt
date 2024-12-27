@@ -1,0 +1,14 @@
+"SDK_VertexLitGeneric"
+{
+	"$basetexture" "models/xen_panthereye/pant_eye_arc"
+	"$bumpmap" "models/xen_panthereye/pant_eye_n"
+
+	"$surfaceprop" "flesh"
+	"$model" 1
+
+	"$phong" 1
+	"$phongboost" "10"
+	"$halflambert" "1"
+	"$phongalbedotint" "1"										
+	"$phongfresnelranges"	"[.1 .5 1.0]"
+}

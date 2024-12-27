@@ -1,0 +1,9 @@
+"SDK_VertexlitGeneric"
+{
+	"$basetexture" "models/Player/Gordon_face/ochki_nada/glasses_glass"
+
+	"$nocull" 1
+	"$translucent" "1"
+	"$alpha" ".4"
+	
+}

@@ -1,0 +1,26 @@
+"SDK_Refract"
+{
+ 	"Refract_DX60"
+	{
+		"$fallbackmaterial" "effects/blurr"
+	}
+                "$nocull" "1"
+	"$nowritez" 1
+	"$bluramount" 0.1
+ 	"$refractamount" ".1"
+                "$bumpmap" "effects/bump_testsheet_normal"
+                "$normalmap" "effects/bump_testsheet_normal"
+
+
+	"Proxies"
+	{
+		"TextureScroll"
+		{
+			"texturescrollvar" "$bumptransform"
+			"texturescrollrate" .08
+			"texturescrollangle" 90
+		}
+	}
+}
+
+

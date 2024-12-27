@@ -1,0 +1,9 @@
+"DecalModulate"
+{
+	"$basetexture" "Decals/wood/alt/shot3"
+	"$decalscale" 0.15
+	"$flashlightnolambert" 1
+}
+
+
+

@@ -1,0 +1,23 @@
+"SDK_VertexLitGeneric"
+{
+	"$basetexture" "models\weapons\v_oicw\Panel"
+	"$bumpmap" "models\weapons\v_oicw\panel_norm"
+	"$normalmapalphaenvmapmask" "1"
+	"$phong" 		"1"
+	"$phongexponent" 	"40"
+	"$phongboost" "0.75"
+	"$phongfresnelranges" "[1 3 6]"
+     //	"$phongalbedotint" "1"
+
+        "$detail" "detail/vm_blood_detail"
+	"$detailblendmode" "2"
+	"$detailblendfactor" "0.0"
+	"$detailscale" "1.0"
+
+	"Proxies"
+	{
+		"BloodyTexture"
+		{
+		}
+	}
+}

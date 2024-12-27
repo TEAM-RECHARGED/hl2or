@@ -1,0 +1,11 @@
+"SDK_VertexLitGeneric"
+{
+	// Original shader: VertexLitTexture
+	"$basetexture" "models/acidlion/acidlion_parts"
+	"$surfaceprop" "alienlesh"
+
+ 
+
+
+
+}

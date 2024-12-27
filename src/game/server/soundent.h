@@ -90,6 +90,11 @@ enum
 #define SOUNDENT_VOLUME_PISTOL		1500.0
 #define SOUNDENT_VOLUME_EMPTY		 500.0 // volume of the "CLICK" when you have no bullets
 
+#ifdef OVERCHARGED
+#define SOUNDENT_VOLUME_USP		1500.0
+#endif // OVERCHARGED
+
+
 enum
 {
 	SOUND_PRIORITY_VERY_LOW = -2,

@@ -1,0 +1,12 @@
+"editor_shader"
+{
+	"$shadername"	"objfx_chromehl1_model_hivehand"
+	"$basetexture" "models\weapons\v_hivehand\hive_chrome"
+}
+
+//"SDK_VertexLitGeneric"
+//{
+//	"$envmap" "models\weapons\v_hivehand\hive_chrome"
+//	"$envmapmode" 1
+//	"$multipass" 1
+//}

@@ -1,0 +1,31 @@
+"SDK_VertexLitGeneric"
+{
+	$basetexture "models\weapons\v_shovel\shovel_sheet"
+	$bumpmap "models\weapons\v_shovel\shovel_sheet_n"
+	
+	"$phong"  				"1"
+	"$phongalbedotint" 		"1"	
+	"$phongexponent" 		"90"
+	"$phongboost" 			"0.3"
+
+	"$phongfresnelranges"		"[1 2.5 1.1]"
+	"$phongtint" 			"[0.3 0.3 0.4]"
+
+	"$envmaptint"			"[0.1 0.1 0.1]"
+	"$envmapfresnel"		"0.3"
+	
+	"$normalmapalphaenvmapmask"	"1"
+
+        "$detail" "detail/vm_blood_detail"
+	"$detailblendmode" "2"
+	"$detailblendfactor" "0.0"
+	"$detailscale" "1.0"
+
+	"Proxies"
+	{
+		"BloodyTexture"
+		{
+		}
+	}
+}
+ 

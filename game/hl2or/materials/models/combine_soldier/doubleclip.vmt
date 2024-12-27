@@ -1,0 +1,9 @@
+"SDK_VertexLitGeneric"
+{
+        "$baseTexture" 	"Models/Combine_soldier/doubleclip"
+	"$bumpmap" "models/combine_soldier/doubleclip_normal"
+	"$surfaceprop" "flesh"
+	// "$selfillum" 1
+
+
+}

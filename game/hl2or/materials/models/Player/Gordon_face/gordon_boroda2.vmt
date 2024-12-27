@@ -1,0 +1,17 @@
+"SDK_VertexlitGeneric"
+{
+	"$basetexture" "models/Player/Gordon_face/gordon_boroda"
+
+	"$color2" ".8"
+	"$nocull" 1
+	"$translucent" 1
+	"$ambientocclusion" "0"
+
+	"$phong" "1"
+	"$phongboost" ".05"
+	"$phongexponent" "2"
+//	"$phongtint" "{255 167 133}"
+	"$phongtint" "{255 208 166}"
+	"$phongfresnelranges" "[1 1 .1]"	
+	"$phongdisablehalflambert" "1"	
+}

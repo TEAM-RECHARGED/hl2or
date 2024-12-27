@@ -1,0 +1,7 @@
+"SDK_UnlitGeneric"
+{
+	"$basetexture"	"effects/fake_smoke01cit"
+	"$surfaceprop"	"default"
+	"$translucent"	1
+$nofog 1
+}

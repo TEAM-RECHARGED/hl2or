@@ -1,0 +1,6 @@
+"SDK_VertexLitGeneric"
+{
+	"$basetexture" "models/CrabSynth/backvent"
+	"$bumpmap" "models/CrabSynth/backvent_n"
+	"$selfillum" 1
+}

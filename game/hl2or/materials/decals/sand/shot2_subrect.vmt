@@ -1,0 +1,8 @@
+"DecalModulate"
+{
+	"$basetexture" "Decals/sand/SHOT2"
+	"$decalscale" 0.10
+	"$decal" 1
+}
+
+

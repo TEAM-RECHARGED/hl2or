@@ -1,0 +1,21 @@
+//sdk_Refract
+"UnlitGeneric"
+{
+
+//$basetexture "particle/warp_rain_base"
+$normalmap "particle/warp_rain_normal"
+$translucent 1
+//$additive 1
+$chromatic 1
+$chromaticscale 1.2
+$refractamount "-0.15"
+$vertexalpha 1
+$vertexcolor 1
+
+$forcerefract 1
+
+$nofog 1
+$vertexcolormodulate 1
+$NoCull 1
+$depthblend 0
+}

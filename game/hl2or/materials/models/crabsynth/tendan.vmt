@@ -1,0 +1,5 @@
+"SDK_VertexLitGeneric"
+{
+	"$basetexture" "models/CrabSynth/tendan"
+	"$bumpmap" "models/CrabSynth/tendan_n"
+}

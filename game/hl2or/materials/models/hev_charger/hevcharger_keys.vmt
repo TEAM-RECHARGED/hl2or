@@ -1,0 +1,5 @@
+"VertexLitGeneric"
+{
+	"$basetexture" "models/hev_charger/hevcharger_keys"
+        $envmap env_cubemap
+}

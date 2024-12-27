@@ -1,0 +1,30 @@
+"SDK_VertexLitGeneric"
+{
+	"$basetexture"	"models\weapons\v_m4s\rif_m4a1_s_dark"
+	"$phongexponenttexture" "models\weapons\v_m4s\rif_m4a1_s_exponent"
+	"$phong" "1"
+
+	"$phongboost" "3"		//15
+	"$phongalbedoboost" "25"
+	"$phongfresnelranges" "[.83 .83 1]"
+
+	"$basemapalphaphongmask" "1"
+	"$phongalbedotint" "1"
+	"$phongdisablehalflambert" "1"
+
+	"$envmap" "env_cubemap"
+	"$envmapfresnel" "1"
+	"$envmaptint" 		"[.1 .1 .1]"
+
+	"$detail" "detail/vm_blood_detail"
+	"$detailblendmode" "2"
+	"$detailblendfactor" "0.0"
+	"$detailscale" "1.0"
+
+	"Proxies"
+	{
+		"BloodyTexture"
+		{
+		}
+	}
+}

@@ -1,0 +1,6 @@
+"unlitgeneric"
+{
+	"$basetexture" "effects\shaders\postproc_explosion_screendirt2"
+	"$translucent"	1
+	"$ignorez"	1
+}

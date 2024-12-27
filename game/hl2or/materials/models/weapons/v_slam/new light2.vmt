@@ -1,10 +1,19 @@
-"VertexLitGeneric"
+"SDK_VertexLitGeneric"
 {
-	// Original shader: VertexLitSelfIlluminatedTexture
 	"$basetexture" "models/Weapons/V_slam/new light2"
 	"$selfillum" 1
+
+
+        "$detail" "detail/vm_blood_detail"
+	"$detailblendmode" "2"
+	"$detailblendfactor" "0.0"
+	"$detailscale" "1.0"
+
 	"Proxies"
 	{
+                 "BloodyTexture"
+		{
+		}
 		"Sine"
 		{
 			"resultVar" "$selfIllumTint"

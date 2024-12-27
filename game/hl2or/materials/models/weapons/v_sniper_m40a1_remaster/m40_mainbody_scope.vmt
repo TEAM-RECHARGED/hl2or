@@ -1,0 +1,25 @@
+"SDK_VertexLitGeneric"
+{
+	"$baseTexture" "models\weapons\v_sniper_m40a1_remaster\m40a_mainbodyscope_bolt_2"
+	"$bumpmap" "models\weapons\v_sniper_m40a1_remaster\m40a_mainbodyscope_bolt_2_n"
+
+$phong 1
+$phongboost 1
+
+$phongfresnelranges "[.1 .4 1]"
+$phongalbedotint 1
+
+"$halflambert" 1
+
+        "$detail" "detail/vm_blood_detail"
+	"$detailblendmode" "2"
+	"$detailblendfactor" "0.0"
+	"$detailscale" "1.0"
+
+	"Proxies"
+	{
+		"BloodyTexture"
+		{
+		}
+	}
+}

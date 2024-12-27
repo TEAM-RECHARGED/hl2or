@@ -1,0 +1,10 @@
+"editor_shader"
+{
+	"$shadername"	"postproc_cross_processing_new"
+	"$basetexture"	"_rt_FullFrameFB"
+	"$gradient"	"effects\shaders\cross_processing_new"
+	"$MUTABLE_01"	"0.1"	//Saturation
+	"$MUTABLE_02"	"1.0"	//Contrast
+	"$MUTABLE_03"	"0"	//Brightness
+	"$MUTABLE_04"	"0.1"	//Intensity
+}

@@ -1,0 +1,5 @@
+"SDK_VertexLitGeneric"
+{
+	"$basetexture" "models/CrabSynth/frontant"
+	"$bumpmap" "models/CrabSynth/frontant_n"
+}

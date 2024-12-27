@@ -1,0 +1,6 @@
+SpriteCard
+{
+	$basetexture "particles/proyect_sosiska/vzryv_film_svecheniye"
+	$additive 1
+	$depthblend 0
+}

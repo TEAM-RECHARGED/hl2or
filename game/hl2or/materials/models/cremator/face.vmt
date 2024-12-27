@@ -1,0 +1,5 @@
+"SDK_VertexLitGeneric"
+{
+	"$baseTexture" "models\cremator\face"
+	"$selfillum" "1"
+}

@@ -1,0 +1,10 @@
+"SDK_VertexLitGeneric"
+{
+	"$basetexture" "Models/Items/Battery_empty"
+	"$surfaceprop" "metal"
+	"$envmap" "env_cubemap"
+	"$envmaptint" "[ .5 .5 .5]"
+	"$envmapmask" "Models/Items/Battery_empty_mask"
+	"$selfillum" 1
+}
+

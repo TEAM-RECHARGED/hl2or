@@ -1,0 +1,19 @@
+"SDK_VertexLitGeneric"
+{
+	"$baseTexture" "Models/Weapons/V_oicw/v_oicw_sheet"
+	"$bumpmap" "Models/Weapons/v_oicw/v_oicw_sheet_normal"
+
+	"$selfillum" "1"
+
+     	"$detail" "detail/vm_blood_detail"
+	"$detailblendmode" "2"
+	"$detailblendfactor" "0.0"
+	"$detailscale" "1.0"
+
+	"Proxies"
+	{
+		"BloodyTexture"
+		{
+		}
+	}
+}

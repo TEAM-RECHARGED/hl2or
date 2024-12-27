@@ -1,0 +1,14 @@
+"SDK_VertexLitGeneric"
+{
+	"$basetexture" "models/cremator_remaster/crematorhead_sheet_blue_eyes"
+	"$bumpmap" "models/cremator_remaster/crematorhead_sheet_norm"
+	"$selfillum" "1"
+	"$selfillumtint" "[10 21 4]"
+	//"$selfillummask" "models/cremator_remaster/crematorhead_selfillummask"
+		
+	"$phong" 		"1"
+	"$phongexponenttexture" "models/cremator_remaster/crematorhead_sheet_phmask"
+	"$phongboost" "4"
+	"$phongfresnelranges" "[1 0.75 3]"
+	"$phongalbedotint" "1"
+}

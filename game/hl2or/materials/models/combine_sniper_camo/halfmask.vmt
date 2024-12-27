@@ -1,0 +1,9 @@
+"SDK_VertexLitGeneric"
+{
+	// Original shader: VertexLitMaskedEnvMappedTexture
+
+	"$basetexture" "models/combine_sniper_camo/halfmask"
+	"$envmap" "models/combine_sniper_camo/leatherspec"
+	"$envmapmask" "models/combine_sniper_camo/halfmask_mask"
+	"$envmapsphere" 1
+}

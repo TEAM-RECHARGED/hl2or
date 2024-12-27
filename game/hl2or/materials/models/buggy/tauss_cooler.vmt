@@ -1,0 +1,14 @@
+"SDK_VertexLitGeneric"
+{
+	$basetexture		"models/weapons/v_gauss_remaster/tauss_mainsheet"
+	$bumpmap 		"models/weapons/v_gauss_remaster/tauss_mainsheet_n"
+	$envmap 		"env_cubemap"
+	$envmaptint 		"{170 134 98}"
+	$envmapfresnel 		0	
+	$phong 			1
+
+	$phongtint 		"{170 134 98}"
+	$phongexponent		2
+	$phongboost		5.0
+	$phongfresnelranges	"[.5 .9 1]"
+}

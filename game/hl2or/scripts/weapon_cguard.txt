@@ -1,0 +1,211 @@
+// Combine Guard
+
+WeaponData
+{
+	// Weapon data is loaded by both the Game and Client DLLs.
+	"printname"			"#wpnname_CGUARD"
+	"viewmodel"			"models/weapons/overcharged/v_cguard_gun.mdl"
+	"playermodel"			"models/weapons/overcharged/world/w_cguard.mdl"
+
+	"anim_prefix"			"ar2"
+	"bucket"			"5"
+	"bucket_position"		"6"
+   	"NPCAllowPickup" 		"0"
+	"clip_size"			"1"
+	"default_clip"			"8"
+	"primary_ammo"			"AR2AltFire"
+	"secondary_ammo"		"None"
+
+	"weight"			"2"
+	"item_flags"			"0"
+	"viewbob_model_scale"		"3"
+	"AllowFreeAim"			"0"
+	"AllowIronSight"		"0"
+
+	Weapon_firing_modes
+	{
+		"weapon_modes" "2"
+		"WeaponDefaultMode" "2"
+		"weapon_type" "beam"
+		"SwingHitTime" "0.1"	
+        	"FiresUnderWater" "0"	
+		weapon_mode:2
+		{
+			//"startup_delay"	"1.2"
+			//"mode_fire_rate_automatic" "0.015"//0.015
+		}
+                NPC
+		{
+			"MinBurst" "1"
+			"MaxBurst" "1"		
+		}	
+	}
+
+	Animation_Properties
+	{
+		"FirePrimary1"		"ACT_VM_PRIMARYATTACK"	
+		"FireIronsighted1"	"ACT_VM_PRIMARYATTACK"
+	    "SwingAnimation"	"ACT_VM_MELEE"
+
+		"FirstDrawAnimation"	"ACT_VM_DRAW_INSPECT"
+		"InspectAnimation"	"ACT_VM_INSPECT"
+                
+	}
+
+	Particles_Properties
+	{
+		Player
+		{
+			Muzzle_Tracers
+			{
+				"OldMuzzleTracer"	"effects/spark0.vmt" 
+				"MuzzleTracer1" 	"weapon_tracer_ar2"
+			}	
+			Muzzle_Particles
+			{
+				"MuzzleFlashTransparent" "weapon_smg1_transparentGlow"
+			
+				"MuzzleFlash1" "gauss_normal2"	
+				
+				Muzzle_Particles_Secondary
+				{
+					"MuzzleFlashDelayed" "electrical_arc_01_system"//"charge"
+				}
+			}
+		}
+		Npc
+		{
+			Muzzle_Tracers
+			{
+				"OldMuzzleTracer"	"effects/spark0.vmt" 
+				"MuzzleTracer1" 	"weapon_npc_tracer_ar2"
+			}
+			Muzzle_Particles
+			{
+				"MuzzleFlash1" 		"Chargeball_npc"
+			}
+		}
+	}	
+		
+	MuzzleDLight_Properties
+	{
+		"DLightRed"		"112"
+		"DLightGreen"		"39"
+		"DLightBlue"		"195"
+		"DLightRadius"		"350"	
+		"DLightDecay"		"0.2"
+		"DLightAttachment"	"muzzle"
+	}
+
+	CameraFollow_Properties
+	{
+		"Attachments" "1"
+		"Scales" "0.55"
+	}
+	  Weapon_spread
+	 {
+          Player
+          {
+		 "IronSight_spread" "0.01"
+		 "Standing_spread" "0.02"
+		 "Crouch_spread" "0.01"
+		 "Walking_spread" "0.05"
+		 "Running_spread" "0.1"			 
+	 }
+	 NPC
+	 {
+		 "Standing_spread" "0.05"
+		 "Crouch_spread" "0.01"
+		 "Walking_spread" "0.5"
+		 "Running_spread" "0.1"	
+	 }	
+        }
+	 Weapon_Recoil
+	 {
+
+		"DoRandomPunch" "0"
+		"ViewPunch_X" "8.45"
+		"ViewPunch_Y" "8.45"
+		"ViewPunch_Z" "0"
+
+		"DoRandomKick" "0"
+		"ViewKick_X" "7.45"
+		"ViewKick_Y" "2.45"
+		"ViewKick_Z" "0"
+	 }
+	 ViewModel_Properties
+	 {
+	
+		 "pos_x" "13.0"   
+		 "pos_y" "-1.5"   
+		 "pos_z" "-4.0"   
+	
+		 "ang_x" "0" 
+		 "ang_y" "-1"  
+		 "ang_z" "-1.0"  
+
+		 "iron_pos_x" "-1.0"   
+		 "iron_pos_y" "-5.1"   
+		 "iron_pos_z" "2.1"   
+
+
+		 "DistanceToWall" "40.0"
+		 "PosW_x" "-7.0"
+		 "PosW_y" "4.0"
+		 "PosW_z" "-2.0"
+		 "AngleW_x" "-10.0"
+		 "AngleW_y" "50.0"
+		 "AngleW_z" "20.0"
+
+		 "posf_x" "10.0"   
+		 "posf_y" "2.0"   
+		 "posf_z" "-4.0"   
+	
+		 "anglef_x" "10" 
+		 "anglef_y" "15"  
+		 "anglef_z" "0.0" 
+
+	 }
+
+
+	// Sounds for the weapon. There is a max of 16 sounds per category (i.e. max 16 "single_shot" sounds)
+	SoundData
+	{
+		"special1"			"NPC_Strider.Charge"
+		"reload"			"Weapon_CombineGuard.Reload"
+		"reload_npc"		"Weapon_CombineGuard.NPC_Reload"
+		"single_shot"		"NPC_Strider.Shoot"
+		"single_shot_npc"	"Weapon_CombineGuard.NPC_Single"
+	}
+
+	// Weapon Sprite data is loaded by the Client DLL.
+	TextureData
+	{
+		"weapon"
+		{
+				"font"		"WeaponsIconsOver"
+				"character"	"o"
+		}
+		"weapon_s"
+		{
+				"font"		"WeaponIconsOverSelected"
+				"character"	"o"
+		}
+		"ammo"
+		{
+				"font"		"WeaponIcons"
+				"character"	"z"
+		}
+		"ammo2"
+		{
+				"font"		"WeaponIcons"
+				"character"	"z"
+		}
+		"crosshair"
+		{
+				"font"		"CrosshairsOver"
+				"character"	"r"
+				
+		}
+	}
+}

@@ -1,0 +1,19 @@
+"SDK_VertexLitGeneric"
+{
+	"$basetexture" "models/Weapons/v_gauss_remaster/tauss_indicators_glow"
+	"$bumpmap" "models/Weapons/v_gauss_remaster/tauss_indicators_n"
+
+	"$selfillum" 1
+
+        "$detail" "detail/vm_blood_detail"
+	"$detailblendmode" "2"
+	"$detailblendfactor" "0.0"
+	"$detailscale" "1.0"
+
+	"Proxies"
+	{
+		"BloodyTexture"
+		{
+		}
+	}
+}

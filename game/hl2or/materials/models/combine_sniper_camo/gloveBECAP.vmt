@@ -1,0 +1,5 @@
+"SDK_VertexLitGeneric"
+{
+	// Original shader: VertexLitTexture
+	"$basetexture" "models/combine_sniper_camo/glove"
+}

@@ -1,0 +1,307 @@
+WeaponData
+{
+	// Weapon data is loaded by both the Game and Client DLLs.
+	"printname"	"#wpnname_g36"
+	"viewmodel"			"models/weapons/OverCharged/v_g36_silent.mdl"
+	"playermodel"			"models/weapons/overcharged/world/w_g36.mdl"
+	"anim_prefix"			"ar2"
+	"bucket"			"2"
+	"bucket_position"		"8"
+	"bucket_360"			"1"
+	"bucket_position_360"		"0"
+
+	"clip_size"			"30"
+	"clip2_size"			"-1"
+
+	"default_clip"			"30"
+	//"default_clip2"		"-1"
+
+	"primary_ammo"			"OICW"
+	//"secondary_ammo"		"none"
+
+	"weight"			"5"
+	"rumble"			"3"
+	"item_flags"			"0"
+
+	"AllowShellEjectSmokeFlash" 	"2"
+	"AllowFreeAim"			"1"
+	"AllowIronSight"		"1"
+
+	"GetFireRate"			"0.063"
+	"IronsightSensitivity"		"0.5"
+
+	Weapon_firing_modes
+	{
+		"weapon_modes" "1 2 3"
+		"WeaponDefaultMode" "2"
+		"weapon_type" "smg"
+		"SwingHitTime" "0.1"	
+        	"FiresUnderWater" "0"	
+		weapon_mode:1
+		{
+			"weapon_switching_sound" "Weapon_Switch.1"
+			"mode_fire_rate_single" "0.8"
+			"mode_accuracy_maximum_penalty_time" "1.5"
+			"mode_fastest_refire_time" "0.1"
+			"mode_accuracy_shot_penalty_time" "0.2"
+			"mode_fastest_dry_refire_time" "0.2"
+		}
+		weapon_mode:2
+		{
+			"weapon_switching_sound" "Weapon_Switch.2"
+			"mode_fire_rate_automatic" "0.063"
+		}
+		weapon_mode:3
+		{
+			"weapon_switching_sound" "Weapon_Switch.3"
+			"mode_fire_rate_burst" "0.063"
+			"mode_fire_rate_burst_refire_time" "0.3"
+		}
+		Silencer
+		{
+			"weapon_using_silencer" "1"
+			"silencer_bodygroup" "silencer"
+			"silencer_bodygroup_enable_value" "1"
+			"silencer_bodygroup_disable_value" "0"			
+		}
+                NPC
+		{
+			"MinBurst" "3"
+			"MaxBurst" "12"		
+		}
+	}	
+	Animation_Properties
+	{
+		"InspectAnimation" "ACT_VM_INSPECT"
+        "FirstDrawAnimation"	"ACT_VM_DRAW_INSPECT"	
+		"zeroidleanim" "1"
+		"FirePrimary1"	   "ACT_VM_PRIMARYATTACK"
+		"FirePrimary2"	   "ACT_VM_RECOIL1"
+		"FirePrimary3"	   "ACT_VM_RECOIL2"	
+		"FirePrimary4"	   "ACT_VM_RECOIL3"
+	    "SwingAnimation" "ACT_VM_MELEE"
+			"WalkAnimation"			"ACT_VM_WALK"
+		"RunAnimation" "ACT_VM_ADMIRE"
+		"UseHalfFullMagAnimations" "1"
+		"ReloadFullEmptyAnimation" "ACT_VM_RELOAD_EMPTY"
+		"ReloadDefaultAnimation"	"ACT_VM_RELOAD" 
+		"weapon_switch_animation" "ACT_VM_FIREMODE"	
+		"FireIronsighted1" "ACT_VM_PRIMARYATTACK_IRONSIGHTED1"
+		"FireIronsighted2" "ACT_VM_PRIMARYATTACK_IRONSIGHTED1"
+		"FireIronsighted3" "ACT_VM_PRIMARYATTACK_IRONSIGHTED1"
+		"FireIronsighted4" "ACT_VM_PRIMARYATTACK_IRONSIGHTED1"
+		"FirePrimaryCompleteEmpty" "ACT_VM_PRIMARYATTACK_EMPTY"		
+	}
+		
+	Weapon_shells
+	{
+		"ShellModel" "models/shells/shell_556.mdl"
+		"ShellBounceSound" "Bounce.Shell"
+		"ShellParticle" "shell_exhaust_smoke"
+		"ShellExhaustAttachment"	"shell"
+		"ShellExhaustParticle"		"shell_eject_smoke_flash"
+	}
+	Particles_Properties
+	{
+		Player
+		{
+			Muzzle_Tracers
+			{
+				"OldMuzzleTracer"	"effects/spark0.vmt" 
+				"MuzzleTracer1" "weapon_tracer_smg"
+			}	
+			Muzzle_Particles
+			{
+				"MuzzleFlash1" "weapon_smg1_muzzle1"
+				"MuzzleFlash2" "weapon_smg1_muzzle2"
+				"MuzzleFlash3" "weapon_smg1_muzzle3"
+				"MuzzleFlash4" "weapon_smg1_muzzle4"
+			}
+		}
+		Npc
+		{
+			Muzzle_Tracers
+			{
+				"OldMuzzleTracer"	"effects/spark0.vmt" 
+				"MuzzleTracer1" "weapon_npc_tracer_smg"
+			}
+			Muzzle_Particles
+			{
+				"MuzzleFlash1" "smg_normal_npc"
+			}
+		}
+	}
+		
+	MuzzleDLight_Properties
+	{
+		"DLightRed"		"232"
+		"DLightGreen"		"108"
+		"DLightBlue"		"25"
+		"DLightRadius"		"290"	
+		"DLightDecay"		"0.2"
+		"DLightAttachment"	"muzzle"
+	}
+
+	Disabled-MuzzleProjectedLight_Properties
+	{
+		"FirstAttachment" "muzzle"
+		"FlashLifeTime"		"0.03"
+		"FlashType"		"2"
+		"RollFlash" "1"
+		"MuzzleLight1" "effects/muzzleflash_light1.vmt"
+		"MuzzleLight2" "effects/muzzleflash_light2.vmt"
+		"MuzzleLight3" "effects/muzzleflash_light3.vmt"
+		"MuzzleLight4" "effects/muzzleflash_light4.vmt"
+	}
+		
+	CameraFollow_Properties
+	{
+		"Attachments" "1"
+		"Scales" "0.8"
+	}
+	 Weapon_spread
+	 {
+          Player
+          {
+		 "IronSight_spread" "2.501"
+		 "Standing_spread" "10.02"
+		 "Crouch_spread" "3.01"
+		 "Walking_spread" "30.03"
+		 "Running_spread" "70.1"			 
+	 }
+	 NPC
+	 {
+		 "Standing_spread" "20.02"
+		 "Crouch_spread" "10.01"
+		 "Walking_spread" "30.03"
+		 "Running_spread" "100.1"			
+	 }
+         }		 
+	 Weapon_Recoil
+	 {
+		"DoRandomPunch" "0"
+		"ViewPunch_X" "0.2"
+		"ViewPunch_Y" "0.4"
+		"ViewPunch_Z" "0"
+
+		"DoRandomKick" "0"
+		"ViewKick_X" "0.25"
+		"ViewKick_Y" "0.35"
+		"ViewKick_Z" "0"
+	 }
+
+	
+	 Garbage_Properties
+	 {
+	    "Garb_Name" "models/weapons/MAGS/w_rif_m4a1_s_mag.mdl"
+
+		"Garb_Offset_x" "-28"
+		"Garb_Offset_y" "5"
+		"Garb_Offset_z" "-40"
+		"HitSound"	   "Garbazines.Impact2"
+
+		"Garb_Angle_x" "0.0"
+		"Garb_Angle_y" "0.0"
+		"Garb_Angle_z" "0.0"
+	 }
+
+	
+	ViewModel_Properties
+	{
+	
+		 "pos_x" "1.0"    
+		 "pos_y" "0.2"    
+		 "pos_z" "0.0"    
+
+	     "ang_z" "0.0"  
+	
+		 "iron_pos_x" "-5.0"  
+		 "iron_pos_y" "-2.975"  
+		 "iron_pos_z" "0.1"   
+
+		 "iron_ang_x" "0.0" 
+      	 "iron_ang_z" "0" 
+		 
+		 "DistanceToWall" "45.0"
+		 "PosW_x" "-13"
+		 "PosW_y" "1.4"
+		 "PosW_z" "-10.0"
+		 "AngleW_x" "-60.0"
+		 "AngleW_y" "-5.0"
+		 "AngleW_z" "5.0"
+
+		 //"PosF_x" "-2.0"
+		 //"PosF_y" "-3.0"
+		 //"PosF_z" "1.0"
+		 //"AngleF_x" "20.0"
+		 //"AngleF_y" "0.0"
+		 //"AngleF_z" "-20.0"
+
+		 "ParticleTracerPos_x" "30.0"
+		 "ParticleTracerPos_y" "-2.25"
+		 "ParticleTracerPos_z" "-3.0"
+
+		 "TracerPosIron_x" "0.0"
+		 "TracerPosIron_y" "0.0"
+		 "TracerPosIron_z" "0.0"
+
+		 "OriginTracerPos_x" "0.0"
+		 "OriginTracerPos_y" "0.0"
+		 "OriginTracerPos_z" "1.0"
+
+		 "ScopeParticleTracerPos_x" "20.0"
+		 "ScopeParticleTracerPos_y" "-4.0"
+		 "ScopeParticleTracerPos_z" "-4.0"
+		 
+		 "IrSightOriginTracerPos_X" "0.0"
+		 "IrSightOriginTracerPos_Y" "0.0"
+		 "IrSightOriginTracerPos_Z" "0.0"
+	}
+
+	// Sounds for the weapon. There is a max of 16 sounds per category (i.e. max 16 "single_shot" sounds)
+	SoundData
+	{
+		"single_shot"			"Weapon_ovr_m4_FirePrimary"
+		"special1"			"Weapon_ovr_m4_FirePrimarySilenced"
+		"empty"				"Weapon_SMG1.Empty"
+	
+		"single_shot_npc"		"Weapon_ovr_m4_Primary_NPC"
+		"reload_npc"			"Weapon_ovr_m4_Reload_NPC"
+	}
+
+	// Weapon Sprite data is loaded by the Client DLL.
+	TextureData
+	{
+		"weapon"
+        {
+                "font"        "WeaponsIconsOverExtra"
+                "character"    "B"
+        }
+        "weapon_s"
+        {
+                "font"        "WeaponIconsOverExtraSelected"
+                "character"    "B"
+        }
+        "weapon_small"
+        {
+                "font"        "WeaponIconsOverExtraSmall"
+                "character"    "B"
+        }
+		"ammo"
+		{
+				"font"		"AmmoIconsOver"
+				"character"	"m"      
+		}
+		"ammo2"
+		{
+				"font"		"WeaponIconsSmall"
+				"character"	"t"
+		}
+		"crosshair"
+		{
+				"font"		"CrosshairsOver"
+				"character"	"q"
+				
+		}
+	}
+}

@@ -1,0 +1,13 @@
+"VertexLitGeneric"
+{
+	"$basetexture" "models/combine_turrets/drive_turret/driveturret_sheet"
+
+	"$surfaceprop" "metal"
+	"$envmap" "Environment Maps/envmapcombine"
+	"$envmap" "env_cubemap"
+	"$nocull" 1
+	"$envmaptint" "[ .5 .5 .5]"
+	"$envmap" "env_cubemap"
+	"$basealphaenvmapmask" 1
+	"$envmaptint" "[ .125 .125 .125]"
+}

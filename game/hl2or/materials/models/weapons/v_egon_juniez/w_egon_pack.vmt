@@ -1,0 +1,38 @@
+"SDK_VertexLitGeneric"
+{
+	"$baseTexture" "models\weapons\v_egon_juniez\w_egon_pack"
+	"$bumpmap" "models\weapons\v_egon_juniez\w_egon_pack_nm"
+	"$envmap" "env_cubemap"
+	"$envmaptint" "[.1 .1 .1]"
+    	"$normalmapalphaenvmapmask" "1"
+ 	$phong 1
+        $phongexponent 20
+        $phongboost 2
+        $phongtint "[1 1 1]"
+        $halflambert 0
+        $phongfresnelranges "[.4 .8 30]"
+
+	"$rimlight" "1"
+	"$rimlightexponent" "80"
+	"$rimlightboost" ".3"
+
+
+        //$detail detail\bm_rustymetal_detail_01
+        //$detailscale 3
+        //$detailblendfactor .7
+        //$detailblendmode 0
+    	"$model" 1
+
+     	"$detail" "detail/vm_blood_detail"
+	"$detailblendmode" "2"
+	"$detailblendfactor" "0.0"
+	"$detailscale" "1.0"
+
+	"Proxies"
+	{
+		"BloodyTexture"
+		{
+		}
+	}
+
+}

@@ -1,0 +1,17 @@
+"SDK_VertexLitGeneric"
+{
+	"$basetexture" "models/Weapons/V_iceaxe/top"
+	"$bumpmap"	"models/Weapons/V_iceaxe/top_n"
+
+        "$detail" "detail/vm_blood_detail"
+	"$detailblendmode" "2"
+	"$detailblendfactor" "0.0"
+	"$detailscale" "1.0"
+
+	"Proxies"
+	{
+		"BloodyTexture"
+		{
+		}
+	}
+}

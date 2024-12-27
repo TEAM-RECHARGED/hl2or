@@ -1,0 +1,5 @@
+"editor_shader"
+{
+	"$shadername"	"postproc_chromatic_abberations"
+     	"$basetexture"	"_rt_FullFrameFB"
+}

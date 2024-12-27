@@ -1,0 +1,18 @@
+"SDK_VertexLitGeneric"
+{
+	"$basetexture" "models/Weapons/v_tripwire/tripwire_ref"
+	"$bumpmap" "models/Weapons/v_tripwire/tripwire_ref_n"  
+
+    
+        "$detail" "detail/vm_blood_detail"
+	"$detailblendmode" "2"
+	"$detailblendfactor" "0.0"
+	"$detailscale" "1.0"
+
+	"Proxies"
+	{
+		"BloodyTexture"
+		{
+		}
+	}
+}

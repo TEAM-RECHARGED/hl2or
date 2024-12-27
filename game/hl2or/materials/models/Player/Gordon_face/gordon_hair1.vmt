@@ -1,0 +1,7 @@
+"SDK_VertexlitGeneric"
+{
+	"$basetexture" "models/Player/Gordon_face/gordon_boroda"
+
+	"$alphatest" 1
+	"$nocull" 1
+}
