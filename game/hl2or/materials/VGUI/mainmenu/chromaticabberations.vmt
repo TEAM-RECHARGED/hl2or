@@ -1,7 +1,0 @@
-"UnlitGeneric"
-{
-	"$baseTexture" "vgui/mainmenu/chromaticabberations"
-	"$vertexalpha" 1
-	"$gammaColorRead" "1"
-	"$linearWrite" "1"
-}

@@ -1,7 +1,0 @@
-"editor_shader"
-{
-	"$shadername"	"lightmap_fog"
-	"$basetexture"	"effects/fog"
-	"$depthtexture"	"_rt_FullFrameDepth_Alt"
-	"$tint"		"[1.0 1.0 1.0]"
-}

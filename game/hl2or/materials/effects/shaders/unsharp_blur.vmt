@@ -1,6 +1,0 @@
-"unsharp_blur"
-{
-	"$FBTEXTURE"		"_rt_FullFrameFB" 
-	"$BLURSIZE"		"0.5"
-	"$ignorez"		1
-}

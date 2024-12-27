@@ -1,8 +1,0 @@
-"SpriteCard"
-{
-	$basetexture "particles\baseexplosion_ovr\3"
-	$additive 1
-	$OVERBRIGHTFACTOR 4.5
-	$DEPTHBLEND 1
-        $blendframes 1
-}

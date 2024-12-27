@@ -1,8 +1,0 @@
-"UnlitGeneric"
-{
-	"$basetexture" "sprites/weapons_icons/sniperrifle_m40a1_op4/sniperrifle_m40a1_op4"
-	"$additive" "1"
-	"$vertexcolor" "1"
-	"$vertexalpha" "1"
-	"$ignorez"     "1"
-}

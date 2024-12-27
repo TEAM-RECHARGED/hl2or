@@ -1,7 +1,0 @@
-"SDK_VertexLitGeneric"
-{
-	// Original shader: AdditiveTextureAndVertexColor
-	"$additive" 1
-	"$vertexcolor" 1
-	"$basetexture" "sprites/richo1"
-}

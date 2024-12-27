@@ -1,7 +1,0 @@
-"editor_shader"
-{
-	"$shadername"		"model_sun"
-	"$basetexture"		"sprites/light_glow02"
-	"$hdrcolorscale"	"1.0"
-	"$mutable_01"		"[1.0 1.0 1.0]"
-}

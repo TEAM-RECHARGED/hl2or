@@ -1,7 +1,0 @@
-"UnlitGeneric"
-{
-	"$basetexture" "effects/cguard/blackSphere"
-	"$additive" "1"
-	"$vertexcolor" 1
-	"$ignorez" "1"
-}

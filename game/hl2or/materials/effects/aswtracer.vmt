@@ -1,9 +1,0 @@
-UnlitGeneric
-{
-
-
-$basetexture "swarm/effects/aswtracer"
-
-$additive 1
-$vertexcolor 1
-}

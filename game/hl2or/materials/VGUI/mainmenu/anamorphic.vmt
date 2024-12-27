@@ -1,7 +1,0 @@
-"UnlitGeneric"
-{
-	"$baseTexture" "vgui/mainmenu/anamorphic"
-	"$vertexalpha" 1
-	"$gammaColorRead" "1"
-	"$linearWrite" "1"
-}

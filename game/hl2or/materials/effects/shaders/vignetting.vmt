@@ -1,6 +1,0 @@
-"vignetting"
-{
-	"$FBTEXTURE"		"_rt_FullFrameFB" 
-	"$VIGNETDARKNESS"	"1.25"
-	"$ignorez"		1
-}

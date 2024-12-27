@@ -1,7 +1,0 @@
-"UnlitGeneric"
-{
-	// Original shader: AddTexture
-	"$basetexture" "MuzzleEffects/tracer5"
-	"$additive" 1
-	"$vertexcolor" 1
-}

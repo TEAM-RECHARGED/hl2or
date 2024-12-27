@@ -1,8 +1,0 @@
-"UnlitGeneric"
-{
-	"$basetexture" "sprites/weapons_icons/alien_spore_launcher/alien_spore_launcher"
-	"$additive" "1"
-	"$vertexcolor" "1"
-	"$vertexalpha" "1"
-	"$ignorez"     "1"
-}

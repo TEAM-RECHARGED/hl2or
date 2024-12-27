@@ -1,6 +1,0 @@
-"editor_shader"
-{
-	"$basetexture"		"_rt_SmallFB0"
-	"$additive"		1
-	"$ignorez"		1
-}

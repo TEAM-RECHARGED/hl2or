@@ -1,7 +1,0 @@
-"SDK_UnlitGeneric"
-{
-	"$basetexture" "effects/cloudalpha"
-//	"$surfaceprop" "glass"
-	"$translucent" "1"
-	"$additive" "1"
-}

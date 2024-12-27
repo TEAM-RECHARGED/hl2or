@@ -1,7 +1,0 @@
-"UnlitGeneric"
-{
-	"$baseTexture" "vgui/mainmenu/bloom1"
-	"$vertexalpha" 1
-	"$gammaColorRead" "1"
-	"$linearWrite" "1"
-}

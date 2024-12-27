@@ -1,8 +1,0 @@
-"UnlitGeneric"
-{
-	"$basetexture" "sprites/weapons_icons/heavymachinegun_m249/heavymachinegun_m249"
-	"$additive" "1"
-	"$vertexcolor" "1"
-	"$vertexalpha" "1"
-	"$ignorez"     "1"
-}

@@ -1,8 +1,0 @@
-"UnlitGeneric"
-{
-	"$basetexture" "particles/npc_voltigore/beam001"
-	"$vertexalpha" "1"
-	"$vertexcolor" "1"
-//	"$additive" "1"
-	"$color" "[1 1 1]"
-}

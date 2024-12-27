@@ -1,7 +1,0 @@
-"UnlitGeneric"
-{
-	"$basetexture" "ANewParticles/cartoon_muzzle/muzzleflash2"
-	"$additive" "1"
-	"$vertexcolor" 1
-	"$vertexalpha" "1"
-}

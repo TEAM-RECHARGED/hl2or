@@ -1,6 +1,0 @@
-"editor_shader"
-{
-	"$shadername"	"postproc_gears_bloom"
-//	"$basetexture"	"_rt_FullFrameFB"
-//	"$basetexture2"	"_rt_FullFrameFB"
-}

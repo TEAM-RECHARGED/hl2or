@@ -1,8 +1,0 @@
-"SDK_VertexLitGeneric"
-{
-	"$basetexture"		"vgui/white"
-	"$selfillum"		1
-	"$selfillummask"		"vgui/white"
-	"$vertexalpha"		1
-	"$model"			1
-}
