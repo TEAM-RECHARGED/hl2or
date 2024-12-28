@@ -1,5 +1,0 @@
-"SDK_VertexLitGeneric"
-{
-	"$basetexture" "models\weapons\v_lasermine\mine_emitter"
-	"$selfillum"	"1"
-}

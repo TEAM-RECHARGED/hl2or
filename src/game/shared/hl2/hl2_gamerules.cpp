@@ -72,7 +72,17 @@ ConVar  physcannon_mega_enabled( "physcannon_mega_enabled", "0", FCVAR_CHEAT | F
 
 // Controls the application of the robus radius damage model.
 ConVar	sv_robust_explosions( "sv_robust_explosions","1", FCVAR_REPLICATED );
-
+#ifdef OVERCHARGED
+ConVar sk_plr_dmg_egon_narrow("sk_plr_dmg_egon_narrow", "0", FCVAR_REPLICATED);
+ConVar sk_plr_dmg_egon_wide("sk_plr_dmg_egon_wide", "0", FCVAR_REPLICATED);
+ConVar	sk_plr_dmg_m4("sk_plr_dmg_m4", "0", FCVAR_REPLICATED);
+ConVar	sk_npc_dmg_m4("sk_npc_dmg_m4", "0", FCVAR_REPLICATED);
+ConVar	sk_max_m4("sk_max_m4", "0", FCVAR_REPLICATED);
+ConVar	sk_plr_dmg_m4_grenade("sk_plr_dmg_m4_grenade", "0", FCVAR_REPLICATED);
+ConVar	sk_npc_dmg_m4_grenade("sk_npc_dmg_m4_grenade", "0", FCVAR_REPLICATED);
+ConVar	sk_max_m4_grenade("sk_max_m4_grenade", "0", FCVAR_REPLICATED);
+ConVar sk_max_uranium("sk_max_uranium", "0", FCVAR_REPLICATED);
+#endif // OVERCHARGED
 // Damage scale for damage inflicted by the player on each skill level.
 ConVar	sk_dmg_inflict_scale1( "sk_dmg_inflict_scale1", "1.50", FCVAR_REPLICATED );
 ConVar	sk_dmg_inflict_scale2( "sk_dmg_inflict_scale2", "1.00", FCVAR_REPLICATED );
@@ -1818,6 +1828,10 @@ CAmmoDef *GetAmmoDef()
 		def.AddAmmoType("GaussEnergy",		DMG_SHOCK,					TRACER_NONE,			"sk_jeep_gauss_damage",		"sk_jeep_gauss_damage", "sk_max_gauss_round", BULLET_IMPULSE(650, 8000), 0 ); // hit like a 10kg weight at 400 in/s
 		def.AddAmmoType("CombineCannon",	DMG_BULLET,					TRACER_LINE,			"sk_npc_dmg_gunship_to_plr", "sk_npc_dmg_gunship", NULL, 1.5 * 750 * 12, 0 ); // hit like a 1.5kg weight at 750 ft/s
 		def.AddAmmoType("AirboatGun",		DMG_AIRBOAT,				TRACER_LINE,			"sk_plr_dmg_airboat",		"sk_npc_dmg_airboat",		NULL,					BULLET_IMPULSE(10, 600), 0 );
+#ifdef OVERCHARGED
+		def.AddAmmoType("OICW", DMG_BULLET, TRACER_LINE_AND_WHIZ, "sk_plr_dmg_m4", "sk_npc_dmg_m4", "sk_max_m4", BULLET_IMPULSE(200, 1225), 0);
+		def.AddAmmoType("Uranium", DMG_ENERGYBEAM, TRACER_LINE, NULL, NULL, "sk_max_uranium", 100, 100);
+#endif // OVERCHARGED
 
 		//=====================================================================
 		// STRIDER MINIGUN DAMAGE - Pull up a chair and I'll tell you a tale.

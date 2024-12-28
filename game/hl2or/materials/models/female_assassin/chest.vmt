@@ -1,8 +1,0 @@
-//"ModelDiffuseBump"
-"SDK_VertexLitGeneric"
-//"Wireframe"
-{
-	"$bumpmap" "models/female_assassin/chest_normal"
-	"$envmap" "shadertest/cubemap"
-	"$model" 1
-}

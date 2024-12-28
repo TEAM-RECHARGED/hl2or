@@ -1,7 +1,0 @@
-"SDK_VertexlitGeneric"
-{
-	"$basetexture" 	"models\weapons\v_m16_remaster2\m16_magbullets"
-	"$bumpmap" 	"models\weapons\v_m16_remaster2\m16_magbullets_n"
-
-	"$phong" "1"
-}

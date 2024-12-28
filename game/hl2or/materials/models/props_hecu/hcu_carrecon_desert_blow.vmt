@@ -1,9 +1,0 @@
-"vertexlitgeneric"
-{
-	"$basetexture" "models/props_hecu/hcu_carrecon_desert_blow"
-	"$halflambert" 1
-	"$model" "1"
-	"$detail" "detail/dt_metal1"
-	"$detailscale" "12"
-	"$detailblendfactor" "0.8"
-}

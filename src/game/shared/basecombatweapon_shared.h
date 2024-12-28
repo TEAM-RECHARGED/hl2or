@@ -359,6 +359,11 @@ public:
 	virtual bool			UsesClipsForAmmo2( void ) const;
 	bool					IsMeleeWeapon() const;
 
+#ifdef OVERCHARGED
+	float					m_flNextFidgetReload;
+#endif // OVERCHARGED
+
+
 	// derive this function if you mod uses encrypted weapon info files
 	virtual const unsigned char *GetEncryptionKey( void );
 

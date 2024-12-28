@@ -1,7 +1,0 @@
-"vertexlitgeneric"
-{
-	"$basetexture" "lostcoast/nature/rockwall021c"
-	"%tooltexture" "lostcoast/nature/blendrockweeds001b_tooltexture"
-	"%keywords" "wasteland"
-	"$bumpmap" "lostcoast/nature/rockwall021c_normal"
-}

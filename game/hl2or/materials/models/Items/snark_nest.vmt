@@ -1,6 +1,0 @@
-"SDK_VertexLitGeneric"
-{
-	"$baseTexture" "models/items/snark_nest"
-        "$bumpmap" "models\items/snark_nest_n"
-        "$normalmapalphaenvmapmask" 1
-}

@@ -1,4 +1,0 @@
-"SDK_VertexLitGeneric" {
-    "$basetexture" "models\AlienAssassin\head"
-    "$surfaceprop" "flesh"
-}

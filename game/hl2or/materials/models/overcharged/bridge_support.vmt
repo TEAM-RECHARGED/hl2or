@@ -1,8 +1,0 @@
-
-"VertexLitGeneric"
-{
-	// Original shader: VertexLitTexture
-	"$basetexture" "Models/overcharged/bridge_support"
-	"$surfaceprop" "concrete"
-	
-}

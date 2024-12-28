@@ -1,5 +1,0 @@
-"SDK_VertexLitGeneric"
-{
-	// Original shader: VertexLitTexture
-	"$basetexture" "Models/Items/rad_box_blue"
-}

@@ -1,9 +1,0 @@
-"SDK_vertexlitgeneric"
-{
-	"$alphatest" 1
-	"$basetexture" "metal/metaltruss019a"
-	"%compilepassbullets" 1
-	"$surfaceprop" "metal"
-	"%keywords" "c17industrial,wasteland"
-	"$nocull" 1
-}

@@ -1,7 +1,0 @@
-"SDK_eyes"
-{
-	"$basetexture" "models/player/gordon_citizen/eyeball_l"
-	"$iris" "models/player/gordon_citizen/grn_pupil_l"
-	"$halflambert" 1
-	"$nodecal" "1"
-}

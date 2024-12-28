@@ -12,7 +12,7 @@ WeaponData
    	"NPCAllowPickup" 	"0"
 	"default_clip" 		"200"
 
-	"primary_ammo" 		"GaussEnergy" 
+	"primary_ammo" 		"Uranium" 
 	"secondary_ammo" 	"None"
 
 	"weight" 		"3" 

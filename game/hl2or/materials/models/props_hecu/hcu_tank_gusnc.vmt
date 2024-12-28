@@ -1,9 +1,0 @@
-"vertexlitgeneric"
-{
-	"$basetexture" "models/props_hecu/hcu_tank_gusnc"
-	"$bumpmap" "models/props_hecu/hcu_tank_gusnc_n"
-
-	"$detail" "detail/dt_metal1"
-	"$detailscale" "7.74"
-	"$detailblendfactor" "0.8"
-}

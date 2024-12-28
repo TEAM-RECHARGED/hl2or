@@ -1,9 +1,0 @@
-"SDK_VertexLitGeneric"
-{
-	"$basetexture" "models/weapons/v_cguardgun_remaster/v_guardgun_sheet"
-	"$bumpmap" "Models/weapons/v_cguardgun_remaster/v_guardgun_sheet_n"
-
-	"$phong" "1"
-	"$phongboost" "1"
-	"$phongfresnelranges"	"[0.04 0.4 1]"
-}

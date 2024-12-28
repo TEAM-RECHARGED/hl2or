@@ -1,5 +1,0 @@
-"SDK_VertexLitGeneric" {
-    "$basetexture" "models\AlienAssassin\shin"
-    "$bumpmap" "models\AlienAssassin\shin_normal"
-    "$surfaceprop" "flesh"
-}

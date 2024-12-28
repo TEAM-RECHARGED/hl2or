@@ -1,9 +1,0 @@
-"SDK_VertexLitGeneric"
-{
-        "$baseTexture" 	"Models/Combine_soldier/clippouch"
-	"$bumpmap" "models/combine_soldier/clippouch_normal"
-	"$surfaceprop" "flesh"
-	// "$selfillum" 1
-
-
-}
