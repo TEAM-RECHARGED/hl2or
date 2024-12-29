@@ -226,8 +226,10 @@ void CWeaponEgon::PrimaryAttack(void)
 		return;
 	}
 
-	Vector vecAiming = pPlayer->GetAutoaimVector(0);
 	Vector vecSrc = pPlayer->Weapon_ShootPosition();
+
+	//Vector vecAiming = pPlayer->GetAutoaimVector(0);
+
 
 	switch (m_fireState)
 	{
@@ -259,7 +261,7 @@ void CWeaponEgon::PrimaryAttack(void)
 
 	case FIRE_STARTUP:
 	{
-		Fire(vecSrc, vecAiming);
+//		Fire();
 
 		if (gpGlobals->curtime >= (m_flStartFireTime + 2.0))
 		{
@@ -277,7 +279,7 @@ void CWeaponEgon::PrimaryAttack(void)
 	}
 	case FIRE_CHARGE:
 	{
-		Fire(vecSrc, vecAiming);
+//		Fire(vecSrc, vecAiming);
 
 		if (!HasAmmo())
 		{
