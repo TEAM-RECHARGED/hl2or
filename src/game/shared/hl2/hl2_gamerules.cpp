@@ -73,6 +73,9 @@ ConVar  physcannon_mega_enabled( "physcannon_mega_enabled", "0", FCVAR_CHEAT | F
 // Controls the application of the robus radius damage model.
 ConVar	sv_robust_explosions( "sv_robust_explosions","1", FCVAR_REPLICATED );
 #ifdef OVERCHARGED
+ConVar sk_plr_dmg_hornet("sk_plr_dmg_hornet", "0", FCVAR_REPLICATED);
+ConVar sk_npc_dmg_hornet("sk_npc_dmg_hornet", "0", FCVAR_REPLICATED);
+ConVar sk_max_hornet("sk_max_hornet", "0", FCVAR_REPLICATED);
 ConVar sk_plr_dmg_egon_narrow("sk_plr_dmg_egon_narrow", "0", FCVAR_REPLICATED);
 ConVar sk_plr_dmg_egon_wide("sk_plr_dmg_egon_wide", "0", FCVAR_REPLICATED);
 ConVar	sk_plr_dmg_m4("sk_plr_dmg_m4", "0", FCVAR_REPLICATED);
@@ -1831,6 +1834,7 @@ CAmmoDef *GetAmmoDef()
 #ifdef OVERCHARGED
 		def.AddAmmoType("OICW", DMG_BULLET, TRACER_LINE_AND_WHIZ, "sk_plr_dmg_m4", "sk_npc_dmg_m4", "sk_max_m4", BULLET_IMPULSE(200, 1225), 0);
 		def.AddAmmoType("Uranium", DMG_ENERGYBEAM, TRACER_LINE, NULL, NULL, "sk_max_uranium", 100, 100);
+		def.AddAmmoType("Hornet", DMG_BULLET, TRACER_NONE, "sk_plr_dmg_hornet", "sk_npc_dmg_hornet", "sk_max_hornet", BULLET_IMPULSE(100, 1200), 0);
 #endif // OVERCHARGED
 
 		//=====================================================================

@@ -1,0 +1,22 @@
+"MapAdd"
+{
+    "1"
+    {
+        "entity"       "weapon_egon"
+        "x"            "10223.968750"
+        "y"            "8026.540039"
+        "z"            "-831.968750"
+        "pitch"        "0"
+        "yaw"          "0"
+        "roll"         "0"
+        "KeyValues"
+        {
+            "model"    "models/weapons/overcharged/world/w_egon_full.mdl"
+            "additionalequipment" ""
+        }
+        "Flags"
+        {
+            "spawnflags"    "1"
+        }
+    }
+}

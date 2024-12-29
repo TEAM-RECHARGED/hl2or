@@ -38,6 +38,9 @@ $Project "Client (HL2OR)"
 				$File 	"hl2or\c_weapon_iontau.cpp"
 				$File 	"hl2or\cmds.cpp"
 				$File	"$SRCDIR\game\shared\hl2or\weapon_egon.cpp"
+				$File	"$SRCDIR\game\shared\hl2or\weapon_hornetgun.cpp"
+				$File	"$SRCDIR\game\shared\hl2or\hl1_npc_hornet.cpp"
+				$File	"$SRCDIR\game\shared\hl2or\hl1_npc_hornet.h"
 			}
 		}
 
