@@ -29,6 +29,11 @@ $Project "Client (HL2OR)"
 
 		$Folder "HL2OR DLL"
 		{
+		$Folder "Touch"
+		{
+			$File	"hl2or\touch.cpp"
+			$File	"hl2or\touch.h"
+		}
 			$Folder "Weapons"
 			{
 				$File	"$SRCDIR\game\shared\hl2mp\weapon_slam.cpp"

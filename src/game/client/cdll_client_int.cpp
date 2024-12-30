@@ -172,6 +172,7 @@ extern vgui::IInputInternal *g_InputInternal;
 #ifdef OVERCHARGED
 #include "discord_rpc.h" 
 #include <time.h>
+#include "hl2or\touch.h"
 #endif
 
 // memdbgon must be the last include file in a .cpp file!!!
@@ -730,10 +731,12 @@ public:
 	
 	// Returns true if the disconnect command has been handled by the client
 	virtual bool DisconnectAttempt( void );
-public:
+
 	void PrecacheMaterial( const char *pMaterialName );
 
 	virtual bool IsConnectedUserInfoChangeAllowed( IConVar *pCvar );
+
+	virtual void IN_TouchEvent(int type, int fingerId, int x, int y);
 
 private:
 	void UncacheAllMaterials( );
@@ -1073,6 +1076,8 @@ int CHLClient::Init( CreateInterfaceFn appSystemFactory, CreateInterfaceFn physi
 
 	gHUD.Init();
 
+	gTouch.Init();
+
 	g_pClientMode->Init();
 
 	if ( !IGameSystem::InitAllSystems() )
@@ -1263,6 +1268,7 @@ void CHLClient::Shutdown( void )
 	
 	gHUD.Shutdown();
 	VGui_Shutdown();
+	gTouch.Shutdown();
 	
 	ParticleMgr()->Term();
 	
@@ -1491,6 +1497,18 @@ void CHLClient::ExtraMouseSample( float frametime, bool active )
 
 	MDLCACHE_CRITICAL_SECTION();
 	input->ExtraMouseSample( frametime, active );
+}
+
+void CHLClient::IN_TouchEvent(int type, int fingerId, int x, int y)
+{
+	if (enginevgui->IsGameUIVisible())
+		return;
+	touch_event_t ev;
+	ev.type = type;
+	ev.fingerid = fingerId;
+	ev.x = x;
+	ev.y = y;
+	gTouch.ProcessEvent(&ev);
 }
 
 void CHLClient::IN_SetSampleTime( float frametime )
