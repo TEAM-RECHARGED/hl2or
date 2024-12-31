@@ -15,10 +15,11 @@ Download and place the mod files in the following directory:
 Restart Steam.
 
 In your Steam library, you should now see:
-Half-Life 2: Overcharged Redux.
+Half-Life 2: ReCharged.
 
 New Features:
 MP3 Command: Play your favorite MP3 files directly in-game.
+touch commands: Play the game with a touch screen instead of your cheetos-infested keyboard
 New NPC - Houndeye:
 Improved AI for a better gameplay experience.
 Weapons:

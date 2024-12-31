@@ -1,7 +1,7 @@
 "GameInfo"
 {
-	game 		"HALF-LIFE 2: OVERCHARGED REDUX"
-	title 		"HALF-LIFE 2: OVERCHARGED"
+	game 		"HALF-LIFE 2: ReCharged"
+	title 		"HALF-LIFE 2: ReCharged"
 	title2		"REDUX"
 	supportsvr	0
 
