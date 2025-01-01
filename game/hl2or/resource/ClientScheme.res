@@ -632,7 +632,7 @@ Scheme
 		{
 			"1"
 			{
-				"name"  "HalfLife2"
+				"name"  "HL2OR"
 				"tall"			"32"
 				"tall_hidef"	"46"
 				"weight" "0"
