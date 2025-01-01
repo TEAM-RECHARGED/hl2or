@@ -61,6 +61,7 @@ $Project "Server (HL2OR)"
 				$File "hl2or\point_houndeye_manager.h"
 
 			}
+			$File "hl2or\weapon_dualies.cpp"
 			$File "hl2or\mapadd.cpp"
 			$File "hl2or\mapadd.h"
 			$File "hl2or\weapon_grapple.cpp"

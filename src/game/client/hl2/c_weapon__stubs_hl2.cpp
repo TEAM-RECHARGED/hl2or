@@ -18,6 +18,7 @@ STUB_WEAPON_CLASS( cycler_weapon, WeaponCycler, C_BaseCombatWeapon );
 STUB_WEAPON_CLASS(weapon_m4, WeaponM4, C_HLSelectFireMachineGun);
 STUB_WEAPON_CLASS(weapon_usp, WeaponUSP, C_BaseHLCombatWeapon);
 STUB_WEAPON_CLASS(weapon_mp5, WeaponMP5, C_HLSelectFireMachineGun);
+STUB_WEAPON_CLASS(weapon_dual, WeaponDual, C_BaseHLCombatWeapon);
 #endif // OVERCHARGED
 STUB_WEAPON_CLASS( weapon_binoculars, WeaponBinoculars, C_BaseHLCombatWeapon );
 STUB_WEAPON_CLASS( weapon_bugbait, WeaponBugBait, C_BaseHLCombatWeapon );
