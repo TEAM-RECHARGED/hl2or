@@ -79,6 +79,11 @@ enum InputEventType_t
 	IE_ButtonDoubleClicked,	// m_nData contains a ButtonCode_t
 	IE_AnalogValueChanged,	// m_nData contains an AnalogCode_t, m_nData2 contains the value
 
+#ifdef OVERCHARGED
+	IE_FingerDown, // Touch Support
+	IE_FingerUp, // Touch Support
+	IE_FingerMotion, // Touch Support
+#endif // OVERCHARGED
 	IE_FirstSystemEvent = 100,
 	IE_Quit = IE_FirstSystemEvent,
 	IE_ControllerInserted,	// m_nData contains the controller ID

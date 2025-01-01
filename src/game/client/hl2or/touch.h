@@ -1,4 +1,5 @@
 #include "utllinkedlist.h"
+#include "vgui/ISurface.h"
 #include "vgui/VGUI.h"
 #include <vgui_controls/Panel.h>
 #include "cbase.h"
@@ -10,12 +11,23 @@ extern ConVar touch_enable;
 #define GRID_COUNT touch_grid_count.GetInt()
 #define GRID_COUNT_X (GRID_COUNT)
 #define GRID_COUNT_Y (GRID_COUNT * screen_h / screen_w)
-#define GRID_X (1.0/GRID_COUNT_X)
+#define GRID_X (1.0f/GRID_COUNT_X)
 #define GRID_Y (screen_w/screen_h/GRID_COUNT_X)
 #define GRID_ROUND_X(x) ((float)round( x * GRID_COUNT_X ) / GRID_COUNT_X)
 #define GRID_ROUND_Y(x) ((float)round( x * GRID_COUNT_Y ) / GRID_COUNT_Y)
 
 #define CMD_SIZE 64
+
+#define TOUCH_FL_HIDE                   (1U << 0)
+#define TOUCH_FL_NOEDIT                 (1U << 1)
+#define TOUCH_FL_CLIENT                 (1U << 2)
+#define TOUCH_FL_MP                             (1U << 3)
+#define TOUCH_FL_SP                             (1U << 4)
+#define TOUCH_FL_DEF_SHOW               (1U << 5)
+#define TOUCH_FL_DEF_HIDE               (1U << 6)
+#define TOUCH_FL_DRAW_ADDITIVE  (1U << 7)
+#define TOUCH_FL_STROKE                 (1U << 8)
+#define TOUCH_FL_PRECISION              (1U << 9)
 
 enum ETouchButtonType
 {
@@ -60,11 +72,21 @@ struct event_clientcmd_t
 struct event_s
 {
 	int type;
-	int x;
-	int y;
+	float x, y, dx, dy;
 	int fingerid;
 } typedef touch_event_t;
 
+
+struct CTouchTexture
+{
+	IVTFTexture* vtf;
+
+	float X0, Y0, X1, Y1; // position in atlas texture
+	int height, width;
+	int textureID;
+	bool isInAtlas;
+	char szName[1024];
+};
 
 class CTouchButton
 {
@@ -74,9 +96,6 @@ public:
 
 	// Field of button in pixels
 	float x1, y1, x2, y2;
-
-	// Button texture
-	int texture;
 
 	rgba_t color;
 	char texturefile[256];
@@ -88,7 +107,7 @@ public:
 	float fadespeed;
 	float fadeend;
 	float aspect;
-	int textureID;
+	CTouchTexture* texture;
 };
 
 class CTouchPanel : public vgui::Panel
@@ -98,9 +117,11 @@ class CTouchPanel : public vgui::Panel
 public:
 	CTouchPanel(vgui::VPANEL parent);
 	virtual			~CTouchPanel(void) {};
-
 	virtual void	Paint();
-	virtual bool	ShouldDraw(void);
+	virtual void    ApplySchemeSettings(vgui::IScheme* pScheme);
+
+protected:
+	MESSAGE_FUNC_INT_INT(OnScreenSizeChanged, "OnScreenSizeChanged", oldwide, oldtall);
 };
 
 abstract_class ITouchPanel
@@ -136,19 +157,34 @@ public:
 	}
 };
 
-
 class CTouchControls
 {
 public:
-
 	void Init();
+	void LevelInit();
 	void Shutdown();
 
 	void Paint();
 	void Frame();
 
-	void IN_TouchAddButton(const char* name, const char* texturefile, const char* command, float x1, float y1, float x2, float y2, rgba_t color = rgba_t(255, 255, 255, 255));
-	void IN_TouchCheckCoords(float* x1, float* y1, float* x2, float* y2);
+	void AddButton(const char* name, const char* texturefile, const char* command, float x1, float y1, float x2, float y2, rgba_t color = rgba_t(255, 255, 255, 255), int round = 2, float aspect = 1.f, int flags = 0);
+	void RemoveButton(const char* name);
+	void ResetToDefaults();
+	void HideButton(const char* name);
+	void ShowButton(const char* name);
+	void ListButtons();
+	void RemoveButtons();
+
+	CTouchButton* FindButton(const char* name);
+	//	bool FindNextButton( const char *name, CTouchButton &button );
+	void SetTexture(const char* name, const char* file);
+	void SetColor(const char* name, rgba_t color);
+	void SetCommand(const char* name, const char* cmd);
+	void SetFlags(const char* name, int flags);
+	void WriteConfig();
+
+	void IN_CheckCoords(float* x1, float* y1, float* x2, float* y2);
+	void InitGrid();
 
 	void Move(float frametime, CUserCmd* cmd);
 	void IN_Look();
@@ -156,21 +192,33 @@ public:
 	void ProcessEvent(touch_event_t* ev);
 	void FingerPress(touch_event_t* ev);
 	void FingerMotion(touch_event_t* ev);
+	void GetTouchAccumulators(float* forward, float* side, float* yaw, float* pitch);
+	void GetTouchDelta(float yaw, float pitch, float* dx, float* dy);
+	void EditEvent(touch_event_t* ev);
+	void EnableTouchEdit(bool enable);
+	void CreateAtlasTexture();
 
 	CTouchPanel* touchPanel;
-private:
-	bool initialized;
-	ETouchState state;
-	CUtlLinkedList<CTouchButton*> btns;
-
-	int look_finger;
-	int move_finger;
+	float screen_h, screen_w;
 	float forward, side, movecount;
 	float yaw, pitch;
-	CTouchButton* move;
+	rgba_t gridcolor;
+
+private:
+	bool initialized = false;
+	ETouchState state;
+	CUtlLinkedList<CTouchButton*> btns;
+	CUtlVector<CTouchTexture*> textureList;
+
+	int look_finger, move_finger, wheel_finger;
+	CTouchButton* move_button;
 
 	float move_start_x, move_start_y;
-	float dx, dy;
+	float m_flPreviousYaw, m_flPreviousPitch;
+
+	int touchTextureID;
+	IMesh* m_pMesh;
+	CMeshBuilder meshBuilder;
 
 	// editing
 	CTouchButton* edit;
@@ -188,10 +236,13 @@ private:
 	int closetexture;
 	int joytexture; // touch indicator
 	bool configchanged;
+	bool config_loaded;
 	vgui::HFont textfont;
 	int mouse_events;
 
-	int screen_h, screen_w;
+	bool m_bCutScene;
+	float m_flHideTouch;
+	int m_AlphaDiff;
 };
 
 extern CTouchControls gTouch;
