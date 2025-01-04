@@ -1,1 +1,2 @@
-devtools\bin\vpc.exe /hl2 +game /mksln everything.sln
+devtools\bin\vpc.exe /hl2 +game +launcher +launcher_main /mksln everything.sln
+pause

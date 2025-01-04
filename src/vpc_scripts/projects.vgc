@@ -43,6 +43,16 @@ $Project "server"
 	"game\server\server_hl2.vpc"
 }
 
+$Project "launcher_main"
+{
+	"launcher_main/launcher_main.vpc"
+}
+
+$Project "launcher"
+{
+	"launcher/launcher.vpc"
+}
+
 $Project "mathlib"
 {
 	"mathlib\mathlib.vpc" [$WINDOWS||$X360||$POSIX]
