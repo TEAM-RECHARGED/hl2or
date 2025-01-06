@@ -34,6 +34,11 @@ $Project "Client (HL2OR)"
 			$File	"hl2or\touch.cpp"
 			$File	"hl2or\touch.h"
 		}
+		$Folder "Mount"
+		{
+			$File	"$SRCDIR\game\shared\hl2or\mount.cpp"
+			$File	"$SRCDIR\game\shared\hl2or\mount.h"
+		}
 		$File	"hl2or\worldlight.cpp"
 		$File 	"hl2or\worldlight.h"
 			$Folder "Weapons"
