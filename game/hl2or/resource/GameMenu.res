@@ -114,11 +114,11 @@
     "17"
     {
         "label" "Fast Settings 1"
-        "command" "exec fastsettings/graphic_realism.cfg"
+        "command" "exec graphic_realism"
     }
     "18"
     {
         "label" "Fast Settings 2"
-        "command" "exec fastsettings/graphics_hd.cfg"
+        "command" "exec graphics_hd"
     }
 }
