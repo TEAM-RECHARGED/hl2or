@@ -39,6 +39,7 @@ $Project "Client (HL2OR)"
 			$File	"$SRCDIR\game\shared\hl2or\mount.cpp"
 			$File	"$SRCDIR\game\shared\hl2or\mount.h"
 		}
+		$File	"hl2or\fetchinfo.cpp"
 		$File	"hl2or\worldlight.cpp"
 		$File 	"hl2or\worldlight.h"
 			$Folder "Weapons"
