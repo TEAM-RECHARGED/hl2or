@@ -37,7 +37,7 @@ class CBaseHL1Helicopter : public CAI_BaseNPC
 {
 public:
 	DECLARE_CLASS( CBaseHL1Helicopter, CAI_BaseNPC );
-
+	IMPLEMENT_SERVERCLASS_ST(CBaseHL1Helicopter, DT_BaseHL1Helicopter)
 	DECLARE_DATADESC();
 	DECLARE_SERVERCLASS();
 

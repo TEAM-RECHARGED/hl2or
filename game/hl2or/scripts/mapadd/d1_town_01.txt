@@ -1,0 +1,22 @@
+"MapAdd"
+{
+    "1"
+    {
+        "entity"       "weapon_glock"
+        "x"            "3970.565918"
+        "y"            "-1055.423340"
+        "z"            "-3759.968750"
+        "pitch"        "0"
+        "yaw"          "0"
+        "roll"         "0"
+        "KeyValues"
+        {
+            "model"    "models/weapons/overcharged/world/w_glock.mdl"
+            "additionalequipment" ""
+        }
+        "Flags"
+        {
+            "spawnflags"    "1"
+        }
+    }
+}
