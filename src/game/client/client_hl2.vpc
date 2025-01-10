@@ -68,11 +68,25 @@ $Project "Client (HL2OR)"
 				$File 	"hl2or\c_weapon_grapple.h"
 				$File 	"hl2or\c_weapon_iontau.cpp"
 				$File 	"hl2or\cmds.cpp"
-				$File	"$SRCDIR\game\shared\hl2or\weapon_egon.cpp"
 				$File	"$SRCDIR\game\shared\hl2or\weapon_hornetgun.cpp"
 				$File	"$SRCDIR\game\shared\hl2or\hl1_npc_hornet.cpp"
 				$File	"$SRCDIR\game\shared\hl2or\hl1_npc_hornet.h"
 			}
+		}
+
+		$Folder "Half-Life: Source"
+		{
+			$File	"hl1\hl1_c_rpg_rocket.cpp"
+			$File   "hl1\hl1_c_weapon__stubs.cpp"
+			$File   "hl1/hl1_fx_gauss.cpp"
+			$File   "hl1/hl1_fx_shelleject.cpp"
+			$File   "$SRCDIR\game\shared\hl1\hl1mp_basecombatweapon_shared.cpp"
+			$File	"$SRCDIR\game\shared\hl1\hl1_basecombatweapon_shared.cpp"
+			$File	"$SRCDIR\game\shared\hl1\hl1mp_weapon_357.cpp"
+			$File	"$SRCDIR\game\shared\hl1\hl1mp_weapon_egon.cpp"
+			$File	"$SRCDIR\game\shared\hl1\hl1mp_weapon_handgrenade.cpp"
+			$File	"$SRCDIR\game\shared\hl1\hl1mp_weapon_rpg.cpp"
+			$File	"$SRCDIR\game\shared\hl1\hl1mp_weapon_sachel.cpp"
 		}
 
 		$Folder	"HL2 DLL"

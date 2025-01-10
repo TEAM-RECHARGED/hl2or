@@ -615,6 +615,9 @@ enum
 
 	// FIXME: Not really sure where I should add this...
 	EFL_IS_BEING_LIFTED_BY_BARNACLE = (1<<20),
+#ifdef OVERCHARGED
+	EFL_IS_BEING_LIFTED_BY_BARNACLE_HL1 = (1 << 20),
+#endif
 	EFL_NO_ROTORWASH_PUSH =		(1<<21),		// I shouldn't be pushed by the rotorwash
 	EFL_NO_THINK_FUNCTION =		(1<<22),
 	EFL_NO_GAME_PHYSICS_SIMULATION = (1<<23),

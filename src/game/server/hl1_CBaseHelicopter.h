@@ -8,35 +8,35 @@
 //---------------------------------------------------------
 //  Helicopter flags
 //---------------------------------------------------------
-enum HelicopterFlags_t
+enum HelicopterFlagsHL1_t
 {
-	BITS_HELICOPTER_GUN_ON			= 0x00000001,	// Gun is on and aiming
-	BITS_HELICOPTER_MISSILE_ON		= 0x00000002,	// Missile turrets are on and aiming
+	BITS_HELICOPTER_GUN_HL1_ON			= 0x00000001,	// Gun is on and aiming
+	BITS_HELICOPTER_MISSILE_HL1_ON		= 0x00000002,	// Missile turrets are on and aiming
 };
 
 
 //---------------------------------------------------------
 //---------------------------------------------------------
 
-#define SF_NOWRECKAGE		0x08
-#define SF_NOROTORWASH		0x20
-#define SF_AWAITINPUT		0x40
+#define SF_NOWRECKAGE_HL1		0x08
+#define SF_NOROTORWASH_HL1		0x20
+#define SF_AWAITINPUT_HL1		0x40
 
 
 //---------------------------------------------------------
 //---------------------------------------------------------
-#define BASECHOPPER_MAX_SPEED			400.0f
-#define BASECHOPPER_MAX_FIRING_SPEED	250.0f
-#define BASECHOPPER_MIN_ROCKET_DIST		1000.0f
-#define BASECHOPPER_MAX_GUN_DIST		2000.0f
+#define BASECHOPPER_MAX_SPEED_HL1			400.0f
+#define BASECHOPPER_MAX_FIRING_SPEED_HL1	250.0f
+#define BASECHOPPER_MIN_ROCKET_DIST_HL1		1000.0f
+#define BASECHOPPER_MAX_GUN_DIST_HL1		2000.0f
 
 
 //=========================================================
 //=========================================================
-class CBaseHelicopter : public CAI_BaseNPC
+class CBaseHL1Helicopter : public CAI_BaseNPC
 {
 public:
-	DECLARE_CLASS( CBaseHelicopter, CAI_BaseNPC );
+	DECLARE_CLASS( CBaseHL1Helicopter, CAI_BaseNPC );
 
 	DECLARE_DATADESC();
 	DECLARE_SERVERCLASS();

@@ -85,6 +85,9 @@ ConVar	sk_plr_dmg_m4_grenade("sk_plr_dmg_m4_grenade", "0", FCVAR_REPLICATED);
 ConVar	sk_npc_dmg_m4_grenade("sk_npc_dmg_m4_grenade", "0", FCVAR_REPLICATED);
 ConVar	sk_max_m4_grenade("sk_max_m4_grenade", "0", FCVAR_REPLICATED);
 ConVar sk_max_uranium("sk_max_uranium", "0", FCVAR_REPLICATED);
+ConVar sk_plr_dmg_mp5_grenade("sk_plr_dmg_mp5_grenade", "0", FCVAR_REPLICATED);
+ConVar sk_max_mp5_grenade("sk_max_mp5_grenade", "0", FCVAR_REPLICATED);
+ConVar sk_mp5_grenade_radius("sk_mp5_grenade_radius", "0", FCVAR_REPLICATED);
 #endif // OVERCHARGED
 // Damage scale for damage inflicted by the player on each skill level.
 ConVar	sk_dmg_inflict_scale1( "sk_dmg_inflict_scale1", "1.50", FCVAR_REPLICATED );
