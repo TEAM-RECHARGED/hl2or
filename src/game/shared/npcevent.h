@@ -76,6 +76,7 @@ struct animevent_t
 #ifdef OVERCHARGED
 #define	EVENT_WEAPON_USP_FIRE		3014
 #define	EVENT_WEAPON_DUAL_FIRE		3014
+#define	EVENT_WEAPON_GLOCK_FIRE		3014
 #endif // OVERCHARGED
 
 

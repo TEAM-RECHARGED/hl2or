@@ -92,6 +92,7 @@ enum
 
 #ifdef OVERCHARGED
 #define SOUNDENT_VOLUME_USP		1500.0
+#define SOUNDENT_VOLUME_GLOCK		1500.0
 #endif // OVERCHARGED
 
 
