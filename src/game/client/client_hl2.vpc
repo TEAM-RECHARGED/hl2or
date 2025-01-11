@@ -29,6 +29,8 @@ $Project "Client (HL2OR)"
 
 		$Folder "HL2OR DLL"
 		{
+			$File	"loadingscreens/ILoadingBackground.h"
+			$File	"loadingscreens/ILoadingBackground.cpp"
 			$Folder "Shader Editor" [$WIN32]
 			{
 				$Folder	"Header Files"
