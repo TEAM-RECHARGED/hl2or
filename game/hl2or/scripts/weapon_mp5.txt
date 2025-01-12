@@ -293,4 +293,12 @@ WeaponData
 				"character"	"F"	
 		}
 	}
+	IronSight
+	{
+		"forward"	"-10"
+		"right"		"-6.91"
+		"up"		"0.185"
+		"roll"		"-20"
+		"fov"		"-20"
+	}
 }

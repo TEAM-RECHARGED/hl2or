@@ -1,11 +1,20 @@
-//========= Copyright HL2 ReCharged, All rights reserved.============//
-//
-// Implementation of neofetch for the Source SDK
-//
-//=======================================================================//
-
+/*
+* Copyright (c) 2024-2025 Half-Life 2: ReCharged.  All rights reserved.
+* 
+* ===========================================
+* FetchInfo - Version 1.1
+* 
+* Author(s): GuestSneezePlayZ
+* 
+* Base Project: https://github.com/ItzVladik/sourcefetch
+* 
+* ===========================================
+* 
+* About: To Fetch the players system info and create custom commands.
+* 
+* 
+*/ 
 #include "cbase.h"
-#include "proto_version.h"
 #include "filesystem.h"
 
 const char* GetArch()
@@ -18,10 +27,8 @@ const char* GetArch()
 	return "aarch64";
 #elif defined __arm__ || defined _M_ARM
 	return "arm";
-#elif defined __e2k__ || defined e2k
-	return "e2k ( Elbrus )";
 #else
-	return "Unknown";
+	return "Unknown (THE FUCK?)";
 #endif
 }
 
@@ -59,7 +66,6 @@ const char* GetGame()
 	{
 		Error("Buddy, stop stealing mods. You have been reported!");
 	}
-
 	return var;
 }
 
@@ -102,8 +108,13 @@ CON_COMMAND_F(neofetch, "Print info about engine", FCVAR_NONE)
 	ConColorMsg(orange, "                      @@@@@@           \n");
 	ConColorMsg(orange, "                     @@@@@@            \n");
 	ConColorMsg(orange, "                       @@@             \n\n");
-	Msg("Engine Version: %s\n");
+	Msg("Engine Version: Source 2013\n");
 	Msg("Platform: %s\n", GetPlatform());
 	Msg("Arch: %s\n", GetArch());
 	Msg("Game: Half-Life 2 ReCharged");
+}
+
+CON_COMMAND(oc_firstperson, "Creates first person ragdoll, WARNING BETA!")
+{
+	engine->ClientCmd("cl_first_person_uses_world_model 1");
 }

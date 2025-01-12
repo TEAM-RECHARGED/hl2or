@@ -74,3 +74,4 @@ Debug/
 save/
 FileListAbsolute.txt
 GameState.txt
+*.bsp

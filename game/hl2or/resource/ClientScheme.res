@@ -633,8 +633,8 @@ Scheme
 			"1"
 			{
 				"name"  "HL2OR"
-				"tall"			"32"
-				"tall_hidef"	"46"
+				"tall"			"34"
+				"tall_hidef"	"48"
 				"weight" "0"
 				"additive" "0"
 				"antialias" "1"
