@@ -9,7 +9,6 @@ Install the following games on Steam:
 - Half-Life 2: Episode One & Episode Two (HL2 Episodic)
 - Counter-Strike: Source (CS:S)
 - Half-Life 2: Overcharged
-- Black Mesa: Source
 - Half-Life 1: Source
 
 Download and place the mod files in the following directory:
@@ -19,3 +18,6 @@ Restart Steam.
 
 In your Steam library, you should now see:
 Half-Life 2: ReCharged.
+------
+Mounting.
+- To mount Source Engine-based games, you can use the mount.cfg script located in [GAME DIRECTORY]/cfg/mount.cfg, there is already a simple tutorial in the code comments.

@@ -1113,14 +1113,8 @@ void CHL2_Player::PlayerRunCommand(CUserCmd *ucmd, IMoveHelper *moveHelper)
 void CHL2_Player::Spawn(void)
 {
 
-#ifndef HL2MP
-#ifndef PORTAL
-	SetModel( "models/player.mdl" );
-#endif
-#endif
-
 #ifdef OVERCHARGED
-	SetModel("models/male_07.mdl");
+	SetModel("models/humans/male_07.mdl");
 #else
 	SetModel("models/player.mdl");
 #endif // OVERCHARGED
