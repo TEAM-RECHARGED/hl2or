@@ -116,5 +116,6 @@ CON_COMMAND_F(neofetch, "Print info about engine", FCVAR_NONE)
 
 CON_COMMAND(oc_firstperson, "Creates first person ragdoll, WARNING BETA!")
 {
+
 	engine->ClientCmd("cl_first_person_uses_world_model 1");
 }

@@ -435,6 +435,10 @@ void CHL2_Player::Precache( void )
 	PrecacheScriptSound( "HL2Player.TrainUse" );
 	PrecacheScriptSound( "HL2Player.Use" );
 	PrecacheScriptSound( "HL2Player.BurnPain" );
+#ifdef OVERCHARGED
+	PrecacheModel("models/male_07.mdl");
+#endif // OVERCHARGED
+
 }
 
 //-----------------------------------------------------------------------------
@@ -1114,6 +1118,13 @@ void CHL2_Player::Spawn(void)
 	SetModel( "models/player.mdl" );
 #endif
 #endif
+
+#ifdef OVERCHARGED
+	SetModel("models/male_07.mdl");
+#else
+	SetModel("models/player.mdl");
+#endif // OVERCHARGED
+
 
 	BaseClass::Spawn();
 
