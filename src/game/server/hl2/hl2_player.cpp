@@ -436,7 +436,7 @@ void CHL2_Player::Precache( void )
 	PrecacheScriptSound( "HL2Player.Use" );
 	PrecacheScriptSound( "HL2Player.BurnPain" );
 #ifdef OVERCHARGED
-	PrecacheModel("models/male_07.mdl");
+	PrecacheModel("models/humans/male_07.mdl");
 #endif // OVERCHARGED
 
 }

@@ -470,7 +470,7 @@ void C_BasePlayer::Spawn( void )
 	m_iFOV	= 0;	// init field of view.
 
 #ifdef OVERCHARGED
-	SetModel("models/male_07.mdl");
+	SetModel("models/humans/male_07.mdl");
 #else
 	SetModel("models/player.mdl");
 #endif // OVERCHARGED
