@@ -96,31 +96,23 @@ void AddPlatform(const char* path)
 
 void MountExtraContent()
 {
-	KeyValuesAD gameinfo("GameInfo");
-	gameinfo->LoadFromFile(filesystem, "gameinfo.txt");
-
+#ifdef OVERCHARGED
 	KeyValuesAD mountcfg("MountCfg");
 	mountcfg->LoadFromFile(filesystem, "cfg/mount.cfg");
+#else
+	KeyValuesAD gameinfo("GameInfo");
+	gameinfo->LoadFromFile(filesystem, "gameinfo.txt");
+#endif // OVERCHARGED
+
+	
 
 	if (steamapicontext->SteamApps()->BIsAppInstalled(243730))
 	{
 		char sdk2013SPPath[MAX_PATH];
 		steamapicontext->SteamApps()->GetAppInstallDir(243730, sdk2013SPPath, sizeof(sdk2013SPPath));
 
-		if (gameinfo->GetBool("hl2content") || gameinfo->GetBool("ep1content") || gameinfo->GetBool("ep2content"))
-			AddHL2(sdk2013SPPath);
-
-		if (gameinfo->GetBool("ep2content") || gameinfo->GetBool("ep1content"))
-			AddEP1(sdk2013SPPath);
-
-		if (gameinfo->GetBool("ep2content"))
-			AddEP2(sdk2013SPPath);
-
-		if (gameinfo->GetBool("lostcoastcontent"))
-			AddLostCoast(sdk2013SPPath);
-
 #ifdef OVERCHARGED
-		if (mountcfg->GetBool("hl2content") || mountcfg->GetBool("ep1content") || gameinfo->GetBool("ep2content"))
+		if (mountcfg->GetBool("hl2content") || mountcfg->GetBool("ep1content") || mountcfg->GetBool("ep2content"))
 			AddHL2(sdk2013SPPath);
 
 		if (mountcfg->GetBool("ep2content") || mountcfg->GetBool("ep1content"))
@@ -135,10 +127,87 @@ void MountExtraContent()
 		// Time for mounting Overcharged
 		if (mountcfg->GetBool("overcharged"))
 			AddOvercharged(sdk2013SPPath);
-#endif // OVERCHARGED
+#else
+		if (gameinfo->GetBool("hl2content") || gameinfo->GetBool("ep1content") || gameinfo->GetBool("ep2content"))
+			AddHL2(sdk2013SPPath);
 
+		if (gameinfo->GetBool("ep2content") || gameinfo->GetBool("ep1content"))
+			AddEP1(sdk2013SPPath);
+
+		if (gameinfo->GetBool("ep2content"))
+			AddEP2(sdk2013SPPath);
+
+		if (gameinfo->GetBool("lostcoastcontent"))
+			AddLostCoast(sdk2013SPPath);
+#endif // OVERCHARGED
 	}
 
+#ifdef OVERCHARGED
+	if (steamapicontext->SteamApps()->BIsAppInstalled(243750) && mountcfg->GetBool("hl2mpcontent"))
+	{
+		char sdk2013MPPath[MAX_PATH];
+		steamapicontext->SteamApps()->GetAppInstallDir(243750, sdk2013MPPath, sizeof(sdk2013MPPath));
+		AddHL2(sdk2013MPPath);
+		AddHL2MP(sdk2013MPPath);
+	}
+
+	if (steamapicontext->SteamApps()->BIsAppInstalled(220) && (mountcfg->GetBool("hl2content") || mountcfg->GetBool("ep1content") || mountcfg->GetBool("ep2content")))
+	{
+		char hl2Path[MAX_PATH];
+		steamapicontext->SteamApps()->GetAppInstallDir(220, hl2Path, sizeof(hl2Path));
+		AddHL2(hl2Path);
+	}
+
+	if (steamapicontext->SteamApps()->BIsAppInstalled(320) && mountcfg->GetBool("hl2mpcontent"))
+	{
+		char hl2mpPath[MAX_PATH];
+		steamapicontext->SteamApps()->GetAppInstallDir(320, hl2mpPath, sizeof(hl2mpPath));
+		AddHL2(hl2mpPath);
+		AddHL2MP(hl2mpPath);
+	}
+
+	if (steamapicontext->SteamApps()->BIsAppInstalled(380) && (mountcfg->GetBool("ep1content") || mountcfg->GetBool("ep2content")))
+	{
+		char ep1Path[MAX_PATH];
+		steamapicontext->SteamApps()->GetAppInstallDir(380, ep1Path, sizeof(ep1Path));
+		AddEP1(ep1Path);
+	}
+
+	if (steamapicontext->SteamApps()->BIsAppInstalled(420) && mountcfg->GetBool("ep2content"))
+	{
+		char ep2Path[MAX_PATH];
+		steamapicontext->SteamApps()->GetAppInstallDir(420, ep2Path, sizeof(ep2Path));
+		AddEP2(ep2Path);
+	}
+
+	if (steamapicontext->SteamApps()->BIsAppInstalled(340) && mountcfg->GetBool("lostcoastcontent"))
+	{
+		char lostCoastPath[MAX_PATH];
+		steamapicontext->SteamApps()->GetAppInstallDir(340, lostCoastPath, sizeof(lostCoastPath));
+		AddLostCoast(lostCoastPath);
+	}
+
+	if (steamapicontext->SteamApps()->BIsAppInstalled(400) && mountcfg->GetBool("portalcontent"))
+	{
+		char portalPath[MAX_PATH];
+		steamapicontext->SteamApps()->GetAppInstallDir(400, portalPath, sizeof(portalPath));
+		AddPortal(portalPath);
+	}
+
+	if (steamapicontext->SteamApps()->BIsAppInstalled(240) && mountcfg->GetBool("csscontent"))
+	{
+		char cssPath[MAX_PATH];
+		steamapicontext->SteamApps()->GetAppInstallDir(240, cssPath, sizeof(cssPath));
+		AddCSS(cssPath);
+	}
+
+	if (steamapicontext->SteamApps()->BIsAppInstalled(243750))
+	{
+		char sdk2013MPPath[MAX_PATH];
+		steamapicontext->SteamApps()->GetAppInstallDir(243750, sdk2013MPPath, sizeof(sdk2013MPPath));
+		AddPlatform(sdk2013MPPath);
+	}
+#else
 	if (steamapicontext->SteamApps()->BIsAppInstalled(243750) && gameinfo->GetBool("hl2mpcontent"))
 	{
 		char sdk2013MPPath[MAX_PATH];
@@ -203,6 +272,8 @@ void MountExtraContent()
 		steamapicontext->SteamApps()->GetAppInstallDir(243750, sdk2013MPPath, sizeof(sdk2013MPPath));
 		AddPlatform(sdk2013MPPath);
 	}
+#endif // OVERCHARGED
+
 
 	filesystem->AddSearchPath(CFmtStr("%s", CommandLine()->ParmValue("-game")), "GAME", PATH_ADD_TO_HEAD);
 	filesystem->AddSearchPath(CFmtStr("%s", CommandLine()->ParmValue("-game")), "MOD", PATH_ADD_TO_HEAD);
