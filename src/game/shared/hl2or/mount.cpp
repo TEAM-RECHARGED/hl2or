@@ -11,15 +11,16 @@
 #endif
 #include "filesystem.h"
 #include "fmtstr.h"
-
 #include "mount.h"
-
 #include "ienginevgui.h"
 #include <vgui/ISurface.h>
 #include <vgui/IVGui.h>
 #include <vgui/ILocalize.h>
 #include "icommandline.h"
 #include "tier3/tier3.h"
+
+// Final include, required for debugging.
+#include "tier0/memdbgon.h"
 
 void AddEP2(const char* path)
 {
@@ -207,6 +208,13 @@ void MountExtraContent()
 		steamapicontext->SteamApps()->GetAppInstallDir(243750, sdk2013MPPath, sizeof(sdk2013MPPath));
 		AddPlatform(sdk2013MPPath);
 	}
+
+//	if (steamapicontext->SteamApps()->BIsAppInstalled(220) && (mountcfg->GetBool("overcharged")
+//	{
+//		char OVRPath[MAX_PATH];
+//		steamapicontext->SteamApps()->GetAppInstallDir(220, OVRPath, sizeof(OVRPath));
+//		AddOvercharged(OVRPath);
+//	}
 #else
 	if (steamapicontext->SteamApps()->BIsAppInstalled(243750) && gameinfo->GetBool("hl2mpcontent"))
 	{

@@ -1,19 +1,10 @@
-/*
-* Copyright (c) 2024-2025 Half-Life 2: ReCharged.  All rights reserved.
-* 
-* ===========================================
-* FetchInfo - Version 1.1
-* 
-* Author(s): GuestSneezePlayZ
-* 
-* Base Project: https://github.com/ItzVladik/sourcefetch
-* 
-* ===========================================
-* 
-* About: To Fetch the players system info and create custom commands.
-* 
-* 
-*/ 
+//========= Copyright Half-Life 2 ReCharged Team, All rights reserved. ============//
+//
+// Purpose: 
+//
+// $NoKeywords: $
+//
+//===========================================================================//
 #include "cbase.h"
 #include "filesystem.h"
 
@@ -114,8 +105,14 @@ CON_COMMAND_F(neofetch, "Print info about engine", FCVAR_NONE)
 	Msg("Game: Half-Life 2 ReCharged");
 }
 
-CON_COMMAND(oc_firstperson, "Creates first person ragdoll, WARNING BETA!")
+CON_COMMAND(oc_firstperson_enable, "Creates first person ragdoll, WARNING BETA!")
 {
-
+	Msg("Enabling OVR Firstperson...");
 	engine->ClientCmd("cl_first_person_uses_world_model 1");
+}
+
+CON_COMMAND(oc_firstperson_disable, "Disables the first person ragdoll.")
+{
+	Msg("Disabling OVR Firstperson...");
+	engine->ClientCmd("cl_first_person_uses_world_model 0");
 }
