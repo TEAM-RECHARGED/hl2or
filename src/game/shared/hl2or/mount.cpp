@@ -18,6 +18,7 @@
 #include <vgui/ILocalize.h>
 #include "icommandline.h"
 #include "tier3/tier3.h"
+#include <filesystem>
 
 // Final include, required for debugging.
 #include "tier0/memdbgon.h"
@@ -209,12 +210,10 @@ void MountExtraContent()
 		AddPlatform(sdk2013MPPath);
 	}
 
-//	if (steamapicontext->SteamApps()->BIsAppInstalled(220) && (mountcfg->GetBool("overcharged")
-//	{
-//		char OVRPath[MAX_PATH];
-//		steamapicontext->SteamApps()->GetAppInstallDir(220, OVRPath, sizeof(OVRPath));
-//		AddOvercharged(OVRPath);
-//	}
+	if (g_pFullFileSystem->IsDirectory("C:\\Program Files (x86)\\Steam\\steamapps\\sourcemods\\overcharged", "MOD") && mountcfg->GetBool("overcharged"))
+	{
+		AddOvercharged("C:\Program Files (x86)\Steam\steamapps\sourcemods\overcharged");
+	}
 #else
 	if (steamapicontext->SteamApps()->BIsAppInstalled(243750) && gameinfo->GetBool("hl2mpcontent"))
 	{
