@@ -1,5 +1,5 @@
 # TO COMPLETE!
-- [ ] Mounting system support source mods located in `[STEAMPATH]\SteamApps\SourceMods`\.
+- [ ] Mounting system support source mods located in `[STEAMPATH]\SteamApps\SourceMods\`.
 - [ ] Every Overcharged weapon.
 - [ ] Portal weapons.
 - [ ] TF2 Weapons.
@@ -7,3 +7,9 @@
 - [X] IronSights
 - [ ] SMOD weapons.
 - [ ] autoexec should automatically be ran when loading in a map.
+- [ ] Add Physics Gun.
+- [ ] Add VScript (lua OR squirrel).
+- [ ] Add ATLEAST 50 MapAdd scripts.
+- [X] Native Linux support.
+- [ ] Engine License.
+- [ ] Every Overcharged NPC.
