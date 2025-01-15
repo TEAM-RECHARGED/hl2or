@@ -158,6 +158,10 @@ void MountExtraContent()
 		char hl2Path[MAX_PATH];
 		steamapicontext->SteamApps()->GetAppInstallDir(220, hl2Path, sizeof(hl2Path));
 		AddHL2(hl2Path);
+		// HL2 Anniversary merged EP(x) and Lost Coast into the defaulted HL2, so we need to add them here. - GuestSneezePlayZ 1/15/2025
+		AddEP1(hl2Path);
+		AddEP2(hl2Path);
+		AddLostCoast(hl2Path);
 	}
 
 	if (steamapicontext->SteamApps()->BIsAppInstalled(320) && mountcfg->GetBool("hl2mpcontent"))
@@ -166,27 +170,6 @@ void MountExtraContent()
 		steamapicontext->SteamApps()->GetAppInstallDir(320, hl2mpPath, sizeof(hl2mpPath));
 		AddHL2(hl2mpPath);
 		AddHL2MP(hl2mpPath);
-	}
-
-	if (steamapicontext->SteamApps()->BIsAppInstalled(380) && (mountcfg->GetBool("ep1content") || mountcfg->GetBool("ep2content")))
-	{
-		char ep1Path[MAX_PATH];
-		steamapicontext->SteamApps()->GetAppInstallDir(380, ep1Path, sizeof(ep1Path));
-		AddEP1(ep1Path);
-	}
-
-	if (steamapicontext->SteamApps()->BIsAppInstalled(420) && mountcfg->GetBool("ep2content"))
-	{
-		char ep2Path[MAX_PATH];
-		steamapicontext->SteamApps()->GetAppInstallDir(420, ep2Path, sizeof(ep2Path));
-		AddEP2(ep2Path);
-	}
-
-	if (steamapicontext->SteamApps()->BIsAppInstalled(340) && mountcfg->GetBool("lostcoastcontent"))
-	{
-		char lostCoastPath[MAX_PATH];
-		steamapicontext->SteamApps()->GetAppInstallDir(340, lostCoastPath, sizeof(lostCoastPath));
-		AddLostCoast(lostCoastPath);
 	}
 
 	if (steamapicontext->SteamApps()->BIsAppInstalled(400) && mountcfg->GetBool("portalcontent"))
