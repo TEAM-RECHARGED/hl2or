@@ -155,6 +155,7 @@ $Project "Server (HL2OR)"
 				$File	"hl2mp\grenade_tripmine.h"
 				$File	"episodic\grenade_hopwire.cpp"
 				$File	"episodic\grenade_hopwire.h"
+				$File	"$SRCDIR\game\shared\hl2or\kick.cpp"
 			}
 		}
 
