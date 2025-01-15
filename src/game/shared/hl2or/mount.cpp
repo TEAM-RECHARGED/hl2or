@@ -203,17 +203,21 @@ void MountExtraContent()
 		AddCSS(cssPath);
 	}
 
+	/*
+	if (steamapicontext->SteamApps()->BIsAppInstalled(240) && mountcfg->GetBool("overcharged"))
+	{
+		char OVRPath[MAX_PATH];
+		steamapicontext->SteamApps()->GetAppInstallDir(240, OVRPath, sizeof(OVRPath));
+		AddOvercharged(OVRPath);
+	}
+	*/
+
 	if (steamapicontext->SteamApps()->BIsAppInstalled(243750))
 	{
 		char sdk2013MPPath[MAX_PATH];
 		steamapicontext->SteamApps()->GetAppInstallDir(243750, sdk2013MPPath, sizeof(sdk2013MPPath));
 		AddPlatform(sdk2013MPPath);
 	}
-
-//	if (g_pFullFileSystem->IsDirectory("C:\\Program Files (x86)\\Steam\\steamapps\\sourcemods\\overcharged", "MOD") && mountcfg->GetBool("overcharged"))
-//	{
-//		AddOvercharged("C:\Program Files (x86)\Steam\steamapps\sourcemods\overcharged");
-//	}
 #else
 	if (steamapicontext->SteamApps()->BIsAppInstalled(243750) && gameinfo->GetBool("hl2mpcontent"))
 	{
