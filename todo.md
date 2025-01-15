@@ -1,5 +1,6 @@
 # TO COMPLETE!
-- [ ] Mounting system support source mods located in `[STEAMPATH]\SteamApps\SourceMods\`.
+- ~~[ ] Mounting system support source mods located in `[STEAMPATH]\SteamApps\SourceMods\`.~~
+- [ ] Mount overcharged from mounting system.
 - [ ] Every Overcharged weapon.
 - [ ] Portal weapons.
 - [ ] TF2 Weapons.
@@ -13,3 +14,53 @@
 - [X] Native Linux support.
 - [ ] Engine License.
 - [ ] Every Overcharged NPC.
+- [ ] Steam release.
+
+
+# Progression for recreation of OVERCHARGED.
+40% Complete, WIP_* entities and weapons aren't required.
+* Required to Complete
+    * weapon_adrenaline.txt
+    * weapon_airboatgun.txt
+    * weapon_ak47.txt
+    * weapon_autoshotgun.txt
+    * weapon_beretta.txt
+    * weapon_combinesniper.txt
+    * weapon_deagle.txt
+    * weapon_displacer.txt
+    * weapon_extinguisher.txt
+    * weapon_flamethrower.txt
+    * weapon_grenadelauncher.txt
+    * weapon_hopmine.txt
+    * weapon_iceaxe.txt
+    * weapon_interactive_headcrab.txt
+    * weapon_interactive_item.txt
+    * weapon_jetpack.txt
+    * weapon_knife.txt
+    * weapon_lasermine.txt
+    * weapon_machinegun.txt
+    * weapon_magnetgun.txt
+    * weapon_molotov.txt
+    * weapon_multitool.txt
+    * weapon_NpcCustomizeMelee.txt
+    * weapon_npcspawner.txt
+    * weapon_oicw.txt
+    * weapon_physgun.txt - in OVR(OG)2.1 it will have rotation
+    * weapon_propthrower.txt
+    * weapon_proto1.txt
+    * weapon_sg552.txt
+    * weapon_shockrifle.txt
+    * weapon_shovel.txt
+    * weapon_smg2.txt
+    * weapon_smokegrenade.txt
+    * weapon_snark.txt
+    * weapon_sniper.txt
+    * weapon_sniper_m40a1.txt
+    * weapon_spore_launcher.txt
+    * weapon_tripwire.txt
+    * weapon_wrench.txt
+    * SMOD Kick
+    * SMod Weapons
+    * Fix firstperson ragdolls. 
+    * Fix player animations
+    * FIx IronSights to firstperson.

@@ -99,8 +99,8 @@ void AddPlatform(const char* path)
 void MountExtraContent()
 {
 #ifdef OVERCHARGED
-	KeyValuesAD mountcfg("MountCfg");
-	mountcfg->LoadFromFile(filesystem, "cfg/mount.cfg");
+	KeyValuesAD mountcfg("MountCfg"); // Haha, take that YourLocalMoon, stupid-old cuck!
+	mountcfg->LoadFromFile(filesystem, "cfg/mount.cfg"); // You said I could never do better coding than you and guess what? I can! - GuestSneezePlayZ
 #else
 	KeyValuesAD gameinfo("GameInfo");
 	gameinfo->LoadFromFile(filesystem, "gameinfo.txt");
@@ -178,6 +178,12 @@ void MountExtraContent()
 		steamapicontext->SteamApps()->GetAppInstallDir(400, portalPath, sizeof(portalPath));
 		AddPortal(portalPath);
 	}
+//	if (steamapicontext->SteamApps()->BIsAppInstalled(1521150) && mountcfg->GetBool("overcharged"))
+//	{
+//		char OVRPath[MAX_PATH];
+//		steamapicontext->SteamApps()->GetAppInstallDir(1521150, OVRPath, sizeof(OVRPath));
+//		AddOvercharged(OVRPath);
+//	}
 
 	if (steamapicontext->SteamApps()->BIsAppInstalled(240) && mountcfg->GetBool("csscontent"))
 	{
@@ -185,15 +191,6 @@ void MountExtraContent()
 		steamapicontext->SteamApps()->GetAppInstallDir(240, cssPath, sizeof(cssPath));
 		AddCSS(cssPath);
 	}
-
-	/*
-	if (steamapicontext->SteamApps()->BIsAppInstalled(240) && mountcfg->GetBool("overcharged"))
-	{
-		char OVRPath[MAX_PATH];
-		steamapicontext->SteamApps()->GetAppInstallDir(240, OVRPath, sizeof(OVRPath));
-		AddOvercharged(OVRPath);
-	}
-	*/
 
 	if (steamapicontext->SteamApps()->BIsAppInstalled(243750))
 	{

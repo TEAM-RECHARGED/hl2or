@@ -7,6 +7,7 @@
 //===========================================================================//
 #include "cbase.h"
 #include "filesystem.h"
+#include "mount.h"
 
 const char* GetArch()
 {

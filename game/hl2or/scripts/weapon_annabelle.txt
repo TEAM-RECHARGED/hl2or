@@ -1,0 +1,265 @@
+// Annabelle - Grigori's shotgun
+
+WeaponData
+{
+	// Weapon data is loaded by both the Game and Client DLLs.
+	"printname"		"#wpnname_Annabelle"
+	"viewmodel"		"models/weapons/overcharged/v_annabelle_remaster.mdl"
+	"playermodel"		"models/weapons/overcharged/world/w_annabelle_remaster.mdl"
+	"anim_prefix"			"shotgun"
+	"bucket"			"3"
+	"bucket_position"		"3"
+	"clip_size"			"7"
+	"primary_ammo"			"357"
+	"secondary_ammo"		"None"
+
+	"weight"			"2"
+	"item_flags"			"0"
+	"viewbob_model_scale"		"3"
+
+    	"viewmodel_fov_shift"		"-11"
+
+	"AllowFreeAim"			"1"
+	"AllowForceDrawInspect"		"1"
+
+	"AllowShellEjectSmokeFlash" 	"-1"
+	"AllowIronSight"		"1"
+	"IronsightSensitivity"    	"0.7"
+
+	Bullet_Properties
+	{
+		"PenetrationLength" "6"
+		"ImpulseForce" "1500"
+		"Speed" "81"
+	}	
+	Weapon_firing_modes
+	{
+		"weapon_modes" "1"
+		"WeaponDefaultMode" "1"
+		"weapon_type" "shotgun"
+		"SwingHitTime" "0.1"
+        "FiresUnderWater" "0"
+		weapon_mode:1
+		{
+			"weapon_switch_animation" "ACT_VM_DRAW_INSPECT"
+			"weapon_switching_sound" "Weapon_Switch.1"
+			"mode_fire_rate_single" "1.3"
+			"mode_accuracy_maximum_penalty_time" "1.5"
+			"mode_fastest_refire_time" "1.3"
+			"mode_accuracy_shot_penalty_time" "0.2"
+			"mode_fastest_dry_refire_time" "0.2"
+		}
+		weapon_mode:2
+		{
+			"weapon_switch_animation" "ACT_VM_DRAW_INSPECT"
+			"weapon_switching_sound" "Weapon_Switch.2"
+			"mode_fire_rate_automatic" "0.5"
+		}
+                NPC
+		{
+			"MinBurst" "1"
+			"MaxBurst" "1"		
+		}	
+	}	
+	Animation_Properties
+	{
+        "FirstDrawAnimation"	"ACT_VM_DRAW_INSPECT"
+		"InspectAnimation" "ACT_VM_INSPECT"
+	
+                
+
+
+		"ShotgunPumpAnimation" "0"
+        "ShotgunDoublePumpAnimation" "0"	
+		"ShotgunStartReloadAnimation" "ACT_SHOTGUN_RELOAD_START"
+		"ShotgunFillClipAnimation" "ACT_VM_RELOAD"	
+		"ShotgunStopReloadAnimation" "ACT_SHOTGUN_RELOAD_FINISH"
+		
+		"ReloadFullEmptyAnimation" "ACT_VM_RELOAD_EMPTY"
+        "SwingAnimation" "ACT_VM_MELEE"
+		"FirePrimary1"	   "ACT_VM_PRIMARYATTACK"	
+		"FireIronsighted1" "ACT_VM_PRIMARYATTACK"
+
+        "FirePrimaryCompleteEmpty" "ACT_VM_PRIMARYATTACK_SPECIAL"
+
+	}
+
+	"GetFireRate"		"0.5"
+	Weapon_shells
+	{
+		"ShellModel" "models/shells/shell_57.mdl"
+		"ShellBounceSound" "Bounce.Shell"
+		"ShellParticle" "shell_exhaust_smoke"
+		"ShellExhaustAttachment"	"shell"
+		"ShellExhaustParticle"		"shell_eject_smoke_flash"	
+	}		
+	
+	Particles_Properties
+	{
+		Player
+		{
+			Muzzle_Tracers
+			{
+				"OldMuzzleTracer"	"effects/spark0.vmt" 
+				"MuzzleTracer1" "weapon_tracer_357"
+			}	
+			Muzzle_Particles
+			{
+				"MuzzleFlash1" "weapon_muzzle_flash_357"
+			}
+		}
+		Npc
+		{
+			Muzzle_Tracers
+			{
+				"OldMuzzleTracer"	"effects/spark0.vmt" 
+				"MuzzleTracer1" "weapon_npc_tracer_357"
+			}
+			Muzzle_Particles
+			{
+				"MuzzleFlash1" "weapon_muzzle_flash_shotgun_npc"
+			}
+		}
+	}
+
+	MuzzleDLight_Properties
+	{
+		"DLightRed"		"255"
+		"DLightGreen"		"165"
+		"DLightBlue"		"0"
+		"DLightRadius"		"350"	
+		"DLightDecay"		"0.2"
+		"DLightAttachment"	"muzzle"
+	}
+
+	CameraFollow_Properties
+	{
+		"Attachments" "1 2 3 4"
+		"Scales" "0.7 0.9 0.7 0.6"
+	}
+	 Weapon_spread
+	 {
+          Player
+          {
+		 "IronSight_spread" "2.0"
+		 "Standing_spread" "10.0"
+		 "Crouch_spread" "5.0"
+		 "Walking_spread" "20.0"
+		 "Running_spread" "40.0"			 
+	 }
+	 NPC
+	 {
+		 "Standing_spread" "10.0"
+		 "Crouch_spread" "10.0"
+		 "Walking_spread" "10.0"
+		 "Running_spread" "30"			
+	 }
+        }			 
+	 Weapon_Recoil
+	 {
+		"DoRandomPunch" "0"
+		"ViewPunch_X" "3.65"
+		"ViewPunch_Y" "5.85"
+		"ViewPunch_Z" "0"
+
+		"DoRandomKick" "0"
+		"ViewKick_X" "3.55"
+		"ViewKick_Y" "3.1"
+		"ViewKick_Z" "0"
+	 }
+	 ViewModel_Properties
+	 {
+
+		"pos_x" "3.0"
+		"pos_y" "-0.75"
+		"pos_z" "0"
+
+		"ang_x" "0.0"
+		"ang_y" "0.0"
+		"ang_z" "-5.0"
+
+		"iron_pos_x" "0.0"
+		"iron_pos_y" "-2.985"
+		"iron_pos_z" "2.53"
+
+		"iron_ang_x" "1.0"
+		"iron_ang_y" "-0.15"
+
+		 "DistanceToWall" "30.0"
+		 "PosW_x" "0.0"
+		 "PosW_y" "-2.0"
+		 "PosW_z" "2.0"
+		 "AngleW_x" "20.0"
+		 "AngleW_y" "0.0"
+		 "AngleW_z" "-20.0"
+
+		 "PosF_x" "0.0"
+		 "PosF_y" "-2.0"
+		 "PosF_z" "2.5"
+		 "AngleF_x" "15.0"
+		 "AngleF_y" "0.0"
+		 "AngleF_z" "-20.0"
+
+		 "ParticleTracerPos_x" "50.0"
+		 "ParticleTracerPos_y" "0.0"
+		 "ParticleTracerPos_z" "-5.0"
+
+		 "TracerPosIron_x" "0.0"
+		 "TracerPosIron_y" "0.0"
+		 "TracerPosIron_z" "0.0"
+
+		 "OriginTracerPos_x" "20.0"
+		 "OriginTracerPos_y" "0.3"
+		 "OriginTracerPos_z" "0.0"
+		 
+	 	 "IrSightOriginTracerPos_X" "0.0"
+		 "IrSightOriginTracerPos_Y" "1.0"
+		 "IrSightOriginTracerPos_Z" "0.0"
+
+		 "ScopeParticleTracerPos_x" "20.0"
+		 "ScopeParticleTracerPos_y" "-4.0"
+		 "ScopeParticleTracerPos_z" "-1.0"
+	 }
+
+	// Sounds for the weapon. There is a max of 16 sounds per category (i.e. max 16 "single_shot" sounds)
+	SoundData
+	{
+                "single_shot"		"Weapon_ovr_annabelle_FirePrimary"
+		"empty"			"Weapon_ovr_annabelle_FireEmpty"
+		//"double_shot"		"Weapon_Shotgun.Double"
+
+		"single_shot_npc"	"Weapon_ovr_annabelle_Primary_NPC"
+		"reload_npc"		"Weapon_ovr_annabelle_Reload_NPC"
+	}
+
+	// Weapon Sprite data is loaded by the Client DLL.
+	TextureData
+	{
+		"weapon"
+		{
+				"font"		"WeaponsIconsOver"
+				"character"	"r"
+		}
+		"weapon_s"
+		{
+				"font"		"WeaponIconsOverSelected"
+				"character"	"r"
+		}
+		"weapon_small"
+		{
+				"font"		"WeaponIconsOverSmall"
+				"character"	"r"
+		}
+		"ammo"
+		{
+				"font"		"WeaponIconsSmall"
+				"character"	"q"
+		}
+		"crosshair"
+		{
+				"font"		"CrosshairsOver"
+				"character"	"i"
+				
+		}	
+	}
+}
