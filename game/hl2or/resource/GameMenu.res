@@ -115,10 +115,18 @@
     {
         "label" "Fast Settings 1"
         "command" "exec graphic_realism"
+		"OnlyInGame" "1"
     }
     "18"
     {
         "label" "Fast Settings 2"
         "command" "exec graphics_hd"
+		"OnlyInGame" "1"
     }
+	"19"
+	{
+		"label" "Fast Settings 3"
+		"command" "exec graphics_default"
+		"OnlyInGame" "1"
+	}
 }

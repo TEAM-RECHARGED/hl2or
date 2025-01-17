@@ -56,8 +56,10 @@ vgui::Panel *GetSDKRootPanel();
 
 #ifdef _WIN32
 #define MP3_DEFAULT_MP3DIR "c:\\my music"
-#else
+#elif LINUX
 #define MP3_DEFAULT_MP3DIR "~/music/" // Enable Linux finder
+#else 
+#define MP3_DEFAULT_MP3DIR "/" // MacOS & BSD should default to /
 #endif
 
 CMP3Player *GetMP3Player()

@@ -123,9 +123,9 @@ bool CMapAdd::RunLabel(const char* szLabel)
 							}
 						}
 					}
-					//createEnt->Activate();//Is this a good idea? Not sure!
+					//createEnt->Activate();//Is this a good idea? Not sure! - ThePixelMoon
 					//createEnt->Spawn();
-					DispatchSpawn(createEnt); //I derped
+					DispatchSpawn(createEnt); //I derped - ThePixelMoon
 				}
 			}
 			else
@@ -144,7 +144,7 @@ bool CMapAdd::HandlePlayerEntity(KeyValues* playerEntityKV, bool initLevel)
 	if (AllocPooledString(kvEntName) == AllocPooledString("player"))
 	{
 		CBasePlayer* playerEnt = UTIL_GetLocalPlayer();
-		if (!playerEnt) //He doesn't exist, just pretend
+		if (!playerEnt) //He doesn't exist, just pretend - ThePixelMoon
 			return true;
 		Vector SpawnVector = playerEnt->GetAbsOrigin();
 		QAngle SpawnAngle = playerEnt->GetAbsAngles();
@@ -166,7 +166,7 @@ bool CMapAdd::HandlePlayerEntity(KeyValues* playerEntityKV, bool initLevel)
 
 bool CMapAdd::HandleSpecialEnitity(KeyValues* specialEntity)
 {
-	//weaponmanagers are moved to HandleSpecialEntity
+	//weaponmanagers are moved to HandleSpecialEntity - ThePixelMoon
 	const char* kvEntName = specialEntity->GetString("entity", "");
 	if (AllocPooledString(kvEntName) == AllocPooledString("gameweaponmanager"))
 	{
@@ -239,9 +239,9 @@ bool CMapAdd::HandleRemoveEnitity(KeyValues* mapaddValue)
 	}
 }
 
-void CMapAdd::InputRunLabel(inputdata_t& inputData) //Input this directly!
+void CMapAdd::InputRunLabel(inputdata_t& inputData) //Input this directly! - ThePixelMoon
 {
 	char szMapadd[128];
-	Q_snprintf(szMapadd, sizeof(szMapadd), "mapadd/%s.txt", STRING(gpGlobals->mapname));
+	Q_snprintf(szMapadd, sizeof(szMapadd), "mapadd/%s.txt", STRING(gpGlobals->mapname)); // TODO: Replace the .txt format with a new format named %s.oc_mapadd - GuestSneezePlayZ
 	this->RunLabel(inputData.value.String());
 }

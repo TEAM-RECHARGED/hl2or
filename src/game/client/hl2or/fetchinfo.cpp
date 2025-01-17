@@ -7,8 +7,11 @@
 //===========================================================================//
 #include "cbase.h"
 #include "filesystem.h"
-#include "mount.h"
 
+// Enable Debugging.
+#include "tier0/memdbgon.h"
+
+static ConVar oc_firstperson("oc_firstperson", "1", 1, "Displays The First Person Model");
 const char* GetArch()
 {
 #if defined( __x86_64__) || defined( _M_X64 )
@@ -106,14 +109,17 @@ CON_COMMAND_F(neofetch, "Print info about engine", FCVAR_NONE)
 	Msg("Game: Half-Life 2 ReCharged");
 }
 
-CON_COMMAND(oc_firstperson_enable, "Creates first person ragdoll, WARNING BETA!")
-{
-	Msg("Enabling OVR Firstperson...");
-	engine->ClientCmd("cl_first_person_uses_world_model 1");
-}
 
-CON_COMMAND(oc_firstperson_disable, "Disables the first person ragdoll.")
+void FUNCTION_FIRSTPERSON()
 {
-	Msg("Disabling OVR Firstperson...");
-	engine->ClientCmd("cl_first_person_uses_world_model 0");
+	if (oc_firstperson.GetBool() == 1)
+	{
+		DevMsg("Firstperson has been enabled!");
+		engine->ClientCmd("cl_first_person_uses_world_model 1");
+	}
+	else if (oc_firstperson.GetBool() == 0)
+	{
+		DevMsg("Firstperson has been disabled!");
+		engine->ClientCmd("cl_first_person_uses_world_model 0");
+	}
 }

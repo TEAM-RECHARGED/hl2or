@@ -436,7 +436,8 @@ void CHL2_Player::Precache( void )
 	PrecacheScriptSound( "HL2Player.Use" );
 	PrecacheScriptSound( "HL2Player.BurnPain" );
 #ifdef OVERCHARGED
-	PrecacheModel("models/humans/group01/male_07.mdl");
+	PrecacheModel("models/player/gordon_citizen.mdl");
+	PrecacheModel("models/player/gordon_hev.mdl"); // Use this when wearing HEV Suit.
 #endif // OVERCHARGED
 
 }
@@ -461,6 +462,17 @@ void CHL2_Player::CheckSuitZoom( void )
 	}
 //#endif//_XBOX
 }
+
+#ifdef OVERCHARGED
+void CHL2_Player::SuitPlayerModel(void)
+{
+	if (IsSuitEquipped()) // Checks if the suit IS equipt. - GuestSneezePlayZ
+	{
+		SetModel("models/player/gordon_hev.mdl"); // Hopefully it overwrites the other citizen model.
+	}
+}
+#endif // OVERCHARGED
+
 
 void CHL2_Player::EquipSuit( bool bPlayEffects )
 {
@@ -1114,7 +1126,7 @@ void CHL2_Player::Spawn(void)
 {
 
 #ifdef OVERCHARGED
-	SetModel("models/humans/group01/male_07.mdl");
+	SetModel("models/player/gordon_citizen.mdl");
 #else
 	SetModel("models/player.mdl");
 #endif // OVERCHARGED

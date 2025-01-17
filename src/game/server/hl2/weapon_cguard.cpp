@@ -1,8 +1,11 @@
 //========= Copyright Valve Corporation, All rights reserved. ============//
 //
-// Purpose:		Combine guard gun, strider destroyer
+// Purpose: Combine guard gun, strider destroyer. The concussive blast entity now
+// passes through a damage input, useful for allowing the player to do a different
+// amount of damage than the Strider. The Combine Guard Gun is also restored, but
+// you need to add weapon sounds to game_sounds_weapons.txt.
 //
-// $NoKeywords: $
+// $NoKeywords: $FixedByTheMaster974
 //=============================================================================//
 
 #include "cbase.h"
@@ -19,6 +22,12 @@
 
 // memdbgon must be the last include file in a .cpp file!!!
 #include "tier0/memdbgon.h"
+
+// ----------------------------------------------------------
+// Addition, this allows the Combine Guard Gun to do damage.
+// Don't forget to add this to your mod's cfg/skill.cfg file!
+// ----------------------------------------------------------
+ConVar sk_plr_dmg_cguard("sk_plr_dmg_cguard", "0", FCVAR_REPLICATED);
 
 //Concussive explosion entity
 
@@ -112,7 +121,7 @@ public:
 	// Output :
 	//-----------------------------------------------------------------------------
 
-	void Explode(float magnitude)
+	void Explode(float magnitude, float damage) // Added float damage.
 	{
 		//Create a concussive explosion
 		CPASFilter filter(GetAbsOrigin());
@@ -149,8 +158,8 @@ public:
 			128			//speed
 		);
 
-		//Do the radius damage
-		RadiusDamage(CTakeDamageInfo(this, GetOwnerEntity(), 200, DMG_BLAST | DMG_DISSOLVE), GetAbsOrigin(), 256, CLASS_NONE, NULL);
+		//Do the radius damage, replaced 200 with damage input variable.
+		RadiusDamage(CTakeDamageInfo(this, GetOwnerEntity(), damage, DMG_BLAST | DMG_DISSOLVE), GetAbsOrigin(), 256, CLASS_NONE, NULL);
 
 		UTIL_Remove(this);
 	}
@@ -168,10 +177,10 @@ BEGIN_DATADESC(CConcussiveBlast)
 END_DATADESC()
 
 
-//-----------------------------------------------------------------------------
-// Purpose: Create a concussive blast entity and detonate it
-//-----------------------------------------------------------------------------
-void CreateConcussiveBlast(const Vector& origin, const Vector& surfaceNormal, CBaseEntity* pOwner, float magnitude)
+//-------------------------------------------------------------------------------
+// Purpose: Create a concussive blast entity and detonate it, added damage input.
+//-------------------------------------------------------------------------------
+void CreateConcussiveBlast(const Vector& origin, const Vector& surfaceNormal, CBaseEntity* pOwner, float magnitude, float damage)
 {
 	QAngle angles;
 	VectorAngles(surfaceNormal, angles);
@@ -179,13 +188,14 @@ void CreateConcussiveBlast(const Vector& origin, const Vector& surfaceNormal, CB
 
 	if (pBlast)
 	{
-		pBlast->Explode(magnitude);
+		pBlast->Explode(magnitude, damage); // Added damage input.
 	}
 }
 
-// Combine Guard weapon
+// Combine Guard weapon, which will be restored.
 
-#if 0
+//#if 0
+#if 1
 
 class CWeaponCGuard : public CBaseHLCombatWeapon
 {
@@ -283,7 +293,8 @@ void CWeaponCGuard::AlertTargets(void)
 
 	// Fire the bullets
 	Vector vecSrc = pPlayer->Weapon_ShootPosition();
-	Vector vecAiming = pPlayer->GetRadialAutoVector(NEW_AUTOAIM_RADIUS, NEW_AUTOAIM_DIST);
+	//	Vector vecAiming = pPlayer->GetRadialAutoVector( NEW_AUTOAIM_RADIUS, NEW_AUTOAIM_DIST );
+	Vector vecAiming = pPlayer->GetAutoaimVector(AUTOAIM_2DEGREES); // Fix, 2 degrees is arbitrary.
 
 	Vector	impactPoint = vecSrc + (vecAiming * MAX_TRACE_LENGTH);
 
@@ -372,7 +383,7 @@ void CWeaponCGuard::PrimaryAttack(void)
 
 	WeaponSound(SPECIAL1);
 
-	//UTIL_ScreenShake( GetAbsOrigin(), 10.0f, 100.0f, 2.0f, 128, SHAKE_START, false );
+	UTIL_ScreenShake(GetAbsOrigin(), 10.0f, 100.0f, 2.0f, 128, SHAKE_START, false); // Restored.
 
 	m_flChargeTime = gpGlobals->curtime + 1.0f;
 	m_bFired = false;
@@ -384,6 +395,7 @@ void CWeaponCGuard::PrimaryAttack(void)
 void CWeaponCGuard::ItemPostFrame(void)
 {
 	//FIXME: UpdateLasers();
+	UpdateLasers(); // Restored. There, fixed! :)
 
 	if ((m_flChargeTime < gpGlobals->curtime) && (m_bFired == false))
 	{
@@ -437,7 +449,8 @@ void CWeaponCGuard::DelayedFire(void)
 
 	// Fire the bullets
 	Vector vecSrc = pPlayer->Weapon_ShootPosition();
-	Vector vecAiming = pPlayer->GetRadialAutoVector(NEW_AUTOAIM_RADIUS, NEW_AUTOAIM_DIST);
+	//	Vector vecAiming = pPlayer->GetRadialAutoVector( NEW_AUTOAIM_RADIUS, NEW_AUTOAIM_DIST );
+	Vector vecAiming = pPlayer->GetAutoaimVector(AUTOAIM_2DEGREES); // Fix, 2 degrees is arbitrary.
 
 	//Factor in the view kick
 	AddViewKick();
@@ -447,7 +460,7 @@ void CWeaponCGuard::DelayedFire(void)
 	trace_t	tr;
 	UTIL_TraceHull(vecSrc, impactPoint, Vector(-2, -2, -2), Vector(2, 2, 2), MASK_SHOT, pPlayer, COLLISION_GROUP_NONE, &tr);
 
-	CreateConcussiveBlast(tr.endpos, tr.plane.normal, this, 1.0);
+	CreateConcussiveBlast(tr.endpos, tr.plane.normal, this, 1.0, sk_plr_dmg_cguard.GetFloat()); // Added damage amount.
 }
 
 //-----------------------------------------------------------------------------

@@ -470,8 +470,8 @@ void C_BasePlayer::Spawn( void )
 	m_iFOV	= 0;	// init field of view.
 
 #ifdef OVERCHARGED
-	PrecacheModel("models/humans/group01/male_07.mdl");
-	SetModel("models/humans/group01/male_07.mdl");
+	PrecacheModel("models/player/gordon_citizen.mdl");
+	SetModel("models/player/gordon_citizen.mdl");
 #else
 	SetModel("models/player.mdl");
 #endif // OVERCHARGED

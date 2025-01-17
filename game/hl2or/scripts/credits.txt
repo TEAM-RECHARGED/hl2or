@@ -98,7 +98,7 @@
 
 "CreditsParams"
 {
-	"logo" "HALF-LIFE'"
+	"logo" "ReCharged"
 	
 	"fadeintime"	"2.5"
 	"fadeouttime"	"1"

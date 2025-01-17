@@ -4,8 +4,8 @@ WeaponData
 {
 	// Weapon data is loaded by both the Game and Client DLLs.
 	"printname"		"#wpnname_FlareGun"
-	"viewmodel"		"models/weapons/OverCharged/v_flaregun.mdl"
-	"playermodel"		"models/weapons/overcharged/world/w_flaregun.mdl"
+	"viewmodel"		"models/weapons/weapons/v_flaregun.mdl"
+	"playermodel"		"models/weapons/weapons/w_flaregun.mdl"
 	"anim_prefix"		"python"
 	"bucket"		"1"
 	"bucket_position"	"8"

@@ -13,8 +13,8 @@
 #include "vgui_controls/Button.h"
 #include "viewrender.h"
 
-#define STB_RECT_PACK_IMPLEMENTATION
-#include "..\hl2or\stb_rect_pack.h"
+#define STB_RECT_PACK_IMPLEMENTATION 1
+#include "stb_rect_pack.h"
 #include <isaverestore.h>
 
 extern ConVar cl_sidespeed;

@@ -100,10 +100,10 @@ CWeaponAlyxGun::CWeaponAlyxGun( )
 
 	m_flTooCloseTimer	= TOOCLOSETIMER_OFF;
 
-#ifdef HL2_EPISODIC
+#ifdef OVERCHARGED
 	m_fMinRange1		= 60;
 	m_fMaxRange1		= 2048;
-#endif//HL2_EPISODIC
+#endif//OVERCHARGED
 }
 
 CWeaponAlyxGun::~CWeaponAlyxGun( )
@@ -133,9 +133,7 @@ void CWeaponAlyxGun::Equip( CBaseCombatCharacter *pOwner )
 // Output : int
 //-----------------------------------------------------------------------------
 int CWeaponAlyxGun::WeaponRangeAttack1Condition( float flDot, float flDist )
-{
-#ifdef HL2_EPISODIC
-	
+{	
 	if( flDist < m_fMinRange1 )
 	{
 		// If Alyx is not able to fire because an enemy is too close, start a timer.
@@ -181,12 +179,6 @@ int CWeaponAlyxGun::WeaponRangeAttack1Condition( float flDot, float flDist )
 	}
 
 	return nBaseCondition;
-
-#else 
-
-	return BaseClass::WeaponRangeAttack1Condition( flDot, flDist );
-
-#endif//HL2_EPISODIC
 }
 
 //-----------------------------------------------------------------------------
@@ -230,7 +222,7 @@ void CWeaponAlyxGun::FireNPCPrimaryAttack( CBaseCombatCharacter *pOperator, bool
 	}
 	else
 	{
-		pOperator->FireBullets( 1, vecShootOrigin, vecShootDir, VECTOR_CONE_PRECALCULATED, MAX_TRACE_LENGTH, m_iPrimaryAmmoType, 2 );
+		pOperator->FireBullets( 1, vecShootOrigin, vecShootDir, VECTOR_CONE_PRECALCULATED, MAX_TRACE_LENGTH, m_iPrimaryAmmoType, 1 );
 	}
 
 	pOperator->DoMuzzleFlash();
@@ -246,7 +238,10 @@ void CWeaponAlyxGun::FireNPCPrimaryAttack( CBaseCombatCharacter *pOperator, bool
 	}
 	else
 	{
-		m_iClip1 = m_iClip1 - 1;
+		if (m_iClip1 > 1)
+		{
+			m_iClip1 = m_iClip1 - 1;
+		}
 	}
 }
 

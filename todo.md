@@ -1,11 +1,12 @@
 # TO COMPLETE!
 - ~~[ ] Mounting system support source mods located in `[STEAMPATH]\SteamApps\SourceMods\`.~~
-- [ ] Mount overcharged from mounting system.
+- [X] Mount overcharged from mounting system.
 - [ ] Every Overcharged weapon.
-- [ ] Portal weapons.
+- ~~[ ] Portal weapons.~~
 - [ ] TF2 Weapons.
 - [X] HL1 Weapons
-- [X] IronSights
+- [X] IronSights.
+- [ ] HL2 Beta Weapons.
 - [ ] SMOD weapons.
 - [ ] autoexec should automatically be ran when loading in a map.
 - [ ] Add Physics Gun.
@@ -20,7 +21,6 @@
 # Progression for recreation of OVERCHARGED.
 40% Complete, WIP_* entities and weapons aren't required.
 * Required to Complete
-    * weapon_adrenaline.txt
     * weapon_airboatgun.txt
     * weapon_ak47.txt
     * weapon_autoshotgun.txt
@@ -53,7 +53,6 @@
     * weapon_shovel.txt
     * weapon_smg2.txt
     * weapon_smokegrenade.txt
-    * weapon_snark.txt
     * weapon_sniper.txt
     * weapon_sniper_m40a1.txt
     * weapon_spore_launcher.txt
@@ -61,6 +60,5 @@
     * weapon_wrench.txt
     * SMOD Kick
     * SMod Weapons
-    * Fix firstperson ragdolls. 
     * Fix player animations
     * FIx IronSights to firstperson.
