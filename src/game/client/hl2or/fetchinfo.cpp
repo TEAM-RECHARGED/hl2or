@@ -7,6 +7,10 @@
 //===========================================================================//
 #include "cbase.h"
 #include "filesystem.h"
+#ifdef CLIENT_DLL
+#include "clientsteamcontext.h"
+#endif // CLIENT_DLL
+
 
 // Enable Debugging.
 #include "tier0/memdbgon.h"

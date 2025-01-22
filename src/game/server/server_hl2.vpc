@@ -154,6 +154,7 @@ $Project "Server (HL2OR)"
 				$File	"hl2mp\grenade_tripmine.cpp"
 				$File	"hl2mp\grenade_tripmine.h"
 				$File	"episodic\grenade_hopwire.cpp"
+				$File	"hl2or\weapon_ak47.cpp"
 				$File	"episodic\grenade_hopwire.h"
 			}
 		}
