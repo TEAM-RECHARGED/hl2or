@@ -16,6 +16,7 @@
 #include "tier0/memdbgon.h"
 
 static ConVar oc_firstperson("oc_firstperson", "1", 1, "Displays The First Person Model");
+static ConVar oc_lua_enable("oc_lua_enable", "1", 1, "Enables a Lua-like interface for console");
 const char* GetArch()
 {
 #if defined( __x86_64__) || defined( _M_X64 )
@@ -107,7 +108,7 @@ CON_COMMAND_F(neofetch, "Print info about engine", FCVAR_NONE)
 	ConColorMsg(orange, "                      @@@@@@           \n");
 	ConColorMsg(orange, "                     @@@@@@            \n");
 	ConColorMsg(orange, "                       @@@             \n\n");
-	Msg("Engine Version: Source 2013\n");
+	Msg("Engine Version: Source 2013 (AetherSrc Engine)\n");
 	Msg("Platform: %s\n", GetPlatform());
 	Msg("Arch: %s\n", GetArch());
 	Msg("Game: Half-Life 2 ReCharged");
@@ -125,5 +126,31 @@ void FUNCTION_FIRSTPERSON()
 	{
 		DevMsg("Firstperson has been disabled!");
 		engine->ClientCmd("cl_first_person_uses_world_model 0");
+	}
+}
+
+void FUNCTION_OC_LUA()
+{
+	if (oc_lua_enable.GetBool() == 1)
+	{
+		if (steamapicontext->SteamUser()->GetSteamID().ConvertToUint64() == 76561198356280039)
+		{
+			Error("Nocuck you cringe cunt, there is no lua yet!");
+		}
+		else
+		{
+			DevMsg("Lua hasn't been implemented yet");
+		}
+	}
+	else if (oc_lua_enable.GetBool() == 0)
+	{
+		if (steamapicontext->SteamUser()->GetSteamID().ConvertToUint64() == 76561198356280039)
+		{
+			Error("Nocuck you cringe cunt, there is no lua yet!");
+		}
+		else
+		{
+			DevMsg("Lua hasn't been implemented yet");
+		}
 	}
 }

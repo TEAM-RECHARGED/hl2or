@@ -178,12 +178,13 @@ void MountExtraContent()
 		steamapicontext->SteamApps()->GetAppInstallDir(400, portalPath, sizeof(portalPath));
 		AddPortal(portalPath);
 	}
-//	if (steamapicontext->SteamApps()->BIsAppInstalled(1521150) && mountcfg->GetBool("overcharged"))
-//	{
-//		char OVRPath[MAX_PATH];
-//		steamapicontext->SteamApps()->GetAppInstallDir(1521150, OVRPath, sizeof(OVRPath));
-//		AddOvercharged(OVRPath);
-//	}
+	if (steamapicontext->SteamApps()->BIsAppInstalled(1521150) && mountcfg->GetBool("overcharged"))
+	{
+		char OVRPath[MAX_PATH];
+		steamapicontext->SteamApps()->GetAppInstallDir(1521150, OVRPath, sizeof(OVRPath));
+		AddOvercharged(OVRPath);
+		Msg("Hello, You're a playteseter of Overcharged's steam release so\nhave a good day :)");
+	}
 
 	if (steamapicontext->SteamApps()->BIsAppInstalled(240) && mountcfg->GetBool("csscontent"))
 	{

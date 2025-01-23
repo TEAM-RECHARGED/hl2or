@@ -252,34 +252,6 @@ CON_COMMAND(touch_setgridcolor, "change grid color")
 		Msg("Usage: touch_setgridcolor <r> <g> <b> <a>\n");
 }
 
-/*
-CON_COMMAND( touch_roundall, "round all buttons coordinates to grid" )
-{
-
-}
-
-CON_COMMAND( touch_exportconfig, "export config keeping aspect ratio" )
-{
-
-}
-
-CON_COMMAND( touch_reloadconfig, "load config, not saving changes" )
-{
-
-}
-*/
-
-/*
-CON_COMMAND( touch_fade, "start fade animation for selected buttons" )
-{
-
-}
-
-CON_COMMAND( touch_toggleselection, "toggle visibility on selected button in editor" )
-{
-
-}*/
-
 void CTouchControls::GetTouchAccumulators(float* side, float* forward, float* yaw, float* pitch)
 {
 	*forward = this->forward;
@@ -618,7 +590,7 @@ void CTouchControls::IN_CheckCoords(float* x1, float* y1, float* x2, float* y2)
 	}
 }
 
-void CTouchControls::Move(float /*frametime*/, CUserCmd* cmd)
+void CTouchControls::Move(float, CUserCmd* cmd)
 {
 }
 
@@ -1169,28 +1141,12 @@ void CTouchControls::WriteConfig()
 		filesystem->FPrintf(f, "touch_yaw \"%f\"\n", touch_yaw.GetFloat());
 		filesystem->FPrintf(f, "touch_forwardzone \"%f\"\n", touch_forwardzone.GetFloat());
 		filesystem->FPrintf(f, "touch_sidezone \"%f\"\n", touch_sidezone.GetFloat());
-		/*		filesystem->FPrintf( f, "touch_nonlinear_look \"%d\"\n",touch_nonlinear_look.GetBool() );
-				filesystem->FPrintf( f, "touch_pow_factor \"%f\"\n", touch_pow_factor->value );
-				filesystem->FPrintf( f, "touch_pow_mult \"%f\"\n", touch_pow_mult->value );
-				filesystem->FPrintf( f, "touch_exp_mult \"%f\"\n", touch_exp_mult->value );*/
 		filesystem->FPrintf(f, "\n// grid settings\n");
 		filesystem->FPrintf(f, "touch_grid_count \"%d\"\n", touch_grid_count.GetInt());
 		filesystem->FPrintf(f, "touch_grid_enable \"%d\"\n", touch_grid_enable.GetInt());
 
 		filesystem->FPrintf(f, "touch_setgridcolor \"%d\" \"%d\" \"%d\" \"%d\"\n", gridcolor.r, gridcolor.g, gridcolor.b, gridcolor.a);
 		filesystem->FPrintf(f, "touch_button_info \"%d\"\n", touch_button_info.GetInt());
-		/*
-				filesystem->FPrintf( f, "\n// global overstroke (width, r, g, b, a)\n" );
-				filesystem->FPrintf( f, "touch_set_stroke %d %d %d %d %d\n", touch.swidth, touch.scolor[0], touch.scolor[1], touch.scolor[2], touch.scolor[3] );
-				filesystem->FPrintf( f, "\n// highlight when pressed\n" );
-				filesystem->FPrintf( f, "touch_highlight_r \"%f\"\n", touch_highlight_r->value );
-				filesystem->FPrintf( f, "touch_highlight_g \"%f\"\n", touch_highlight_g->value );
-				filesystem->FPrintf( f, "touch_highlight_b \"%f\"\n", touch_highlight_b->value );
-				filesystem->FPrintf( f, "touch_highlight_a \"%f\"\n", touch_highlight_a->value );
-				filesystem->FPrintf( f, "\n// _joy and _dpad options\n" );
-				filesystem->FPrintf( f, "touch_dpad_radius \"%f\"\n", touch_dpad_radius->value );
-				filesystem->FPrintf( f, "touch_joy_radius \"%f\"\n", touch_joy_radius->value );
-		*/
 		filesystem->FPrintf(f, "\n// how much slowdown when Precise Look button pressed\n");
 		filesystem->FPrintf(f, "touch_precise_amount \"%f\"\n", touch_precise_amount.GetFloat());
 		//		filesystem->FPrintf( f, "\n// enable/disable move indicator\n" );
