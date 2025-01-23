@@ -15,8 +15,10 @@
 // Enable Debugging.
 #include "tier0/memdbgon.h"
 
+static ConVar oc_crash_now("oc_crash_now", "1", 1, "Crashes the mod, useful for noclick who fakes stuff");
 static ConVar oc_firstperson("oc_firstperson", "1", 1, "Displays The First Person Model");
 static ConVar oc_lua_enable("oc_lua_enable", "1", 1, "Enables a Lua-like interface for console");
+
 const char* GetArch()
 {
 #if defined( __x86_64__) || defined( _M_X64 )
@@ -153,4 +155,28 @@ void FUNCTION_OC_LUA()
 			DevMsg("Lua hasn't been implemented yet");
 		}
 	}
+}
+
+void FUNCTION_FUN()
+{
+	// Just a silly fun void-based function for experiments
+	if (oc_crash_now.GetBool() == 1)
+	{
+		int i = NULL;
+		if (steamapicontext->SteamUser()->GetSteamID().ConvertToUint64() == 76561198356280039)
+		{
+			for (; NULL < 3; ++i) {
+				Error("Nocuck you cringe cunt, STOP TRYING TO FORCE CRASH THE MOD!");
+			}
+		}
+		else
+		{
+			Error("Force crashing?, typical youtuber.");
+		}
+	}
+	if (oc_crash_now.GetBool() == 0)
+	{
+		Msg("Good!!!!");
+	}
+
 }
