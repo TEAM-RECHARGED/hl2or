@@ -150,7 +150,8 @@ void FUNCTION_OC_LUA()
 	{
 		if (steamapicontext->SteamUser()->GetSteamID().ConvertToUint64() == 76561198356280039)
 		{
-			Error("Nocuck you cringe cunt, there is no lua yet!");
+			// Just make it look like hes faking it :blush:
+			Error("There is no lua yet! Ya Cringe Cunt!");
 		}
 		else
 		{
@@ -194,11 +195,6 @@ void FUNCTION_FUN()
 		INITCMD("oc_friendlyfire 1");
 	}
 
-//	elif(oc_realism.GetBool() == 0)
-//	{
-//		Msg("Realism Not Enabled");
-//		// Or maybe comment this block :/
-//	}
 	if (oc_friendlyfire.GetBool() == 1)
 	{
 		INITCMD("ent_create ai_relationship subject !player target * disposition 1 rank 99 reciprocal 0 startactive 1");
