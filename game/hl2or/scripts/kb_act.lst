@@ -4,7 +4,7 @@
 "toggle_ironsight"		"IronSight Key"
 "sv_cheats 1;impulse 111"			"Get all weapons"
 "switchToOn"					"BulletTime"
-"ent_create ai_relationship subject !player target * disposition 1 rank 99 reciprocal 0 startactive 1"      "Enable Friendly Fire"
+"oc_friendlyfire"      "Enable Friendly Fire"
 
 "blank"			"=========================="
 "blank"			"#Valve_Movement_Title"

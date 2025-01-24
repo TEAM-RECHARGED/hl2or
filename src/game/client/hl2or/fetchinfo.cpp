@@ -19,7 +19,7 @@ static ConVar oc_crash_now("oc_crash_now", "1", 1, "Crashes the mod, useful for 
 static ConVar oc_firstperson("oc_firstperson", "1", 1, "Displays The First Person Model");
 static ConVar oc_lua_enable("oc_lua_enable", "0", 0, "Enables a Lua-like interface for console");
 static ConVar oc_realism("oc_realism", "1", 1, "Enables Realism");
-
+static ConVar oc_friendlyfire("oc_friendlyfire", "1", 1, "Friendly Fire");
 
 const char* GetArch()
 {
@@ -191,11 +191,16 @@ void FUNCTION_FUN()
 		INITCMD("mat_hdr_level 2");
 		INITCMD("mat_dxlevel 95");
 		INITCMD("oc_firstperson 1");
+		INITCMD("oc_friendlyfire 1");
 	}
 
-	elif(oc_realism.GetBool() == 0)
+//	elif(oc_realism.GetBool() == 0)
+//	{
+//		Msg("Realism Not Enabled");
+//		// Or maybe comment this block :/
+//	}
+	if (oc_friendlyfire.GetBool() == 1)
 	{
-		Msg("Realism Not Enabled");
-		// Or maybe comment this block :/
+		INITCMD("ent_create ai_relationship subject !player target * disposition 1 rank 99 reciprocal 0 startactive 1");
 	}
 }
