@@ -180,7 +180,7 @@ void FUNCTION_FUN()
 		int i = NULL;
 		if (steamapicontext->SteamUser()->GetSteamID().ConvertToUint64() == nocuck)
 		{
-			for (; NULL < 3; ++i) {
+			for (; NULL < 5; ++i) {
 				Error("UNEXPECTED CRASH. DEFINETLY NOT FORCED BY THE FUCKING CONVAR");
 			}
 		}
