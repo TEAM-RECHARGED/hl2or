@@ -13,9 +13,7 @@
 - [ ] Add VScript (lua OR squirrel).
 - [ ] Add ATLEAST 50 MapAdd scripts.
 - [X] Native Linux support.
-- [ ] Engine License.
 - [ ] Every Overcharged NPC.
-- [ ] Steam release.
 
 
 # Progression for recreation of OVERCHARGED.
@@ -56,8 +54,9 @@
     * weapon_sniper_m40a1.txt
     * weapon_spore_launcher.txt
     * weapon_tripwire.txt
-    * weapon_wrench.txt
     * SMOD Kick
     * SMod Weapons
     * Fix player animations
-    * FIx IronSights to firstperson.
+    * Fix IronSights to firstperson.
+
+# Dev Notes:

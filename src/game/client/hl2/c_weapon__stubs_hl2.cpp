@@ -22,6 +22,7 @@ STUB_WEAPON_CLASS(weapon_dual, WeaponDual, C_BaseHLCombatWeapon);
 STUB_WEAPON_CLASS(weapon_glock, WeaponGlock, C_BaseHLCombatWeapon);
 STUB_WEAPON_CLASS(weapon_cguard, WeaponCGuard, C_BaseHLCombatWeapon);
 STUB_WEAPON_CLASS(weapon_ak47, CWeaponAK47, CBaseHLCombatWeapon);
+STUB_WEAPON_CLASS(weapon_wrench, WeaponWrench, C_BaseHLBludgeonWeapon);
 #endif // OVERCHARGED
 STUB_WEAPON_CLASS( weapon_binoculars, WeaponBinoculars, C_BaseHLCombatWeapon );
 STUB_WEAPON_CLASS( weapon_bugbait, WeaponBugBait, C_BaseHLCombatWeapon );
