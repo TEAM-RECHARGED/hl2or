@@ -1,4 +1,4 @@
-//========= Copyright Overcharged Developers, All rights reserved. ============//
+//========= Copyright Overcharged Developers & Half-Life 2: ReCharged, All rights reserved. ============//
 //
 // Purpose: 
 //
@@ -19,6 +19,11 @@
 #include "animation.h"
 #include "basehlcombatweapon_shared.h"
 #include "iservervehicle.h"
+#include "gamestats.h"	
+#include "beam_shared.h"	/* We will use some of the functions declared this later... */
+#include "ammodef.h"		/* This is needed for the tracing done later */
+#include "basecombatweapon_shared.h"
+#include "ehandle.h"
 
 // memdbgon must be the last include file in a .cpp file!!!
 #include "tier0/memdbgon.h"
@@ -49,6 +54,7 @@ ConVar	g_debug_lighter_xen("g_debug_turret_xen", "0");
 //Heights
 #define	XEN_LIGHTER_RETRACT_HEIGHT	24
 #define	XEN_LIGHTER_DEPLOY_HEIGHT	64
+#define PHYSCANNON_BEAM_SPRITE "sprites/orangelight1.vmt"
 
 //Activities
 int ACT_LIGHTER_OPEN;
@@ -90,6 +96,10 @@ public:
 	void	Precache(void);
 	void	Spawn(void);
 
+	// Guest's Additions:
+	void   	DrawBeam(const Vector& startPos, const Vector& endPos, float width);
+	void	DoImpactEffect(trace_t& tr, int nDamageType);
+
 	// Think functions
 	void	Retire(void);
 	void	Deploy(void);
@@ -97,6 +107,7 @@ public:
 	void	SearchThink(void);
 	void	AutoSearchThink(void);
 	void	DeathThink(void);
+	void	PrimaryAttack(trace_t& tr, int nDamageType, CBaseCombatCharacter* pOperator);
 
 	// Inputs
 	void	InputToggle(inputdata_t& inputdata);
@@ -150,9 +161,13 @@ protected:
 	void	SpinUp(void);
 	void	SpinDown(void);
 	void	SetHeight(float height);
-
+	int	m_nBulletType;
+	float m_nNumShotsFired;
 	bool	UpdateFacing(void);
-
+	float	m_flSoonestPrimaryAttack;
+	float	m_flAccuracyPenalty;
+	int				m_iPrimaryAttacks;
+	void* pOwner;
 	int		m_iAmmoType;
 	int		m_iMinHealthDmg;
 
@@ -179,6 +194,7 @@ protected:
 //Datatable
 BEGIN_DATADESC(CNPC_LIGHTER)
 
+DEFINE_FIELD(m_nBulletType, FIELD_INTEGER),
 DEFINE_FIELD(m_iAmmoType, FIELD_INTEGER),
 DEFINE_KEYFIELD(m_iMinHealthDmg, FIELD_INTEGER, "minhealthdmg"),
 DEFINE_FIELD(m_bAutoStart, FIELD_BOOLEAN),
@@ -216,6 +232,8 @@ LINK_ENTITY_TO_CLASS(npc_xenlighter, CNPC_LIGHTER);
 //-----------------------------------------------------------------------------
 CNPC_LIGHTER::CNPC_LIGHTER(void)
 {
+	m_flSoonestPrimaryAttack = gpGlobals->curtime;
+	m_nBulletType = -1;
 	m_bActive = false;
 	m_pEyeGlow = NULL;
 	m_iAmmoType = -1;
@@ -233,6 +251,92 @@ CNPC_LIGHTER::CNPC_LIGHTER(void)
 CNPC_LIGHTER::~CNPC_LIGHTER(void)
 {
 }
+
+void CNPC_LIGHTER::PrimaryAttack(trace_t& tr, int nDamageType, CBaseCombatCharacter* pOperator)
+{
+	if ((gpGlobals->curtime - m_flLastAttackTime) > 0.5f)
+	{
+		m_nNumShotsFired = 0;
+	}
+	else
+	{
+		m_nNumShotsFired++;
+	}
+
+	m_flLastAttackTime = gpGlobals->curtime;
+#define	xenlighter_FASTEST_REFIRE_TIME		0.1f
+	m_flSoonestPrimaryAttack = gpGlobals->curtime + xenlighter_FASTEST_REFIRE_TIME;
+	CSoundEnt::InsertSound(SOUND_COMBAT, GetAbsOrigin(), SOUNDENT_VOLUME_PISTOL, 0.2/*, GetOwner()*/); // Comment GetOwner because NPC is always Owner
+
+//	if (pOwner)
+//	{
+		// Each time the player fires the pistol, reset the view punch. This prevents
+		// the aim from 'drifting off' when the player fires very quickly. This may
+		// not be the ideal way to achieve this, but it's cheap and it works, which is
+		// great for a feature we're evaluating. (sjb)
+//		pOwner->ViewPunchReset();
+//	}
+
+	BaseClass::PrimaryAttack();
+
+	// Add an accuracy penalty which can move past our maximum penalty time if we're really spastic
+#define	XENLIGHTER_ACCURACY_SHOT_PENALTY_TIME		0.2f	// Applied amount of time each shot adds to the time we must recover from
+	m_flAccuracyPenalty += XENLIGHTER_ACCURACY_SHOT_PENALTY_TIME;
+
+	m_iPrimaryAttacks++;
+//	gamestats->Event_WeaponFired(pOwner, true, GetClassname());
+	Vector vecShootOrigin, vecShootDir;
+	vecShootOrigin = pOperator->Weapon_ShootPosition();
+	DrawBeam(vecShootOrigin, tr.endpos, 15.5);
+}
+
+
+void CNPC_LIGHTER::DrawBeam(const Vector& startPos, const Vector& endPos, float width)
+{
+	//Tracer down the middle
+	UTIL_Tracer(startPos, endPos, 0, TRACER_DONT_USE_ATTACHMENT, 6500, false, "GaussTracer");
+
+	//Draw the main beam shaft
+	CBeam* pBeam = CBeam::BeamCreate(PHYSCANNON_BEAM_SPRITE, 15.5);
+
+	// It starts at startPos
+	pBeam->SetStartPos(startPos);
+
+	// This sets up some things that the beam uses to figure out where
+	// it should start and end
+	pBeam->PointEntInit(endPos, this);
+
+	// This makes it so that the laser appears to come from the muzzle of the pistol
+	pBeam->SetEndAttachment(LookupAttachment("Muzzle"));
+	pBeam->SetWidth(width);
+	//	pBeam->SetEndWidth( 0.05f );
+
+		// Higher brightness means less transparent
+	pBeam->SetBrightness(255);
+	pBeam->SetColor(255, 185 + random->RandomInt(-16, 16), 40);
+	pBeam->RelinkBeam();
+
+	// The beam should only exist for a very short time
+	pBeam->LiveForTime(0.1f);
+}
+//-----------------------------------------------------------------------------
+// Purpose: 
+// Input  : &tr - used to figure out where to do the effect
+//          nDamageType - ???
+//-----------------------------------------------------------------------------
+void CNPC_LIGHTER::DoImpactEffect(trace_t& tr, int nDamageType)
+{
+	//Draw our beam
+	DrawBeam(tr.startpos, tr.endpos, 15.5);
+	if ((tr.surface.flags & SURF_SKY) == false)
+	{
+		CPVSFilter filter(tr.endpos);
+		te->GaussExplosion(filter, 0.0f, tr.endpos, tr.plane.normal, 0);
+		m_nBulletType = GetAmmoDef()->Index("GaussEnergy");
+		UTIL_ImpactTrace(&tr, m_nBulletType);
+	}
+}
+
 
 //-----------------------------------------------------------------------------
 // Purpose: Precache

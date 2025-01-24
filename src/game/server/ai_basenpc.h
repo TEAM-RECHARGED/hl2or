@@ -505,6 +505,7 @@ public:
 	virtual void		OnRestore();
 	void				SaveConditions( ISave &save, const CAI_ScheduleBits &conditions );
 	void				RestoreConditions( IRestore &restore, CAI_ScheduleBits *pConditions );
+	void				PrimaryAttack();
 
 	bool				ShouldSavePhysics()	{ return false; }
 	virtual unsigned int	PhysicsSolidMaskForEntity( void ) const;
