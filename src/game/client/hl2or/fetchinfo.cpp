@@ -2,7 +2,7 @@
 //
 // Purpose: 
 //
-// $NoKeywords: $
+// Commands and more(tm)
 //
 //===========================================================================//
 #include "cbase.h"
@@ -12,13 +12,14 @@
 #endif // CLIENT_DLL
 
 
-// Enable Debugging.
+// Final include, required for debugging.
 #include "tier0/memdbgon.h"
 
 static ConVar oc_crash_now("oc_crash_now", "1", 1, "Crashes the mod, useful for noclick who fakes stuff");
 static ConVar oc_firstperson("oc_firstperson", "1", 1, "Displays The First Person Model");
 static ConVar oc_lua_enable("oc_lua_enable", "0", 0, "Enables a Lua-like interface for console");
 static ConVar oc_realism("oc_realism", "1", 1, "Enables Realism");
+
 
 const char* GetArch()
 {

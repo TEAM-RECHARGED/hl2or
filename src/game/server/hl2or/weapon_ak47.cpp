@@ -1,9 +1,8 @@
-//========= Copyright Valve Corporation, All rights reserved. ============//
+//========= Copyright Team ReCharged, All rights reserved. ============//
 //
-// Purpose: Singleplayer version of AK-47
+// Purpose: Boreal Revive's implementation of AK-47 in HL2 ReCharged
 //
 //=============================================================================//
-/*
 #include "cbase.h"
 #include "basehlcombatweapon.h"
 #include "npcevent.h"
@@ -37,6 +36,7 @@ public:
 
 	int GetMinBurst() { return 2; }
 	int GetMaxBurst() { return 5; }
+	int	m_nShotsFired;
 	float GetFireRate() { return ROF; }
 
 	virtual const Vector &GetBulletSpread();
@@ -66,6 +66,20 @@ CWeaponAK47::CWeaponAK47()
 void CWeaponAK47::Precache()
 {
 	BaseClass::Precache();
+}
+
+Activity CWeaponAK47::GetPrimaryAttackActivity(void)
+{
+	if (m_nShotsFired < 2)
+		return ACT_VM_PRIMARYATTACK;
+
+	if (m_nShotsFired < 3)
+		return ACT_VM_RECOIL1;
+
+	if (m_nShotsFired < 4)
+		return ACT_VM_RECOIL2;
+
+	return ACT_VM_RECOIL3;
 }
 
 void CWeaponAK47::PrimaryAttack()
@@ -119,4 +133,3 @@ const Vector &CWeaponAK47::GetBulletSpread()
 	static Vector cone = VECTOR_CONE_3DEGREES;
 	return cone;
 }
-*/

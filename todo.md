@@ -19,10 +19,9 @@
 
 
 # Progression for recreation of OVERCHARGED.
-40% Complete, WIP_* entities and weapons aren't required.
+43% Complete, WIP_* entities and weapons aren't required.
 * Required to Complete
     * weapon_airboatgun.txt
-    * weapon_ak47.txt
     * weapon_autoshotgun.txt
     * weapon_beretta.txt
     * weapon_combinesniper.txt
