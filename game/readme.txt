@@ -22,4 +22,5 @@ Half-Life 2: ReCharged.
 Mounting.
 - To mount Source Engine-based games, you can use the mount.cfg script located in [GAME DIRECTORY]/cfg/mount.cfg, there is already a simple tutorial in the code comments.
 ------
-If you plan on creating MapAdd script, put them in scripts/mapadd/*<mapname>.txt, You can find an example in sdk_vechiles.txt
+MapAdd.
+- If you plan on creating MapAdd script, put them in scripts/mapadd/*<mapname>.txt, You can find an example in sdk_vechiles.txt

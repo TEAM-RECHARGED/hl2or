@@ -5,12 +5,14 @@
 	title2		""
 	supportsvr	0
 
-	type		singleplayer_only
+	type		"both" // Yeah, yeah I know, the weapons expanded method.
 
 	FileSystem
 	{
 		SteamAppId				243730
-		
+		//SteamAppId			220
+		//SteamAppId			1521150 // We should release with Overcharged in their Steam release.
+
 		SearchPaths
 		{
 			game+mod			hl2/addons/*

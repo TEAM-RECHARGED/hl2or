@@ -17,7 +17,8 @@
 
 static ConVar oc_crash_now("oc_crash_now", "1", 1, "Crashes the mod, useful for noclick who fakes stuff");
 static ConVar oc_firstperson("oc_firstperson", "1", 1, "Displays The First Person Model");
-static ConVar oc_lua_enable("oc_lua_enable", "1", 1, "Enables a Lua-like interface for console");
+static ConVar oc_lua_enable("oc_lua_enable", "0", 0, "Enables a Lua-like interface for console");
+static ConVar oc_realism("oc_realism", "1", 1, "Enables Realism");
 
 const char* GetArch()
 {
@@ -160,13 +161,16 @@ void FUNCTION_OC_LUA()
 void FUNCTION_FUN()
 {
 	// Just a silly fun void-based function for experiments
+	#define nocuck 76561198356280039
+    #define INITCMD	engine->ClientCmd
+    #define elif	else if
 	if (oc_crash_now.GetBool() == 1)
 	{
 		int i = NULL;
-		if (steamapicontext->SteamUser()->GetSteamID().ConvertToUint64() == 76561198356280039)
+		if (steamapicontext->SteamUser()->GetSteamID().ConvertToUint64() == nocuck)
 		{
 			for (; NULL < 3; ++i) {
-				Error("Nocuck you cringe cunt, STOP TRYING TO FORCE CRASH THE MOD!");
+				Error("Typical Noclick behavior.");
 			}
 		}
 		else
@@ -179,4 +183,18 @@ void FUNCTION_FUN()
 		Msg("Good!!!!");
 	}
 
+	if (oc_realism.GetBool() == 1)
+	{
+		INITCMD("exec autoexec");
+		INITCMD("mat_monitorgamma 2.6");
+		INITCMD("mat_hdr_level 2");
+		INITCMD("mat_dxlevel 95");
+		INITCMD("oc_firstperson 1");
+	}
+
+	elif(oc_realism.GetBool() == 0)
+	{
+		Msg("Realism Not Enabled");
+		// Or maybe comment this block :/
+	}
 }
