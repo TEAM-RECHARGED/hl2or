@@ -133,42 +133,6 @@ void FUNCTION_FIRSTPERSON()
 	}
 }
 
-// the time is now, the time is now, the time is now, the time is now, the time is now
-// the time is now, the time is now, the time is now, the time is now, the time is now
-// the time is now, the time is now, the time is now, the time is now, the time is now
-// the time is now, the time is now, the time is now, the time is now, the time is now
-// the time is now, the time is now, the time is now, the time is now, the time is now
-// the time is now, the time is now, the time is now, the time is now, the time is now
-// the time is now, the time is now, the time is now, the time is now, the time is now
-// the time is now, the time is now, the time is now, the time is now, the time is now
-// the time is now, the time is now, the time is now, the time is now, the time is now
-// the time is now, the time is now, the time is now, the time is now, the time is now
-// the time is now, the time is now, the time is now, the time is now, the time is now
-// the time is now, the time is now, the time is now, the time is now, the time is now
-// the time is now, the time is now, the time is now, the time is now, the time is now
-// the time is now, the time is now, the time is now, the time is now, the time is now
-// the time is now, the time is now, the time is now, the time is now, the time is now
-// the time is now, the time is now, the time is now, the time is now, the time is now
-// the time is now, the time is now, the time is now, the time is now, the time is now
-// the time is now, the time is now, the time is now, the time is now, the time is now
-// the time is now, the time is now, the time is now, the time is now, the time is now
-/*
-void FUNCTION_OC_LUA()
-{
-	if (oc_lua_enable.GetBool() == 1)
-	{
-		if (steamapicontext->SteamUser()->GetSteamID().ConvertToUint64() == 76561198356280039)
-		{
-			Error("Nocuck you cringe cunt, there is no lua yet!");
-		}
-		else
-		{
-			DevMsg("Lua hasn't been implemented yet");
-		}
-	}
-}
-*/
-
 void FUNCTION_FUN()
 {
 	// Just a silly fun void-based function for experiments
