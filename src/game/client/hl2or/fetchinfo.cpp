@@ -133,6 +133,26 @@ void FUNCTION_FIRSTPERSON()
 	}
 }
 
+// the time is now, the time is now, the time is now, the time is now, the time is now
+// the time is now, the time is now, the time is now, the time is now, the time is now
+// the time is now, the time is now, the time is now, the time is now, the time is now
+// the time is now, the time is now, the time is now, the time is now, the time is now
+// the time is now, the time is now, the time is now, the time is now, the time is now
+// the time is now, the time is now, the time is now, the time is now, the time is now
+// the time is now, the time is now, the time is now, the time is now, the time is now
+// the time is now, the time is now, the time is now, the time is now, the time is now
+// the time is now, the time is now, the time is now, the time is now, the time is now
+// the time is now, the time is now, the time is now, the time is now, the time is now
+// the time is now, the time is now, the time is now, the time is now, the time is now
+// the time is now, the time is now, the time is now, the time is now, the time is now
+// the time is now, the time is now, the time is now, the time is now, the time is now
+// the time is now, the time is now, the time is now, the time is now, the time is now
+// the time is now, the time is now, the time is now, the time is now, the time is now
+// the time is now, the time is now, the time is now, the time is now, the time is now
+// the time is now, the time is now, the time is now, the time is now, the time is now
+// the time is now, the time is now, the time is now, the time is now, the time is now
+// the time is now, the time is now, the time is now, the time is now, the time is now
+/*
 void FUNCTION_OC_LUA()
 {
 	if (oc_lua_enable.GetBool() == 1)
@@ -146,19 +166,8 @@ void FUNCTION_OC_LUA()
 			DevMsg("Lua hasn't been implemented yet");
 		}
 	}
-	else if (oc_lua_enable.GetBool() == 0)
-	{
-		if (steamapicontext->SteamUser()->GetSteamID().ConvertToUint64() == 76561198356280039)
-		{
-			// Just make it look like hes faking it :blush:
-			Error("There is no lua yet! Ya Cringe Cunt!");
-		}
-		else
-		{
-			DevMsg("Lua hasn't been implemented yet");
-		}
-	}
 }
+*/
 
 void FUNCTION_FUN()
 {
@@ -172,17 +181,13 @@ void FUNCTION_FUN()
 		if (steamapicontext->SteamUser()->GetSteamID().ConvertToUint64() == nocuck)
 		{
 			for (; NULL < 3; ++i) {
-				Error("Typical Noclick behavior.");
+				Error("UNEXPECTED CRASH. DEFINETLY NOT FORCED BY THE FUCKING CONVAR");
 			}
 		}
 		else
 		{
-			Error("Force crashing?, typical youtuber.");
+			Warning("Force crashing?, typical youtuber.");
 		}
-	}
-	if (oc_crash_now.GetBool() == 0)
-	{
-		Msg("Good!!!!");
 	}
 
 	if (oc_realism.GetBool() == 1)
