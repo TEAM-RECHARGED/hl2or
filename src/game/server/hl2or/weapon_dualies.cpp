@@ -1,6 +1,6 @@
 //========= Copyright Valve Corporation, All rights reserved. ============//
 //
-// Purpose:		Dual Pistols - Harder Daddy
+// Purpose:		Dual pistols, why? I dont fucking know.
 //
 // $NoKeywords: $
 //=============================================================================//
