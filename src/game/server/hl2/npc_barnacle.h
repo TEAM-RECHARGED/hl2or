@@ -26,6 +26,8 @@ class CNPC_Barnacle;
 #define BARNACLE_MIN_PULL_TIME	3.0f
 
 #define NUM_BARNACLE_GIBS	4
+#define NUM_WATER_BARNACLE_GIBS	4
+
 
 #define	SF_BARNACLE_CHEAP_DEATH	(1<<16)	// Don't spawn as many gibs
 #define	SF_BARNACLE_AMBUSH	(1<<17)	// Start with tongue retracted and wait for input.
