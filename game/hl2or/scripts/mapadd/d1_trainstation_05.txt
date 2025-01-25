@@ -1,0 +1,17 @@
+"MapAdd"
+{
+    "1"
+    {
+        "entity"       "weapon_wrench"
+        "x"            "-6381.937988"
+        "y"            "-1060.900513"
+        "z"            "90.175201"
+        "pitch"        "0"
+        "yaw"          "0"
+        "roll"         "0"
+        "Flags"
+        {
+            "spawnflags"    "1"
+        }
+    }
+}
