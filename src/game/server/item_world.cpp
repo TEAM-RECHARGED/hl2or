@@ -98,6 +98,11 @@ BEGIN_DATADESC( CItem )
 	DEFINE_THINKFUNC( Materialize ),
 	DEFINE_THINKFUNC( ComeToRest ),
 
+#ifdef OVERCHARGED
+	DEFINE_KEYFIELD(m_tEzVariant, FIELD_INTEGER, "ezvariant"),
+#endif // OVERCHARGED
+
+
 #if defined( HL2MP ) || defined( TF_DLL )
 	DEFINE_FIELD( m_flNextResetCheckTime, FIELD_TIME ),
 	DEFINE_THINKFUNC( FallThink ),

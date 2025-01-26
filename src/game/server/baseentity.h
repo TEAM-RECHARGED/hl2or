@@ -112,6 +112,7 @@ enum Class_T
 	CLASS_INSECT, 
 	CLASS_ALIEN_PREDATOR,
 	CLASS_ALIEN_PREY,
+	CLASS_RACE_X,
 #endif // OVERCHARGED
 
 	CLASS_CITIZEN_PASSIVE,	
@@ -136,6 +137,22 @@ enum Class_T
 	CLASS_COMBINE_HUNTER,
 
 	NUM_AI_CLASSES
+};
+
+enum EZ_VARIANT // From Entropy Zero
+{
+	EZ_VARIANT_INVALID = -1,
+	EZ_VARIANT_DEFAULT = 0,
+	EZ_VARIANT_XEN,				// Came from Xen or a place connected to Xen. Used by Xen relay grenades.
+	EZ_VARIANT_RAD,				// Covered in blue radioactive goo. NPCs leave behind hazardous puddles when they die.
+	EZ_VARIANT_TEMPORAL,		// Affected by temporal anomalies. Used by temporal crabs.
+	EZ_VARIANT_ARBEIT,			// Property of Arbeit Communications. Used for Arbeit stuff that isn't covered in goo.
+	EZ_VARIANT_BLOODLION,		// Thirsty for blood. Used by the Nova Prospekt antlions from E:Z2 Chapter 1.
+
+	EZ_VARIANT_ATHENAEUM,		// Servants of the Athenaeum.
+	EZ_VARIANT_ASH,				// Residents of the Ashlands.
+
+	EZ_VARIANT_COUNT, // Keep this at the end
 };
 
 #elif defined( HL1_DLL )
@@ -407,6 +424,9 @@ public:
 public:
 	virtual void			SetRefEHandle( const CBaseHandle &handle );
 	virtual const			CBaseHandle& GetRefEHandle() const;
+#ifdef OVERCHARGED
+	virtual void	SetDisplacementImpossible(bool displacementImpossible) {}
+#endif
 
 // IServerUnknown overrides
 	virtual ICollideable	*GetCollideable();

@@ -139,6 +139,10 @@ $Project "Server (HL2OR)"
 			$File "hl2or\npc_pitdrone.h"
 			$File "hl2or\npc_voltigore.h"
 			$File "hl2or\npc_voltigore.cpp"
+			$File "hl2or\npc_xentree.cpp"
+			$File "hl2or\npc_xentree.h"
+			$File "hl2or\npc_baseflora.cpp"
+			$File "hl2or\npc_baseflora.h"
 
 			$Folder "Weapons"
 			{
