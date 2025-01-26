@@ -1161,8 +1161,8 @@ void CHL2_Player::Spawn(void)
 	SetFlashlightPowerDrainScale( 1.0f );
 #ifdef OVERCHARGED
 	// Now we should add a function to enable oc_friendlyfire 1 on spawn, TODO: Test
-//	#define INITCMD engine->ServerCommand
-//	INITCMD("oc_friendlyfire 1")
+	#define INITCMD engine->ServerCommand
+	INITCMD("oc_friendlyfire 1");
 #endif // OVERCHARGED
 
 }
