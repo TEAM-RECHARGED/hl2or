@@ -257,7 +257,6 @@ public:
 	void					SetBodyPitch( float flPitch );
 
 	virtual void			UpdateOnRemove( void );
-
 	static CBasePlayer		*CreatePlayer( const char *className, edict_t *ed );
 
 	virtual void			CreateViewModel( int viewmodelindex = 0 );
@@ -603,6 +602,9 @@ public:
 	void SetPunchAngle( const QAngle &punchAngle );
 
 	virtual void DoMuzzleFlash();
+	void					TakeIgniteDamage(void);
+	bool					m_bOnFireImmolator;
+	void					SetIgniteBegin(void);
 
 	const char *GetLastKnownPlaceName( void ) const	{ return m_szLastPlaceName; }	// return the last nav place name the player occupied
 
@@ -1114,6 +1116,7 @@ private:
 	float					m_flOldPlayerViewOffsetZ;
 
 	bool					m_bPlayerUnderwater;
+	float					m_flIgniteBegin = 0.0f;
 
 	EHANDLE					m_hViewEntity;
 

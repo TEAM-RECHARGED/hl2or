@@ -28,6 +28,7 @@ public:
 	CEntityFlame( void );
 
 	static CEntityFlame	*Create( CBaseEntity *pTarget, bool useHitboxes = true );
+	static CEntityFlame* CreateGreen(CBaseEntity* pTarget, bool useHitboxes = true);
 
 	void	AttachToEntity( CBaseEntity *pTarget );
 	void	SetLifetime( float lifetime );
@@ -58,6 +59,9 @@ protected:
 	CNetworkVar( bool, m_bUseHitboxes );
 	CNetworkVar( int, m_iNumHitboxFires );
 	CNetworkVar( float, m_flHitboxFireScale );
+#ifdef OVERCHARGED
+	CNetworkVar(bool, m_bIsGreen);
+#endif
 
 	CNetworkVar( float, m_flLifetime );
 	bool	m_bPlayingSound;

@@ -333,3 +333,39 @@ void CreateEntityFlame(CBaseEntity *pEnt)
 {
 	CEntityFlame::Create( pEnt );
 }
+
+
+CEntityFlame* CEntityFlame::CreateGreen(CBaseEntity* pTarget, bool useHitboxes)
+{
+	CEntityFlame* pFlame = (CEntityFlame*)CreateEntityByName("entityflame");
+
+	if (pFlame == NULL)
+		return NULL;
+
+	float xSize = pTarget->CollisionProp()->OBBMaxs().x - pTarget->CollisionProp()->OBBMins().x;
+	float ySize = pTarget->CollisionProp()->OBBMaxs().y - pTarget->CollisionProp()->OBBMins().y;
+
+	float size = (xSize + ySize) * 0.5f;
+
+	if (size < 16.0f)
+	{
+		size = 16.0f;
+	}
+
+	UTIL_SetOrigin(pFlame, pTarget->GetAbsOrigin());
+
+	pFlame->m_bIsGreen = true;
+	pFlame->m_flSize = size;
+	pFlame->SetThink(&CEntityFlame::FlameThink);
+	pFlame->SetNextThink(gpGlobals->curtime + 0.1f);
+
+	pFlame->AttachToEntity(pTarget);
+	pFlame->SetLifetime(2.0f);
+
+	//Send to the client even though we don't have a model
+	pFlame->AddEFlags(EFL_FORCE_CHECK_TRANSMIT);
+
+	pFlame->SetUseHitboxes(useHitboxes);
+
+	return pFlame;
+}

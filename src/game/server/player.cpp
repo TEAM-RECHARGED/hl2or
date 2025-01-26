@@ -5482,6 +5482,29 @@ bool CBasePlayer::GetInVehicle( IServerVehicle *pVehicle, int nRole )
 }
 
 
+void CBasePlayer::SetIgniteBegin(void) {
+	m_flIgniteBegin = gpGlobals->curtime;
+	if (!m_Local.m_bOnFireImmolator) {
+		m_Local.m_bOnFireImmolator = true; // only start taking afterburn damage if not already afterburned
+		TakeIgniteDamage();
+	}
+}
+
+void CBasePlayer::TakeIgniteDamage(void) {
+	if (m_Local.m_bOnFireImmolator) {
+		if (gpGlobals->curtime >= m_flLastIgniteTick + sk_afterburn_tick.GetFloat()) {
+			OnTakeDamage(CTakeDamageInfo(this, this, sk_afterburn_damage.GetFloat(), DMG_GENERIC));
+			EmitSound("HL2Player.BurnPain");
+			m_flLastIgniteTick = gpGlobals->curtime;
+			if (gpGlobals->curtime > m_flIgniteBegin + sk_afterburn_duration.GetFloat()) {
+				// take final tick of damage THEN turn off overlay
+				m_flLastIgniteTick = 0.0f;
+				m_Local.m_bOnFireImmolator = false;
+			}
+		}
+	}
+}
+
 //-----------------------------------------------------------------------------
 // Purpose: Remove this player from a vehicle
 //-----------------------------------------------------------------------------

@@ -16,7 +16,7 @@
 #include "te_particlesystem.h"
 #include "particle_parse.h"
 #include "engine/IEngineSound.h"
-#include "../shared/hl2or/npc_cremator_shared.h"
+#include "npc_cremator_shared.h"
 #include "props.h"
 #include "decals.h"
 #include "npc_cremator.h"

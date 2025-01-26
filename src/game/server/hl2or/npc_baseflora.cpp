@@ -37,14 +37,14 @@ void CNPC_BaseFlora::Spawn()
 	SetSolid( SOLID_BBOX );
 	SetMoveType( MOVETYPE_NONE );
 
-	if (m_tEzVariant == EZ_VARIANT_RAD)
-	{
+//	if (m_tEzVariant == EZ_VARIANT_RAD)
+//	{
 		SetBloodColor( BLOOD_COLOR_BLUE );
-	}
-	else
-	{
-		SetBloodColor( BLOOD_COLOR_GREEN );
-	}
+//	}
+//	else
+//	{
+//		SetBloodColor( BLOOD_COLOR_GREEN );
+//	}
 
 	SetRenderColor( 255, 255, 255, 255 );
 
@@ -72,14 +72,14 @@ void CNPC_BaseFlora::Precache()
 {
 	PrecacheModel( STRING( GetModelName() ) );
 
-	if (m_tEzVariant == EZ_VARIANT_RAD)
-	{
+//	if (m_tEzVariant == EZ_VARIANT_RAD)
+//	{
 		PrecacheParticleSystem( "blood_impact_blue_01" );
-	}
-	else
-	{
-		PrecacheParticleSystem( "blood_impact_yellow_01" );
-	}
+//	}
+//	else
+//	{
+//		PrecacheParticleSystem( "blood_impact_yellow_01" );
+//	}
 
 	BaseClass::Precache();
 }

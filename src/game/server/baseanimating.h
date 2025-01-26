@@ -330,6 +330,10 @@ public:
 	inline void	ClearBoneCacheFlags( unsigned short fFlag ) { m_fBoneCacheFlags &= ~fFlag; }
 
 	bool PrefetchSequence( int iSequence );
+#ifdef OVERCHARGED
+	virtual void IgniteLifetimeGreen(float flFlameLifetime);
+	virtual void IgniteGreen(float flFlameLifetime, bool bNPCOnly = true, float flSize = 0.0f, bool bCalledByLevelDesigner = false);
+#endif
 
 private:
 	void LockStudioHdr();

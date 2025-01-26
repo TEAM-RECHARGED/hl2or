@@ -74,7 +74,6 @@ public:
 	audioparams_t			m_audio;
 
 	bool					m_bSlowMovement;
-
 };
 
 #endif // C_PLAYERLOCALDATA_H

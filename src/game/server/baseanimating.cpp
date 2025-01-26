@@ -3595,3 +3595,55 @@ CStudioHdr *CBaseAnimating::OnNewModel()
 
 	return hdr;
 }
+
+void CBaseAnimating::IgniteLifetimeGreen(float flFlameLifetime)
+{
+	if (!IsOnFire())
+		IgniteGreen(30, false, 0.0f, true);
+
+	CEntityFlame* pFlame = dynamic_cast<CEntityFlame*>(GetEffectEntity());
+
+	if (!pFlame)
+		return;
+
+	pFlame->SetLifetime(flFlameLifetime);
+}
+
+void CBaseAnimating::IgniteGreen(float flFlameLifetime, bool bNPCOnly, float flSize, bool bCalledByLevelDesigner)
+{
+	if (IsOnFire())
+		return;
+
+	bool bIsNPC = IsNPC();
+
+	// Right now this prevents stuff we don't want to catch on fire from catching on fire.
+	if (bNPCOnly && bIsNPC == false)
+	{
+		return;
+	}
+
+	if (bIsNPC == true && bCalledByLevelDesigner == false)
+	{
+		CAI_BaseNPC* pNPC = MyNPCPointer();
+
+		if (pNPC && pNPC->AllowedToIgnite() == false)
+			return;
+	}
+
+	CEntityFlame* pFlame = CEntityFlame::CreateGreen(this);
+	if (pFlame)
+	{
+		pFlame->SetLifetime(flFlameLifetime);
+		AddFlag(FL_ONFIREGREEN);
+		AddFlag(FL_ONFIRE);
+
+		SetEffectEntity(pFlame);
+
+		if (flSize > 0.0f)
+		{
+			pFlame->SetSize(flSize);
+		}
+	}
+
+	m_OnIgnite.FireOutput(this, this);
+}
