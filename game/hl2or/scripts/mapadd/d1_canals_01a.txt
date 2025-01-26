@@ -63,4 +63,15 @@
         "roll"         "0"
         "KeyValues"
     }
+    "6"
+    {
+        "entity"       "weapon_wrench"
+        "x"            "941.742859"
+        "y"            "3183.980225"
+        "z"            "-6.562790"
+        "pitch"        "0"
+        "yaw"          "0"
+        "roll"         "0"
+        "KeyValues"
+    }
 }

@@ -7,6 +7,13 @@
 
 	type		"both" // Yeah, yeah I know, the weapons expanded method.
 
+	GameData	"bin/halflife2.fgd"
+	GameData	"bin/base.fgd"
+	GameData	"fgd/hls.fgd"
+	GameData	"fgd/npc_crabsynth.fgd"
+	GameData	"fgd/npc_pitdrone.fgd"
+	GameData	"fgd/npc_voltigore.fgd"
+
 	FileSystem
 	{
 		SteamAppId				243730

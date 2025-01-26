@@ -1,68 +1,86 @@
-// Wrench
 
-WeaponData
+weapondata
 {
-	// Weapon data is loaded by both the Game and Client DLLs.
-	"printname"	"Wrench"
-	"viewmodel"				"models/weapons/v_wrench.mdl"
-	"playermodel"			"models/weapons/w_wrench.mdl"
-	"anim_prefix"			"crowbar"
-	"bucket"				"0"
-	"bucket_position"		"0"
 
-	"clip_size"				"-1"
-	"primary_ammo"			"None"
-	"secondary_ammo"		"None"
+	printname "Wrench"
+	viewmodel models/weapons/v_wrench.mdl
+	playermodel models/weapons/w_wrench.mdl
+	anim_prefix crowbar
 
-	"weight"				"0"
-	"item_flags"			"0"
+	bucket 0
+	bucket_position 0
 
-	// Sounds for the weapon. There is a max of 16 sounds per category (i.e. max 16 "single_shot" sounds)
-	SoundData
+	primary_ammo None
+	clip_size -1
+
+	secondary_ammo None
+
+	weight 0
+	item_flags 0
+
+	sounddata
 	{
-		"single_shot"		"Weapon_Crowbar.Single"
-		"melee_hit"			"Weapon_Crowbar.Melee_Hit"
-		"melee_hit_world"	"Weapon_Crowbar.Melee_HitWorld"
+
+		single_shot Weapon_Crowbar.Single
+		melee_hit Weapon_Crowbar.Melee_Hit
+		melee_hit_world Weapon_Crowbar.Melee_HitWorld
+
 	}
 
-	// Weapon Sprite data is loaded by the Client DLL.
-	TextureData
+	texturedata
 	{
-		"weapon"
+
+		weapon
 		{
-				"font"		"WeaponIcons"
-				"character"	"c"
+
+			font weaponicons
+			character c
+
 		}
-		"weapon_s"
-		{	
-				"font"		"WeaponIconsSelected"
-				"character"	"c"
-		}
-		"ammo"
+
+		weapon_s
 		{
-				"font"		"WeaponIcons"
-				"character"	"c"
+
+			font weaponiconsselected
+			character c
+
 		}
-		"ammo2"
+
+		ammo
 		{
-			"file"		"sprites/640hud7"
-			"x"			"48"
-			"y"			"72"
-			"width"		"24"
-			"height"	"24"
+
+			font weaponicons
+			character c
+
 		}
-		"crosshair"
+
+		ammo2
 		{
-				"font"		"Crosshairs"
-				"character"	"Q"
+
+			file sprites/640hud7
+			x 48
+			y 72
+			width 24
+			height 24
+
 		}
-		"autoaim"
+
+		crosshair
 		{
-			"file"		"sprites/crosshairs"
-			"x"			"0"
-			"y"			"48"
-			"width"		"24"
-			"height"	"24"
+
+			font crosshairs
+			character Q
+
 		}
+
+		autoaim
+		{
+
+			font crosshairs
+			character Q
+
+		}
+
 	}
+
 }
