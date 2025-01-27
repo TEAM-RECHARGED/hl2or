@@ -55,6 +55,10 @@
 #include "portal_player.h"
 #endif // PORTAL
 
+#ifdef CLIENT_DLL
+#include "../client/iclientmode.h"
+#endif // CLIENT_DLL
+
 // memdbgon must be the last include file in a .cpp file!!!
 #include "tier0/memdbgon.h"
 

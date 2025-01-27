@@ -10,6 +10,7 @@
 	GameData	"bin/halflife2.fgd"
 	GameData	"bin/base.fgd"
 	GameData	"fgd/recharged.fgd"
+	GameData	"fgd/houndeyetest.fgd"
 
 	FileSystem
 	{

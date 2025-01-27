@@ -510,6 +510,17 @@ bool ClientModeShared::ShouldBlackoutAroundHUD()
 	return enginevgui->IsGameUIVisible();
 }
 
+bool ClientModeShared::OverrideViewAngles(void)
+{
+	C_BaseCombatWeapon* pWeapon = GetActiveWeapon();
+	if (pWeapon)
+	{
+		// adnan
+		return pWeapon->OverrideViewAngles();
+	}
+	return false;
+}
+
 
 //-----------------------------------------------------------------------------
 // Purpose: Allows the client mode to override mouse control stuff in sourcevr

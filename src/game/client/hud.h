@@ -164,6 +164,9 @@ public:
 public:
 
 	int							m_iKeyBits;
+#ifdef OVERCHARGED
+	bool						m_bSkipClear;
+#endif // OVERCHARGED
 #ifndef _XBOX
 	float						m_flMouseSensitivity;
 	float						m_flMouseSensitivityFactor;
