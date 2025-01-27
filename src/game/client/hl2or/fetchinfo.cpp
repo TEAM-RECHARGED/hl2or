@@ -11,11 +11,6 @@
 #include "clientsteamcontext.h"
 #endif // CLIENT_DLL
 
-//#define OVR_COMMAND( name, description ) \
-   static void name( const CCommand &args ); \
-   static ConCommand name##_command( #name, name, description ); \
-   static void name( const CCommand &args )
-
 // Final include, required for debugging.
 #include "tier0/memdbgon.h"
 
