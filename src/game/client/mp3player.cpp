@@ -55,10 +55,10 @@ vgui::Panel *GetSDKRootPanel();
 #define MP3_SETTINGS_FILE	"resource/mp3settings.txt"
 
 #ifdef _WIN32
-#define MP3_DEFAULT_MP3DIR "c:\\my music"
-#elif LINUX
-#define MP3_DEFAULT_MP3DIR "~/music/" // Enable Linux finder
-#elif OSX || BSD || ANDROID
+#define MP3_DEFAULT_MP3DIR "c:\\"
+//#elif LINUX
+//#define MP3_DEFAULT_MP3DIR "~/music/" // Enable Linux finder
+#elif OSX || BSD || ANDROID || LINUX || POSIX
 #define MP3_DEFAULT_MP3DIR "/" // MacOS & BSD should default to /
 #endif
 

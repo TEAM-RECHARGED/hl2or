@@ -40,7 +40,8 @@ public:
 
 	CNetworkVar( int,	m_iHideHUD );		// bitfields containing sections of the HUD to hide
 	CNetworkVar( float, m_flFOVRate );		// rate at which the FOV changes (defaults to 0)
-		
+	CNetworkVar(bool, m_bOnFireImmolator);
+
 	Vector				m_vecOverViewpoint;			// Viewpoint overriding the real player's viewpoint
 	
 	// Fully ducked

@@ -132,7 +132,6 @@ $Project "Server (HL2OR)"
 			$File "hl2or\mapadd.h"
 			$File "hl2or\npc_cremator.cpp"
 			$File "hl2or\npc_cremator.h"
-			$File "hl2or\npc_xenlighter.cpp"
 			$File "hl2or\grenade_energy.cpp"
 			$File "hl2or\npc_mortarsynth.cpp"
 			$File "hl2or\npc_pitdrone.cpp"
@@ -177,6 +176,13 @@ $Project "Server (HL2OR)"
 		{
 			$File "episodic\weapon_oldmanharpoon.cpp"
 			$File "episodic\weapon_hopwire.cpp"
+		}
+
+		$Folder "HoundEye Test by theKlaxon"
+		{
+			$File	"houneyetest\npc_houndeye.cpp"
+			$File	"houneyetest\point_houndeye.cpp"
+			$File	"houneyetest\point_houndeye_manager.cpp"
 		}
 
 		$Folder	"HL2 DLL"

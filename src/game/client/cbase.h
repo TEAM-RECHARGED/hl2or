@@ -41,7 +41,9 @@ struct studiohdr_t;
 // This is a precompiled header.  Include a bunch of common stuff.
 // This is kind of ugly in that it adds a bunch of dependency where it isn't needed.
 // But on balance, the compile time is much lower (even incrementally) once the precompiled
-// headers contain these headers.
+// headers contain these headers. - VALVe
+// GuestSneezePlayZ: Why dont we use the same cbase.h for every project? I mean the server has GAME_DLL and other projects has their respected
+// DLL Definitions which means we can use the same cbase.h
 #include "precache_register.h"
 #include "c_basecombatweapon.h"
 #include "c_basecombatcharacter.h"

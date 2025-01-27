@@ -107,7 +107,7 @@ public:
 	void	SearchThink(void);
 	void	AutoSearchThink(void);
 	void	DeathThink(void);
-	void	PrimaryAttack(trace_t& tr, int nDamageType, CBaseCombatCharacter* pOperator);
+	void	PrimaryAttack(trace_t& tr, int nDamageType, CAI_BaseNPC* pOperator);
 
 	// Inputs
 	void	InputToggle(inputdata_t& inputdata);
@@ -252,7 +252,7 @@ CNPC_LIGHTER::~CNPC_LIGHTER(void)
 {
 }
 
-void CNPC_LIGHTER::PrimaryAttack(trace_t& tr, int nDamageType, CBaseCombatCharacter* pOperator)
+void CNPC_LIGHTER::PrimaryAttack(trace_t& tr, int nDamageType, CAI_BaseNPC* pOperator)
 {
 	if ((gpGlobals->curtime - m_flLastAttackTime) > 0.5f)
 	{

@@ -9,10 +9,7 @@
 
 	GameData	"bin/halflife2.fgd"
 	GameData	"bin/base.fgd"
-	GameData	"fgd/hls.fgd"
-	GameData	"fgd/npc_crabsynth.fgd"
-	GameData	"fgd/npc_pitdrone.fgd"
-	GameData	"fgd/npc_voltigore.fgd"
+	GameData	"fgd/recharged.fgd"
 
 	FileSystem
 	{

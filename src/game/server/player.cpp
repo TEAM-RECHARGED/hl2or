@@ -182,6 +182,10 @@ ConVar	sk_player_chest( "sk_player_chest","1" );
 ConVar	sk_player_stomach( "sk_player_stomach","1" );
 ConVar	sk_player_arm( "sk_player_arm","1" );
 ConVar	sk_player_leg( "sk_player_leg","1" );
+// GuestSneezePlayZ: OVR Addition
+ConVar sk_afterburn_duration("sk_afterburn_duration", "5");
+ConVar sk_afterburn_tick("sk_afterburn_tick", "0.5");
+ConVar sk_afterburn_damage("sk_afterburn_damage", "2");
 
 //ConVar	player_usercommand_timeout( "player_usercommand_timeout", "10", 0, "After this many seconds without a usercommand from a player, the client is kicked." );
 #ifdef _DEBUG
@@ -2862,7 +2866,6 @@ float CBasePlayer::GetHeldObjectMass( IPhysicsObject *pHeldObject )
 {
 	return 0;
 }
-
 
 //-----------------------------------------------------------------------------
 // Purpose:	Server side of jumping rules.  Most jumping logic is already

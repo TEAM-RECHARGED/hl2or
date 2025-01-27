@@ -1,6 +1,0 @@
-@NpcClass base(BaseNPC) 
-	appliesto(EP1, EP2, HL2, P1)  
-	autovis(Entities, NPCs, Combine, Voltigore)
-	studio("models/voltigore.mdl") = npc_voltigore: "Voltigore"
-	[
-	]

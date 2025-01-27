@@ -6,6 +6,7 @@
 //=============================================================================//
 
 #include "cbase.h"
+/*
 #include "game.h"
 #include "ai_default.h"
 #include "ai_schedule.h"
@@ -733,15 +734,15 @@ void CNPC_Houndeye::RunTask ( const Task_t *pTask )
 				life = 0.1;
 			}
 
-		/*	MessageBegin( MSG_PAS, SVC_TEMPENTITY, GetAbsOrigin() );
-				WRITE_BYTE(  TE_IMPLOSION);
-				WRITE_COORD( GetAbsOrigin().x);
-				WRITE_COORD( GetAbsOrigin().y);
-				WRITE_COORD( GetAbsOrigin().z + 16);
-				WRITE_BYTE( 50 * life + 100);  // radius
-				WRITE_BYTE( pev->frame / 25.0 ); // count
-				WRITE_BYTE( life * 10 ); // life
-			MessageEnd();*/
+		//MessageBegin( MSG_PAS, SVC_TEMPENTITY, GetAbsOrigin() );
+		//		WRITE_BYTE(  TE_IMPLOSION);
+		//		WRITE_COORD( GetAbsOrigin().x);
+		//		WRITE_COORD( GetAbsOrigin().y);
+		//		WRITE_COORD( GetAbsOrigin().z + 16);
+		//		WRITE_BYTE( 50 * life + 100);  // radius
+		//		WRITE_BYTE( pev->frame / 25.0 ); // count
+		//		WRITE_BYTE( life * 10 ); // life
+		//	MessageEnd();
 			
 			if ( IsSequenceFinished() )
 			{
@@ -1285,3 +1286,4 @@ AI_BEGIN_CUSTOM_NPC( monster_houndeye, CNPC_Houndeye )
 	)
 
 AI_END_CUSTOM_NPC()
+*/

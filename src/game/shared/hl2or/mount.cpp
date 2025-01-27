@@ -23,6 +23,11 @@
 // Final include, required for debugging.
 #include "tier0/memdbgon.h"
 
+// Lets add a ConVar-system which mounts the games,
+// through the console!
+//static ConVar oc_mount("oc_mount", "1", 1, "Crashes the mod, useful for noclick who fakes stuff");
+// ... But later.
+
 void AddEP2(const char* path)
 {
 	filesystem->AddSearchPath(CFmtStr("%s/ep2/ep2_pak.vpk", path), "GAME", PATH_ADD_TO_HEAD);
@@ -105,8 +110,6 @@ void MountExtraContent()
 	KeyValuesAD gameinfo("GameInfo");
 	gameinfo->LoadFromFile(filesystem, "gameinfo.txt");
 #endif // OVERCHARGED
-
-	
 
 	if (steamapicontext->SteamApps()->BIsAppInstalled(243730))
 	{

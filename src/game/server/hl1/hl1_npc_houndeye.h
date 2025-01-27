@@ -5,6 +5,7 @@
 // $NoKeywords: $
 //
 //=============================================================================//
+/*
 #ifndef NPC_HOUNDEYE_H
 #define NPC_HOUNDEYE_H
 #pragma once
@@ -70,4 +71,4 @@ private:
 	Vector	m_vecPackCenter; // the center of the pack. The leader maintains this by averaging the origins of all pack members.
 };
 
-#endif // NPC_HOUNDEYE_H
+#endif // NPC_HOUNDEYE_H*/

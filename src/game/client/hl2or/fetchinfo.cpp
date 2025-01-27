@@ -11,6 +11,10 @@
 #include "clientsteamcontext.h"
 #endif // CLIENT_DLL
 
+//#define OVR_COMMAND( name, description ) \
+   static void name( const CCommand &args ); \
+   static ConCommand name##_command( #name, name, description ); \
+   static void name( const CCommand &args )
 
 // Final include, required for debugging.
 #include "tier0/memdbgon.h"
@@ -112,39 +116,23 @@ CON_COMMAND_F(neofetch, "Print info about engine", FCVAR_NONE)
 	ConColorMsg(orange, "                      @@@@@@           \n");
 	ConColorMsg(orange, "                     @@@@@@            \n");
 	ConColorMsg(orange, "                       @@@             \n\n");
-	Msg("Engine Version: Source 2013 (AetherSrc Engine)\n");
-	Msg("Platform: %s\n", GetPlatform());
-	Msg("Arch: %s\n", GetArch());
-	Msg("Game: Half-Life 2 ReCharged");
+	Msg("Engine Version: Source 2013\n");
+	Msg("OS/Platform: %s\n", GetPlatform());
+	Msg("Architecture: %s\n", GetArch());
+	Msg("Game: Half-Life 2: ReCharged");
 }
 
-
-void FUNCTION_FIRSTPERSON()
+void FUNCTION_EVERYTHING()
 {
-	if (oc_firstperson.GetBool() == 1)
-	{
-		DevMsg("Firstperson has been enabled!");
-		engine->ClientCmd("cl_first_person_uses_world_model 1");
-	}
-	else if (oc_firstperson.GetBool() == 0)
-	{
-		DevMsg("Firstperson has been disabled!");
-		engine->ClientCmd("cl_first_person_uses_world_model 0");
-	}
-}
-
-void FUNCTION_FUN()
-{
-	// Just a silly fun void-based function for experiments
 	#define nocuck 76561198356280039
     #define INITCMD	engine->ClientCmd
     #define elif	else if
-	if (oc_crash_now.GetBool() == 1)
+	if (oc_crash_now.GetFloat() == 1)
 	{
-		int i = NULL;
+		int i = 0;
 		if (steamapicontext->SteamUser()->GetSteamID().ConvertToUint64() == nocuck)
 		{
-			for (; NULL < 5; ++i) {
+			for (; i < 5; ++i) {
 				Error("UNEXPECTED CRASH. DEFINETLY NOT FORCED BY THE FUCKING CONVAR");
 			}
 		}
@@ -154,7 +142,7 @@ void FUNCTION_FUN()
 		}
 	}
 
-	if (oc_realism.GetBool() == 1)
+	if (oc_realism.GetFloat() == 1)
 	{
 		INITCMD("exec autoexec");
 		INITCMD("mat_monitorgamma 2.6");
@@ -164,8 +152,19 @@ void FUNCTION_FUN()
 		INITCMD("oc_friendlyfire 1");
 	}
 
-	if (oc_friendlyfire.GetBool() == 1)
+	if (oc_friendlyfire.GetFloat() == 1)
 	{
 		INITCMD("ent_create ai_relationship subject !player target * disposition 1 rank 99 reciprocal 0 startactive 1");
+	}
+
+	if (oc_firstperson.GetFloat() == 1)
+	{
+		DevMsg("Firstperson has been enabled!");
+		engine->ClientCmd("cl_first_person_uses_world_model 1");
+	}
+	else // if (oc_firstperson.GetFloat() == 0)
+	{
+		DevMsg("Firstperson has been disabled!");
+		engine->ClientCmd("cl_first_person_uses_world_model 0");
 	}
 }

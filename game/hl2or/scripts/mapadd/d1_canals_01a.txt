@@ -21,7 +21,7 @@
     }
     "2"
     {
-        "entity"       "monster_houndeye"
+        "entity"       "npc_houndeye"
         "x"            "584.648743"
         "y"            "5382.794434"
         "z"            "-8.938187"
@@ -32,7 +32,7 @@
     }
     "3"
     {
-        "entity"       "monster_houndeye"
+        "entity"       "npc_houndeye"
         "x"            "-3046.568604"
         "y"            "8655.750977"
         "z"            "34.406139"
@@ -43,7 +43,7 @@
     }
     "4"
     {
-        "entity"       "monster_houndeye"
+        "entity"       "npc_houndeye"
         "x"            "-114.407738"
         "y"            "-1130.192017"
         "z"            "-1007.968750"
@@ -54,7 +54,7 @@
     }
     "5"
     {
-        "entity"       "monster_houndeye"
+        "entity"       "npc_houndeye"
         "x"            "-255.968750"
         "y"            "-960.697571"
         "z"            "-1007.968750"
