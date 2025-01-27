@@ -437,10 +437,6 @@ public:
 	CUserCmd		*m_pCurrentCommand;
 
 	// Movement constraints
-#ifdef OVERCHARGED
-	QAngle		m_vecUseAngles;
-#endif // OVERCHARGED
-
 	EHANDLE			m_hConstraintEntity;
 	Vector			m_vecConstraintCenter;
 	float			m_flConstraintRadius;

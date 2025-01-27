@@ -421,7 +421,6 @@ BEGIN_DATADESC( CBasePlayer )
 	DEFINE_FIELD( m_flOldPlayerViewOffsetZ, FIELD_FLOAT ),
 	DEFINE_FIELD( m_bPlayerUnderwater, FIELD_BOOLEAN ),
 	DEFINE_FIELD( m_hViewEntity, FIELD_EHANDLE ),
-	DEFINE_FIELD(m_vecUseAngles, FIELD_VECTOR),
 
 	DEFINE_FIELD( m_hConstraintEntity, FIELD_EHANDLE ),
 	DEFINE_FIELD( m_vecConstraintCenter, FIELD_VECTOR ),
@@ -7985,7 +7984,6 @@ void SendProxy_CropFlagsToPlayerFlagBitsLength( const SendProp *pProp, const voi
 #else
 		SendPropVector		( SENDINFO( m_vecBaseVelocity ), 20, 0, -1000, 1000 ),
 #endif
-		SendPropVector		(SENDINFO(m_vecUseAngles), 0, SPROP_NOSCALE),
 
 		SendPropEHandle		( SENDINFO( m_hConstraintEntity)),
 		SendPropVector		( SENDINFO( m_vecConstraintCenter), 0, SPROP_NOSCALE ),

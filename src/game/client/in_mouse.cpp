@@ -685,18 +685,9 @@ void CInput::MouseMove( CUserCmd *cmd )
 		// Re-center the mouse.
 		ResetMouse();
 	}
-#ifdef OVERCHARGED
-	// adnan
-	// only set the new viewangles if we're not supposed to override them
-	if (!(g_pClientMode->OverrideViewAngles()))
-	{
-#endif
-		// Store out the new viewangles.
-		engine->SetViewAngles(viewangles);
-#ifdef OVERCHARGED
-	}
-	// end adnan
-#endif
+
+	// Store out the new viewangles.
+	engine->SetViewAngles( viewangles );
 }
 
 //-----------------------------------------------------------------------------

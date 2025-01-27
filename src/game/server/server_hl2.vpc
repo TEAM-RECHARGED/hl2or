@@ -142,7 +142,6 @@ $Project "Server (HL2OR)"
 			$File "hl2or\npc_xentree.h"
 			$File "hl2or\npc_baseflora.cpp"
 			$File "hl2or\npc_baseflora.h"
-			$File "../shared/hl2or/weapon_physgun.cpp"
 
 			$Folder "Weapons"
 			{
