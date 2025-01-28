@@ -67,10 +67,6 @@ public:
 	}
 
 	virtual int GetDeathMessageStartHeight( void );
-#ifdef OVERCHARGED
-	void StartMainMenuVideo();
-	void StopMainMenuVideo();
-#endif // OVERCHARGED
 
 
 	// virtual void ChatInputPosition( int *x, int *y );
