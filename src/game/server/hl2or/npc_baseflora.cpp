@@ -72,15 +72,7 @@ void CNPC_BaseFlora::Spawn()
 void CNPC_BaseFlora::Precache()
 {
 	PrecacheModel( STRING( GetModelName() ) );
-
-//	if (m_tEzVariant == EZ_VARIANT_RAD)
-//	{
-		PrecacheParticleSystem( "blood_impact_blue_01" );
-//	}
-//	else
-//	{
-//		PrecacheParticleSystem( "blood_impact_yellow_01" );
-//	}
+	PrecacheParticleSystem( "blood_impact_blue_01" );
 
 	BaseClass::Precache();
 }
