@@ -5,17 +5,18 @@
 // $NoKeywords: $
 //
 //=============================================================================//
-/*
-#ifndef NPC_HOUNDEYE_H
-#define NPC_HOUNDEYE_H
+
+#ifndef NPC_HL1_HOUNDEYE_H
+#define NPC_HL1_HOUNDEYE_H
 #pragma once
 
 #include "hl1_ai_basenpc.h"
-#define	HOUNDEYE_MAX_ATTACK_RADIUS		384
+#define	HL1_HOUNDEYE_MAX_ATTACK_RADIUS		384
+#define HOUNDEYE_MAX_ATTACK_RADIUS			HL1_HOUNDEYE_MAX_ATTACK_RADIUS
 
-class CNPC_Houndeye : public CHL1BaseNPC
+class CNPC_HL1_Houndeye : public CHL1BaseNPC
 {
-	DECLARE_CLASS( CNPC_Houndeye, CHL1BaseNPC );
+	DECLARE_CLASS(CNPC_HL1_Houndeye, CHL1BaseNPC );
 	
 public:
 	void Spawn( void );
@@ -71,4 +72,4 @@ private:
 	Vector	m_vecPackCenter; // the center of the pack. The leader maintains this by averaging the origins of all pack members.
 };
 
-#endif // NPC_HOUNDEYE_H*/
+#endif // NPC_HL1_HOUNDEYE_H

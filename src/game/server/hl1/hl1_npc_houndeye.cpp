@@ -6,7 +6,6 @@
 //=============================================================================//
 
 #include "cbase.h"
-/*
 #include "game.h"
 #include "ai_default.h"
 #include "ai_schedule.h"
@@ -53,14 +52,14 @@ static int s_iSquadIndex = 0;
 #define		HOUND_AE_HOPBACK		6
 #define		HOUND_AE_CLOSE_EYE		7
 
-BEGIN_DATADESC( CNPC_Houndeye )
+BEGIN_DATADESC(CNPC_HL1_Houndeye)
 	DEFINE_FIELD( m_iSpriteTexture, FIELD_INTEGER ),
 	DEFINE_FIELD( m_fAsleep, FIELD_BOOLEAN ),
 	DEFINE_FIELD( m_fDontBlink, FIELD_BOOLEAN ),
 	DEFINE_FIELD( m_vecPackCenter, FIELD_POSITION_VECTOR ),
 END_DATADESC()
 
-LINK_ENTITY_TO_CLASS( monster_houndeye, CNPC_Houndeye );
+LINK_ENTITY_TO_CLASS( monster_houndeye, CNPC_HL1_Houndeye);
 
 //=========================================================
 // monster-specific tasks
@@ -103,7 +102,7 @@ enum HoundEyeSquadSlots
 //=========================================================
 // Spawn
 //=========================================================
-void CNPC_Houndeye::Spawn()
+void CNPC_HL1_Houndeye::Spawn()
 {
 	Precache( );
 	
@@ -136,7 +135,7 @@ void CNPC_Houndeye::Spawn()
 //=========================================================
 // Precache - precaches all resources this monster needs
 //=========================================================
-void CNPC_Houndeye::Precache()
+void CNPC_HL1_Houndeye::Precache()
 {
 	PrecacheModel("models/houndeye.mdl");
 
@@ -155,14 +154,14 @@ void CNPC_Houndeye::Precache()
 	BaseClass::Precache();
 }	
 
-void CNPC_Houndeye::Event_Killed( const CTakeDamageInfo &info )
+void CNPC_HL1_Houndeye::Event_Killed( const CTakeDamageInfo &info )
 {
 	// Close the eye to make death more obvious
 	m_nSkin = 1;
 	BaseClass::Event_Killed( info );
 }
 
-int CNPC_Houndeye::RangeAttack1Conditions ( float flDot, float flDist )
+int CNPC_HL1_Houndeye::RangeAttack1Conditions ( float flDot, float flDist )
 {
 	// I'm not allowed to attack if standing in another hound eye 
 	// (note houndeyes allowed to interpenetrate)
@@ -189,7 +188,7 @@ int CNPC_Houndeye::RangeAttack1Conditions ( float flDot, float flDist )
 	{
 		return( COND_NONE );
 	}
-	if (flDist > ( HOUNDEYE_MAX_ATTACK_RADIUS * 0.5 ))
+	if (flDist > ( HL1_HOUNDEYE_MAX_ATTACK_RADIUS * 0.5 ))
 	{
 		return COND_TOO_FAR_TO_ATTACK;
 	}
@@ -203,7 +202,7 @@ int CNPC_Houndeye::RangeAttack1Conditions ( float flDot, float flDist )
 //=========================================================
 // IdleSound
 //=========================================================
-void CNPC_Houndeye::IdleSound ( void )
+void CNPC_HL1_Houndeye::IdleSound ( void )
 {
 	CPASAttenuationFilter filter( this );
 	EmitSound( filter, entindex(), "HoundEye.Idle" );	
@@ -212,7 +211,7 @@ void CNPC_Houndeye::IdleSound ( void )
 //=========================================================
 // IdleSound
 //=========================================================
-void CNPC_Houndeye::WarmUpSound ( void )
+void CNPC_HL1_Houndeye::WarmUpSound ( void )
 {
 	CPASAttenuationFilter filter( this );
 	EmitSound( filter, entindex(),"HoundEye.Warn" );	
@@ -221,7 +220,7 @@ void CNPC_Houndeye::WarmUpSound ( void )
 //=========================================================
 // WarnSound 
 //=========================================================
-void CNPC_Houndeye::WarnSound ( void )
+void CNPC_HL1_Houndeye::WarnSound ( void )
 {
 	CPASAttenuationFilter filter( this );
 	EmitSound( filter, entindex(), "HoundEye.Hunt" );	
@@ -230,7 +229,7 @@ void CNPC_Houndeye::WarnSound ( void )
 //=========================================================
 // AlertSound 
 //=========================================================
-void CNPC_Houndeye::AlertSound ( void )
+void CNPC_HL1_Houndeye::AlertSound ( void )
 {
 
 	if ( m_pSquad && !m_pSquad->IsLeader( this ) )
@@ -243,7 +242,7 @@ void CNPC_Houndeye::AlertSound ( void )
 //=========================================================
 // DeathSound 
 //=========================================================
-void CNPC_Houndeye::DeathSound( const CTakeDamageInfo &info )
+void CNPC_HL1_Houndeye::DeathSound( const CTakeDamageInfo &info )
 {
 	CPASAttenuationFilter filter( this );
 	EmitSound( filter, entindex(), "HoundEye.Die" );	
@@ -252,7 +251,7 @@ void CNPC_Houndeye::DeathSound( const CTakeDamageInfo &info )
 //=========================================================
 // PainSound 
 //=========================================================
-void CNPC_Houndeye::PainSound ( const CTakeDamageInfo &info )
+void CNPC_HL1_Houndeye::PainSound ( const CTakeDamageInfo &info )
 {
 	CPASAttenuationFilter filter( this );
 	EmitSound( filter, entindex(), "HoundEye.Pain" );	
@@ -262,7 +261,7 @@ void CNPC_Houndeye::PainSound ( const CTakeDamageInfo &info )
 // MaxYawSpeed - allows each sequence to have a different
 // turn rate associated with it.
 //=========================================================
-float CNPC_Houndeye::MaxYawSpeed  ( void )
+float CNPC_HL1_Houndeye::MaxYawSpeed  ( void )
 {
 	int flYS;
 
@@ -295,7 +294,7 @@ float CNPC_Houndeye::MaxYawSpeed  ( void )
 // Classify - indicates this monster's place in the 
 // relationship table.
 //=========================================================
-Class_T	CNPC_Houndeye::Classify ( void )
+Class_T	CNPC_HL1_Houndeye::Classify ( void )
 {
 	return CLASS_ALIEN_MONSTER;
 }
@@ -304,7 +303,7 @@ Class_T	CNPC_Houndeye::Classify ( void )
 // HandleAnimEvent - catches the monster-specific messages
 // that occur when tagged animation frames are played.
 //=========================================================
-void CNPC_Houndeye::HandleAnimEvent( animevent_t *pEvent )
+void CNPC_HL1_Houndeye::HandleAnimEvent( animevent_t *pEvent )
 {
 	switch ( pEvent->event )
 	{
@@ -367,7 +366,7 @@ void CNPC_Houndeye::HandleAnimEvent( animevent_t *pEvent )
 //=========================================================
 // SonicAttack
 //=========================================================
-void CNPC_Houndeye::SonicAttack ( void )
+void CNPC_HL1_Houndeye::SonicAttack ( void )
 {
 	float		flAdjustedDamage;
 	float		flDist;
@@ -379,7 +378,7 @@ void CNPC_Houndeye::SonicAttack ( void )
 	te->BeamRingPoint( filter2, 0.0, 
 		GetAbsOrigin(),							//origin
 		16,										//start radius
-		HOUNDEYE_MAX_ATTACK_RADIUS,//end radius
+		HL1_HOUNDEYE_MAX_ATTACK_RADIUS,//end radius
 		m_iSpriteTexture,						//texture
 		0,										//halo index
 		0,										//start frame
@@ -399,7 +398,7 @@ void CNPC_Houndeye::SonicAttack ( void )
 	te->BeamRingPoint( filter3, 0.0, 
 		GetAbsOrigin(),									//origin
 		16,												//start radius
-		HOUNDEYE_MAX_ATTACK_RADIUS / 2,											//end radius
+		HL1_HOUNDEYE_MAX_ATTACK_RADIUS / 2,											//end radius
 		m_iSpriteTexture,								//texture
 		0,												//halo index
 		0,												//start frame
@@ -417,7 +416,7 @@ void CNPC_Houndeye::SonicAttack ( void )
 	
 	CBaseEntity *pEntity = NULL;
 	// iterate on all entities in the vicinity.
-	while ((pEntity = gEntList.FindEntityInSphere( pEntity, GetAbsOrigin(), HOUNDEYE_MAX_ATTACK_RADIUS )) != NULL)
+	while ((pEntity = gEntList.FindEntityInSphere( pEntity, GetAbsOrigin(), HL1_HOUNDEYE_MAX_ATTACK_RADIUS )) != NULL)
 	{
 		if ( pEntity->m_takedamage  != DAMAGE_NO )
 		{
@@ -441,7 +440,7 @@ void CNPC_Houndeye::SonicAttack ( void )
 
 				flDist = (pEntity->WorldSpaceCenter() - GetAbsOrigin()).Length();
 
-				flAdjustedDamage -= ( flDist / HOUNDEYE_MAX_ATTACK_RADIUS ) * flAdjustedDamage;
+				flAdjustedDamage -= ( flDist / HL1_HOUNDEYE_MAX_ATTACK_RADIUS ) * flAdjustedDamage;
 
 				if ( !FVisible( pEntity ) )
 				{
@@ -500,7 +499,7 @@ void CNPC_Houndeye::SonicAttack ( void )
 // WriteBeamColor - writes a color vector to the network 
 // based on the size of the group. 
 //=========================================================
-Vector CNPC_Houndeye::WriteBeamColor ( void )
+Vector CNPC_HL1_Houndeye::WriteBeamColor ( void )
 {
 	BYTE	bRed, bGreen, bBlue;
 
@@ -549,7 +548,7 @@ Vector CNPC_Houndeye::WriteBeamColor ( void )
 	return Vector ( bRed, bGreen, bBlue );
 }
 
-bool CNPC_Houndeye::ShouldGoToIdleState( void )
+bool CNPC_HL1_Houndeye::ShouldGoToIdleState( void )
 {
 	if ( m_pSquad )
 	{
@@ -566,7 +565,7 @@ bool CNPC_Houndeye::ShouldGoToIdleState( void )
 	return true;
 }
 
-bool CNPC_Houndeye::FValidateHintType ( CAI_Hint *pHint )
+bool CNPC_HL1_Houndeye::FValidateHintType ( CAI_Hint *pHint )
 {
 	switch( pHint->HintType() )
 	{
@@ -592,7 +591,7 @@ bool CNPC_Houndeye::FValidateHintType ( CAI_Hint *pHint )
 //=========================================================
 // SetActivity 
 //=========================================================
-void CNPC_Houndeye::SetActivity ( Activity NewActivity )
+void CNPC_HL1_Houndeye::SetActivity ( Activity NewActivity )
 {
 	int	iSequence;
 
@@ -626,7 +625,7 @@ void CNPC_Houndeye::SetActivity ( Activity NewActivity )
 //=========================================================
 // start task
 //=========================================================
-void CNPC_Houndeye::StartTask ( const Task_t *pTask )
+void CNPC_HL1_Houndeye::StartTask ( const Task_t *pTask )
 {
 	switch ( pTask->iTask )
 	{
@@ -685,7 +684,7 @@ void CNPC_Houndeye::StartTask ( const Task_t *pTask )
 //=========================================================
 // RunTask 
 //=========================================================
-void CNPC_Houndeye::RunTask ( const Task_t *pTask )
+void CNPC_HL1_Houndeye::RunTask ( const Task_t *pTask )
 {
 	switch ( pTask->iTask )
 	{
@@ -763,7 +762,7 @@ void CNPC_Houndeye::RunTask ( const Task_t *pTask )
 //=========================================================
 // PrescheduleThink
 //=========================================================
-void CNPC_Houndeye::PrescheduleThink ( void )
+void CNPC_HL1_Houndeye::PrescheduleThink ( void )
 {
 	BaseClass::PrescheduleThink();
 	
@@ -805,7 +804,7 @@ void CNPC_Houndeye::PrescheduleThink ( void )
 //=========================================================
 // GetScheduleOfType 
 //=========================================================
-int CNPC_Houndeye::TranslateSchedule( int scheduleType ) 
+int CNPC_HL1_Houndeye::TranslateSchedule( int scheduleType )
 {
 	if ( m_fAsleep )
 	{
@@ -889,7 +888,7 @@ int CNPC_Houndeye::TranslateSchedule( int scheduleType )
 	}
 }
 
-int CNPC_Houndeye::SelectSchedule( void )
+int CNPC_HL1_Houndeye::SelectSchedule( void )
 {
 	switch	( m_NPCState )
 	{
@@ -941,7 +940,7 @@ int CNPC_Houndeye::SelectSchedule( void )
 // and returns that value, which is considered to be the 'local' 
 // volume of the sound. 
 //=========================================================
-float CNPC_Houndeye::FLSoundVolume( CSound *pSound )
+float CNPC_HL1_Houndeye::FLSoundVolume( CSound *pSound )
 {
 	return ( pSound->Volume() - ( ( pSound->GetSoundOrigin() - GetAbsOrigin() ).Length() ) );
 }
@@ -953,7 +952,7 @@ float CNPC_Houndeye::FLSoundVolume( CSound *pSound )
 // link them as a group.  returns the group size
 //
 //=========================================================
-int CNPC_Houndeye::SquadRecruit( int searchRadius, int maxMembers )
+int CNPC_HL1_Houndeye::SquadRecruit( int searchRadius, int maxMembers )
 {
 	int squadCount;
 	int iMyClass = Classify();// cache this monster's class
@@ -973,7 +972,7 @@ int CNPC_Houndeye::SquadRecruit( int searchRadius, int maxMembers )
 
 		while ( pEntity && squadCount < maxMembers )
 		{
-			CNPC_Houndeye *pRecruit = (CNPC_Houndeye*)pEntity->MyNPCPointer();
+			CNPC_HL1_Houndeye*pRecruit = (CNPC_HL1_Houndeye*)pEntity->MyNPCPointer();
 
 			if ( pRecruit )
 			{
@@ -1005,7 +1004,7 @@ int CNPC_Houndeye::SquadRecruit( int searchRadius, int maxMembers )
 			if ( !FClassnameIs ( pEntity, "monster_houndeye" ) )
 				continue;
 
-			CNPC_Houndeye *pRecruit = (CNPC_Houndeye*)pEntity->MyNPCPointer();
+			CNPC_HL1_Houndeye*pRecruit = (CNPC_HL1_Houndeye*)pEntity->MyNPCPointer();
 
 			if ( pRecruit && pRecruit != this && pRecruit->IsAlive() && !pRecruit->m_hCine )
 			{
@@ -1047,7 +1046,7 @@ int CNPC_Houndeye::SquadRecruit( int searchRadius, int maxMembers )
 
 
 
-void CNPC_Houndeye::StartNPC ( void )
+void CNPC_HL1_Houndeye::StartNPC ( void )
 {
 	if ( !m_pSquad )
 	{
@@ -1078,7 +1077,7 @@ void CNPC_Houndeye::StartNPC ( void )
 //
 //------------------------------------------------------------------------------
 
-AI_BEGIN_CUSTOM_NPC( monster_houndeye, CNPC_Houndeye )
+AI_BEGIN_CUSTOM_NPC( monster_houndeye, CNPC_HL1_Houndeye)
 
 	DECLARE_TASK ( TASK_HOUND_CLOSE_EYE )
 	DECLARE_TASK ( TASK_HOUND_OPEN_EYE )
@@ -1286,4 +1285,3 @@ AI_BEGIN_CUSTOM_NPC( monster_houndeye, CNPC_Houndeye )
 	)
 
 AI_END_CUSTOM_NPC()
-*/
