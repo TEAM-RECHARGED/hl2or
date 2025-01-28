@@ -1,0 +1,8 @@
+"UnlitGeneric"
+{
+	"$basetexture" "sprites/weapons_icons/sniperrifle_combine/a_sr_combine"
+	"$additive" "1"
+	"$vertexcolor" "1"
+	"$vertexalpha" "1"
+	"$ignorez"     "1"
+}

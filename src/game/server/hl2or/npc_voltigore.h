@@ -3,7 +3,7 @@
 // Purpose: Large Race X predator that fires unstable portals
 //
 // Author: 1upD
-// Modified By GuestSneezePlayZ to support OVR
+//
 //=============================================================================//
 
 #ifndef NPC_VOLTIGORE_H

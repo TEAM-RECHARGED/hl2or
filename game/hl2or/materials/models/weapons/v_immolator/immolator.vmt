@@ -1,0 +1,29 @@
+"SDK_VertexLitGeneric"
+{
+$basetexture "models\weapons\v_immolator\immolator"
+$bumpmap "models\weapons\v_immolator\immolator_n"
+
+$phong "1"
+$phongexponent "2.75"			//4.75
+$phongboost ".1"			//.5
+$phongfresnelranges	"[0.8 1 10]"
+$phongalbedotint "1"
+$ambientocclusion "1"
+
+//$rimlight "0"
+//$rimlightboost "1"
+//$rimlightexponent "1"
+
+        "$detail" "detail/vm_blood_detail"
+	"$detailblendmode" "2"
+	"$detailblendfactor" "0.0"
+	"$detailscale" "1.0"
+
+	"Proxies"
+	{
+		"BloodyTexture"
+		{
+		}
+	}
+}
+ 

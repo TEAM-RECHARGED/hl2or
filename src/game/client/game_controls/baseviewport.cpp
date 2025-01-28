@@ -14,6 +14,9 @@
 #pragma warning( disable : 4800  )  // disable forcing int to bool performance warning
 
 #include "cbase.h"
+#ifdef OVERCHARGED
+#include "../hl2or/menu_background.h"
+#endif // OVERCHARGED
 #include <cdll_client_int.h>
 #include <cdll_util.h>
 #include <globalvars_base.h>
@@ -152,6 +155,9 @@ CBaseViewport::CBaseViewport() : vgui::EditablePanel( NULL, "CBaseViewport")
 	SetSize( 10, 10 ); // Quiet "parent not sized yet" spew
 	gViewPortInterface = this;
 	m_bInitialized = false;
+#ifdef OVERCHARGED
+	m_pMainMenuPanel = NULL;
+#endif // OVERCHARGED
 
 	m_GameuiFuncs = NULL;
 	m_GameEventManager = NULL;
@@ -221,6 +227,18 @@ void CBaseViewport::OnScreenSizeChanged(int iOldWide, int iOldTall)
 	{
 		ShowPanel( PANEL_SPECGUI, true );
 	}
+
+	bool bRestartMainMenuVideo = false;
+
+	if (m_pMainMenuPanel)
+		bRestartMainMenuVideo = m_pMainMenuPanel->IsVideoPlaying();
+
+	m_pMainMenuPanel = new CMainMenu(NULL, NULL);
+	m_pMainMenuPanel->SetZPos(500);
+	m_pMainMenuPanel->SetVisible(false);
+
+	if (bRestartMainMenuVideo)
+		m_pMainMenuPanel->StartVideo();
 }
 
 void CBaseViewport::CreateDefaultPanels( void )
@@ -486,6 +504,16 @@ CBaseViewport::~CBaseViewport()
 	RemoveAllPanels();
 
 	gameeventmanager->RemoveListener( this );
+
+	if (!m_bHasParent && m_pMainMenuPanel)
+		m_pMainMenuPanel->MarkForDeletion();
+	m_pMainMenuPanel = NULL;
+
+	if (m_pMainMenuPanel)
+	{
+		m_pMainMenuPanel->MarkForDeletion();
+		m_pMainMenuPanel = NULL;
+	}
 }
 
 
@@ -507,6 +535,11 @@ void CBaseViewport::Start( IGameUIFuncs *pGameUIFuncs, IGameEventManager2 * pGam
 	m_GameEventManager->AddListener( this, "game_newmap", false );
 	
 	m_bInitialized = true;
+
+	m_pMainMenuPanel = new CMainMenu(NULL, NULL);
+	m_pMainMenuPanel->SetZPos(500);
+	m_pMainMenuPanel->SetVisible(false);
+	m_pMainMenuPanel->StartVideo();
 }
 
 /*
@@ -706,6 +739,21 @@ void CBaseViewport::ReloadScheme(const char *fromFile)
 int CBaseViewport::GetDeathMessageStartHeight( void )
 {
 	return YRES(2);
+}
+
+void CBaseViewport::StartMainMenuVideo()
+{
+	if (m_pMainMenuPanel)
+		m_pMainMenuPanel->StartVideo();
+}
+
+//-----------------------------------------------------------------------------
+// Purpose: 
+//-----------------------------------------------------------------------------
+void CBaseViewport::StopMainMenuVideo()
+{
+	if (m_pMainMenuPanel)
+		m_pMainMenuPanel->StopVideo();
 }
 
 void CBaseViewport::Paint()

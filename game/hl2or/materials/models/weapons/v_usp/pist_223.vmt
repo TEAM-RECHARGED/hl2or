@@ -1,0 +1,30 @@
+"SDK_VertexLitGeneric"
+{
+	"$basetexture" "models\weapons\v_usp\usp_alt"
+
+	"$phongexponenttexture" "models\weapons\v_usp\pist_223_exponent"
+	"$phong" "1"
+	"$phongboost" "3" //8
+	"$phongalbedoboost" "80"
+	"$phongfresnelranges"	"[.83 .83 1]"
+	"$basemapalphaphongmask" "1"
+	"$phongalbedotint" "1"
+	"$phongdisablehalflambert" "1"
+
+	"$envmap" "env_cubemap"
+	"$envmapfresnel" "1"
+	"$envmaptint"		"[.2 .2 .2]"
+
+	"$detail" "detail/vm_blood_detail"
+	"$detailblendmode" "2"
+	"$detailblendfactor" "0.0"
+	"$detailscale" "1.0"
+
+	"Proxies"
+	{
+		"BloodyTexture"
+		{
+		}
+	}
+}
+

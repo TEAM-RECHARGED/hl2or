@@ -1,0 +1,16 @@
+"SDK_VertexLitGeneric"
+{
+$basetexture "models\super_soldier\super_soldier_diffuse"
+$bumpmap "models\super_soldier\super_soldier_normal"
+
+$phong "1"
+$phongexponent "2.75"
+$phongboost ".45" 
+$halflambert "1"
+$phongfresnelranges "[1 1 10]"
+$ambientocclusion "1"
+
+$rimlight "1"
+$rimlightexponent "1"
+$rimlightboost "1"
+}

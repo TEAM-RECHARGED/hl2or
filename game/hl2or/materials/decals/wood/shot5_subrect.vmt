@@ -1,9 +1,9 @@
-"Subrect"
+"DecalModulate"
 {
-	"$Material"	"decals/decals_lit"
-	"$Pos"		"256  576"
-	"$Size"		"64 64"
-	"$decalscale" 	0.10
-	"$modelmaterial" "decals/wood/shot5"
-	"$decalDynamicScale" 1
+	"$basetexture" "Decals/wood/alt/shot5"
+	"$decalscale" 0.15
+	"$flashlightnolambert" 1
 }
+
+
+

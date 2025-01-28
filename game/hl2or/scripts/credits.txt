@@ -13,6 +13,7 @@
 	"GuestSneezePlayZ" "CreditsText"
 	"bvvth556"		"CreditsText"
 	"YourLocalMoon" "CreditsText"
+	"1upD"	"CreditsText"
 	"Viktor Antonov"   "CreditsText"
 	"Ted Backman"    "CreditsText"
 	"Kelly Bailey"    "CreditsText"

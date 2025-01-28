@@ -1,0 +1,38 @@
+"SDK_VertexLitGeneric"
+{
+	"$basetexture" 	"models/weapons/v_alyxgun_remaster/AlyxGun_Base"
+	"$bumpmap" 	"models/weapons/v_alyxgun_remaster/AlyxGun_Base_n"
+	
+	//"$envmap" "env_cubemap"
+	//"$envmaptint"	"[0.03 0.03 0.03]"
+	//"$envmapfresnel"	"1"
+     
+	"$phongexponenttexture" "models/weapons/v_alyxgun_remaster/AlyxGun_Base_n"
+	"$phong"			"1"
+	"$phongexponent"		"25"
+	//"$phongboost"			"1"
+	"$phongfresnelranges"		"[2 4 6]"
+	"$phongtint"			"[0.85 0.9 1.15]"
+
+	"$rimlight"			"1"
+	"$rimlightexponent"		"50"	
+	//"$rimlightboost"		"0.1"	
+				
+	"$envmap"			"env_cubemap"
+	"$normalmapalphaenvmapmask"	"1"
+	"$envmaptint"			"[.125 .125 .125]"
+
+	////"$phongfresnelranges"	"[0.22 0.856 20]"
+
+     	"$detail" "detail/vm_blood_detail"
+	"$detailblendmode" "2"
+	"$detailblendfactor" "0.0"
+	"$detailscale" "1.0"
+
+	"Proxies"
+	{
+		"BloodyTexture"
+		{
+		}
+	}
+}

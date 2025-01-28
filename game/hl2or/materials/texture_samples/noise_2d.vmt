@@ -1,0 +1,5 @@
+"unlitgeneric"
+{
+	"$basetexture" "texture_samples/noise_2d"
+	$ignorez	1
+}

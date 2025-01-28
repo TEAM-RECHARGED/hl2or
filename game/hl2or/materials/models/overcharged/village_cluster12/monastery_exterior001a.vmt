@@ -1,0 +1,5 @@
+"vertexlitgeneric"
+{
+	"$basetexture" "lostcoast/monastery/monastery_exterior001a"
+	"$surfaceprop" "plaster"
+}

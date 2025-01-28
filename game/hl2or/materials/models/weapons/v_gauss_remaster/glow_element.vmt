@@ -1,0 +1,10 @@
+"SDK_VertexLitGeneric"
+{
+	"$basetexture" "shadertest/gooinglass"
+ 	"$model" 1
+	"$envmap" "shadertest/gooinglass_envglass"
+	"$translucent" "1"	
+	"$envmapcontrast" "1"
+	"$envmapsaturation" "1"
+	"$envmaptint" "[ 1.00 1.00 1.00 ]"
+}

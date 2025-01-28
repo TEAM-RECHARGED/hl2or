@@ -27,6 +27,11 @@ ConVar hopwire_hopheight("hopwire_hopheight", "400");
 
 ConVar g_debug_hopwire("g_debug_hopwire", "0");
 
+enum HopwireStyle {
+	HOPWIRE_XEN = 0,
+	HOPWIRE_STASIS
+};
+
 #define	DENSE_BALL_MODEL	"models/props_junk/metal_paintcan001b.mdl"
 
 #define	MAX_HOP_HEIGHT		(hopwire_hopheight.GetFloat())		// Maximum amount the grenade will "hop" upwards when detonated
@@ -150,6 +155,28 @@ void CGravityVortexController::PullPlayersInRange(void)
 //			**pPhysObj - pointer to the ragdoll created if the NPC is killed
 // Output :	bool - whether or not the NPC was killed and the returned pointer is valid
 //-----------------------------------------------------------------------------
+
+class CStasisVortexController : public CGravityVortexController
+{
+	DECLARE_CLASS(CStasisVortexController, CGravityVortexController);
+	DECLARE_DATADESC();
+
+public:
+	static CStasisVortexController* Create(const Vector& origin, float radius, float strength, float duration, CBaseEntity* pGrenade = NULL);
+
+	virtual HopwireStyle GetHopwireStyle() { return HOPWIRE_STASIS; }
+
+	void	PullThink(void);
+	void	StartPull(const Vector& origin, float radius, float strength, float duration);
+
+private:
+	void	FreezePlayersInRange(void);
+	void    UnfreezeNPCThink(void);
+	void	UnfreezePhysicsObjectThink(void);
+
+	bool	m_bFreezingPlayer;
+};
+
 bool CGravityVortexController::KillNPCInRange(CBaseEntity* pVictim, IPhysicsObject** pPhysObj)
 {
 	CBaseCombatCharacter* pBCC = pVictim->MyCombatCharacterPointer();

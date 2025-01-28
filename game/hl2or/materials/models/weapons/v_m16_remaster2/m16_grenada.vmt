@@ -1,0 +1,19 @@
+"SDK_VertexlitGeneric"
+{
+	"$basetexture" 	"models\weapons\v_m16_remaster2\m16_grenada"
+	"$bumpmap" 	"models\weapons\v_m16_remaster2\m16_grenada_n"
+
+	"$phong" "1"
+
+     	"$detail" "detail/vm_blood_detail"
+	"$detailblendmode" "2"
+	"$detailblendfactor" "0.0"
+	"$detailscale" "1.0"
+
+	"Proxies"
+	{
+		"BloodyTexture"
+		{
+		}
+	}
+}

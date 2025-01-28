@@ -1,0 +1,5 @@
+"editor_shader"
+{
+	"$shadername"	"postproc_natural"
+     "$basetexture"	"_rt_FullFrameFB"
+}

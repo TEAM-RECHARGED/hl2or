@@ -1,0 +1,20 @@
+"Lightmappedtwotexture"
+{
+	"$baseTexture" "Effects/vol_lightmask02"
+	"$texture2" "Effects/dust01" 
+//	"$nocull" 1	
+	"$additive" 1
+	"$translucent" 1
+
+	"!srgb?$color2" "[ 0.8 0.8 0.8 ]" // The '!' means non-srgb parts
+
+	"Proxies"
+	{
+		"TextureScroll"
+		{
+			"texturescrollvar" "$texture2transform"
+			"texturescrollrate" 0.03
+			"texturescrollangle" -30
+		}
+	}
+}

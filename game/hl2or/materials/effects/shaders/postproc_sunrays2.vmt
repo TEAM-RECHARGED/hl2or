@@ -1,0 +1,6 @@
+"editor_shader"
+{
+	"$shadername"	"sunrays_calc"
+     //"$basetexture"	"_rt_SmallFB0"
+     //"$basetexture2"	"_rt_SmallFB1"
+}

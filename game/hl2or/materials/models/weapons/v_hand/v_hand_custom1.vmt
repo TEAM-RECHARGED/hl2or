@@ -1,0 +1,17 @@
+"SDK_VertexLitGeneric"
+{
+	"$basetexture" "models/Weapons/V_hand/v_hand_custom1_citizen"
+	"$bumpmap" "models/Weapons/V_hand/v_hand_custom1_citizen_n"
+
+        "$detail" "detail/vm_blood_detail"
+	"$detailblendmode" "2"
+	"$detailblendfactor" "0.0"
+	"$detailscale" "1.0"
+
+	"Proxies"
+	{
+		"BloodyTexture"
+		{
+		}
+	}
+}

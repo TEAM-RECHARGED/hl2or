@@ -1,0 +1,7 @@
+"SDK_LightmappedGeneric"
+{
+	"$basetexture" "XEN_Extra/BarnacleGun_Surface"
+
+	"$surfaceprop" "alienflesh"	//"EGGSHELL"
+	"%keywords" "xen,surface,barnacle"
+}

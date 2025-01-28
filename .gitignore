@@ -75,3 +75,5 @@ save/
 FileListAbsolute.txt
 GameState.txt
 *.bsp
+*Main.vtf
+*background_video.bik

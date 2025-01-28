@@ -1,0 +1,25 @@
+"SDK_VertexlitGeneric"
+{
+	"$basetexture" 	"models\weapons\v_vector_combined\vec_eq_main"
+	"$bumpmap" 	"models\weapons\v_vector_combined\vec_eq_main_n"
+
+	"$phong" "1"
+	"$phongboost"	"2"
+	"$phongfresnelranges"	"[0.22 0.856 20]"
+	//"$envmap" "env_cubemap"
+	//"$envmaptint"	"[0.03 0.03 0.03]"
+	//"$envmapfresnel"	"1"
+	
+
+     	"$detail" "detail/vm_blood_detail"
+	"$detailblendmode" "2"
+	"$detailblendfactor" "0.0"
+	"$detailscale" "1.0"
+
+	"Proxies"
+	{
+		"BloodyTexture"
+		{
+		}
+	}
+}

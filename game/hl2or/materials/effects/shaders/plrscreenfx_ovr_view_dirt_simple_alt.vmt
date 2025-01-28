@@ -1,0 +1,5 @@
+"editor_shader"
+{
+	"$shadername"	"plrscreenfx_ovr_view_dirt_simple_alt"
+	"$bloom"	"_rt_SmallFB0"
+}

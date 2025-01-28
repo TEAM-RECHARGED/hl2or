@@ -3,130 +3,81 @@
 	"1"
 	{
 		"label" "#GameUI_GameMenu_ResumeGame"
-		"InGameOrder" "10"
+		"command" "ResumeGame"
 		"OnlyInGame" "1"
 	}
 	"2"
 	{
-		"label" "#GameUI_GameMenu_Disconnect"
-		"command" "Disconnect"
+		"label" "#GameUI_GameMenu_MAINMENU2"
+		"command" "disconnect"
 		"OnlyInGame" "1"
-		"notsingle" "1"
 	}
-//	"3"	[$WIN32] // from portal
-//	{
-//		"label" "#GameUI_GameMenu_BonusMaps"
-//		"command" "OpenBonusMapsDialog"
-//		"InGameOrder" "50"
-//		"notmulti" "1"
-//	}
 	"3"
-
-	{
-		"label" "#GameUI_GameMenu_PlayerList"
-		"command" "OpenPlayerListDialog"
-		"OnlyInGame" "1"
-		"notsingle" "1"
-	}
-	"4"     //devider
-	{
-		"label" ""
-		"command" ""
-		"OnlyInGame" "1"
-	}
-	"5"
 	{
 		"label" "#GameUI_GameMenu_NewGame"
 		"command" "OpenNewGameDialog"
-		"notmulti" "1"  //nomulti will make this button not appear when in MP mode
+		"notmulti" "1"
 	}
-	"6"
+	"4"
 	{
 		"label" "#GameUI_GameMenu_LoadGame"
 		"command" "OpenLoadGameDialog"
 		"notmulti" "1"
 	}
-	"7"
+	"5"
 	{
 		"label" "#GameUI_GameMenu_SaveGame"
 		"command" "OpenSaveGameDialog"
 		"notmulti" "1"
 		"OnlyInGame" "1"
 	}
+	"6"
+	{
+		"label" "#GameUI_GameMenu_Options"
+		"command" "OpenOptionsDialog"
+	}	
+	"7"
+	{
+		"label" "Advanced Options"
+		"command" "engine ToggleAdvOptions"	
+	}
 	"8"
 	{
-		"label" "#GameUI_GameMenu_Achievements"
-		"command" "OpenAchievementsDialog"
-		"InGameOrder" "70"
+		"label" "------------------------"
 	}
-//         "8" 
-//	{
-//		"label" "#GameUI_Controller"
-//		"command" "OpenControllerDialog"
-//		"InGameOrder" "80"
-//		"ConsoleOnly" "1"
-//	}
-	"9"
+	"9"	[$WIN32]
 	{
-		"label" ""
-		"command" ""
+		//"label" "#GameUI_GameMenu_BonusMaps"
+		//"command" "OpenBonusMapsDialog"
+		"label"	"FAST SETTINGS - OVERCHARGED"
+		"command" "engine exec fastpreset/OverCharged_cfgpreset1"
 		"notmulti" "1"
 	}
 	"10"
 	{
-		"label" "#GameUI_GameMenu_FindServers"
-		"command" "OpenServerBrowser"
-		"notsingle" "1"
+		//"label"	"#GameUI_GameMenu_FEED"
+		//"command" "engine exec Feedback"
+		"label"	"FAST SETTINGS - REALISM"
+		"command" "engine exec fastpreset/OverCharged_cfgpreset7"
 	}
-	"11"
+       "11"
 	{
-		"label" "#GameUI_GameMenu_CreateServer"
-		"command" "OpenCreateMultiplayerGameDialog"
-		"notsingle" "1"
+		"label"	"FAST SETTINGS - HL2 DEFAULT"
+		"command" "engine exec fastpreset/OverCharged_cfgpreset8"
 	}
 	"12"
 	{
-		"label" "#GameUI_GameMenu_Friends"
-		"command" "OpenFriendsDialog"
+		"label" "------------------------"
 	}
-//	"13"  // not needed
-//	{
-//		"name" "LoadDemo"
-//		"label" "#GameUI_GameMenu_PlayDemo"
-//		"command" "OpenLoadDemoDialog"
-//	}
+	"13"
+	{
+		"label" "#GameUI_Controller"
+		"command" "OpenControllerDialog"
+		"ConsoleOnly" "1"
+	}
 	"14"
-	{
-		"label" ""
-		"command" ""
-		"notsingle" "1"
-	}
-	"15"
-	{
-		"label" "#GameUI_GameMenu_Options"
-		"command" "OpenOptionsDialog"
-	}
-	"16"
 	{
 		"label" "#GameUI_GameMenu_Quit"
 		"command" "Quit"
-	}
-    "17"
-    {
-        "label" "Fast Settings 1"
-        "command" "exec graphic_realism"
-		"OnlyInGame" "1"
-    }
-    "18"
-    {
-        "label" "Fast Settings 2"
-        "command" "exec graphics_hd"
-		"OnlyInGame" "1"
-    }
-	"19"
-	{
-		"label" "Fast Settings 3"
-		"command" "exec graphics_default"
-		"OnlyInGame" "1"
 	}
 }

@@ -1,0 +1,17 @@
+"VertexLitGeneric"
+{
+	//"$envmap" "models/aliengrunt/Chrome2"
+
+	"$basetexture" "models/aliengrunt/Chrome2"
+	"$bumpmap" "models/aliengrunt/aliengrunt_normal"
+
+	"$phong" "1"
+	"$phongexponenttexture" "models/aliengrunt/aliengrunt_exponent"
+	"$phongboost"	"10"
+	"$phongalbedotint" "1"
+	"$phongfresnelranges" "[.18 .4 1]"
+
+	"$rimlight" "1"
+	"$rimlightexponent" "10"
+	"$rimlightboost" "5"	
+}

@@ -1,0 +1,6 @@
+"SDK_UnlitGeneric"
+{
+	"$basetexture" "sprites/scanner_bottom"
+	"$translucent" 1
+	"$spritesize" 19
+}

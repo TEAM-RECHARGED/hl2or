@@ -1,0 +1,14 @@
+"Refract"
+{
+	"$model" 1
+ 	"$refractamount" ".32"
+ 	"$bluramount" "0"
+	"$nofog" "1"
+ 	"$normalmap" "particles/proyect_sosiska/shock_hypno01"
+	"$bumpframe" "0"
+	"$translucent" "1"
+	"$ignorez" "1"
+	"$forcerefract" 1
+	"$NoCull" 1
+	"$vertexcolormodulate" "1"
+}

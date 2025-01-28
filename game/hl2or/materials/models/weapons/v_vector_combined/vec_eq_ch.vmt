@@ -1,0 +1,5 @@
+"SDK_VertexLitGeneric"
+{
+	"$basetexture" 	"models\weapons\v_vector_combined\vec_glowblu"
+	"$selfillum" 1
+}

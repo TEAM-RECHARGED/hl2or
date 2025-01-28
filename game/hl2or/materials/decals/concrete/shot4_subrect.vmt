@@ -3,7 +3,6 @@
 	"$Material"	"decals/decals_mod2x"
 	"$Pos"		"64 64"
 	"$Size"		"64 64"
-	"$decalscale" 	0.06
+	"$decalscale" 	0.10
 	"$modelmaterial" "decals/concrete/shot4"
-	"$decalDynamicScale" 1
 }

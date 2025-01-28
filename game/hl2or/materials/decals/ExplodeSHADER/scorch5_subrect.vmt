@@ -1,0 +1,10 @@
+"EDITOR_SHADER"
+{
+
+"$SHADERNAME" "Decal_test"
+//"$SHADERNAME" "HOUNDEYE"
+
+	"$basetexture" "Decals/explode/scorch5"
+	"$model" 1
+
+}

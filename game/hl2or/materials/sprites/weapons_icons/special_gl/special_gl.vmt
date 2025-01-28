@@ -1,0 +1,8 @@
+"UnlitGeneric"
+{
+	"$basetexture" "sprites/weapons_icons/special_gl/special_gl"
+	"$additive" "1"
+	"$vertexcolor" "1"
+	"$vertexalpha" "1"
+	"$ignorez"     "1"
+}

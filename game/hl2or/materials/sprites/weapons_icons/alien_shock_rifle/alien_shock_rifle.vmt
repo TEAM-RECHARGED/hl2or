@@ -1,0 +1,8 @@
+"UnlitGeneric"
+{
+	"$basetexture" "sprites/weapons_icons/alien_shock_rifle/alien_shock_rifle"
+	"$additive" "1"
+	"$vertexcolor" "1"
+	"$vertexalpha" "1"
+	"$ignorez"     "1"
+}

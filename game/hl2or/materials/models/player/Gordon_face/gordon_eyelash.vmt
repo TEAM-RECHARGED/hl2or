@@ -1,0 +1,16 @@
+"SDK_VertexlitGeneric"
+{
+	"$basetexture" "models/Player/Gordon_face/gordon_eyelash"
+
+	"$nocull" 1
+	"$color2" ".16"
+	
+	"$translucent" "1"
+	"$phong" "1"
+	"$phongexponent" "8"
+	"$phongboost" "2"
+	"$phongfresnelranges"	"[.04 .16 1]"
+	"$phongdisablehalflambert" 1	
+	"$ambientocclusion" "0"
+	
+}

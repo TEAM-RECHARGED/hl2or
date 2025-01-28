@@ -1,0 +1,10 @@
+"DecalModulate"
+{
+	"$basetexture" "Decals/tile/SHOT4"
+	"$decalscale" 0.10
+	"$decal" 1
+	"$translucent" 1
+	"$nocull" 1
+}
+
+

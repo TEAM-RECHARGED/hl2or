@@ -1,6 +1,6 @@
-"Sprite"
+Sprite
 {
-	"$spriteorientation" "vp_parallel"
-	"$spriteorigin" "[ 0.50 0.50 ]"
-	"$basetexture" "sprites/glow"
+$spriteorientation vp_parallel
+$spriteorigin "[ 0.50 0.50 ]"
+$basetexture "sprites/glow"
 }

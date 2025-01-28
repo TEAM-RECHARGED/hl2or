@@ -36,8 +36,8 @@
 
 #define HOUNDEYE_TOP_MASS	 300.0f
 
-ConVar sk_houndeye_health ( "sk_houndeye_health", "20" );
-ConVar sk_houndeye_dmg_blast ( "sk_houndeye_dmg_blast", "15" );
+ConVar sk_hl1_houndeye_health ( "sk_houndeye_health", "20" );
+ConVar sk_hl1_houndeye_dmg_blast ( "sk_houndeye_dmg_blast", "15" );
 
 static int s_iSquadIndex = 0;
 
@@ -118,7 +118,7 @@ void CNPC_HL1_Houndeye::Spawn()
 	SetMoveType( MOVETYPE_STEP );
 	m_bloodColor		= BLOOD_COLOR_YELLOW;
 	ClearEffects();
-	m_iHealth			= sk_houndeye_health.GetFloat();
+	m_iHealth			= sk_hl1_houndeye_health.GetFloat();
 	m_flFieldOfView		= 0.5;// indicates the width of this monster's forward view cone ( as a dotproduct result )
 	m_NPCState			= NPC_STATE_NONE;
 	m_fAsleep			= FALSE; // everyone spawns awake
@@ -430,12 +430,12 @@ void CNPC_HL1_Houndeye::SonicAttack ( void )
 				if ( m_pSquad && m_pSquad->NumMembers() > 1 )
 				{
 					// squad gets attack bonus.
-					flAdjustedDamage = sk_houndeye_dmg_blast.GetFloat() + sk_houndeye_dmg_blast.GetFloat() * ( HOUNDEYE_SQUAD_BONUS * ( m_pSquad->NumMembers() - 1 ) );
+					flAdjustedDamage = sk_hl1_houndeye_dmg_blast.GetFloat() + sk_hl1_houndeye_dmg_blast.GetFloat() * ( HOUNDEYE_SQUAD_BONUS * ( m_pSquad->NumMembers() - 1 ) );
 				}
 				else
 				{
 					// solo
-					flAdjustedDamage =sk_houndeye_dmg_blast.GetFloat();
+					flAdjustedDamage =sk_hl1_houndeye_dmg_blast.GetFloat();
 				}
 
 				flDist = (pEntity->WorldSpaceCenter() - GetAbsOrigin()).Length();

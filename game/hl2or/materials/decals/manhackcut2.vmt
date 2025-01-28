@@ -2,5 +2,4 @@
 {
 	"$basetexture" "Decals/manhackcut2"
 	"$decalscale" 0.40
-	"$translucent" 1
 }

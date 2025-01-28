@@ -1,6 +1,9 @@
 "DecalModulate"
 {
-	"$basetexture" "Decals/wood/shot5"
-	"$decalscale" 0.10
-	"$decalDynamicScale" 1
+	"$basetexture" "Decals/wood/alt/shot5"
+	"$decalscale" 0.15
+	"$flashlightnolambert" 1
 }
+
+
+

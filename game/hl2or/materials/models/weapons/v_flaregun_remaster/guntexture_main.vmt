@@ -1,0 +1,21 @@
+"SDK_VertexLitGeneric"
+{
+	"$basetexture" "models/Weapons/v_flaregun_remaster/guntexture_main"
+        "$bumpmap" "models/Weapons/v_flaregun_remaster/guntexture_main_n"
+	"$phong" "1"
+	"$phongexponent" "50"
+	"$phongboost"	"4"
+	"$phongfresnelranges"	"[.3 1.0 2.9]"
+
+        "$detail" "detail/vm_blood_detail"
+	"$detailblendmode" "2"
+	"$detailblendfactor" "0.0"
+	"$detailscale" "1.0"
+
+	"Proxies"
+	{
+		"BloodyTexture"
+		{
+		}
+	}
+}

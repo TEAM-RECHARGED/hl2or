@@ -1,0 +1,10 @@
+"SDK_VertexLitGeneric"
+{
+	// Original shader: VertexLitMaskedEnvMappedTexture
+	"$basetexture" "models/acidlion/acidlion_innards"
+	"$surfaceprop" "alienflesh"
+
+   
+	
+
+}

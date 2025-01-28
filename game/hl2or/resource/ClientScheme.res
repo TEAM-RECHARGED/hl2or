@@ -24,7 +24,6 @@ Scheme
 	BaseSettings
 	{
 		"FgColor"			"255 220 0 100"
-		"FgColor_vrmode"	"255 220 0 200"
 		"BgColor"			"0 0 0 76"
 
 		"Panel.FgColor"			"255 220 0 100"
@@ -47,19 +46,19 @@ Scheme
 
 		// HL1-style HUD colors
 		"Yellowish"			"255 160 0 255"
-		"Normal"			"159 39 13 159"
+		"Normal"			"255 208 64 255"
 		"Caution"			"255 48 0 255"
 
 		// Top-left corner of the "Half-Life 2" on the main screen
-		"Main.Title1.X"			"53"
-		"Main.Title1.Y"			"190"
-		"Main.Title1.Y_hidef"	"184"
+		"Main.Title1.X"				"76"
+		"Main.Title1.Y"				"145"
+		"Main.Title1.Y_hidef"		"130"
 		"Main.Title1.Color"	"255 255 255 255"
 
 		// Top-left corner of secondary title e.g. "DEMO" on the main screen
-		"Main.Title2.X"				"291"
-		"Main.Title2.Y"				"207"
-		"Main.Title2.Y_hidef"		"242"
+		"Main.Title2.X"				"76"
+		"Main.Title2.Y"				"190"
+		"Main.Title2.Y_hidef"		"174"
 		"Main.Title2.Color"	"255 255 255 200"
 
 		// Top-left corner of the menu on the main screen
@@ -86,6 +85,31 @@ Scheme
 	// describes all the fonts
 	Fonts
 	{
+		CSweaponsSmall 
+		  {
+		   "1"
+		   {
+			"name"  "Counter-Strike" // Cstrike.ttf
+			"tall"  "24"
+			"weight" "0"
+			"additive" "1"
+			"antialias" "1"
+			"custom" "1" [$OSX]
+		   }
+		  }
+
+		CSweapons // temporary, for testing. overlaps with CSType, above
+		  {
+		   "1"
+		   {
+			"name"  "Counter-Strike" // Cstrike.ttf
+			"tall"  "24"
+			"weight" "0"
+			"additive" "1"
+			"antialias" "1"
+			"custom" "1" [$OSX]
+		   }
+		  }
 		// fonts are used in order that they are listed
 		// fonts are used in order that they are listed
 		"DebugFixed"
@@ -143,6 +167,8 @@ Scheme
 				"weight"	"900"
 				"antialias" "1"
 				"yres"	"768 1023"
+				"blur" "1"		// ovrc_additions
+				"scanlines" "2"
 			}
 			"4"
 			{
@@ -275,12 +301,23 @@ Scheme
 				"weight"		"0"
 			}
 		}
-		WeaponIcons
+		
+		"HUDOverParts"
 		{
 			"1"
 			{
-				"name"		"HalfLife2"
-				"tall"		"64"
+				"name"		"overcharged_letters"
+				"tall"		"200"
+				"weight"	"1"
+				"antialias" "1"
+			}
+		}
+		"HUDOver"
+		{
+			"1"
+			{
+				"name"		"overcharged_letters"
+				"tall"		"34"
 				"tall_hidef"	"58"
 				"weight"	"0"
 				"antialias" "1"
@@ -288,12 +325,40 @@ Scheme
 				"custom"	"1"
 			}
 		}
-		WeaponIconsSelected
+                AmmoIconsOver
 		{
 			"1"
 			{
-				"name"		"HalfLife2"
-				"tall"		"64"
+				"name"		"overcharged_ammo"
+				"tall"		"24"
+				"tall_hidef"	"58"
+				"weight"	"0"
+				"antialias" "1"
+				"additive"	"1"
+				"custom"	"1"
+			}
+                  
+		}
+                 WeaponsIconsOver
+		{
+			"1"
+			{
+				"name"		"overcharged_weapons_font"
+				"tall"		"24"
+				"tall_hidef"	"58"
+				"weight"	"0"
+				"antialias" "1"
+				"additive"	"1"
+				"custom"	"1"
+			}
+                  
+		}
+                WeaponIconsOverSelected
+		{
+			"1"
+			{
+				"name"		"overcharged_weapons_font"
+				"tall"		"24"
 				"tall_hidef"	"58"
 				"weight"	"0"
 				"antialias" "1"
@@ -302,6 +367,125 @@ Scheme
 				"additive"	"1"
 				"custom"	"1"
 			}
+                       
+		}
+		WeaponIconsOverSmall
+		{
+			"1"
+			{
+				"name"		"overcharged_weapons_font"
+				"tall"		"32"
+				"weight"	"0"
+				"antialias" "1"
+				"additive"	"1"
+				"custom"	"1"
+			}
+                       
+		}
+
+
+  WeaponsIconsOverExtra
+		{
+			"1"
+			{
+				"name"		"overcharged_weapons_extra"
+				"tall"		"24"
+				"tall_hidef"	"58"
+				"weight"	"0"
+				"antialias" "1"
+				"additive"	"1"
+				"custom"	"1"
+			}
+                  
+		}
+                WeaponIconsOverExtraSelected
+		{
+			"1"
+			{
+				"name"		"overcharged_weapons_extra"
+				"tall"		"24"
+				"tall_hidef"	"58"
+				"weight"	"0"
+				"antialias" "1"
+				"blur"		"5"
+				"scanlines"	"2"
+				"additive"	"1"
+				"custom"	"1"
+			}
+                       
+		}
+		WeaponIconsOverExtraSmall
+		{
+			"1"
+			{
+				"name"		"overcharged_weapons_extra"
+				"tall"		"32"
+				"weight"	"0"
+				"antialias" "1"
+				"additive"	"1"
+				"custom"	"1"
+			}
+                       
+		}
+        HudNumbersOver
+		{
+			"1"
+			{
+				"name"		"HalfLife2"
+				"tall"		"24"	[$WIN32]
+				"tall"		"22"	[$X360]
+				"weight"	"1000"
+				"additive"	"1"
+				"antialias" "1"
+				"custom"	"1"
+				"blur" "0"		// ovrc_additions
+				"scanlines" "0"
+			}
+		}
+		HudNumbersOverGlow
+		{
+			"1"
+			{
+				"name"		"HalfLife2"
+				"tall"		"26"	[$WIN32]
+				"tall"		"22"	[$X360]
+				"weight"	"0"
+				"blur"		"4"
+				"scanlines" "2"
+				"antialias" "1"
+				"additive"	"1"
+				"custom"	"1"
+			}
+		}
+		WeaponIcons
+		{
+			"1"
+			{
+				"name"		"HalfLife2"
+				"tall"		"24"
+				"tall_hidef"	"58"
+				"weight"	"0"
+				"antialias" "1"
+				"additive"	"1"
+				"custom"	"1"
+			}
+                  
+		}
+		WeaponIconsSelected
+		{
+			"1"
+			{
+				"name"		"HalfLife2"
+				"tall"		"24"
+				"tall_hidef"	"58"
+				"weight"	"0"
+				"antialias" "1"
+				"blur"		"5"
+				"scanlines"	"2"
+				"additive"	"1"
+				"custom"	"1"
+			}
+                       
 		}
 		WeaponIconsSmall
 		{
@@ -314,14 +498,29 @@ Scheme
 				"additive"	"1"
 				"custom"	"1"
 			}
+                       
+		}
+                CrosshairsOver
+		{
+			"1"
+			{
+				"name"		"overcharged_crosshairs"
+				"tall"		"62"
+				"weight"	"0"
+				"antialias" "0"
+				"additive"	"1"
+				"scanlines"	"2"
+				"custom"	"1"
+				"outline"   "2"
+				"yres"		"1 10000"
+			}
 		}
 		Crosshairs
 		{
 			"1"
 			{
 				"name"		"HalfLife2"
-				"tall"		"40" [!$OSX]
-				"tall"		"41" [$OSX]
+				"tall"		"40"
 				"weight"	"0"
 				"antialias" "0"
 				"additive"	"1"
@@ -343,12 +542,23 @@ Scheme
 			"1"	[$WIN32]
 			{
 				"name"		"HL2cross"
-				"tall"		"28" [!$OSX]
-				"tall"		"50" [$OSX]
+				"tall"		"28"
 				"weight"	"0"
 				"antialias" "1"
 				"additive"	"1"
-				"custom"	"1" [!$OSX]
+				"custom"	"1"
+			}
+		}
+		SlowMoBar
+		{
+			"1"	[$WIN32]
+			{
+				"name"		"HL2slowmobar"
+				"tall"		"28"
+				"weight"	"0"
+				"antialias" 	"1"
+				"additive"	"1"
+				"custom"	"1"
 			}
 		}
 		HudNumbers
@@ -362,6 +572,8 @@ Scheme
 				"antialias" "1"
 				"additive"	"1"
 				"custom"	"1"
+				"blur" "0"		// ovrc_additions
+				"scanlines" "0"
 			}
 		}
 		SquadIcon	[$X360]
@@ -395,14 +607,15 @@ Scheme
 		{
 			"1"
 			{
-				"name"		"HalfLife2" [!$OSX]
-				"name"		"Helvetica Bold" [$OSX]
+				"name"		"HalfLife2"
 				"tall"		"16"	[$WIN32]
 				"tall"		"22"	[$X360]
 				"weight"	"1000"
 				"additive"	"1"
 				"antialias" "1"
 				"custom"	"1"
+				"blur" "0"		// ovrc_additions
+				"scanlines" "0"
 			}
 		}
 		HudSelectionNumbers
@@ -414,6 +627,8 @@ Scheme
 				"weight"	"700"
 				"antialias" "1"
 				"additive"	"1"
+				"blur" "1"		// ovrc_additions
+				"scanlines" "2"
 			}
 		}
 		HudHintTextLarge
@@ -427,24 +642,26 @@ Scheme
 			}
 			"1"	[$WIN32]
 			{
-				"name"		"Verdana" [!$OSX]
-				"name"		"Helvetica Bold" [$OSX]
+				"name"		"Verdana"
 				"tall"		"14"
 				"weight"	"1000"
 				"antialias" "1"
 				"additive"	"1"
+				//"blur" "1"		// ovrc_additions
+				//"scanlines" "2"
 			}
 		}
 		HudHintTextSmall
 		{
 			"1"	[$WIN32]
 			{
-				"name"		"Verdana" [!$OSX]
-				"name"		"Helvetica" [$OSX]
+				"name"		"Verdana"
 				"tall"		"11"
 				"weight"	"0"
 				"antialias" "1"
 				"additive"	"1"
+				//"blur" "1"		// ovrc_additions
+				//"scanlines" "2"
 			}
 			"1"	[$X360]
 			{
@@ -464,6 +681,8 @@ Scheme
 				"weight"	"700"
 				"antialias" "1"
 				"yres"	"1 599"
+				//"blur" "1"		// ovrc_additions
+				//"scanlines" "2"
 			}
 			"2"
 			{
@@ -472,6 +691,8 @@ Scheme
 				"weight"	"700"
 				"antialias" "1"
 				"yres"	"600 767"
+				//"blur" "1"		// ovrc_additions
+				//"scanlines" "2"
 			}
 			"3"
 			{
@@ -480,6 +701,8 @@ Scheme
 				"weight"	"900"
 				"antialias" "1"
 				"yres"	"768 1023"
+				//"blur" "1"		// ovrc_additions
+				//"scanlines" "2"
 			}
 			"4"
 			{
@@ -488,6 +711,8 @@ Scheme
 				"weight"	"900"
 				"antialias" "1"
 				"yres"	"1024 1199"
+				//"blur" "1"		// ovrc_additions
+				//"scanlines" "2"
 			}
 			"5"
 			{
@@ -496,6 +721,8 @@ Scheme
 				"weight"	"1000"
 				"antialias" "1"
 				"yres"	"1200 10000"
+				//"blur" "1"		// ovrc_additions
+				//"scanlines" "2"
 			}
 		}
 		GameUIButtons
@@ -541,10 +768,8 @@ Scheme
 		{
 			"1"
 			{
-				"name"		"Tahoma" [!$OSX]
-				"name"		"Verdana" [$OSX]
-				"tall"		"26" [!$OSX]
-				"tall"		"24" [$OSX]
+				"name"		"Tahoma"
+				"tall"		"26"
 				"weight"	"500"
 			}
 		}
@@ -552,10 +777,8 @@ Scheme
 		{
 			"1"
 			{
-				"name"		"Tahoma" [!$OSX]
-				"name"		"Verdana Italic" [$OSX]
-				"tall"		"26" [!$OSX]
-				"tall"		"24" [$OSX]
+				"name"		"Tahoma"
+				"tall"		"26"
 				"weight"	"500"
 				"italic"	"1"
 			}
@@ -564,10 +787,8 @@ Scheme
 		{
 			"1"
 			{
-				"name"		"Tahoma" [!$OSX]
-				"name"		"Verdana Bold" [$OSX]
-				"tall"		"26" [!$OSX]
-				"tall"		"24" [$OSX]
+				"name"		"Tahoma"
+				"tall"		"26"
 				"weight"	"900"
 			}
 		}
@@ -575,10 +796,8 @@ Scheme
 		{
 			"1"
 			{
-				"name"		"Tahoma" [!$OSX]
-				"name"		"Verdana Bold Italic" [$OSX]
-				"tall"		"26" [!$OSX]
-				"tall"		"24" [$OSX]
+				"name"		"Tahoma"
+				"tall"		"26"
 				"weight"	"900"
 				"italic"	"1"
 			}
@@ -587,11 +806,9 @@ Scheme
 		{
 			"1"
 			{
-				"name"		"Tahoma" [!$OSX]
-				"name"		"Verdana" [$OSX]
-				"tall"		"16" [!$OSX]
-				"tall"		"14" [$OSX]
- 				"tall_hidef"	"24"
+				"name"		"Tahoma"
+				"tall"		"16"
+				"tall_hidef"	"24"
 				"weight"	"900"
 				"range"		"0x0000 0x017F" //	Basic Latin, Latin-1 Supplement, Latin Extended-A
 			}
@@ -628,17 +845,40 @@ Scheme
 				"weight"	"900"
 			}
 		}
-		ClientTitleFont
+                ClientTitleFontOver
 		{
 			"1"
 			{
-				"name"  "HL2OR"
+				"name"  "overcharged_letters"
 				"tall"			"34"
 				"tall_hidef"	"48"
 				"weight" "0"
 				"additive" "0"
 				"antialias" "1"
-				"custom"	"1" [$OSX]
+			}
+		}
+		ClientTitleFont
+		{
+			"1"
+			{
+				"name"  "DejaVu Sans"	//"HL2EP2"
+				"tall"			"34"
+				"tall_hidef"	"48"
+				"weight" "0"
+				"additive" "0"
+				"antialias" "1"
+			}
+		}
+		ClientTitleFontAA
+		{
+			"1"
+			{
+				"name"  "impact"
+				"tall"			"34"
+				"tall_hidef"	"48"
+				"weight" "0"
+				"additive" "0"
+				"antialias" "1"
 			}
 		}
 		CreditsLogo
@@ -664,6 +904,17 @@ Scheme
 				"additive"	"1"
 			}
 		}
+                CreditsText2
+		{
+			"1"
+			{
+				"name"		"overcharged_letters"
+				"tall"		"20"
+				"weight"	"900"
+				"antialias" "1"
+				"additive"	"1"
+			}
+		}
 		CreditsOutroLogos
 		{
 			"1"
@@ -680,8 +931,7 @@ Scheme
 		{
 			"1"
 			{
-				"name"		"Verdana" [!$OSX]
-				"name"		"Courier Bold" [$OSX]
+				"name"		"Verdana"
 				"tall"		"9"
 				"weight"	"900"
 				"antialias" "1"
@@ -692,8 +942,7 @@ Scheme
 			// note that this scales with the screen resolution
 			"1"
 			{
-				"name"		"Trebuchet MS" [!$OSX]
-				"name"		"Helvetica" [$OSX]
+				"name"		"Trebuchet MS"
 				"tall"		"18"
 				"weight"	"900"
 				"antialias" "1"
@@ -794,6 +1043,13 @@ Scheme
 	{
 		"1"		"resource/HALFLIFE2.ttf"
 		"2"		"resource/HL2crosshairs.ttf"
+		"3"		"resource/HL2EP2.ttf"	
+                "4"		"resource/overcharged_ammo.ttf"	
+                "5"		"resource/overcharged_weapons_font.ttf"	
+                "6"		"resource/overcharged_crosshairs.ttf"	
+                "7"		"resource/overcharged_weapons_extra.ttf"	
+                "8"		"resource/overcharged_letters.ttf"	
+		"9"		"resource/overcharged_next_hud.ttf"	
 	}
 
 }

@@ -1,0 +1,11 @@
+"SDK_LightmappedGeneric"
+{
+	"$basetexture" "Decals/glass/1"
+	"$decalscale" 0.075
+	"$decal" 1
+	"$modelmaterial" "decals/glass/shot1"
+	"$translucent" 1
+}
+
+
+

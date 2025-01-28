@@ -1,0 +1,7 @@
+"SDK_VertexLitGeneric"
+{
+	"$baseTexture" "models/weapons/v_displacer/GLOW"
+	"$additive" "1"
+	"$selfillum" "1"
+   
+}

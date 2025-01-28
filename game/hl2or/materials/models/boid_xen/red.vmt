@@ -1,0 +1,9 @@
+"SDK_VertexLitGeneric"
+{
+	"$basetexture" "models/boid_xen/red"
+
+$detail detail\detaildirt001a
+$detailscale 2.563
+$detailblendfactor .8
+$detailblendmode 0
+}

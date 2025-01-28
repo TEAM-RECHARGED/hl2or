@@ -1,0 +1,10 @@
+"SDK_VertexLitGeneric"
+{
+	"$baseTexture" "models/hecu_turret_floor/turret_stand"
+	"$bumpmap" "models/hecu_turret_floor/turret_stand_n"
+
+$detail detail\dt_metal2
+$detailscale 2.563
+$detailblendfactor .8
+$detailblendmode 0
+}

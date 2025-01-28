@@ -1,0 +1,10 @@
+"editor_shader"
+{
+	//"$shadername"	"postproc_cinematic_overlay_saturation"
+
+	"$shadername"	"postproc_saturation"
+     	"$tex1"	"effects/shaders/Saturation_text.vtf"
+
+	//"$Brightness"	"0.0"	//Brightness
+	//"$Intensity"	"0.02"	//Intensity
+}

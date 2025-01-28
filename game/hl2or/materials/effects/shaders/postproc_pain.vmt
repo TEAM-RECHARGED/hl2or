@@ -1,0 +1,6 @@
+"editor_shader"
+{
+	"$shadername"	"postproc_pain"
+     "$basetexture"	"_rt_SmallFB0"
+     "$basetexture2"	"_rt_SmallFB1"
+}

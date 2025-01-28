@@ -1,0 +1,6 @@
+"editor_shader"
+{
+	"$shadername"	"downsample_4"
+//	"$basetexture"	"_rt_FullFrameFB"
+//	"$basetexture2"	"_rt_FullFrameFB"
+}

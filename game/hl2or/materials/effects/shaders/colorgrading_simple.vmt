@@ -1,0 +1,6 @@
+"editor_shader"
+{
+	"$shadername"	"postproc_colorgrading_simple"
+//	"$basetexture"	"_rt_FullFrameFB"
+//	"$basetexture2"	"_rt_FullFrameFB"
+}

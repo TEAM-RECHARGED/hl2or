@@ -1,0 +1,6 @@
+"editor_shader"
+{
+//postproc_cinematic_overlay_saturation
+	//"$shadername"	"postproc_cinematic_overlay"
+"$shadername"	"postproc_scope_sniper"
+}

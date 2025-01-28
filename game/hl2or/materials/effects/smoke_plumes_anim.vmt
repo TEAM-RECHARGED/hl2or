@@ -1,0 +1,5 @@
+"SDK_LightmappedGeneric"
+{
+$basetexture	 "effects/smoke_plumes_00"
+$translucent 1
+}

@@ -3,60 +3,286 @@
 WeaponData
 {
 	// Weapon data is loaded by both the Game and Client DLLs.
-	"printname"			"#HL2_357Handgun"
-	"viewmodel"			"models/weapons/v_357.mdl"
-	"playermodel"		"models/weapons/w_357.mdl"
+	"printname"		"#wpnname_357Handgun"
+	"viewmodel"		"models/weapons/OverCharged/v_357_revolver.mdl"
+	"playermodel"		"models/weapons/overcharged/world/w_357.mdl"
 	"anim_prefix"		"python"
 	"bucket"			"1"
-	"bucket_position"	"1"
+	"bucket_position"		"1"
+	"bucket_360"			"0"
+	"bucket_position_360"		"1"
 
 	"clip_size"			"6"
-	"default_clip"		"6"
-	"primary_ammo"		"357"
-	"secondary_ammo"	"None"
+	"default_clip"			"6"
+	"primary_ammo"			"357"
+	"secondary_ammo"		"None"
+	"AllowShellEjectSmokeFlash" 	"-1"
+	"AllowFreeAim"			"1"
+	"AllowIronSight"		"1"
+	"weight"			"7"
+	"rumble"			"2"
+	"item_flags"			"0"
+	"viewbob_model_scale"		"3"
 
-	"weight"		"7"
-	"item_flags"		"0"
+	"GetFireRate"			"1.5"
+	"IronsightSensitivity"		"0.5"
 
-	"damage"		"75"
+	Weapon_firing_modes
+	{
+		"weapon_modes" "1"
+		"WeaponDefaultMode" "1"
+		"weapon_type" "pistol"
+		"SwingHitTime" "0.1"		
+		"FiresUnderWater" "0"
+		weapon_mode:1
+		{
+			"mode_fire_rate_single" "1.0"
+			"mode_accuracy_maximum_penalty_time" "1.5"
+			"mode_fastest_refire_time" "0.2"
+			"mode_accuracy_shot_penalty_time" "0.15"
+			"mode_fastest_dry_refire_time" "0.15"
+		}
+                NPC
+		{
+			"MinBurst" "1"
+			"MaxBurst" "1"		
+		}
+	}	
+	Animation_Properties
+	{
+        "FirstDrawAnimation"	"ACT_VM_DRAW_INSPECT"
+		"InspectAnimation" "ACT_VM_INSPECT"	
+
+		"FirePrimary1"	   "ACT_VM_PRIMARYATTACK"	
+		"FireIronsighted1" "ACT_VM_PRIMARYATTACK"
+		"SwingAnimation" "ACT_VM_MELEE"	
+
+        "RunAnimation" "ACT_VM_LOWERED_TO_IDLE"
+	
+		"WalkAnimation" "0"
+		"WallAnimation" "0"
+
+		"ReloadDefaultAnimation"	"ACT_VM_RELOAD"
+		"ReloadWaitWhileAnimation" "1"
+        "PumpAnimation"	"0"
+		
+	}
+
+	Weapon_shells
+	{
+		"ShellModel" "models/weapons/shell.mdl"
+		"ShellBounceSound" "Bounce.Shell"
+		"Shell_Attachment" "shell"
+	}
+	
+	Particles_Properties
+	{
+		Player
+		{
+			Muzzle_Tracers
+			{
+				"OldMuzzleTracer"	"effects/spark0.vmt" 
+				"MuzzleTracer1" "weapon_tracer_357"
+			}	
+			Muzzle_Particles
+			{
+				"MuzzleFlash1" "weapon_muzzle_flash_357"
+			}
+		}
+		Npc
+		{
+			Muzzle_Tracers
+			{
+				"OldMuzzleTracer"	"effects/spark0.vmt" 
+				"MuzzleTracer1" "weapon_npc_tracer_357"
+			}
+			Muzzle_Particles
+			{
+				"MuzzleFlash1" "weapon_muzzle_flash_huntingrifle"
+			}
+		}
+	}
+	
+	MuzzleDLight_Properties
+	{
+		"DLightRed"		"232"
+		"DLightGreen"		"108"
+		"DLightBlue"		"25"
+		"DLightRadius"		"290"	
+		"DLightDecay"		"0.2"
+		"DLightAttachment"	"muzzle"
+	}
+
+	Disabled-MuzzleProjectedLight_Properties
+	{
+		"FirstAttachment" "muzzle"
+		"FlashLifeTime"		"0.04"
+		"FlashType"		"2"
+		"RollFlash" "1"
+		"MuzzleLight1" "effects/muzzleflash_light1.vmt"
+		"MuzzleLight2" "effects/muzzleflash_light2.vmt"
+		"MuzzleLight3" "effects/muzzleflash_light3.vmt"
+		"MuzzleLight4" "effects/muzzleflash_light4.vmt"
+	}	
+
+	 CameraFollow_Properties
+	 {
+		"Attachments" "1"
+		"Scales" "0.6"
+	 }
+	 
+	 Garbage_Properties
+	 {
+
+		"Garb_Offset_x" "-25"
+		"Garb_Offset_y" "0"
+		"Garb_Offset_z" "-10"
+
+		"Garb_Angle_x" "0.0"
+		"Garb_Angle_y" "0.0"
+		"Garb_Angle_z" "0.0"
+
+	 }
+	 
+	 Weapon_spread
+	 {
+          Player
+          {
+		 "IronSight_spread" "3.0"
+		 "Standing_spread" "10.0"
+		 "Crouch_spread" "5.0"
+		 "Walking_spread" "30.0"
+		 "Running_spread" "50.0"
+         }			 
+	 NPC
+	 {
+		 "Standing_spread" "20.0"
+		 "Crouch_spread" "10.0"
+		 "Walking_spread" "50.0"
+		 "Running_spread" "80.0"	
+	 }	
+	}
+	 Weapon_Recoil
+	 {
+		"IronScopeDecreaseKoefficient" "0.3"
+		"DoRandomPunch" "1"
+		"ViewPunch_X" "17.45"
+		"ViewPunch_Y" "14.45"
+		"ViewPunch_Z" "0"
+		"AutoReduce" "1"
+
+
+		"DoRandomKick" "0"
+		"ViewKick_X" "6.45"
+		"ViewKick_Y" "4.45"
+		"ViewKick_Z" "0"
+	 }
+
+
+	 ViewModel_Properties
+	 {
+	     	 "pos_x" "-1.0"
+		 "pos_y" "-1.0"
+		 "pos_z" "0.0"
+
+		 "ang_x" "0.7" 
+		 "ang_y" "0.0" 
+		 "ang_z" "-3.5" 
+
+		 "iron_pos_x" "0.0"  
+		 "iron_pos_y" "-2.28"  
+		 "iron_pos_z" "1.1"    
+
+		 "iron_ang_x" "0.0" 
+		 "iron_ang_y" "-0.2" 
+		 "iron_ang_z" "-7.0" 
+
+		 "scope_pos_x" "-25.0"
+		 "scope_pos_y" "-2.64"
+		 "scope_pos_z" "0.7"
+
+		 "scope_ang_x" "0.0"
+		 "scope_ang_y" "0.0"
+		 "scope_ang_z" "7.0"
+
+		 "DistanceToWall" "25.0"
+		 "AngleW_x" "-70.0"
+		 "AngleW_y" "0.0"
+		 "AngleW_z" "0.0"
+		 "PosW_x" "-13.0"
+		 "PosW_y" "1"
+		 "PosW_z" "-5"
+		 
+		 "AngleF_x" "0.0"
+		 "AngleF_y" "-15.0"
+		 "AngleF_z" "-3.0"
+		 "PosF_x" "0"
+		 "PosF_y" "-4"
+		 "PosF_z" "-1.0"
+
+		 "LaserPos_x" "30.0"
+		 "LaserPos_y" "0.0"
+		 "LaserPos_z" "-3.0"
+
+		 "ParticleTracerPos_x" "50.0"
+		 "ParticleTracerPos_y" "-4.0"
+		 "ParticleTracerPos_z" "-3.0"
+
+		 "OriginTracerPos_x" "10.0"
+		 "OriginTracerPos_y" "0.0"
+		 "OriginTracerPos_z" "0.0"
+
+		 "RT_Offset_x" "0.0"
+		 "RT_Offset_y" "7.0"
+		 "RT_Offset_z" "0.3"
+
+		 "RT_OffsetIron_x" "0.0"
+		 "RT_OffsetIron_y" "0.0"
+		 "RT_OffsetIron_z" "0.0"
+
+		 "RT_Angle_x" "0.0"
+		 "RT_Angle_y" "0.0"
+		 "RT_Angle_z" "0.0"
+
+		 "RT_AngleIron_x" "0.0"
+		 "RT_AngleIron_y" "0.0"
+		 "RT_AngleIron_z" "0.0"
+	 }
 
 	// Sounds for the weapon. There is a max of 16 sounds per category (i.e. max 16 "single_shot" sounds)
 	SoundData
 	{
-		"empty"		"Weapon_Pistol.Empty"
-		"single_shot"	"Weapon_357.Single"
+                "single_shot"		"Weapon_ovr_357_FirePrimary"
+                "single_shot_npc"	"Weapon_ovr_357_Primary_NPC"
 	}
 
 	// Weapon Sprite data is loaded by the Client DLL.
 	TextureData
 	{
-		"weapon"
+			"weapon"
 		{
-				"font"		"WeaponIcons"
-				"character"	"e"
+				"font"		"WeaponsIconsOver"
+				"character"	"J"
 		}
 		"weapon_s"
-		{	
-				"font"		"WeaponIconsSelected"
-				"character"	"e"
+		{
+				"font"		"WeaponIconsOverSelected"
+				"character"	"J"
+		}
+		"weapon_small"
+		{
+				"font"		"WeaponIconsOverSmall"
+				"character"	"J"
 		}
 		"ammo"
 		{
-				"font"		"WeaponIcons"
+				"font"		"WeaponIconsSmall"
 				"character"	"q"
 		}
 		"crosshair"
 		{
-				"font"		"Crosshairs"
-				"character"	"Q"
-		}
-		"autoaim"
-		{
-				"file"		"sprites/crosshairs"
-				"x"			"0"
-				"y"			"48"
-				"width"		"24"
-				"height"	"24"
+				"font"		"CrosshairsOver"
+				"character"	"d"	
 		}
 	}
 	IronSight

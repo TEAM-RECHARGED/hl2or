@@ -1,0 +1,24 @@
+"SDK_VertexLitGeneric"
+{
+	"$basetexture"	"Models/weapons/IonRifle/combine_cannon_gun2"	
+	"$bumpmap"	"Models/weapons/IonRifle/combine_cannon_gun_NORM"
+
+	"$phong" "1"
+	"$phongexponenttexture"  "Models/weapons/IonRifle/combine_cannon_gun_DISP"
+	"$phongboost" "4"
+	"$phongfresnelranges" "[.3 .5 1]"
+
+	"$selfillum" "1"
+
+     	"$detail" "detail/vm_blood_detail"
+	"$detailblendmode" "2"
+	"$detailblendfactor" "0.0"
+	"$detailscale" "1.0"
+
+	"Proxies"
+	{
+		"BloodyTexture"
+		{
+		}
+	}
+}

@@ -128,8 +128,8 @@ $Project "Server (HL2OR)"
 				$File	"$SRCDIR\game\shared\hl2or\mount.h"
 			}
 
-			$File "hl2or\npc_baseovr.cpp"
-			$File "hl2or\npc_baseovr.h"
+			$File "hl2or\npc_basepredator.cpp"
+			$File "hl2or\npc_basepredator.h"
 			$File "hl2or\mapadd.cpp"
 			$File "hl2or\mapadd.h"
 			$File "hl2or\npc_cremator.cpp"

@@ -1150,6 +1150,10 @@ protected:
 	void CleanupForcedInteraction( void );
 	void CalculateForcedInteractionPosition( void );
 	CAI_BaseNPC *GetInteractionPartner( void );
+#ifdef OVERCHARGED
+	bool				m_bInvestigateSounds;
+	virtual bool		ShouldInvestigateSounds(void) { return m_bInvestigateSounds; };
+#endif // OVERCHARGED
 
 private:
 	// Forced interactions

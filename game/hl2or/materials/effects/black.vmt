@@ -1,5 +1,8 @@
-LightmappedGeneric
+"Sprite"
 {
-	"$basetexture"	"effects\black"
-
+	"$basetexture" "effects/black"
+	"$spriteorientation" "parallel_upright"
+	"$spriteorigin" "[ 0.50 0.50 ]"
+	"$spriterendermode" 8
+	"$ignorez" "1"
 }

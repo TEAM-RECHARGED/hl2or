@@ -1,0 +1,5 @@
+"VertexLitGeneric"
+{
+	$basetexture "models/xen_tentacle/xen_tentacle_body"
+	$bumpmap "models/xen_tentacle/xen_tentacle_body_n"
+}

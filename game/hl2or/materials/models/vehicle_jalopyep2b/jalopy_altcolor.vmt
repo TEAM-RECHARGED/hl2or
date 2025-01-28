@@ -1,0 +1,13 @@
+"SDK_VertexLitGeneric"
+{
+	"$basetexture"	"Models/vehicle_jalopyep2b/jalopy_altcolor"
+	"$bumpmap" "Models/vehicle_jalopyep2b/jalopy_altcolor_n"
+	"$surfaceprop"	"Wood_lowdensity"
+
+	"$phong" "1"
+	"$phongboost" "5"
+	"$halflambert" "1"
+	"$phongexponent" "15"
+										
+	"$phongfresnelranges"	"[.1 .5 1.0]"
+}

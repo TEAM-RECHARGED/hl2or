@@ -1,0 +1,30 @@
+"SDK_VertexlitGeneric"
+{
+	"$basetexture" "models/acidlion/acidlion_sheet"
+	"$surfaceprop" "alienflesh"
+
+        
+	"$rimlight" "1"
+	"$rimlightexponent" "5"
+	"$rimlightboost" "1"
+
+         "$bumpmap" "models/antlion/Antlionhigh_normal"
+	"$phong"     "1"
+	"$phongexponent"  "10"
+	"$phongboost"   "4"
+	"$phongfresnelranges"   "[1 .50 .40]"
+	"$envmap" "env_cubemap"
+	"$envmaptint" "[ .35 .35 .30 ]"
+	"$envmapconstrast" "1"
+	"$normalmapalphaenvmapmask" 1
+
+	"$selfillum" "1"
+	"$selfIllumFresnel" "1"
+	"$selfIllumFresnelMinMaxExp" "[0.25 2.0 2.9]" 
+	"$selfillumtint"	"[1.05 1.0 0.6]"
+
+	"$model" "1"
+
+	
+
+}

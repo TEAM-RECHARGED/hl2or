@@ -66,12 +66,22 @@ public:
 #endif
 	}
 
-	virtual int GetDeathMessageStartHeight( void );	
+	virtual int GetDeathMessageStartHeight( void );
+#ifdef OVERCHARGED
+	void StartMainMenuVideo();
+	void StopMainMenuVideo();
+#endif // OVERCHARGED
+
 
 	// virtual void ChatInputPosition( int *x, int *y );
 	
 public: // IGameEventListener:
 	virtual void FireGameEvent( IGameEvent * event);
+
+#ifdef OVERCHARGED
+private:
+	class CMainMenu* m_pMainMenuPanel;
+#endif // OVERCHARGED
 
 
 protected:
