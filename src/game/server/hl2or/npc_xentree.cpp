@@ -41,7 +41,7 @@ void CNPC_XenTree::Precache()
 {
 	if ( GetModelName() == NULL_STRING )
 	{
-		SetModelName( AllocPooledString( "models/tree.mdl" ) );
+		SetModelName( AllocPooledString( "models/xentree.mdl" ) );
 	}
 
 	m_bIsRetracted = false;

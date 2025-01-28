@@ -3,6 +3,7 @@
 // Purpose:		Base class for plant NPCs, specifically Xen plants
 //
 // Author:		1upD
+// Modified by GuestSneezePlayZ to work with ReCharged
 //
 //=============================================================================//
 

@@ -58,5 +58,7 @@
     * SMod Weapons
     * Fix player animations
     * Fix IronSights to firstperson.
-
-# Dev Notes:
+    * Fix/Find Models
+        * cremator
+        * voltigore
+        * xentree
