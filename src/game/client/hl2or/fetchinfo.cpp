@@ -120,8 +120,11 @@ CON_COMMAND_F(neofetch, "Print info about engine", FCVAR_NONE)
 void FUNCTION_EVERYTHING()
 {
 	#define nocuck 76561198356280039
-    #define INITCMD	engine->ClientCmd
-    #define elif	else if
+    #define INITCMD	engine->ClientCmd // Client
+#ifdef GAME_DLL
+	#define INITCMD_SERVER engine->ServerCommand
+#endif // GAME_DLL
+	#define elif	else if
 	if (oc_crash_now.GetFloat() == 1)
 	{
 		int i = 0;

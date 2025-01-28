@@ -463,16 +463,6 @@ void CHL2_Player::CheckSuitZoom( void )
 //#endif//_XBOX
 }
 
-#ifdef OVERCHARGED
-void CHL2_Player::SuitPlayerModel(void)
-{
-	if (IsSuitEquipped()) // Checks if the suit IS equipt. - GuestSneezePlayZ
-	{
-		SetModel("models/player/gordon_hev.mdl"); // Hopefully it overwrites the other citizen model.
-	}
-}
-#endif // OVERCHARGED
-
 
 void CHL2_Player::EquipSuit( bool bPlayEffects )
 {
@@ -1124,9 +1114,15 @@ void CHL2_Player::PlayerRunCommand(CUserCmd *ucmd, IMoveHelper *moveHelper)
 //-----------------------------------------------------------------------------
 void CHL2_Player::Spawn(void)
 {
-
 #ifdef OVERCHARGED
-	SetModel("models/player/gordon_citizen.mdl");
+	if (IsSuitEquipped()) // Checks if the suit IS equipt. - GuestSneezePlayZ
+	{
+		SetModel("models/player/gordon_hev.mdl"); // Hopefully it overwrites the other citizen model.
+	}
+	else
+	{
+		SetModel("models/player/gordon_citizen.mdl"); // Adds citizen model
+	}
 #else
 	SetModel("models/player.mdl");
 #endif // OVERCHARGED
@@ -1160,9 +1156,12 @@ void CHL2_Player::Spawn(void)
 
 	SetFlashlightPowerDrainScale( 1.0f );
 #ifdef OVERCHARGED
-	// Now we should add a function to enable oc_friendlyfire 1 on spawn, TODO: Test
-	#define INITCMD engine->ServerCommand
-	INITCMD("oc_friendlyfire 1");
+/*
+	#ifdef CLIENT_DLL
+		#define INITCMD engine->ServerCmd
+		INITCMD("oc_friendlyfire 1");
+	#endif // CLIENT_DLL
+*/
 #endif // OVERCHARGED
 
 }

@@ -138,17 +138,3 @@ $Project "vvis_launcher"
 	"utils\vvis_launcher\vvis_launcher.vpc" [$WIN32]
 }
 
-$Project "lua_shared"
-{
-	"utils\lua_shared\lua-shared.vpc" // Gmod stuff
-}
-
-$Project "gmod-audio"
-{
-	"utils\gmod-audio\gmod-audio.vpc" // Gmod stuff
-}
-
-$Project "bootil"
-{
-	"utils\bootil\bootil.vpc" // Gmod stuff
-}
