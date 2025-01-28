@@ -12,7 +12,8 @@ Install the following games on Steam:
 - Half-Life 1: Source
 
 Download and place the mod files in the following directory:
-[YOUR STEAM DIRECTORY]/sourcemods
+[YOUR STEAM DIRECTORY]/sourcemods, example of your steam directory can be:
+C:\Program Files (x86)\Steam\steamapps\sourcemods.
 
 Restart Steam.
 
