@@ -1,8 +1,0 @@
-"SDK_VertexLitGeneric"
-{
-	"$basetexture" "models/items/tactical_shield/shield_glass"
-
-        "$translucent" 1
-    	"$surfaceprop" "glass"
-   	"$envmap" "env_cubemap"
-}

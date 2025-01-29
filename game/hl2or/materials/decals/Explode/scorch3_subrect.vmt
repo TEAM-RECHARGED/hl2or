@@ -1,8 +1,0 @@
-"SDK_DecalModulate"
-{
-	"$translucent" 1
-	"$basetexture" "Decals/explode/scorch3"
-	"$decal" 1
-	"$decalscale" 	0.35
-	"$modelmaterial" "decals/explode/expl3"
-}

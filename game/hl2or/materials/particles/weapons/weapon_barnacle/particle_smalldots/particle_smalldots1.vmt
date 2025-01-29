@@ -1,9 +1,0 @@
-SpriteCard
-{
-$basetexture "particles/weapons/weapon_barnacle/particle_smalldots/particle_smalldots1"
-$translucent 1
-$DEPTHBLEND 0
-$minsize .00125
-$maxsize .25
-$blendframes 0
-}

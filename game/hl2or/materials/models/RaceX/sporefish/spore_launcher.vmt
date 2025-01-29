@@ -1,8 +1,0 @@
-"SDK_VertexLitGeneric"
-{
-	"$basetexture" "models/weapons/v_spore_launcher/spore_launcher"
-	"$bumpmap" "models/weapons/v_spore_launcher/spore_launcher_n"
-
-	$phong 1
-	$phongfresnelranges "[.15 .15 .15]"
-}

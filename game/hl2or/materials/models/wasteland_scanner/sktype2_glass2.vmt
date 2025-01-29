@@ -1,5 +1,0 @@
-"VertexLitGeneric"
-{
-	$basetexture "models/wasteland_scanner/glass2_alpha"
-	$translucent 1
-}

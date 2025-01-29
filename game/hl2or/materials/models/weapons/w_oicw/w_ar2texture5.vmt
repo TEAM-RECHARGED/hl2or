@@ -1,8 +1,0 @@
-"SDK_VertexLitGeneric"
-{
-	"$baseTexture" "Models/Weapons/w_oicw/w_ar2texture5"
-	"$bumpmap" "Models/Weapons/w_oicw/w_ar2texture5_normal"
-	"$envmap" "env_cubemap"
-	"$normalmapalphaenvmapmask" 1
-	"$selfillum" "1"
-}

@@ -1,7 +1,0 @@
-"UnLitGeneric"
-{
-	"$baseTexture" "models\weapons\v_molotov_over1\v_eq_molotov_bottle"
-	"$translucent" "1"
-	$model  1
-
-}

@@ -1,8 +1,0 @@
-"SDK_VertexLitGeneric"
-{
-	"$basetexture" "Models/healthvial/vial_redlight"
-	"$surfaceprop" "metal"
-        "$translucent" 0
-
-}
-

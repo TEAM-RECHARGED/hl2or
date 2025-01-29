@@ -1,7 +1,0 @@
-"nightvision"
-{
-	"$FBTEXTURE"		"_rt_FullFrameFB" 
-	"$FINENOISETEX"		"effects/shaders/nightvision_noise"
-	"$SPECTRUMTEX"	"effects/shaders/nightvision_spectrum"
-	"$ignorez"		1
-}

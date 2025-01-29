@@ -1,7 +1,0 @@
-"SDK_VertexLitGeneric"
-{
-	"$model" 1
-	"$basetexture" "models/weapons/v_combinesniper/TexScope_combsniper_alpha2"
-	"$translucent" 1
-}
-

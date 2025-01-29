@@ -1,8 +1,0 @@
-"editor_shader"
-{
-	"$shadername"		"postproc_dust"
-	"$bloom"			"_rt_SmallFB0"
-	"$dust"			"shadereditor\screen-dirt3"
-	"$dust_scale"		"[1 1]"
-	"$dust_strength"		"0.2"
-}

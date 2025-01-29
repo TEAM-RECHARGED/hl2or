@@ -1,9 +1,0 @@
-"SDK_VertexLitGeneric"
-{
-	"$baseTexture" "models/boid_xen_alt/flockface"
-
-$detail detail\detaildirt001a
-$detailscale 2.563
-$detailblendfactor .8
-$detailblendmode 0
-}

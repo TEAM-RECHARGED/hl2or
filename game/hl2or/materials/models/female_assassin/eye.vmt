@@ -1,9 +1,0 @@
-//"ModelDiffuseBump"
-"SDK_VertexLitGeneric"
-{
-	
-	"$envmap" "env_cubemap"
-	"$envmaptint" "[1.0 0.9 0.0]"
-	"$basetexture" "models/female_assassin/eye"
-	"$model" 1
-}

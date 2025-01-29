@@ -1,8 +1,0 @@
-"editor_shader"
-{
-	"$shadername"	"plrscreenfx_ovr_teleporting"
-     	"$basetexture"	"_rt_FullFrameFB"
-
-     	//"$basetexture"	"_rt_SmallFB0"
-     	//"$basetexture2"	"_rt_SmallFB1"
-}

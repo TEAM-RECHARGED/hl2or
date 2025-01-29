@@ -1,5 +1,0 @@
-"SDK_VertexLitGeneric"
-{
-	"$baseTexture" "models/weapons/w_shock/shock_rifle"
-	"$selfillum" 1
-}

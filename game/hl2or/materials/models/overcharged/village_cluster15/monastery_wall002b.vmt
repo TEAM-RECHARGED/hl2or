@@ -1,6 +1,0 @@
-"vertexlitgeneric"
-{
-	"$basetexture" "lostcoast/monastery/monastery_wall002b"
-	"$surfaceprop" "concrete"
-	"$bumpmap" "lostcoast/monastery/monastery_wall002b_normal"
-}

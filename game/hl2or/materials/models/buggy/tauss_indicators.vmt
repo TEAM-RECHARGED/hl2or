@@ -1,7 +1,0 @@
-"SDK_VertexLitGeneric"
-{
-	"$basetexture" "models/Weapons/v_gauss_remaster/tauss_indicators_glow"
-	"$bumpmap" "models/Weapons/v_gauss_remaster/tauss_indicators_n"
-
-	"$selfillum" 1
-}

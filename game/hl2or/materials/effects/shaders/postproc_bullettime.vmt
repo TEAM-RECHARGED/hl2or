@@ -1,6 +1,0 @@
-"editor_shader"
-{
-	"$shadername"	"postproc_bullettime"
-	"$FrameBuffer"	"_rt_FullFrameFB"
-     	"$custom parameter"	"texture_samples/normal_2"
-}

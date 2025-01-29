@@ -1,9 +1,0 @@
-"UnlitGeneric"
-{
-	// Original shader: AddTexture
-	"$basetexture" "effects/redglow1"
-	"$additive" 1
-	"$vertexcolor" 1
-}
-
-

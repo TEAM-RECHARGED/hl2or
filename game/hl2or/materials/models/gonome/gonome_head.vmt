@@ -1,9 +1,0 @@
-"SDK_VertexLitGeneric"
-{
-	"$baseTexture" "models/gonome/gonome_head"
-        "$bumpmap" "models/gonome/gonome_head_n"
-	"$phong" "1"
-	"$phongexponent" "15"
-	"$phongboost"	"1"
-	"$phongfresnelranges"	"[.1 0.9 2.5]"
-}

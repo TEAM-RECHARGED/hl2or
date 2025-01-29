@@ -1,5 +1,0 @@
-"SDK_VertexLitGeneric"
-{
-	"$basetexture" "models/Weapons/v_gauss_remaster/tauss_multidetails"
-	"$bumpmap" "models/Weapons/v_gauss_remaster/tauss_multidetails_n"
-}

@@ -1,9 +1,0 @@
-"editor_shader"
-{
-	"$shadername"	"postproc_flare_naive_eyes2"
-     "$tex3"	"_rt_FullFrameFB"
-     "$tex1"	"texture_samples/fx_clouds_4"
-     "$tex2"	"texture_samples/noise_3d"
-     //"$tex3"	"texture_samples/fx_clouds_1"
-     //"$texture_4"	"texture_samples/noise_3d"
-}

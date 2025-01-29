@@ -1,9 +1,0 @@
-"UnlitGeneric"
-{
-	"$translucent" 1
-	"$basetexture" "Decals/spore_spitsplat"
-	"$decal" 1
-	"$decalscale" 0.25
-
-	"$selfillum" 1
-}

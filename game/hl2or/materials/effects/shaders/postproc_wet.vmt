@@ -1,6 +1,0 @@
-"editor_shader"
-{
-	"$shadername"	"postproc_wet"
-	"$basetexture"	"texture_samples\drew\water_droplets"
-	"$basetexture2"	"_rt_FullFrameFB"
-}
