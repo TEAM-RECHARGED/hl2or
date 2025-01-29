@@ -6,6 +6,8 @@ WeaponData
 	"printname"	"#HL2_SMG1"
 	"viewmodel"				"models/weapons/v_smg1.mdl"
 	"playermodel"			"models/weapons/w_smg1.mdl"	//FIXME: 
+//	"viewmodel"			"models/weapons/overcharged/v_smg1_mp7.mdl"
+//	"playermodel"			"models/weapons/overcharged/world/w_smg1.mdl"
 	"anim_prefix"			"smg2"
 	"bucket"				"2"
 	"bucket_position"		"0"
