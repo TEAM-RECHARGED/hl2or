@@ -1,0 +1,10 @@
+//"ModelDiffuseBump"
+"SDK_VertexLitGeneric"
+{
+	"$bumpmap" "models/female_assassin/head_normal"
+	"$envmap" "shadertest/cubemap"
+	"$envmaptint" "[0.6 0.6 0.6]"
+	"$normalmapalphaenvmapmask" 1
+	"$basetexture" "models/female_assassin/head"
+	"$model" 1
+}

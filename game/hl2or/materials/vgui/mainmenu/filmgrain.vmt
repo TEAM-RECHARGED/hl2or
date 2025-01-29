@@ -1,0 +1,7 @@
+"UnlitGeneric"
+{
+	"$baseTexture" "vgui/mainmenu/filmgrain"
+	"$vertexalpha" 1
+	"$gammaColorRead" "1"
+	"$linearWrite" "1"
+}

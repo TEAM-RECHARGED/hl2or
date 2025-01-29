@@ -1,0 +1,6 @@
+"DecalModulate"
+{
+	"$basetexture" "Decals/extinguish1_noalpha"
+	"$decal" 1
+	"$decalscale" 0.25
+}

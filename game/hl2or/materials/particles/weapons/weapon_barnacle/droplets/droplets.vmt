@@ -1,0 +1,6 @@
+spritecard
+{
+$basetexture "particles/weapons/weapon_barnacle/droplets/droplets"
+$translucent 1
+$DEPTHBLEND 1
+}

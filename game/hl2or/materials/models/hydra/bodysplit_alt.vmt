@@ -1,0 +1,11 @@
+//"UnlitGeneric"
+//{
+//	"$basetexture" "models/hydra/bodysplit"
+//	"$gradienttexture" "models/hydra/gradient"
+//	"$model" 1
+//}
+"editor_shader"
+{
+	"$shadername"	"model_chromatic_aberration_hydra"
+
+}

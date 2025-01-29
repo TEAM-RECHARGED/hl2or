@@ -1,0 +1,7 @@
+"UnlitGeneric"
+{
+	"$basetexture" "effects/AK47/dot_glow/redflare"
+	"$additive" "1"
+	"$vertexcolor" 1
+	//"$ignorez" "1"
+}

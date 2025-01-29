@@ -1,0 +1,6 @@
+"postproc_sunrays"
+{
+	"$shadername"	"postproc_sunrays"
+	"$skymask"	"_rt_SEdit_Skymask"
+	"$depthbuffer"	"_rt_FullFrameDepth_Alt"
+}

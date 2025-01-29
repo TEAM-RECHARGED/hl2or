@@ -1,0 +1,17 @@
+"Spritecard"
+{
+"$basetexture" "effects/AK47/Frames/muzzle"
+"$surfaceprop"	"no_decal"
+"$additive"	"1"
+"$vertexcolor"     "1"
+"$vertexalpha"     "1"
+"Proxies"
+{
+     "AnimatedTexture"
+     {
+    "animatedtexturevar" "$basetexture"
+    "animatedtextureframenumvar" "$frame"
+    "animatedtextureframerate" "18"
+     }
+    }
+}

@@ -1,0 +1,13 @@
+"Sprite"
+{
+	"$spriteorientation" "vp_parallel"
+	"$spriteorigin" "[ 0.50 0.00 ]"
+	"$basetexture" "sprites/beam_flashlight"
+
+	"Proxies"
+	{
+		"lampbeam"
+		{
+		}
+	}
+}

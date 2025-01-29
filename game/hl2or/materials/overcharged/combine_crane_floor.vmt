@@ -1,0 +1,13 @@
+"LightmappedGeneric"
+{
+	"$basetexture" "overcharged/combine_crane_floor"
+	"$surfaceprop" "metal"
+	//"$nocull" 1 
+	//"$envmap" "Environment Maps/envmapcombine"
+	//"$envmap" "env_cubemap"
+	"$envmaptint" "[ .75 .9 1]"
+	"$basealphaenvmapmask" 1
+	//"$envmapmask" "models/props_combine/Combine_crane003_mask"
+	"$envmapcontrast" 1
+	"$envmapsaturation" 1
+}

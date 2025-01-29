@@ -1,0 +1,17 @@
+"Spritecard"
+{
+
+"$basetexture" "particles\baseexplosion_ovr\Random2\Main"
+"$surfaceprop"	"Default"
+
+"Proxies"
+{
+     "AnimatedTexture"
+     {
+    "animatedtexturevar" "$basetexture"
+    "animatedtextureframenumvar" "$frame"
+    "animatedtextureframerate" "75"
+     }
+}
+
+}

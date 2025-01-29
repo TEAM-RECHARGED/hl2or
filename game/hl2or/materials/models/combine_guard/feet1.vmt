@@ -1,0 +1,5 @@
+"SDK_VertexLitGeneric"
+{
+	"$basetexture" "models/Combine_Guard/feet1"
+	"$bumpmap" "models/Combine_Guard/feet1_n"
+}

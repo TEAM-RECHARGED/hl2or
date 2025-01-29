@@ -1,0 +1,7 @@
+"UnlitGeneric"
+{
+	"$basetexture" "effects/gunshiptracer2"
+	"$brightness" "effects/spark_brightness"
+	"$additive" 1
+	"$vertexcolor" 1
+}

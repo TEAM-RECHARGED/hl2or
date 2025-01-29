@@ -1,0 +1,6 @@
+"editor_shader"
+{
+	"$shadername"	"postproc_suit_regenerate"
+     "$texture_1" "_rt_FullFrameFB"
+     "$texture_2"	"texture_samples/noise_2d"
+}

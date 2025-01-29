@@ -1,0 +1,31 @@
+//"PP_LightmappedGeneric"
+//{
+//	"$vertexcolor" "1"
+//	"$vertexalpha" "1"
+//	// Original shader: DecalBaseTimesLightmapAlphaBlend
+//	"$translucent" 1
+//	"$basetexture" "Decals/beersplash"
+//	"$decal" 1
+//	"$decalscale" 0.50
+//	"$modelmaterial" "Decals/beersplashmode"
+//}
+//"SDK_LightmappedGeneric"
+
+"UnlitGeneric"
+{
+	//"$vertexcolor" "1"
+	//"$vertexalpha" "1"
+	"$translucent" 1
+	"$basetexture" "Decals/beersplash"
+	"$decal" 1
+	"$decalscale" 0.25
+
+	"$selfillum" 1
+}
+
+/*"editor_shader"
+{
+	"$shadername"	"lightmap_parallax_nodepth"
+	"$basetexture" "decals/beer_decal_paralax"
+	"$bumpmap" "decals/beer_decal_paralax_normal"
+}*/

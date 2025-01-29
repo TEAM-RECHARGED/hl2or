@@ -1,0 +1,9 @@
+"SDK_VertexLitGeneric"
+{
+        "$baseTexture" 	"Models/Combine_soldier/beret_red"
+	"$bumpmap" "models/combine_soldier/beret_normal"
+	"$surfaceprop" "flesh"
+	// "$selfillum" 1
+
+
+}

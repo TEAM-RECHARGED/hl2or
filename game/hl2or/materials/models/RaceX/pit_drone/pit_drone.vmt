@@ -1,0 +1,5 @@
+"SDK_VertexLitGeneric"
+{
+	"$baseTexture" "models/RaceX/pit_drone/pit_drone"
+	"$bumpmap" "models/RaceX/pit_drone/pit_drone_n"
+}

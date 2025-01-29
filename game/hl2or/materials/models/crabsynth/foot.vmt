@@ -1,0 +1,16 @@
+"SDK_VertexLitGeneric"
+{
+	"$basetexture" "models/CrabSynth/foot"
+	"$bumpmap" "models/CrabSynth/foot_n"
+
+	//"$envmapmask" "models/CrabSynth/footmask"
+	//"$envmap" "models/CrabSynth/synthenvmap"
+	//"$envmapsphere" 1
+
+	"$halflambert" 1
+ 	"$phong"     "1"
+ 	//"$phongboost"   "5"
+ 	"$phongexponenttexture" "models/CrabSynth/footmask"
+ 	"$phongfresnelranges"   "[.1 .5 1]"
+ 	"$phongalbedotint" 1
+}

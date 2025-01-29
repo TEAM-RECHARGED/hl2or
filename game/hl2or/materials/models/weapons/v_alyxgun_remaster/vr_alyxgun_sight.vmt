@@ -1,0 +1,26 @@
+"SDK_VertexLitGeneric"
+{
+	"$basetexture" "models/weapons/v_alyxgun_remaster/alyxgun_sight_glow"
+	
+	$translucent 1
+	
+	$emissiveBlendEnabled 1
+	$emissiveBlendTexture		"dev/null"
+	$emissiveBlendBaseTexture	"models/weapons/v_alyxgun_remaster/alyxgun_sight_glow"
+	$emissiveBlendFlowTexture	"dev/null"
+	$emissiveBlendStrength 1
+	$emissiveBlendScrollVector "[0 0]"
+
+
+     	"$detail" "detail/vm_blood_detail"
+	"$detailblendmode" "2"
+	"$detailblendfactor" "0.0"
+	"$detailscale" "1.0"
+
+	"Proxies"
+	{
+		"BloodyTexture"
+		{
+		}
+	}
+}

@@ -1,0 +1,5 @@
+"editor_shader"
+{
+	"$shadername"	"objfx_chromehl1_model_agrunt"
+	"$basetexture" "models/aliengrunt/Chrome2"
+}

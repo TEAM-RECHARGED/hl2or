@@ -1,0 +1,54 @@
+"Unlittwotexture"
+//"SDK_VertexLitGeneric"
+{
+	"$model" "1"
+	"$basetexture" "models/props_combine/combine_intmonitor001_disp"
+	"$surfaceprop" "glass"
+	"$texture2"	"models/props_combine/combinescanline"
+	"$selfillum" "1"
+	"$mod2x" "1"
+//	"$additive" "1"
+
+
+	"Proxies"
+	{
+                "BloodyTexture"
+		{
+     	"$detail" "detail/vm_blood_detail"
+	"$detailblendmode" "2"
+	"$detailblendfactor" "0.0"
+	"$detailscale" "1.0"
+		}
+		"Sine"
+		{
+			"resultVar" "$color[0]"
+			"sineperiod" .2
+			"sinemin" .99
+			"sinemax" 1
+		}
+		"Sine"
+		{
+			"resultVar" "$color[1]"
+			"sineperiod" .1
+			"sinemin" .98
+			"sinemax" 1
+		}
+		"Sine"
+		{
+			"resultVar" "$color[2]"
+			"sineperiod" .1
+			"sinemin" .99
+			"sinemax" 1
+		}
+
+		"TextureScroll"
+		{
+			"texturescrollvar" "$texture2transform"
+			"texturescrollrate" 1
+			"texturescrollangle" -90
+		}
+
+
+	}
+
+}

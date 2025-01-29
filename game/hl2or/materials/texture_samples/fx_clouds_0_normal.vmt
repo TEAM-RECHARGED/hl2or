@@ -1,0 +1,5 @@
+"unlitgeneric"
+{
+	"$basetexture" "texture_samples/fx_clouds_0_normal"
+	$ignorez	1
+}

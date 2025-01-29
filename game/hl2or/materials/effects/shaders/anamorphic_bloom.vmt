@@ -1,0 +1,8 @@
+"editor_shader"
+{
+	"$shadername"	"postproc_flare_anamorphic"
+	"$basetexture"	"_rt_SmallFB1"
+	"$MUTABLE_01"	"1.15"	//Strength
+	"$ignorez"		"1"
+	"$quality"				"4"
+}

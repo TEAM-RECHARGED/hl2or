@@ -1,0 +1,20 @@
+//"UnlitGeneric"
+"ParticleSphere"
+{
+	// In DX7 it acts just like UnlitGeneric
+	"$basetexture" "particle/SmokeStackFallback"
+
+	// The bumpmap is used in DX8
+	"$bumpmap" "particle/BillowNormalMap"
+
+	"$translucent" 1
+	"$vertexcolor" 1
+	"$nofog" 1
+
+	//"Proxies"
+	//{
+	//	"ParticleSphereProxy"
+	//	{
+	//	}
+	//}
+}

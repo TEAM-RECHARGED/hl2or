@@ -1,0 +1,5 @@
+"SDK_VertexLitGeneric"
+{
+	"$basetexture" "models/CrabSynth/pulse"
+	"$bumpmap" "models/CrabSynth/pulse_n"
+}

@@ -1,0 +1,11 @@
+"SDK_Vertexlitgeneric"
+{
+	"$basetexture" "models\RaceX\voltigore\volt_leg_rework2"
+	"$bumpmap" "models\RaceX\voltigore\volt_leg_n2"
+
+	"$phong" "1"
+	"$phongboost" "3"
+	"$phongalbedotint" "1"
+	"$phongfresnelranges" "[.18 .4 1]"
+	"$halflambert" "1"
+}

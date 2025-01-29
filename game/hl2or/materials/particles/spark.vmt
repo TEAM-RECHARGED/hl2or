@@ -1,0 +1,9 @@
+"UnlitGeneric"
+{
+	// Original shader: AddTexture
+	"$basetexture" "particles/spark"
+	"$brightness" "particles/spark_brightness"
+	"$additive" 1
+	"$vertexcolor" 1
+$OVERBRIGHTFACTOR 12.0 
+}

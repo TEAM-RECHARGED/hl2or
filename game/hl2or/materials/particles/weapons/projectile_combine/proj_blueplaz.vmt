@@ -1,0 +1,5 @@
+"UnlitGeneric"
+{
+	"$basetexture" "particles\weapons\projectile_combine\proj_blueplaz"
+	"$additive" "1"
+}

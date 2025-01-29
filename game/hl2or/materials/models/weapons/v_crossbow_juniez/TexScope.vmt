@@ -1,0 +1,8 @@
+"SDK_VertexLitGeneric"
+{
+	"$model" 1
+	"$basetexture" "Models/Weapons/v_crossbow_juniez/texscope_crossbow"
+	"$translucent" 1
+}
+
+

@@ -1,0 +1,10 @@
+"vertexlitgeneric"
+{
+	"$basetexture" "models/props_hecu/hcu_carrecon_forest_blow"
+	"$bumpmap" "models/props_hecu/hcu_carrecon_forest_blow_n"
+	"$halflambert" 1
+	"$model" "1"
+	"$detail" "detail/dt_metal1"
+	"$detailscale" "12"
+	"$detailblendfactor" "0.8"
+}

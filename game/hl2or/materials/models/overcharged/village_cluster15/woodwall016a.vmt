@@ -1,0 +1,9 @@
+"vertexlitgeneric"
+{
+	// original shader: cubicenvmapblendmaskedbasetimeslightmap
+	"$basealphaenvmapmask" 1
+	"$basetexture" "wood/woodwall016a"
+	"$envmap" "env_cubemap"
+	"$surfaceprop" "wood"
+	"%keywords" "borealis"
+}

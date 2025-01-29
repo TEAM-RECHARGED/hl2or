@@ -1,0 +1,5 @@
+"SDK_VertexLitGeneric"
+{
+	"$basetexture" "models/combine_BMPod/sack"
+	"$surfaceprop" "flesh"
+}

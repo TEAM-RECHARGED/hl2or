@@ -1,0 +1,6 @@
+"SDK_VertexLitGeneric"
+{
+	"$baseTexture" "models\cremator/arm"
+	"$translucent" 0
+	"$bumpmap" "models/cremator/arm_normal"
+}

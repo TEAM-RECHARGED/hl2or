@@ -1,0 +1,15 @@
+"SDK_VertexLitGeneric"
+{
+	$basetexture		"models/weapons/v_airboatgun_remaster2/abgun_main"
+	$bumpmap 		"models/weapons/v_airboatgun_remaster2/abgun_main_n"
+
+	$envmap 		"env_cubemap"
+	$envmaptint 		"[0.28 0.28 0.28]"
+	$envmapfresnel 		1	
+	$phong 			1
+
+	$phongtint 		"[0.30 0.30 0.40]"
+	$phongexponenttexture 	"models/weapons/v_airboatgun_remaster2/abgun_main_exp"
+	$phongboost		3.0
+	$phongfresnelranges	"[0.30 0.60 .65]"
+}

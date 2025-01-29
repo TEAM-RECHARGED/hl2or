@@ -1,0 +1,6 @@
+"UnlitGeneric"
+{
+	"$basetexture" "sprites/tc_ar2_muzzle1"
+//	"$vertexcolors" "1"
+	"$additive" "1"
+}

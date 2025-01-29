@@ -1,0 +1,6 @@
+//"ModelDiffuseBump"
+"SDK_VertexLitGeneric"
+{
+	"$basetexture" "models/female_assassin/pouch"
+	"$model" 1
+}

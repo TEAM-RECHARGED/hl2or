@@ -1,0 +1,22 @@
+"Refract"
+{
+	"$model" 1
+
+ 	"$refractamount" ".04"
+	"$normalmap" "models/BallSphere/river"
+	"%tooltexture" "models/BallSphere/river"
+	"$envmap" "env_cubemap"
+	"$envmapsaturation" ".3"
+	"$envmaptint" "[.5 .5 .5]"
+	"$nocull" "1"
+	"$refracttint" "[.5 .7 .95]"
+	Proxies
+	{
+		TextureScroll
+		{
+			texturescrollvar $bumpTransform
+			texturescrollrate .75
+			texturescrollangle 0.00
+		}
+	}
+}

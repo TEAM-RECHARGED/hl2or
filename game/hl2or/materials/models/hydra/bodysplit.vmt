@@ -1,0 +1,9 @@
+//"JellyFish"
+//"SDK_VertexlitGeneric"
+"SDK_UnlitGeneric"
+{
+	"$model" 1
+	"$basetexture" "models/hydra/bodysplit_alpha"
+	"$gradienttexture" "models/hydra/gradient"
+	"$translucent" "1"
+}

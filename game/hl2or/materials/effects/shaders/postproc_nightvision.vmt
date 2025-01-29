@@ -1,0 +1,5 @@
+"editor_shader"	// unused post 2024 year
+{
+	"$shadername"	"postproc_nightvision"
+     	"$basetexture"	"_rt_FullFrameFB"
+}

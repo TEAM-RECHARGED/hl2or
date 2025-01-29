@@ -1,0 +1,5 @@
+"SDK_VertexLitGeneric"
+{
+	"$basetexture" "models/CrabSynth/ammo"
+	"$bumpmap" "models/CrabSynth/ammo_n"
+}

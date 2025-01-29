@@ -1,0 +1,10 @@
+"SDK_VertexLitGeneric"
+{
+	"$basetexture" "models/boid_xen/B_Top1"
+	"$bumpmap" "models/boid_xen/B_Top1n"
+
+$detail detail\detaildirt001a
+$detailscale 2.563
+$detailblendfactor .8
+$detailblendmode 0
+}

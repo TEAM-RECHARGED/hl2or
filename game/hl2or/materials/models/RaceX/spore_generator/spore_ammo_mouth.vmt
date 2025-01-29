@@ -1,0 +1,10 @@
+"SDK_VertexLitGeneric"
+{
+	"$baseTexture" "models/RaceX/spore_generator/spore_ammo_mouth"
+	"$bumpmap" "models/RaceX/spore_generator/spore_ammo_mouth_n"
+
+$detail detail\dt_grass1
+$detailscale 2.563
+$detailblendfactor .8
+$detailblendmode 0
+}

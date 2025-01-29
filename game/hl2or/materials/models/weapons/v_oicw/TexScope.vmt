@@ -1,0 +1,8 @@
+"SDK_VertexLitGeneric"
+{
+	"$model" 1
+	"$basetexture" "models/weapons/v_oicw/texscope_oicw3"
+	"$translucent" 1
+}
+
+

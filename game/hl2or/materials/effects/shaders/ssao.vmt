@@ -1,0 +1,7 @@
+"ssao"
+{
+	"$FRAMEBUFFER"		"_rt_FullFrameDepth_Alt"
+	"$LUMINANCE"		"sprites/white"
+	"$NOISEBUFFER"		"water/water_noise_low"
+	"$ignorez"		1
+}

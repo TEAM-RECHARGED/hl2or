@@ -1,0 +1,8 @@
+"editor_shader"
+{
+	"$shadername"		"glass_effect_03_simple"
+//	"$bloom"			"_rt_SmallFB0"
+//	"$dust"			"effects\screenflares_widescreen"
+//	"$dust_scale"		"[2.5 2.5]"
+//	"$dust_strength"		"0.3"
+}

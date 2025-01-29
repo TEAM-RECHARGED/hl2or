@@ -1,0 +1,25 @@
+"SDK_VertexLitGeneric"
+{
+	"$basetexture" "models\weapons\v_lasermine\mine_main2"
+	"$bumpmap" "models\weapons\v_lasermine\mine_main_n"
+	
+	"$surfaceprop" "metal"
+
+	"$envmap" "env_cubemap"
+	"$normalmapalphaenvmapmask" 1
+	"$envmapcontrast" 1
+	"$envmapsaturation" 1
+	"$envmaptint" "[ .56 .67 .75 ]"
+
+     	"$detail" "detail/vm_blood_detail"
+	"$detailblendmode" "2"
+	"$detailblendfactor" "0.0"
+	"$detailscale" "1.0"
+
+	"Proxies"
+	{
+		"BloodyTexture"
+		{
+		}
+	}
+}

@@ -1,0 +1,28 @@
+"SDK_VertexLitGeneric"
+{
+	"$baseTexture" "models\weapons\v_rpg_juniez\v_rpg_body_d"
+	"$bumpmap" "models\weapons\v_rpg_juniez\v_rpg_body_n"
+
+	"$phong"				"1"
+	"$phongexponent"			"10"
+	"$phongboost"				"0.75"
+	"$phongfresnelranges"			"[2 4 6]"
+	"$phongtint"				"[0.75 0.7 0.6]"
+				
+	"$envmap"				"env_cubemap"
+	"$normalmapalphaenvmapmask"		"1"
+	"$envmaptint"				"[.066 .06 .05]"
+
+
+        "$detail" "detail/vm_blood_detail"
+	"$detailblendmode" "2"
+	"$detailblendfactor" "0.0"
+	"$detailscale" "1.0"
+
+	"Proxies"
+	{
+		"BloodyTexture"
+		{
+		}
+	}
+}

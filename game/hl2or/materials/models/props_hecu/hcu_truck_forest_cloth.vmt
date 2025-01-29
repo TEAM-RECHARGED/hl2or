@@ -1,0 +1,24 @@
+"vertexlitgeneric"
+{
+	"$basetexture" "models/props_hecu/hcu_truck_forest_cloth"
+	"$bumpmap" "models/props_hecu/hcu_truck_forest_cloth_n"
+
+	"$halflambert" 1
+	"$model" 1
+	"$surfaceprop" "rubber"
+	
+	"$basemapalphaphongmask" "1"
+	
+	"$phong" "1"
+	"$phongexponent" "25"
+	"$phongboost" "3.5"	
+	"$phongfresnelranges"	"[.5 .5 3]"
+	
+	"$rimlight" "1"			
+	"$rimlightexponent" "20"	
+	"$rimlightboost" ".25"
+
+	"$detail" "detail/dt_fabric2"
+	"$detailscale" "12"
+	"$detailblendfactor" "0.8"
+}

@@ -1,0 +1,6 @@
+"SDK_UnlitGeneric"
+{
+	"$basetexture"	"Effects/city_card_01"
+	//"$translucent"	1
+	"$alphatest" 1
+}

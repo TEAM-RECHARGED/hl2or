@@ -1,0 +1,9 @@
+//"SDK_LightmappedGeneric"
+"UnlitGeneric"
+{
+	"$baseTexture" "vgui/chapters/testmap3"
+	"$vertexalpha" 1
+	"$gammaColorRead" "1"
+	"$linearWrite" "1"
+	"$ignorez"        "1"
+}

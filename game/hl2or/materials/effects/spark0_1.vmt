@@ -1,0 +1,8 @@
+"UnlitGeneric"
+{
+	// Original shader: AddTexture
+	"$basetexture" "effects/spark0_000"
+	"$brightness" "effects/spark0_2"
+	"$additive" 1
+	"$vertexcolor" 1
+}
