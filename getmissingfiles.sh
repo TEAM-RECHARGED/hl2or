@@ -10,5 +10,8 @@ if [`$1` == `--models`]; then
 elif [`$1` == `--maps`]; then
     if [ $OS == "Linux" ]; then
         cp -r ~/.steam/steamapps/common/Half-Life 2/maps/* game/hl2or/maps/*
+    else
+        echo "Unknown OS, using Windows."
+        cp -r C:/Program Files (x86)/Steam/steamapps/common/Half-Life 2/maps/* game/hl2or/maps/*
     fi
 fi
