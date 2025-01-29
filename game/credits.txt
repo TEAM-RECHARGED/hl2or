@@ -1,0 +1,12 @@
+CREDITS!
+--------
+ReCharged uses a variety of multiple assets to create the mod, we will also credit overcharged's assets.
+--------
+
+Used:
+- Valve Developer Wiki:
+    - https://developer.valvesoftware.com/wiki/Hand_Viewmodels <- Used for C_arms implementation.
+    - https://developer.valvesoftware.com/wiki/Adding_an_inventory <- Unused Inventory system.
+    - https://developer.valvesoftware.com/wiki/Ironsights <- Used for IronSights implementation.
+- ModDB:
+    - https://www.moddb.com/mods/hl2-overcharged <- Majority of scripts, models and materials have been used from the original overcharged

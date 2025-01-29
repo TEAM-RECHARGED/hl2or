@@ -29,7 +29,6 @@
     * weapon_flamethrower.txt
     * weapon_grenadelauncher.txt
     * weapon_hopmine.txt
-    * weapon_iceaxe.txt
     * weapon_interactive_headcrab.txt
     * weapon_interactive_item.txt
     * weapon_jetpack.txt

@@ -6174,7 +6174,7 @@ void CBasePlayer::CheatImpulseCommands( int iImpulse )
 		GiveAmmo( 5,	"grenade");
 		GiveAmmo( 32,	"357" );
 		GiveAmmo( 16,	"XBowBolt" );
-#ifdef HL2_EPISODIC
+#ifdef HL2_EPISODIC || OVERCHARGED
 		GiveAmmo( 5,	"Hopwire" );
 #endif		
 		GiveNamedItem( "weapon_smg1" );
@@ -6189,8 +6189,26 @@ void CBasePlayer::CheatImpulseCommands( int iImpulse )
 		GiveNamedItem( "weapon_357" );
 		GiveNamedItem( "weapon_crossbow" );
 #ifdef OVERCHARGED
+		DevMsg("Adding ReCharged weapons...");
 		GiveNamedItem( "weapon_stunstick" );
 		GiveNamedItem( "weapon_slam" );
+		GiveNamedItem("weapon_m4");
+		GiveNamedItem("weapon_ak47");
+		GiveNamedItem("weapon_alyxgun");
+		GiveNamedItem("weapon_annabelle");
+		GiveNamedItem("weapon_cguard");
+		GiveNamedItem("weapon_dual");
+		GiveNamedItem("weapon_egon");
+		GiveNamedItem("weapon_flaregun");
+		GiveNamedItem("weapon_glock");
+		GiveNamedItem("weapon_grapple");
+		GiveNamedItem("weapon_hornetgun");
+		GiveNamedItem("weapon_iontau");
+		GiveNamedItem("weapon_mp5");
+		GiveNamedItem("weapon_snark");
+		GiveNamedItem("weapon_oldmanharpoon");
+		GiveNamedItem("weapon_usp");
+		GiveNamedItem("weapon_wrench");
 #endif
 #ifdef HL2_EPISODIC
 		// GiveNamedItem( "weapon_magnade" );

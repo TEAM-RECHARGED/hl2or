@@ -60,6 +60,7 @@ $Project "Client (HL2OR)"
 		$File	"hl2or\fetchinfo.cpp"
 		$File	"hl2or\worldlight.cpp"
 		$File 	"hl2or\worldlight.h"
+		$File "../shared/hl2or/handviewmodel_shared.cpp"
 			$Folder "Weapons"
 			{
 				$File	"$SRCDIR\game\shared\hl2mp\weapon_slam.cpp"
