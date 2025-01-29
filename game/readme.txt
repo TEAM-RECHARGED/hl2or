@@ -25,3 +25,12 @@ Mounting.
 ------
 MapAdd.
 - If you plan on creating MapAdd script, put them in scripts/mapadd/*<mapname>.txt, You can find an example in sdk_vechiles.txt
+
+
+
+
+
+---- Troubleshooting ----
+If you have any issues with loading the mod here are fixes.
+- No Menu buttons? Hit the ~ on your keyboard.
+- Missing Textures? Ensure you have the original Overcharged installed or re-install the mod, this may be because of incorrect binaries.

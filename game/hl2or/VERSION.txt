@@ -1,4 +1,2 @@
 public: 1.0
-DevBuild: 5
-VSBuild: 67.4
-VPC: 105
+DevBuild: 7

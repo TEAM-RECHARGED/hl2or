@@ -130,6 +130,8 @@ $Project "Server (HL2OR)"
 
 			$File "hl2or\npc_basepredator.cpp"
 			$File "hl2or\npc_basepredator.h"
+			$File "hl2or\npc_shocktrooper.cpp"
+			$File "hl2or\npc_shocktrooper.h"
 			$File "hl2or\mapadd.cpp"
 			$File "hl2or\mapadd.h"
 			$File "hl2or\npc_cremator.cpp"
