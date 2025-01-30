@@ -10,10 +10,10 @@ if [`$1` == `--models`]; then
     mv models/* $HL2OR_PATH/models/
     rm -rf overcharged
 elif [`$1` == `--maps`]; then
-    if [ $OS == "Linux" ]; then
+    if [ $OS == "Linux"||"Darwin"||"FreeBSD" ]; then
         cp -r ~/.steam/steamapps/common/Half-Life 2/maps/* $HL2OR_PATH/maps/*
     else
         echo "Unknown OS, using Windows."
         cp -r C:/Program Files (x86)/Steam/steamapps/common/Half-Life 2/maps/* $HL2OR_PATHs/maps/*
     fi
-fi
+Files

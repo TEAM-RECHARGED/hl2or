@@ -10,3 +10,6 @@ Used:
     - https://developer.valvesoftware.com/wiki/Ironsights <- Used for IronSights implementation.
 - ModDB:
     - https://www.moddb.com/mods/hl2-overcharged <- Majority of scripts, models and materials have been used from the original overcharged
+    - https://www.moddb.com/mods/entropy-zero <- Some code used to add NPC's.
+- GitHub:
+    - https://github.com/entropy-zero/source-sdk-2013/ <- Some code used to add NPC's.

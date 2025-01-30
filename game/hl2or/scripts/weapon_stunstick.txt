@@ -1,32 +1,45 @@
-// stunstick
+// stunstick - used by npc
 
 WeaponData
 {
 	// Weapon data is loaded by both the Game and Client DLLs.
-	"printname"	"#HL2_StunBaton"
-	"viewmodel"				"models/weapons/v_stunstick.mdl"
-	"playermodel"			"models/weapons/w_stunbaton.mdl"
+	"printname"			"#wpnname_stunstick"
+	"viewmodel"			"models/weapons/OverCharged/melee/v_stunstick.mdl"
+	"playermodel"			"models/weapons/overcharged/world/w_stunstick.mdl"
 	"anim_prefix"			"stunbaton"
-	"bucket"				"0"
-	"bucket_position"		"2"
+	"bucket"			"7"
+	"bucket_position"		"5"
 
-	"clip_size"				"-1"
+	"clip_size"			"-1"
 	"primary_ammo"			"None"
 	"secondary_ammo"		"None"
 
-	"weight"				"0"
+	"weight"			"0"
 	"item_flags"			"0"
 
-	"BuiltRightHanded" "1"
-	"AllowFlipping" "1"
+	"AllowFreeAim"			"0"
+	"AllowIronSight"		"0"
+
+	"GetFireRate"			"0.6"
+	"GetRange"			"60"	//"48"
+
+    "UseAnimations" "0"
+    "RunAnimation" "0"
+    "WalkAnimation" "0"
+    "WallAnimation" "0"
+
+	CameraFollow_Properties
+	{
+		"Attachments" "1 1"
+		"Scales" "0.3 -0.3"
+	}
 
 	// Sounds for the weapon. There is a max of 16 sounds per category (i.e. max 16 "single_shot" sounds)
 	SoundData
 	{
-
 		"single_shot"		"Weapon_StunStick.Swing"
 		"melee_miss"		"Weapon_StunStick.Melee_Miss"
-		"melee_hit"			"Weapon_StunStick.Melee_Hit"
+		"melee_hit"		"Weapon_StunStick.Melee_Hit"
 		"melee_hit_world"	"Weapon_StunStick.Melee_HitWorld"
 	}
 
@@ -41,6 +54,11 @@ WeaponData
 		"weapon_s"
 		{
 				"font"		"WeaponIconsSelected"
+				"character"	"n"
+		}
+		"weapon_small"
+		{
+				"font"		"WeaponIconsSmall"
 				"character"	"n"
 		}
 		"ammo"
@@ -58,19 +76,9 @@ WeaponData
 		}
 		"crosshair"
 		{
-				"file"		"sprites/crosshairs"
-				"x"			"0"
-				"y"			"48"
-				"width"		"24"
-				"height"	"24"
-		}
-		"autoaim"
-		{
-				"file"		"sprites/crosshairs"
-				"x"			"48"
-				"y"			"72"
-				"width"		"24"
-				"height"	"24"
+				"font"		"CrosshairsOver"
+				"character"	"b"
+				
 		}
 	}
 }

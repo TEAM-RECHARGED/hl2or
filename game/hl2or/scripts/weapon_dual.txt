@@ -3,17 +3,17 @@
 WeaponData
 {
 	// Weapon data is loaded by both the Game and Client DLLs.
-	"printname"	"#OVR_PistDual"
-	"viewmodel"		"models/weapons/OverCharged/v_dual_pistols.mdl"
+	"printname"		"#wpnname_PistDual"
+	"viewmodel"		"models/weapons/OverCharged/v_pistols_dual.mdl"
 	"playermodel"		"models/weapons/overcharged/world/w_pistol.mdl"
 	"anim_prefix"		"pistol"
-	"bucket"			"1"
+	"bucket"		"1"
 	"bucket_position"	"2"
-	"bucket_360"			"0"
+	"bucket_360"		"0"
 	"bucket_position_360"	"0"
-    "NPCAllowPickup" "0"
-	"clip_size"			"36"
-	"default_clip"			"36"
+   	"NPCAllowPickup" 	"0"
+	"clip_size"		"36"
+	"default_clip"		"36"
 
 	"primary_ammo"		"pistol"
 	"secondary_ammo"	"None"
@@ -21,54 +21,63 @@ WeaponData
 	"weight"		"2"
 	"rumble"		"1"
 	"item_flags"		"0"
-	"viewbob_model_scale"		"1"
+	"viewbob_model_scale"	"1"
 
 	"AllowFreeAim"		"1"
-	"AllowIronSight"		"1"
+	"AllowIronSight"	"1"
 
-	"MuzzleAttachment" "muzzle"
-	"MuzzleAttachment2" "muzzle1"
 	"GetFireRate"		"0.2"
+	"IronsightSensitivity"	"0.5"
+	
+	Attachments_Properties
+	{
+		Player
+		{
+			"MuzzleAttachment" "muzzle"		
+			"MuzzleSecondAttachment" "muzzle1"	
+		}
+		NPC
+		{
+			"MuzzleAttachmentNPC" "muzzle"		
+			"MuzzleSecondAttachmentNPC" "muzzle1"	
+		}
+	}
 	Weapon_firing_modes
 	{
-		"weapon_modes" "1 2"
+		"weapon_modes" "1"
 		"WeaponDefaultMode" "1"
 		"weapon_type" "dual_pistols"
-        "SwingHitTime" "0.1" //0.5"	
-		  "FiresUnderWater" "1"
+        "SwingHitTime" "0.1"	
+		"FiresUnderWater" "1"
 		weapon_mode:1
 		{
 			"weapon_switching_sound" "Weapon_Switch.1"
-			"mode_fire_rate_single" "0.5"
+			"mode_fire_rate_single" "0.15"
 			"mode_accuracy_maximum_penalty_time" "1.5"
-			"mode_fastest_refire_time" "0.1"
-			"mode_accuracy_shot_penalty_time" "0.2"
-			"mode_fastest_dry_refire_time" "0.2"
-		}
-		weapon_mode:2
-		{
-			"weapon_switching_sound" "Weapon_Switch.2"
-			"mode_fire_rate_automatic" "0.14"
+			"mode_fastest_refire_time" "0.035"
+			"mode_accuracy_shot_penalty_time" "0.1"
+			"mode_fastest_dry_refire_time" "0.04"
 		}
         NPC
 		{
 			"MinBurst" "1"
-			"MaxBurst" "1"		
+			"MaxBurst" "12"		
 		}
 	}
 
 	Animation_Properties
 	{
-                "FirstDrawAnimation"	"ACT_VM_DRAW_INSPECT"
+		"FirstDrawAnimation"	"ACT_VM_DRAW_INSPECT"
 		"InspectAnimation" "ACT_VM_INSPECT"
-	
-                 "UseHalfFullMagAnimations" "1"
-                "ReloadFullEmptyAnimation" "ACT_VM_RELOAD_EMPTY"
+
+       
+
+		"UseHalfFullMagAnimations" "1"
+		"ReloadFullEmptyAnimation" "ACT_VM_RELOAD_EMPTY"
 
 		"FirePrimary1"	   "ACT_VM_PRIMARYATTACK"	
 		"FireIronsighted1" "ACT_VM_PRIMARYATTACK"
-                "SwingAnimation" "ACT_VM_MELEE"
-
+		"SwingAnimation" "ACT_VM_MELEE"
 	}
 	
 
@@ -88,7 +97,7 @@ WeaponData
 		{
 			Muzzle_Tracers
 			{
-				"OldMuzzleTracer"	"effects/spark0.2" 
+				"OldMuzzleTracer"	"effects/spark0.vmt" 
 				"MuzzleTracer1" "weapon_tracer_pistol"
 			}	
 			Muzzle_Particles
@@ -101,7 +110,7 @@ WeaponData
 		{
 			Muzzle_Tracers
 			{
-				"OldMuzzleTracer"	"effects/spark0.2" 
+				"OldMuzzleTracer"	"effects/spark0.vmt" 
 				"MuzzleTracer1" "weapon_npc_tracer_pistol"
 			}
 			Muzzle_Particles
@@ -111,12 +120,13 @@ WeaponData
 		}
 	}
 			
+	
 	MuzzleDLight_Properties
 	{
-		"DLightRed"		"255"
-		"DLightGreen"		"165"
-		"DLightBlue"		"0"
-		"DLightRadius"		"350"	
+		"DLightRed"		"232"
+		"DLightGreen"		"108"
+		"DLightBlue"		"25"
+		"DLightRadius"		"290"	
 		"DLightDecay"		"0.2"
 		"DLightAttachment"	"muzzle"
 	}
@@ -252,16 +262,15 @@ WeaponData
 	// Sounds for the weapon. There is a max of 16 sounds per category (i.e. max 16 "single_shot" sounds)
 	SoundData
 	{
-
-		"reload"		"Weapon_Pistol.Reload"
-		"reload_npc"	"Weapon_Pistol.NPC_Reload"
+		"single_shot"		"Weapon_ovr_pistol_FirePrimary"
 		"empty"			"Weapon_Pistol.Empty"
-		"single_shot"	"Weapon_Pistol.Single"
-		"single_shot_npc"	"Weapon_Pistol.NPC_Single"
-		"special1"		"Weapon_Pistol.Special1"
-		"special2"		"Weapon_Pistol.Special2"
-		"burst"			"Weapon_Pistol.Burst"
+		//"reload"		"Weapon_Pistol.Reload"
+		//"special1"		"Weapon_Pistol.Special1"
+		//"special2"		"Weapon_Pistol.Special2"
+		//"burst"		"Weapon_Pistol.Burst"
 
+		"single_shot_npc"	"Weapon_ovr_pistol_Primary_NPC"
+		"reload_npc"		"Weapon_ovr_pistol_Reload_NPC"
 	}
 
 	// Weapon Sprite data is loaded by the Client DLL.
@@ -290,7 +299,7 @@ WeaponData
 		"crosshair"
 		{
 				"font"		"CrosshairsOver"
-				"character"	"a"
+				"character"	"Y"
 				
 		}
 	}

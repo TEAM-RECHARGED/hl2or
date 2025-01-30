@@ -30,3 +30,4 @@ MapAdd.
 If you have any issues with loading the mod here are fixes.
 - No Menu buttons? Hit the ~ on your keyboard.
 - Missing Textures? Ensure you have the original Overcharged installed or re-install the mod, this may be because of incorrect binaries.
+- Hidden hammer stuff in your maps? Ensure your using the steam_legacy branch.
