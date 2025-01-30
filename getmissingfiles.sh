@@ -11,6 +11,7 @@ if [`$1` == `--models`]; then
     rm -rf overcharged
 elif [`$1` == `--maps`]; then
     if [ $OS == "Linux"||"Darwin"||"FreeBSD" ]; then
+        echo "$OS Detected, using unix."
         cp -r ~/.steam/steamapps/common/Half-Life 2/maps/* $HL2OR_PATH/maps/*
     else
         echo "Unknown OS, using Windows."
