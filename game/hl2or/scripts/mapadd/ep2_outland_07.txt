@@ -1,0 +1,1000 @@
+//	OverCharged Steam MAPADD Data
+//	Location: Outlands
+//  Game: Half-Life 2 Episode 2
+
+"precache" {
+    "entity" "npc_shocktrooper"
+    "entity" "npc_bullsquid"
+    "entity" "npc_combine_s"
+	"entity" "npc_hunter"
+    "entity" "npc_combinegunship"
+}
+
+"Init"
+{
+"Give_Equipment"
+	{
+	    "Ammo"
+		{
+		    "flareround" "5"
+			"combinesniperround" "8"
+		}
+		"Item"
+		{
+		    "weapon" "beretta"
+			"weapon" "glock"		
+				"weapon" "shockrifle"
+			"weapon" "combinesniper"
+			"weapon" "dual_pistols"
+		}
+	}
+}
+
+"randomspawn" {
+
+
+
+
+      // "npc_shocktrooper" {
+           //       "count" "4"
+           //     }
+
+   //    "npc_bullsquid" {
+        //         "count" "4"
+         //       }
+				
+		// OverCharged Beta Content
+	"weapon_combinesniper" {
+               "count" "4"
+			   "values" "fademaxdist 700 fademindist 600"
+              }
+			  
+
+"weapon_molotov" {
+		"count"		"3"
+		"values" "fademaxdist 700 fademindist 600"
+	}
+
+"item_box_flare_rounds" {
+                   "count" "3"
+				   "values" "fademaxdist 700 fademindist 600"
+                  }
+
+"weapon_slam" {
+		"count"		"4"
+		"values" "fademaxdist 700 fademindist 600"
+	}
+
+
+
+
+
+}
+
+"entities:combineattack" {
+
+"npc_assaultsynth"
+        {
+        "origin" "-9582 -10873 205"
+        "angle" "0 54 0.00"  
+          "keyvalues"
+            {
+			"fademaxdist" "2700"  
+            "spawnflags" "256"			
+			"fademindist" "2600"
+         }		
+        }
+
+
+"npc_combine_s"
+        {
+        "origin" "-9258 -11102 376"
+        "angle" "0 85.86 0.00"
+        "keyvalues"
+            {
+			"model" "models/combine_sniper_camo.mdl"
+            "spawnflags" "256"
+            "additionalequipment" "weapon_combinesniper"
+            }
+        }
+
+
+
+"npc_combine_s"
+        {
+        "origin" "-8873 -10624 268"
+        "angle" "0 85.86 0.00"
+        "keyvalues"
+            {
+			 "fademaxdist" "3700"
+            "fademindist" "3600"
+            "spawnflags" "512"
+			"model" "models/props_fix_allmaps/combine_soldier_ep2.mdl"
+            "additionalequipment" "weapon_smg1"
+            }
+        }
+
+//"npc_combine_s"
+       // {
+       // "origin" "-8810 -10437 179"
+      //  "angle" "0 85.86 0.00"
+      //  "keyvalues"
+         //   {
+         //   "spawnflags" "512"
+         //   "additionalequipment" "weapon_smg2"
+         //   }
+       // }
+
+//"npc_combine_s"
+       // {
+       // "origin" "-9328 -10217 205"
+        //"angle" "0 85.86 0.00"
+       // "keyvalues"
+          //  {
+          //  "spawnflags" "256"
+          //  "skin" "4"
+		//	"squadname" "bravo_1"
+		//	"tacticalvariant" "1"
+		//	"physdamagescale" "0.5"
+         //   "additionalequipment" "weapon_ak47"
+         //   }
+        //}
+
+"npc_combine_s"
+        {
+        "origin" "-9540 -10049 192"
+        "angle" "0 85.86 0.00"
+        "keyvalues"
+            {
+            "spawnflags" "256"
+             "skin" "2"
+			 "model" "models/combine_skullbreaker_soldier.mdl"
+			 "fademaxdist" "3700"
+            "fademindist" "3600"
+			"squadname" "bravo_1"
+			"tacticalvariant" "1"
+			"physdamagescale" "0.5"
+            "additionalequipment" "weapon_sg552"
+            }
+        }
+
+
+"event"
+	  {
+		"targetname"	"furniture_barn1"
+                "action"  "modifyentity"  
+		"model"	"models/blackout_ep2.mdl"
+	  }
+	  	
+"mapadd_trigger_once" {
+		"origin" "-9200 -9483 192"
+		"keyvalues" {
+			"radius"	"60"
+			"label"		"trailerscene"
+		}
+	}
+	  
+ "mapadd_trigger_once" {
+		"origin" "-9520 -9329 192"
+		"keyvalues" {
+			"radius"	"125"
+			"label"		"showup"
+		}
+	}
+
+}
+
+"entities:showup" {
+
+//"npc_combinegunship"
+   //     {
+     //   "origin" "-10516 -10726 813"
+      //  "angle" "0 10 0"
+       // "keyvalues"
+       //     {
+		//	"spawnflags" "34"
+        //    "targetname" "drp1"
+       //     "target" "dp1"
+      //   }
+     // }
+
+"path_track" {
+		"origin" "-9426 -10591 746"
+		"keyvalues" {
+			"targetname" "dp1"
+			"target" "dp2"
+                  "OnPass" "drp1,FlyToPathTrack,dp2,0,-1"
+		}
+	}
+	
+	"path_track" {
+		"origin" "-5444 -9962 1045"
+		"keyvalues" {
+			"targetname" "dp2"
+                        "target"     "dp3"
+                  "OnPass" "drp1,FlyToPathTrack,dp3,0,-1"
+		}
+	}
+
+        "path_track" {
+		"origin" "-3824 -6942 1118"
+		"keyvalues" {
+			"targetname" "dp3"
+			"target" "dp4"
+                  "OnPass" "drp1,FlyToPathTrack,dp4,0,-1"
+		}
+	}
+
+        "path_track" {
+		"origin" "-3726 6037 1011"
+		"keyvalues" {
+			"targetname" "dp4"
+			"target" "dp2"
+                  "OnPass" "drp1,FlyToPathTrack,dp2,0,-1"
+		}
+	}
+
+	
+
+}
+
+
+
+"entities:trailerscene" {
+
+//"event" {
+		//"classname"	"npc_combine_s"
+		//"models" "models/combine_soldier.mdl"
+	//}
+	
+	
+		
+"mapadd_trigger_once" {
+		"origin" "-9209 -10128 192"
+		"keyvalues" {
+			"radius"	"125"
+			"label"		"fixitmixit"
+		}
+	}
+
+
+"event"
+	  {
+		"targetname"	"mini_strider"
+                "action"  "beginsequence"  
+	
+	  }
+}
+
+"entities" {
+//
+
+	"npc_boid_flocks"
+        {
+        "origin" "-9092 -10483 304"
+        "angle" "0 0 0.00"
+		 "keyvalues"
+            {
+            "fSize" "7"
+	        "fRadius" "128"
+            "spawnflags" "512"
+            }
+        }
+
+
+"npc_boid"
+        {
+        "origin" "-3677 6126 226"
+        "angle" "0 0 0.00"
+		 "keyvalues"
+            {
+			"ModelType"  "1"
+            "fSize" "7"
+	        "fRadius" "128"
+            "spawnflags" "512"
+            }
+        }
+		
+		
+
+"logic_auto"
+        {
+        "origin" "2813 7162 0" 
+		"angle"	"0 0 0"
+        "keyvalues"
+            {
+		    "OnNewGame" "Weather_Display,showhudhint,,4.5"
+			   "OnNewGame" "Weather_Display,hidehudhint,,9.5"
+		"OnMapTransition"	"Weather_Display,showhudhint,,4.5"
+		"OnMapTransition"	"Weather_Display,hidehudhint,,9.5"
+			"OnMapTransition"	"Weather_Display,kill,,9.6"
+            }
+        }
+
+	"env_hudhint"
+        {
+        "origin" "2230 -1369 87"
+        "angle" "0 0 0.00"
+        "keyvalues"
+            {
+			"message" "          H.E.V MʎRK VI ASSISTANT 
+			|TIME: 13:37|
+			|WEATHER: MOSTLY-CLEAN|
+			|TEMPERATURE: 26°C|"
+			"targetname" "Weather_Display"
+			"spawnflags" "1"
+            }
+        }
+		
+  "item_item_crate"
+	{
+		"origin"	"-9263 -10392 209"
+		"angle"		"0 -162 0"
+		"KeyValues"
+		{
+		    "fademaxdist" "1700"
+            "fademindist" "1600"
+			"ItemClass"	"item_box_flare_rounds"
+			"ItemCount"		"4"
+
+		}
+	}
+	
+	
+	
+// Lite Start
+
+
+"prop_dynamic"
+        {
+        "origin" "-5563 -13904 456"
+        "angle" "90 90 0.00"
+        "keyvalues"
+            {
+            "modelscale" "5"
+			"disableshadows" "1"
+			"disablereceiveshadows" "1"
+            "model" "models/props_dev/plank_long_fat.mdl"
+			"fademaxdist" "2500"      "fademindist" "2000"
+			"targetname" "props_ep2_out7_area1"
+            }
+        }
+		
+		"prop_dynamic"
+        {
+        "origin" "-6477 -13999 456"
+        "angle" "90 90 0.00"
+        "keyvalues"
+            {
+            "modelscale" "5"
+			"disableshadows" "1"
+			"disablereceiveshadows" "1"
+            "model" "models/props_dev/plank_long_fat.mdl"
+			"fademaxdist" "2500"      "fademindist" "2000"
+			"targetname" "props_ep2_out7_area1"
+            }
+        }
+		
+		"prop_dynamic"
+        {
+        "origin" "-7446 -14289 468"
+        "angle" "90 130 0.00"
+        "keyvalues"
+            {
+            "modelscale" "5"
+			"disableshadows" "1"
+			"disablereceiveshadows" "1"
+            "model" "models/props_dev/plank_long_fat.mdl"
+			"fademaxdist" "2500"      "fademindist" "2000"
+			"targetname" "props_ep2_out7_area1"
+            }
+        }
+		
+		"prop_dynamic"
+        {
+        "origin" "-8329 -14975 605"
+        "angle" "90 85 0.00"
+        "keyvalues"
+            {
+            "modelscale" "5"
+			"disableshadows" "1"
+			"disablereceiveshadows" "1"
+            "model" "models/props_dev/plank_long_fat.mdl"
+			"fademaxdist" "2500"      "fademindist" "2000"
+			"targetname" "props_ep2_out7_area1"
+            }
+        }
+		
+		"prop_dynamic"
+        {
+        "origin" "-9560 -14914 532"
+        "angle" "90 80 0.00"
+        "keyvalues"
+            {
+            "modelscale" "5"
+			"disableshadows" "1"
+			"disablereceiveshadows" "1"
+            "model" "models/props_dev/plank_long_fat.mdl"
+			"fademaxdist" "2500"      "fademindist" "2000"
+			"targetname" "props_ep2_out7_area1"
+            }
+        }
+		
+			
+		"prop_dynamic"
+        {
+        "origin" "-10511 -14871 403"
+        "angle" "90 80 0.00"
+        "keyvalues"
+            {
+            "modelscale" "3"
+			"disableshadows" "1"
+			"disablereceiveshadows" "1"
+            "model" "models/props_dev/plank_long_fat.mdl"
+			"fademaxdist" "2500"      "fademindist" "2000"
+			"targetname" "props_ep2_out7_area1"
+            }
+        }
+		
+		"prop_dynamic"
+        {
+        "origin" "-9085 -9471 192"
+        "angle" "90 180 0.00"
+        "keyvalues"
+            {
+            "modelscale" "2"
+			"disableshadows" "1"
+			"disablereceiveshadows" "1"
+            "model" "models/props_dev/plank_long_fat.mdl"
+			"fademaxdist" "2500"      "fademindist" "2000"
+			"targetname" "props_ep2_out7_area1"
+            }
+        }
+		
+
+//
+		"prop_dynamic"
+        {
+        "origin" "-9085 -10027 192"
+        "angle" "90 180 0.00"
+        "keyvalues"
+            {
+            "modelscale" "2"
+			"disableshadows" "1"
+			"disablereceiveshadows" "1"
+            "model" "models/props_dev/plank_long_fat.mdl"
+			"fademaxdist" "2500"      "fademindist" "2000"
+			"targetname" "props_ep2_out7_area1"
+            }
+        }
+		
+		"prop_dynamic"
+        {
+        "origin" "-9990 -10144 190"
+        "angle" "90 90 0.00"
+        "keyvalues"
+            {
+            "modelscale" "2"
+			"disableshadows" "1"
+			"disablereceiveshadows" "1"
+            "model" "models/props_dev/plank_long_fat.mdl"
+			"fademaxdist" "2500"      "fademindist" "2000"
+			"targetname" "props_ep2_out7_area1"
+            }
+        }
+		
+		"prop_dynamic"
+        {
+        "origin" "-10011 -10062 284"
+        "angle" "0 90 0.00"
+        "keyvalues"
+            {
+            "modelscale" "2"
+			"disableshadows" "1"
+			"disablereceiveshadows" "1"
+            "model" "models/props_dev/plank_long_fat.mdl"
+			"fademaxdist" "2500"      "fademindist" "2000"
+			"targetname" "props_ep2_out7_area1"
+            }
+        }
+		
+		"prop_dynamic"
+        {
+        "origin" "-10080 -9243 124"
+        "angle" "0 0 0.00"
+        "keyvalues"
+            {
+            "modelscale" "4"
+			"disableshadows" "1"
+			"disablereceiveshadows" "1"
+            "model" "models/props_dev/plank_cube01.mdl"
+			"fademaxdist" "2500"      "fademindist" "2000"
+			"targetname" "props_ep2_out7_area1"
+            }
+        }
+		
+		"prop_dynamic"
+        {
+        "origin" "-9249 -9569 192"
+        "angle" "90 0 0.00"
+        "keyvalues"
+            {
+            "modelscale" "3"
+			"disableshadows" "1"
+			"disablereceiveshadows" "1"
+            "model" "models/props_dev/plank_long_fat.mdl"
+			"fademaxdist" "2500"      "fademindist" "2000"
+			"targetname" "props_ep2_out7_area1"
+            }
+        }
+		
+		"prop_dynamic"
+        {
+        "origin" "-8936 -11258 447"
+        "angle" "0 0 0.00"
+        "keyvalues"
+            {
+            "modelscale" "3"
+			"disableshadows" "1"
+			"disablereceiveshadows" "1"
+            "model" "models/props_dev/plank_long_fat.mdl"
+			"fademaxdist" "2500"      "fademindist" "2000"
+			"targetname" "props_ep2_out7_area1"
+            }
+        }
+		
+			"prop_dynamic"
+        {
+        "origin" "-3393 10830 113"
+        "angle" "90 0 0.00"
+        "keyvalues"
+            {
+            "modelscale" "5"
+			"disableshadows" "1"
+			"disablereceiveshadows" "1"
+            "model" "models/props_dev/plank_long_fat.mdl"
+			"fademaxdist" "2500"      "fademindist" "2000"
+			"targetname" "props_ep2_out7_area1"
+            }
+        }
+		
+			"prop_dynamic"
+        {
+        "origin" "-3393 11722 113"
+        "angle" "90 0 0.00"
+        "keyvalues"
+            {
+            "modelscale" "5"
+			"disableshadows" "1"
+			"disablereceiveshadows" "1"
+            "model" "models/props_dev/plank_long_fat.mdl"
+			"fademaxdist" "2500"      "fademindist" "2000"
+			"targetname" "props_ep2_out7_area1"
+            }
+        }
+		
+			"prop_dynamic"
+        {
+        "origin" "-3394 13437 97"
+        "angle" "90 0 0.00"
+        "keyvalues"
+            {
+            "modelscale" "5"
+			"disableshadows" "1"
+			"disablereceiveshadows" "1"
+            "model" "models/props_dev/plank_long_fat.mdl"
+			"fademaxdist" "2500"      "fademindist" "2000"
+			"targetname" "props_ep2_out7_area1"
+            }
+        }
+		
+			"prop_dynamic"
+        {
+        "origin" "-681 -14043 1123"
+        "angle" "90 90 0.00"
+        "keyvalues"
+            {
+            "modelscale" "5.6"
+			"disableshadows" "1"
+			"disablereceiveshadows" "1"
+            "model" "models/props_dev/plank_long_fat.mdl"
+			"fademaxdist" "2500"      "fademindist" "2000"
+			"targetname" "props_ep2_out7_area1"
+            }
+        }
+		
+			"prop_dynamic"
+        {
+        "origin" "-8779 -11082 327"
+        "angle" "90 0 0.00"
+        "keyvalues"
+            {
+            "modelscale" "3"
+			"disableshadows" "1"
+			"disablereceiveshadows" "1"
+            "model" "models/props_dev/plank_long_fat.mdl"
+			"fademaxdist" "2500"      "fademindist" "2000"
+			"targetname" "props_ep2_out7_area1"
+            }
+        }
+		
+		
+"npc_hunter"
+        {
+        "origin" "2797 11571 -145"
+        "angle" "0 -93 0.00"
+        "keyvalues"
+            {
+			 "fademaxdist" "2700"
+            "fademindist" "2600"
+            "spawnflags" "256"
+            "targetname" "mini"
+            }
+        }
+
+"scripted_sequence" 
+        {
+        "origin" "-9179 -10219 147"
+        "angle" "0 90 0"
+        "keyvalues"
+            {
+            "targetname" "mini_strider"
+            "m_iszEntity" "mini"
+			//"m_isIdle" "trailer07preidle"
+            "m_iszPlay" "trailer07"
+            "m_bLoopActionSequence" "0"
+            "m_fMoveTo" "4"    
+            "spawnflags" "160"   
+			"OnBeginSequence" "push_the_cart,explode,,2.5"
+			"OnScriptEvent01" "mini_sound_1,playsound,,-1"
+			"OnScriptEvent01" "mini_sound_2,playsound,,0.10"
+			"OnEndSequence" "mini_tp,teleport,,-1"
+			"OnEndSequence" "mini_sound_3,playsound,,-1"
+            }
+        }
+		
+
+
+
+"ambient_generic"
+        {
+        "origin" "-9190 -9724 192"
+        "angle" "0 0 0"
+        "keyvalues"
+            {
+            "targetname" "mini_sound_1"
+            "health" "7"
+            "message" "npc\ministrider\hunter_charge4.wav"
+            "pitch"   "100"
+            "spawnflags" "49"
+            "radius" "9999"
+            "pitchstart" "100"
+         }
+      }
+
+"ambient_generic"
+        {
+        "origin" "-9190 -9724 192"
+        "angle" "0 0 0"
+        "keyvalues"
+            {
+            "targetname" "mini_sound_2"
+            "health" "8"
+            "message" "npc\ministrider\body_medium_impact_hard2.wav"
+            "pitch"   "100"
+            "spawnflags" "49"
+            "radius" "9999"
+            "pitchstart" "100"
+         }
+      }
+
+	  "ambient_generic"
+        {
+        "origin" "-9190 -9724 192"
+        "angle" "0 0 0"
+        "keyvalues"
+            {
+            "targetname" "mini_sound_3"
+            "health" "8"
+            "message" "npc\ministrider\hunter_laugh3.wav"
+            "pitch"   "100"
+            "spawnflags" "49"
+            "radius" "9999"
+            "pitchstart" "100"
+         }
+      }
+
+
+		"prop_dynamic" {
+        "origin" "-9123 -9480 192"
+        "angle"  "0 90 0"
+		"keyvalues" {
+			"solid" "6"
+			"model"		"models/props_wasteland/interior_fence002b.mdl"
+			 "fademaxdist" "2500"
+	        "fademindist" "2000"
+		}
+	}
+	
+"ai_relationship"
+        {
+        "origin" "-3985 4668 64"
+        "angle" "0 0 0"
+        "keyvalues"
+            {
+            "targetname"  "coop"
+            "subject"        "npc_hunter"
+            "target"       "!player"
+            "startactive" "1"
+            "disposition" "1"
+            "rank" "9999"
+            }
+        }
+
+
+		"point_teleport"
+        {
+        "origin" "-9180 -9724 145"
+        "angle" "0 90 0"
+        "keyvalues"
+            {
+            "targetname" "mini_tp"
+            "target" "mini"
+            }
+        }
+
+
+"removeentity" {
+            "targetname" "barn_screen_boards02"
+           }
+		
+"removeentity" {
+            "targetname" "barn_screen_boards02"
+           }
+		   
+"removeentity" {
+            "targetname" "barn_screen_boards02"
+           }
+		   
+"removeentity" {
+            "targetname" "barn_screen_boards02"
+           }
+		   
+"removeentity" {
+            "targetname" "barn_screen_boards02"
+           }
+		   		   
+		   
+"removeentity" {
+            "targetname" "barn_screen_post02"
+           }
+		   
+		   	
+"env_physexplosion"
+        {
+        "origin" "-9118 -9717 148"
+        "keyvalues"
+            {
+            "targetname" "push_the_cart"
+            "magnitude" "75"
+            "targetentityname" "phys_prop_hallway"
+            }
+        }
+
+		   
+
+//
+		   
+"removeentity" {
+            "classname" "env_sun"
+           }
+
+"env_sun"
+        {
+              
+                "roll"  "20"  
+                "yaw"   "0"
+                "pitch" "-145"
+
+               "KeyValues"
+                {
+					"targetname" "riseandshine"
+					"rendercolor" "237 218 143"
+				"size" "16"
+					"disablesprite" "1"
+									"overlaysize" "24"
+					"use_angles"	"1"
+					"sunrays_intensity"	"2"
+					"sunrays_color.r"	"0.253"
+					"sunrays_color.g"	"0.251"
+					"sunrays_color.b"	"0.211"
+					"sunrays_color.a"	"1"
+					"sunrays_power"		"0.2"
+					"global_lightning_keyvalues"
+					{
+					
+						"enabled" "1"
+						"enableshadows" "1"			
+						"distance" "7000"
+						"fov" "270"
+						"nearz" "0"			
+						
+						"northoffset" "0"
+						"eastoffset" "0"
+						"forwardoffset" "0"
+						"orthosize" "1200"
+						"brightnessscale" "4"
+						"angles" "35 114 0"
+						"lightcolor" "253 251 211 255"
+						"targetname" "g_light"
+					}
+                }
+        }
+		
+		"prop_ragdoll"
+	{
+		"origin"	"-9501 -9557 128"
+		"angle"		"77 111 0"
+		"KeyValues"
+		{
+		 "fademaxdist" "1700"
+            "fademindist" "1600"
+		    "spawnflags" "260"
+			"model"		"models/racex/shock_trooper.mdl"
+		}
+	}
+
+		"prop_ragdoll"
+	{
+		"origin"	"-9520 -9872 125"
+		"angle"		"37 171 0"
+		"KeyValues"
+		{
+		 "fademaxdist" "1700"
+            "fademindist" "1600"
+		    "spawnflags" "260"
+			"model"		"models/racex/shock_trooper.mdl"
+		}
+	}
+
+		
+"mapadd_trigger_once" {
+		"origin" "-10051 -9373 192"
+		"keyvalues" {
+			"radius"	"125"
+			"label"		"combineattack"
+		}
+	}
+
+  "logic_auto"
+        {
+        "origin" "2813 7162 0" 
+		"angle"	"0 0 0"
+        "keyvalues"
+            {
+		     "OnNewGame" "vortigauntstillworkingonthis,command,oc_weapon_disable_dissolve 1,-1"
+            }
+        }
+
+	 "point_servercommand" {
+		"origin""-697 -7 1487"
+		"keyvalues" {
+                            "targetname" "vortigauntstillworkingonthis"
+	             }
+               }
+			   
+// Lite End
+
+
+
+
+
+	
+"item_item_crate"
+	{
+		"origin"	"-9000 -10985 248"
+		"angle"		"0 0 0"
+		"KeyValues"
+		{ 
+		    "fademaxdist" "1700"
+            "fademindist" "1600"
+            "ItemClass"		"item_dynamic_resupply"
+			"ItemCount"		"3"
+		}
+	}
+
+"weapon_smokegrenade"
+        {
+        "origin" "-9553 -9012 228"
+		"KeyValues"
+		{ 
+		    "fademaxdist" "700"
+            "fademindist" "600"
+		}
+        }
+
+	
+
+        "item_item_crate"
+	{
+		"origin" "-8976 -11271 288"
+		"keyvalues"
+		{
+		 "fademaxdist" "1700"
+            "fademindist" "1600"
+			"ItemClass"		"weapon_flashbang"
+			"ItemCount"		"4"
+		}
+	}
+	
+	 "weapon_flashbang"
+	{
+		"origin" "-9035 -11250 268"
+		"KeyValues"
+		{ 
+		    "fademaxdist" "700"
+            "fademindist" "600"
+		}
+	}
+
+	
+	 "weapon_smokegrenade"
+	{
+		"origin" "-9035 -11250 248"
+		"KeyValues"
+		{ 
+		    "fademaxdist" "700"
+            "fademindist" "600"
+		}
+	}
+
+"item_item_crate"
+	{
+		"origin" "-8976 -11271 340"
+		"keyvalues"
+		{
+		    "fademaxdist" "1700"
+            "fademindist" "1600"
+			"ItemClass"		"weapon_smokegrenade"
+			"ItemCount"		"4"
+		}
+	}
+
+
+	"item_ammo_snark"
+        {
+        "origin" "-9904 -9449 146"
+        "angle" "0 -16 0.00"
+		"KeyValues"
+		{ 
+		"OnPlayerTouch" "vortigauntstillworkingonthis,command,give weapon_snark,,-1"
+		    "fademaxdist" "1100"
+            "fademindist" "1000"
+		}
+        }
+
+
+	"item_ammo_snark"
+        {
+        "origin" "-9738 -9303 92"
+        "angle" "0 148 0.00"
+		"KeyValues"
+		{ 
+		"OnPlayerTouch" "vortigauntstillworkingonthis,command,give weapon_snark,,-1"
+		    "fademaxdist" "1100"
+            "fademindist" "1000"
+		}
+        }
+
+"weapon_sg552"
+        {
+        "origin" "-9763 -9499 190"
+		"KeyValues"
+		{ 
+		    "fademaxdist" "700"
+            "fademindist" "600"
+		}
+        }
+
+}
+

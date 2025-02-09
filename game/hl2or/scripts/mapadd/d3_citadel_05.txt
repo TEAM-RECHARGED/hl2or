@@ -1,0 +1,451 @@
+//	OverCharged Steam MAPADD Data
+//	Location: Citadel
+//      Game: Half-Life 2
+
+"precache"{
+       "sound"  "music/over_ost_navilonsark_ravenholm.mp3"
+}
+
+"randomspawn" {
+}
+
+"entities:music" {
+
+"event"
+	  {
+		"targetname"	"rainbowrock"
+                "action"  "playsound"  
+	
+	  }
+
+
+}
+
+"entities:music_end" {
+
+"event"
+	  {
+		"targetname"	"music_breaker"
+                "action"  "add"  
+	    "value" "1"
+	  }
+
+
+}
+
+"entities:stalk_change" {
+
+
+		"event"
+	  {
+		"targetname"	"stalk_relay"
+                "action"  "trigger"
+	  }
+	  
+	  
+}
+
+"entities:weather" {
+
+	
+"event"
+	  {
+		"targetname"	"weather_relay"
+                "action"  "trigger"  
+	  }
+
+}
+
+"entities" {
+
+
+
+"logic_relay"
+        {
+        "origin" "-949 1430 -765"
+        "angle" "0 0 0.00"
+        "keyvalues"
+            {
+			"OnTrigger"  "weather_display,showhudhint,,0.5"
+			"OnTrigger"  "weather_display,hidehudhint,,5.5"
+			"targetname" "Weather_relay"
+
+            }
+        }
+
+		"env_hudhint"
+        {
+        "origin" "2230 -1369 87"
+        "angle" "0 0 0.00"
+        "keyvalues"
+            {
+			"message" "          H.E.V MʎRK VI ASSISTANT 
+			|TIME: 19:00|
+			|WEATHER: PARTLY-SUNNY|
+			|TEMPERATURE: 19°C|"
+			"targetname" "Weather_Display"
+			"spawnflags" "1"
+            }
+        }
+		
+		"mapadd_trigger_once" {
+		"origin" "14318 -9820 3474"
+		"keyvalues" {
+			"radius"	"300"
+			"label"		"weather"
+		}
+	}
+
+		
+"math_counter"
+        {
+		"origin" "14352 -9915 8307"
+        "keyvalues"
+            {
+            "max"     "1"
+            "min"     "0"
+            "StartDisabled" "0"
+            "startvalue"    "0"
+            "targetname"    "music_breaker"
+            "OnHitMax"      "last_problem,volume,8,-1"
+			"OnHitMax"      "last_problem,volume,6,2"
+			"OnHitMax"      "last_problem,volume,4,4"
+			"OnHitMax"      "last_problem,volume,2,6"
+			"OnHitMax"      "last_problem,volume,1,7"
+			"OnHitMax"      "last_problem,volume,0,8"
+			"OnHitMax"      "last_problem,stopsound,,8"
+	
+		
+            }
+        }
+
+"mapadd_trigger_once" {
+		"origin" "14352 -9915 7607"
+		"keyvalues" {
+			"radius"	"110"
+                        "label"		"music_end"
+		}
+      }
+	  
+"mapadd_trigger_once" {
+		"origin" "8350 -5211 845"
+		"keyvalues" {
+			"radius"	"110"
+                        "label"		"music"
+		}
+      }
+
+
+			  
+			  "event"
+	  {
+		"targetname"	"pod_02_track3"
+                "action"  "modifyentity"  
+				"onpass" "last_problem,playsound,,-1"
+	  }
+
+			
+"ambient_generic" {
+          "origin" "0 0 30"
+          "keyvalues" {
+                  "message" "#music/over_ost_navilonsark_ravenholm.mp3"
+                  "health"  "8"
+                  "radius"  "9999"
+                  "spawnflags" "49"
+                  "targetname" "last_problem"
+                 }
+              }			
+			  
+// Lite Start
+
+  "logic_auto"
+        {
+        "origin" "2813 7162 0" 
+		"angle"	"0 0 0"
+        "keyvalues"
+            {
+			"OnMapSpawn" "combigaunt_1_essence,setparent,cmbgaunt1,1"
+			  "OnMapSpawn" "combigaunt_1_essence,setparentattachment,eyes,3"
+			  "OnMapSpawn" "combigaunt_2_essence,setparent,cmbgaunt2,1"
+			  "OnMapSpawn" "combigaunt_2_essence,setparentattachment,eyes,3"
+			  "OnMapSpawn" "combigaunt_3_essence,setparent,cmbgaunt3,1"
+			  "OnMapSpawn" "combigaunt_3_essence,setparentattachment,eyes,3"
+		     "OnNewGame" "vortigauntstillworkingonthis,command,oc_weapon_disable_dissolve 0,-1"
+            }
+        }
+
+	 "point_servercommand" {
+		"origin""-697 -7 1487"
+		"keyvalues" {
+                            "targetname" "vortigauntstillworkingonthis"
+	             }
+               }
+			   
+"removeentity" {
+            "classname" "env_sun"
+           }
+
+"env_sun"
+        {
+
+                "roll"  "20"  
+                "yaw"   "120"
+                "pitch" "-125"
+
+                "KeyValues"
+                {
+					"targetname" "riseandshine"
+					
+					"use_angles"	"1"
+					"sunrays_intensity"	"2"
+					"sunrays_color.r"	"0.25"
+					"sunrays_color.g"	"0.2"
+					"sunrays_color.b"	"0.2"
+					"sunrays_color.a"	"1"
+					"sunrays_power"		"0.25"
+					
+                }
+        }
+	
+	
+			
+"event"
+	  {
+		"targetname"	"stalkerpod1_stalkerprop"
+                "action"  "modifyentity"
+        "model" "models/stalker_hl2.mdl"		
+	  }
+
+		
+	"mapadd_trigger_once" {
+		"origin" "-119 -435 -2840"
+		"keyvalues" {
+			"radius"	"120"
+                        "label"		"stalk_change"
+		}
+      }
+	  
+
+	  
+"logic_relay"
+        {
+        "origin" "-949 1430 -765"
+        "angle" "0 0 0.00"
+        "keyvalues"
+            {
+			"OnTrigger"  "stalkerpod1_stalkerprop,setanimation,podconvulse,-1"
+			"targetname" "stalk_relay"
+
+            }
+        }
+
+// Lite End
+
+		
+"ai_relationship"
+        {
+        "origin" "-244 275 -2943"
+        "angle" "0 0 0"
+        "keyvalues"
+            {
+            "targetname"  "end_boss_relation"
+            "subject"        "!player"
+            "target"       "npc_vortigaunt"
+            "startactive" "1"
+             "spawnflags" "1"
+            "disposition" "1"
+            "rank" "9999"
+            }
+        }
+
+"ai_relationship"
+        {
+        "origin" "-244 275 -2943"
+        "angle" "0 0 0"
+        "keyvalues"
+            {
+            "targetname"  "end_boss_relation"
+            "subject"        "npc_vortigaunt"
+            "spawnflags" "1"
+            "target"       "!player"
+            "startactive" "1"
+            "disposition" "1"
+            "rank" "9999"
+            }
+        }
+		
+		"npc_combineguard"
+        {
+        "origin" "8897 -4516 3686"
+        "angle" "0 88 0"
+        "keyvalues"
+            {
+				"fademaxdist" "2000"      
+			"fademindist" "1900"	
+              "targetname" "friend"
+            }
+        }
+		
+		"npc_combine_s"
+        {
+        "origin" "8652 -4612 3648"
+        "angle" "0 84 0"
+        "keyvalues"
+            {
+			   "model" "models/combine_skullbreaker_soldier.mdl"
+			  	"fademaxdist" "2000"      
+			"fademindist" "1900"	
+			"skin" "2"
+			  "additionalequipment" "weapon_autoshotgun"
+              "targetname" "friend"
+            }
+        }
+
+"npc_combineguard"
+        {
+        "origin" "1055 -582 -2943"
+        "angle" "0 126 0"
+        "keyvalues"
+            {
+
+			"fademaxdist" "2000"      
+			"fademindist" "1900"	
+              "targetname" "friend"
+            }
+        }
+
+"ai_relationship"
+        {
+        "origin" "-244 275 -2943"
+        "angle" "0 0 0"
+        "keyvalues"
+            {
+            "targetname"  "frnd_relate"
+            "subject"        "friend"
+            "target"       "!player"
+            "startactive" "1"
+            "disposition" "3"
+            "rank" "9999"
+            }
+        }
+
+
+"ai_relationship"
+        {
+        "origin" "-244 275 -2943"
+        "angle" "0 0 0"
+        "keyvalues"
+            {
+            "targetname"  "frnd_relate"
+            "subject"        "friend"
+            "target"       "npc_*"
+            "startactive" "1"
+            "disposition" "3"
+            "rank" "9999"
+            }
+        }
+
+
+"ai_relationship"
+        {
+        "origin" "-244 275 -2943"
+        "angle" "0 0 0"
+        "keyvalues"
+            {
+            "targetname"  "frnd_relate"
+            "subject"        "friend"
+            "target"       "npc_combine_camera"
+            "startactive" "1"
+            "disposition" "3"
+            "rank" "9999"
+            }
+        }
+
+
+
+"npc_vortigaunt"
+        {
+        "origin" "-244 275 -2943"
+        "angle" "0 -91 0"
+        "keyvalues"
+            {
+              "spawnflags" "256"
+              "targetname" "cmbgaunt1"
+			  	"fademaxdist" "5700"     
+			"fademindist" "5600"
+              "model" "models/vortigaunt_slave.mdl"
+           // "additionalequipment" "weapon_autoshotgun"
+            }
+        }
+
+
+"npc_vortigaunt"
+        {
+        "origin" "-296 -1 -2943"
+        "angle" "0 -179 0"
+        "keyvalues"
+            {
+              "spawnflags" "256"
+              "targetname" "cmbgaunt2"
+			   	"fademaxdist" "5700"     
+			"fademindist" "5600"
+              "model" "models/vortigaunt_slave.mdl"
+           // "additionalequipment" "weapon_autoshotgun"
+            }
+        }
+
+
+
+"npc_vortigaunt"
+        {
+        "origin" "139 350 -2932"
+        "angle" "0 -123 0"
+        "keyvalues"
+            {
+              "spawnflags" "256"
+			   	"fademaxdist" "5700"     
+			"fademindist" "5600"
+              "targetname" "cmbgaunt3"
+              "model" "models/vortigaunt_slave.mdl"
+           // "additionalequipment" "weapon_autoshotgun"
+            }
+        }
+
+"npc_cscanner"
+        {
+        "origin" "8639 -2228 3812"
+        "angle" "0 -164 0"
+        "keyvalues"
+            {
+			 	"fademaxdist" "5700"     
+			"fademindist" "5600"
+              "targetname" "gunship_hall_scanners"
+            }
+        }
+		
+		"npc_cscanner"
+        {
+        "origin" "8533 -3234 3703"
+        "angle" "0 -103 0"
+        "keyvalues"
+            {
+			 	"fademaxdist" "5700"     
+			"fademindist" "5600"
+              "targetname" "gunship_hall_scanners"
+            }
+        }
+
+"npc_cscanner"
+        {
+        "origin" "8612 -3635 3695"
+        "angle" "0 -78 0"
+        "keyvalues"
+            {
+			 	"fademaxdist" "5700"     
+			"fademindist" "5600"
+              "targetname" "gunship_hall_scanners"
+            }
+        }
+
+
+}

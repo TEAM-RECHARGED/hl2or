@@ -123,9 +123,9 @@ bool CMapAdd::RunLabel(const char* szLabel)
 							}
 						}
 					}
-					//createEnt->Activate();//Is this a good idea? Not sure! - ThePixelMoon
+					//createEnt->Activate();
 					//createEnt->Spawn();
-					DispatchSpawn(createEnt); //I derped - ThePixelMoon
+					DispatchSpawn(createEnt); 
 				}
 			}
 			else
@@ -239,9 +239,9 @@ bool CMapAdd::HandleRemoveEnitity(KeyValues* mapaddValue)
 	}
 }
 
-void CMapAdd::InputRunLabel(inputdata_t& inputData) //Input this directly! - ThePixelMoon
+void CMapAdd::InputRunLabel(inputdata_t& inputData) //Input this directly!
 {
 	char szMapadd[128];
-	Q_snprintf(szMapadd, sizeof(szMapadd), "mapadd/%s.txt", STRING(gpGlobals->mapname)); // TODO: Replace the .txt format with a new format named %s.oc_mapadd - GuestSneezePlayZ
+	Q_snprintf(szMapadd, sizeof(szMapadd), "mapadd/%s.txt", STRING(gpGlobals->mapname)); 
 	this->RunLabel(inputData.value.String());
 }

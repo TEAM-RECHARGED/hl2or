@@ -1,0 +1,85 @@
+"entities" 
+{
+
+"prop_outlineglow"
+        {
+        "origin" "-737 64 128"
+        "angle" "0 0 0"
+        "keyvalues"
+            {
+            //"modelscale" "2"
+			"disableshadows" "1"
+			"disablereceiveshadows" "1"
+			"fademaxdist" "2500"      
+			"fademindist" "2000"      
+			"model" "models/props_wasteland/interior_fence004b.mdl"
+			//"model" "models/props_silo/ventilationduct01.mdl"
+			"targetname" "glow"
+			"gloweffecton" "1"
+			//"GlowColorRed" "0"
+			//"GlowColorGreen" "255"
+			//"GlowColorBlue" "0"
+			"glowcolortransparency" "170"
+            }
+        }
+
+"prop_mud"
+	{
+		"origin"	"-397 249 100"
+		"angle"		"0 0 0"
+            "keyvalues" 
+			{
+                "model_name" "models/props_junk/cinderblock01a.mdl"
+                "model_name_smash" "models/props_junk/cinderblock01a.mdl"
+                "sound_name_smash" "Weapon_StunStick.Melee_HitWorld"
+            }
+	}
+	
+	"item_health_items"
+	{
+		"origin"	"-375 260 70"
+		"angle"		"0 0 0"
+            "keyvalues" 
+			{
+                "model" "models/props_junk/garbage_milkcarton002a.mdl"
+                //"sound_use" "k_lab.al_buyyoudrink03"
+				"sound_use" "Mud.StepRight"
+				"healthgive" "15"
+				"armorgive" "15"
+				"model_name_use" "models/props_junk/wood_pallet001a_shard01.mdl"
+            }
+	}
+
+"npc_maker"
+        {
+	"origin"	"205 -157 128"
+	"angle"		"0 0 0"
+        "keyvalues"
+            {
+            "targetname" "cmb3spawner"
+            "NPCType"    "npc_combine_s"
+            "NPCTargetname" "cmb3"
+            "StartDisabled" "0"
+            "MaxNPCCount"   "35"
+            "SpawnFrequency" "52"
+            "additionalequipment" "weapon_sniper_m40a1"
+	    //"model" "models/combine_sniper_camo.mdl"
+            "MaxLiveChildren" "1"
+            "OnSpawnNPC" "cmb3,assault,assault_1_1_1,-1"
+            }
+        }
+"npc_metropolice"
+	{
+		"origin"	"-644 59 147"
+		"angle"		"0 180 0"
+		"KeyValues"
+		{
+			"fademaxdist" "2700"      
+			"fademindist" "2600"	
+			"additionalequipment" "weapon_stunstick"
+			"use_flashlight" "1"
+			"use_shield" "1"
+		}
+	}
+
+}

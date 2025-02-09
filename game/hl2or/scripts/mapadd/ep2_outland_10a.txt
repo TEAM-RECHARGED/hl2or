@@ -1,0 +1,690 @@
+//	OverCharged Steam MAPADD Data
+//	Location: White Forest
+//  Game: Half-Life 2 Episode 2
+
+"precache" {
+}
+
+"randomspawn" {
+}
+
+"Init"
+{
+"Give_Equipment"
+	{
+	    "Ammo"
+		{
+		    "smokegrenade" "1"
+		    "flareround" "5"
+			"combinesniperround" "8"
+			"oicw" "30"
+			"LaserPistol" "10"
+		}
+		"Item"
+		{
+
+		    "weapon" "beretta"
+			"weapon" "shockrifle"
+			"weapon" "smg2"
+			"weapon" "oicw"
+			"weapon" "smokegrenade"
+			"weapon" "flashbang"
+			"weapon" "glock"		
+			"weapon" "combinesniper"
+			"weapon" "dual_pistols"
+		}
+	}
+}
+
+
+
+
+"entities" {
+
+
+"npc_boid_flocks"
+        {
+        "origin" "3239 -2152 -1631"
+        "angle" "0 0 0.00"
+		 "keyvalues"
+            {
+            "fSize" "8"
+	        "fRadius" "128"
+            "spawnflags" "512"
+            }
+        }
+
+
+"npc_boid_flocks"
+        {
+        "origin" "2525 7421 -569"
+        "angle" "0 0 0.00"
+		 "keyvalues"
+            {
+            "fSize" "4"
+	        "fRadius" "128"
+            "spawnflags" "512"
+            }
+        }
+		
+		"npc_boid_flocks"
+        {
+        "origin" "4123 9481 405"
+        "angle" "0 0 0.00"
+		 "keyvalues"
+            {
+            "fSize" "12"
+	        "fRadius" "256"
+            "spawnflags" "512"
+            }
+        }
+		
+		
+		
+	  
+
+		"event"
+	  {
+		"targetname"	"dropship_crashed"
+                "action"  "modifyentity"  
+		"ondeath"	"never_ever_do_it_again,reload,,-1"
+
+	  }
+	  
+
+			"event"
+	  {
+		"targetname"	"river_strider"
+                "action"  "modifyentity"  
+		"ondeath"	"never_ever_do_it_again,reload,,-1"
+
+	  }
+	  
+	  			"event"
+	  {
+		"targetname"	"dog_template"
+                "action"  "modifyentity"  
+		"OnEntitySpawned"	"dog,AddOutput,OnDeath never_ever_do_it_again:reload::0:-1,0,-1"
+
+	  }
+	  
+	  
+"player_loadsaved"
+        {
+        "origin" "-28 2876 -1215"
+        "angle" "0 0 0"
+        "keyvalues"
+            {
+            "targetname" "never_ever_do_it_again"
+            "duration" "1"
+            "loadtime" "1"
+            "holdtime" "1"
+            "renderamt"  "255"
+            "rendercolor" "0 0 0"
+         }
+      }
+	  
+	  
+
+
+		
+		
+	  
+	  
+"logic_auto"
+        {
+        "origin" "2813 7162 0" 
+		"angle"	"0 0 0"
+        "keyvalues"
+            {
+		    "OnNewGame" "Weather_Display,showhudhint,,4.5"
+			   "OnNewGame" "Weather_Display,hidehudhint,,9.5"
+		"OnMapTransition"	"Weather_Display,showhudhint,,4.5"
+		"OnMapTransition"	"Weather_Display,hidehudhint,,9.5"
+			"OnMapTransition"	"Weather_Display,kill,,9.6"
+            }
+        }
+
+	"env_hudhint"
+        {
+        "origin" "2230 -1369 87"
+        "angle" "0 0 0.00"
+        "keyvalues"
+            {
+			"message" "          H.E.V MʎRK VI ASSISTANT 
+			|TIME: 15:58|
+			|WEATHER: PARTLY-CLOUDY|
+			|TEMPERATURE: 29°C|"
+			"targetname" "Weather_Display"
+			"spawnflags" "1"
+            }
+        }
+
+
+// Lite Start
+
+  "logic_auto"
+        {
+        "origin" "2813 7162 0" 
+		"angle"	"0 0 0"
+        "keyvalues"
+            {
+		     "OnNewGame" "vortigauntstillworkingonthis,command,oc_weapon_disable_dissolve 1,-1"
+            }
+        }
+
+	 "point_servercommand" {
+		"origin""-697 -7 1487"
+		"keyvalues" {
+                            "targetname" "vortigauntstillworkingonthis"
+	             }
+               }
+
+
+
+"prop_dynamic"
+        {
+        "origin" "6048 -6031 -1452"
+        "angle" "90 90 0.00"
+        "keyvalues"
+            {
+            "modelscale" "8"
+			"disableshadows" "1"
+			"disablereceiveshadows" "1"
+			"fademaxdist" "2500"      "fademindist" "2000"      "model" "models/props_dev/plank_long_fat.mdl"
+			"targetname" "props_ep2_out10a_area1"
+            }
+        }
+		
+		"prop_dynamic"
+        {
+        "origin" "7665 -6028 -1471"
+        "angle" "90 90 0.00"
+        "keyvalues"
+            {
+            "modelscale" "8"
+			"disableshadows" "1"
+			"disablereceiveshadows" "1"
+			"fademaxdist" "2500"      "fademindist" "2000"      "model" "models/props_dev/plank_long_fat.mdl"
+			"targetname" "props_ep2_out10a_area1"
+            }
+        }
+		
+		"prop_dynamic"
+        {
+        "origin" "9540 -6028 -1471"
+        "angle" "90 90 0.00"
+        "keyvalues"
+            {
+            "modelscale" "8"
+			"disableshadows" "1"
+			"disablereceiveshadows" "1"
+			"fademaxdist" "2500"      "fademindist" "2000"      "model" "models/props_dev/plank_long_fat.mdl"
+			"targetname" "props_ep2_out10a_area1"
+            }
+        }
+		
+		"prop_dynamic"
+        {
+        "origin" "5298 -4309 -1834"
+        "angle" "90 110 0.00"
+        "keyvalues"
+            {
+            "modelscale" "5"
+			"disableshadows" "1"
+			"disablereceiveshadows" "1"
+			"fademaxdist" "2500"      "fademindist" "2000"      "model" "models/props_dev/plank_long_fat.mdl"
+			"targetname" "props_ep2_out10a_area1"
+            }
+        }
+		
+		"prop_dynamic"
+        {
+        "origin" "6258 -3459 -1829"
+        "angle" "90 150 0.00"
+        "keyvalues"
+            {
+            "modelscale" "6"
+			"disableshadows" "1"
+			"disablereceiveshadows" "1"
+			"fademaxdist" "2500"      "fademindist" "2000"      "model" "models/props_dev/plank_long_fat.mdl"
+			"targetname" "props_ep2_out10a_area1"
+            }
+        }
+		
+		"prop_dynamic"
+        {
+        "origin" "6258 -3459 -1829"
+        "angle" "90 150 0.00"
+        "keyvalues"
+            {
+            "modelscale" "2"
+			"disableshadows" "1"
+			"disablereceiveshadows" "1"
+			"fademaxdist" "2500"      "fademindist" "2000"      "model" "models/props_dev/plank_cube01.mdl"
+			"targetname" "props_ep2_out10a_area1"
+            }
+        }
+		
+			"prop_dynamic"
+        {
+        "origin" "6846 -5624 -1262"
+        "angle" "0 90 0.00"
+        "keyvalues"
+            {
+            "modelscale" "6"
+			"disableshadows" "1"
+			"disablereceiveshadows" "1"
+            "model" "models/props_dev/plank_long_fat.mdl"
+			"fademaxdist" "2500"     
+			"fademindist" "2000"
+			"targetname" "props_ep2_out10a_area1"
+            }
+        }
+		
+				"prop_dynamic"
+        {
+        "origin" "8473 -5624 -1262"
+        "angle" "0 90 0.00"
+        "keyvalues"
+            {
+            "modelscale" "6"
+			"disableshadows" "1"
+			"disablereceiveshadows" "1"
+            "model" "models/props_dev/plank_long_fat.mdl"
+			"fademaxdist" "2500"     
+			"fademindist" "2000"
+			"targetname" "props_ep2_out10a_area1"
+            }
+        }
+		
+				"prop_dynamic"
+        {
+        "origin" "6003 -5624 -1262"
+        "angle" "0 90 0.00"
+        "keyvalues"
+            {
+            "modelscale" "6"
+			"disableshadows" "1"
+			"disablereceiveshadows" "1"
+            "model" "models/props_dev/plank_long_fat.mdl"
+			"fademaxdist" "2500"     
+			"fademindist" "2000"
+			"targetname" "props_ep2_out10a_area1"
+            }
+        }
+		
+				"prop_dynamic"
+        {
+        "origin" "5579 10430 280"
+        "angle" "0 90 0.00"
+        "keyvalues"
+            {
+            "modelscale" "2"
+			"disableshadows" "1"
+			"disablereceiveshadows" "1"
+            "model" "models/props_dev/plank_long_fat.mdl"
+			"fademaxdist" "2500"     
+			"fademindist" "2000"
+			"targetname" "props_ep2_out10a_area1"
+            }
+        }
+		
+				"prop_dynamic"
+        {
+        "origin" "4928 11347 416"
+        "angle" "0 90 0.00"
+        "keyvalues"
+            {
+            "modelscale" "4"
+			"disableshadows" "1"
+			"disablereceiveshadows" "1"
+            "model" "models/props_dev/plank_long_fat.mdl"
+			"fademaxdist" "2500"     
+			"fademindist" "2000"
+			"targetname" "props_ep2_out10a_area1"
+            }
+        }
+		
+				"prop_dynamic"
+        {
+        "origin" "3054 11322 312"
+        "angle" "90 90 0.00"
+        "keyvalues"
+            {
+            "modelscale" "4"
+			"disableshadows" "1"
+			"disablereceiveshadows" "1"
+            "model" "models/props_dev/plank_long_fat.mdl"
+			"fademaxdist" "2500"     
+			"fademindist" "2000"
+			"targetname" "props_ep2_out10a_area1"
+            }
+        }
+		
+				"prop_dynamic"
+        {
+        "origin" "628 11613 199"
+        "angle" "90 90 0.00"
+        "keyvalues"
+            {
+            "modelscale" "5"
+			"disableshadows" "1"
+			"disablereceiveshadows" "1"
+            "model" "models/props_dev/plank_long_fat.mdl"
+			"fademaxdist" "2500"     
+			"fademindist" "2000"
+			"targetname" "props_ep2_out10a_area1"
+            }
+        }
+		
+				"prop_dynamic"
+        {
+        "origin" "1379 11703 223"
+        "angle" "90 90 0.00"
+        "keyvalues"
+            {
+            "modelscale" "5"
+			"disableshadows" "1"
+			"disablereceiveshadows" "1"
+            "model" "models/props_dev/plank_long_fat.mdl"
+			"fademaxdist" "2500"     
+			"fademindist" "2000"
+			"targetname" "props_ep2_out10a_area1"
+            }
+        }
+		
+				"prop_dynamic"
+        {
+        "origin" "2310 11643 258"
+        "angle" "90 90 0.00"
+        "keyvalues"
+            {
+            "modelscale" "5"
+			"disableshadows" "1"
+			"disablereceiveshadows" "1"
+            "model" "models/props_dev/plank_long_fat.mdl"
+			"fademaxdist" "2500"     
+			"fademindist" "2000"
+			"targetname" "props_ep2_out10a_area1"
+            }
+        }
+		
+				"prop_dynamic"
+        {
+        "origin" "3381 11058 266"
+        "angle" "90 90 0.00"
+        "keyvalues"
+            {
+            "modelscale" "5"
+			"disableshadows" "1"
+			"disablereceiveshadows" "1"
+            "model" "models/props_dev/plank_long_fat.mdl"
+			"fademaxdist" "2500"     
+			"fademindist" "2000"
+			"targetname" "props_ep2_out10a_area1"
+            }
+        }
+		
+			"prop_dynamic"
+        {
+        "origin" "3884 11127 395"
+        "angle" "90 90 0.00"
+        "keyvalues"
+            {
+            "modelscale" "3"
+			"disableshadows" "1"
+			"disablereceiveshadows" "1"
+            "model" "models/props_dev/plank_long_fat.mdl"
+			"fademaxdist" "2500"     
+			"fademindist" "2000"
+			"targetname" "props_ep2_out10a_area1"
+            }
+        }
+		
+			"prop_dynamic"
+        {
+        "origin" "2852 11354 206"
+        "angle" "0 0 0.00"
+        "keyvalues"
+            {
+            "modelscale" "5"
+			"disableshadows" "1"
+			"disablereceiveshadows" "1"
+            "model" "models/props_dev/plank_cube01.mdl"
+			"fademaxdist" "2500"     
+			"fademindist" "2000"
+			"targetname" "props_ep2_out10a_area1"
+            }
+        }
+		
+			"prop_dynamic"
+        {
+        "origin" "2744 11351 194"
+        "angle" "0 0 0.00"
+        "keyvalues"
+            {
+            "modelscale" "5"
+			"disableshadows" "1"
+			"disablereceiveshadows" "1"
+            "model" "models/props_dev/plank_cube01.mdl"
+			"fademaxdist" "2500"     
+			"fademindist" "2000"
+			"targetname" "props_ep2_out10a_area1"
+            }
+        }
+		
+"removeentity" {
+            "classname" "env_sun"
+           }
+
+"env_sun"
+        {
+
+                "roll"  "20"  
+                "yaw"   "0"
+                "pitch" "-135"
+
+                 "KeyValues"
+                {
+					"targetname" "riseandshine"
+					"rendercolor" "237 218 143"
+				"size" "16"
+					"disablesprite" "1"
+									"overlaysize" "24"
+					"use_angles"	"1"
+					"sunrays_intensity"	"2"
+					"sunrays_color.r"	"0"
+					"sunrays_color.g"	"0.191"
+					"sunrays_color.b"	"0.255"
+					"sunrays_color.a"	"1"
+					"sunrays_power"		"0.2"
+					"global_lightning_keyvalues"
+					{
+						"enabled" "1"
+						"enableshadows" "1"			
+						"distance" "7000"
+						"fov" "270"
+						"nearz" "0"
+						"northoffset" "0"
+						"eastoffset" "0"
+						"forwardoffset" "0"
+						"orthosize" "1000"
+						"brightnessscale" "4"
+						"angles" "48 244 10"
+						"lightcolor" "253 251 211 255"
+						"targetname" "g_light"
+					}
+                }
+        }
+		
+
+
+		
+		"point_teleport"
+	{
+		"origin"	"2058.32 -1076.93 -1880.76"
+		"angle"		"0 134.41 0"
+		"KeyValues"
+		{
+            "targetname" "teleport_fixing"
+            "target" "dog"
+		}
+	}
+		
+// Lite End
+
+
+
+		
+		"item_item_crate"
+	{
+		"origin"	"3410 -3508 -1867"
+		"angle"		"4 15 0"
+		"KeyValues"
+		{
+            "fademaxdist" "1700"     
+					"fademindist" "1600"
+			"ItemClass"	"item_healthkit"
+			"ItemCount"		"3"
+
+		}
+	}
+	
+	"item_item_crate"
+	{
+		"origin"	"3560 -3820 -1868"
+		"angle"		"4 15 0"
+		"KeyValues"
+		{
+              "fademaxdist" "1700"     
+					"fademindist" "1600"
+			"ItemClass"	"item_battery"
+			"ItemCount"		"2"
+
+		}
+	}
+	
+	
+	  "info_radar_target" {
+		"origin" "1582 -5665 -1475"
+		"keyvalues" {
+			"targetname"	"smoke_crate_beacon"
+            "radius" "2000"
+			"parentname" "crate_smoke"
+			"mode" "0"
+			"type" "0"
+		}
+	}
+
+		"item_item_crate"
+	{
+		"origin"	"1582 -5665 -1475"
+		"angle"		"4 35 0"
+		"KeyValues"
+		{
+		"fademaxdist" "1700"     
+					"fademindist" "1600"
+		    "OnBreak" "smoke_crate_beacon,kill,,-1"
+            "CrateAppearance" "1"
+			"ItemClass"	"weapon_smokegrenade"
+			"ItemCount"		"3"
+            "targetname" "crate_smoke"
+		}
+	}
+	
+			"item_item_crate"
+	{
+		"origin"	"1567 -5717 -1477"
+		"angle"		"4 15 0"
+		"KeyValues"
+		{
+		"fademaxdist" "1700"     
+					"fademindist" "1600"
+		    "OnBreak" "smoke_crate_beacon,kill,,-1"
+            "CrateAppearance" "1"
+			"ItemClass"	"weapon_flashbang"
+			"ItemCount"		"3"
+            "targetname" "crate_flash"
+		}
+	}
+		
+
+
+
+}
+
+"entities:disabled_until_time_comes" {
+
+
+	"npc_shocktrooper"
+	{
+		"origin" "5484 -3706 -1848"
+        "angle"  "0 -176 0"
+		"KeyValues"
+		{
+		  "fademaxdist" "2700"     
+					"fademindist" "2600"
+		}
+	}
+	
+	"npc_pitdrone"
+	{
+		"origin" "5694 -3345 -1865"
+        "angle"  "0 -151 0"
+		"KeyValues"
+		{
+		  "fademaxdist" "2700"     
+					"fademindist" "2600"
+		}
+	}
+	"npc_voltigore" 
+
+	{
+		"origin" "5344 -3190 -1822"
+        "angle"  "0 -131 0"
+		"KeyValues"
+		{
+		  "fademaxdist" "2700"     
+					"fademindist" "2600"
+		}
+	}
+
+		
+"npc_shocktrooper" 
+    {
+		"origin" "4637 -4102 -1804"
+        "angle"  "0 163 0"
+		"KeyValues"
+		{
+		  "fademaxdist" "2700"     
+					"fademindist" "2600"
+		}
+	}
+
+"npc_shocktrooper"
+    {
+		"origin" "4224 -3048 -1742"
+        "angle"  "0 -133 0"
+		"KeyValues"
+		{
+		  "fademaxdist" "2700"     
+					"fademindist" "2600"
+		}
+	}
+	
+
+
+"npc_voltigore" 
+    {  
+
+		"origin" "4652 -3661 -1846"
+        "angle"  "0 180 0"
+		"KeyValues"
+		{
+		  "fademaxdist" "2700"     
+					"fademindist" "2600"
+		}
+	}
+	
+}

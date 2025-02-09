@@ -1,41 +1,659 @@
-"MapAdd"
+//	OverCharged Steam MAPADD Data
+//	Location: C17
+//      Game: Half-Life 2
+
+"precache" {
+    "model" "models\humans\group01\male_02.mdl"
+	"entity" "npc_metropolice"
+}
+"randomspawn" {
+
+	//"npc_metropolice" {
+	//	"count"		"8"
+	//	"weapon"	"weapon_pistol"
+	//	"values" "fademaxdist 2700 fademindist 2600"
+	//}
+
+//"npc_pitdrone" {
+	//	"count"		"4"
+	//	"values" "fademaxdist 2700 fademindist 2600"
+	//}
+
+
+}
+
+"Init"
 {
-    "1"
-    {
-        "entity"       "weapon_hopwire"
-        "x"            "-486.881256"
-        "y"            "3474.500488"
-        "z"            "783.968750"
-        "pitch"        "0"
-        "yaw"          "0"
-        "roll"         "0"
-        "KeyValues"
-        {
-            "model"    "models/weapons/w_rocket_launcher.mdl"
-        }
-        "Flags"
-        {
-            "spawnflags"    "1"
-        }
-    }
-    "2"
+	"Give_Equipment"
 	{
-        "entity"       "weapon_mp5"
-        "x"            "468.957397"
-        "y"            "3119.086914"
-        "z"            "-783.968750"
-        "pitch"        "0"
-        "yaw"          "0"
-        "roll"         "0"
-    }
-    "3"
-    {
-        "entity"       "weapon_snark"
-        "x"            "-1456.044067"
-        "y"            "896.000061"
-        "z"            "-831.9687"
-        "pitch"        "0"
-        "yaw"          "0"
-        "roll"         "0"
-    }
+		"Item"
+		{
+			"weapon" "stunstick"
+			"weapon" "dual_pistols"
+		}
+	}
+}
+
+"entities:drop" {
+
+
+"prop_ragdoll"
+        {
+        "origin" "-801 1054 -607"
+        "angle" "324 64.44 0.00"
+        "keyvalues"
+            {
+            "model" "models\humans\group01\male_02.mdl"
+            }
+        }
+
+  "npc_metropolice"
+        {
+        "origin" "-792 995 -607"
+        "angle" "0 87.14 0.00"
+        "keyvalues"
+            {
+            "spawnflags" "512"
+			"manhacks" "2"
+			"fademaxdist" "2700"
+	        "fademindist" "2600"
+            "additionalequipment" "weapon_smg1"
+            }
+        }
+
+
+
+}
+
+"entities:vital" {
+
+"event" {
+		"targetname"	"logic_bustthrough"
+		"action"	"modifyentity"
+		"OnTrigger"	"never_ever_do_it_again,kill,,-1"
+	}
+
+"event" {
+		"targetname"	"matt"
+		"action"	"modifyentity"
+		"OnDeath"	"never_ever_do_it_again,reload,,-1"
+	}
+
+}
+
+"entities:weather" {
+
+	
+"event"
+	  {
+		"targetname"	"weather_relay"
+                "action"  "trigger"  
+	  }
+
+}
+
+
+// Lite Start
+
+
+"entities:g_light_enable" {
+
+
+"event" {
+		"targetname"	"g_light"
+		KeyValues
+        {
+        "enabled" "1"
+        }
+	 }
+	 
+	 	 "event" {
+		"targetname"	"g_light_relay"
+		"action" "trigger"
+	 }
+	 
+
+}
+
+"entities:g_light_disable" {
+
+
+"event" {
+		"targetname"	"g_light"
+		KeyValues
+        {
+        "enabled" "0"
+        }
+	 }
+
+}
+
+// Lite End
+"entities" {
+
+"npc_hydra"
+        {
+        "origin" "-1583 807 -1041"
+        "angle" "0 -87 0"
+		"keyvalues"
+            {
+             "fademaxdist" "1700"     
+			"fademindist" "1600"  
+            }
+        }
+		
+		"npc_hydra"
+        {
+        "origin" "-1639 45 -1046"
+        "angle" "0 18 0"
+		"keyvalues"
+            {
+             "fademaxdist" "1700"     
+			"fademindist" "1600"  
+            }
+        }
+
+
+"logic_relay"
+        {
+        "origin" "-949 1430 -765"
+        "angle" "0 0 0.00"
+        "keyvalues"
+            {
+			"OnTrigger"  "weather_display,showhudhint,,0.5"
+			"OnTrigger"  "weather_display,hidehudhint,,5.5"
+			"targetname" "Weather_relay"
+
+            }
+        }
+
+		"env_hudhint"
+        {
+        "origin" "2230 -1369 87"
+        "angle" "0 0 0.00"
+        "keyvalues"
+            {
+			"message" "          H.E.V MʎRK VI ASSISTANT 
+			|TIME: 11:38|
+			|WEATHER: PARTLY-CLOUDY|
+			|TEMPERATURE: 22°C|"
+				
+			"targetname" "Weather_Display"
+			"spawnflags" "1"
+            }
+        }
+		
+		"mapadd_trigger_once" {
+		"origin" "-949 1430 -765"
+		"keyvalues" {
+			"radius"	"100"
+			"label"		"weather"
+		}
+	}
+
+	
+
+// Lite Start
+
+"logic_relay"
+        {
+        "origin" "-949 1430 -765"
+        "angle" "0 0 0.00"
+        "keyvalues"
+            {
+			"OnTrigger"  "vortigauntstillworkingonthis,command,ent_fire g_light setbrightness 0.75,-1"
+			"targetname" "g_light_relay"
+
+            }
+        }
+
+		"mapadd_trigger_multiple" {
+		"origin" "-906 1474 -749"
+		"keyvalues" {
+			"radius"	"100"
+			"label"		"g_light_enable"
+			"wait" "0.1"
+			"delay" "0.1"
+			"limit" "9999"
+		}
+	}
+	
+			"mapadd_trigger_multiple" {
+		"origin" "-1294 -1153 -895"
+		"keyvalues" {
+			"radius"	"100"
+			"label"		"g_light_enable"
+			"wait" "0.1"
+			"delay" "0.1"
+			"limit" "9999"
+		}
+	}
+	
+			"mapadd_trigger_multiple" {
+		"origin" "-879 -210 -831"
+		"keyvalues" {
+			"radius"	"100"
+			"label"		"g_light_enable"
+			"wait" "0.1"
+			"delay" "0.1"
+			"limit" "9999"
+		}
+	}
+	
+			"mapadd_trigger_multiple" {
+		"origin" "-531 -631 -1139"
+		"keyvalues" {
+			"radius"	"100"
+			"label"		"g_light_enable"
+			"wait" "0.1"
+			"delay" "0.1"
+			"limit" "9999"
+		}
+	}
+	
+	
+	
+		"mapadd_trigger_multiple" {
+		"origin" "-906 1474 -749"
+		"keyvalues" {
+			"radius"	"100"
+			"wait" "0.1"
+			"delay" "0.1"
+			"limit" "9999"
+			"label"		"g_light_disable"
+		}
+	}
+	
+			"mapadd_trigger_multiple" {
+		"origin" "-1796 -962 -831"
+		"keyvalues" {
+			"radius"	"100"
+			"wait" "0.1"
+			"delay" "0.1"
+			"limit" "9999"
+			"label"		"g_light_disable"
+		}
+	}
+
+
+			"mapadd_trigger_multiple" {
+		"origin" "-542 -397 -830"
+		"keyvalues" {
+			"radius"	"100"
+			"wait" "0.1"
+			"delay" "0.1"
+			"limit" "9999"
+			"label"		"g_light_disable"
+		}
+	}
+
+
+  "logic_auto"
+        {
+        "origin" "2813 7162 0" 
+		"angle"	"0 0 0"
+        "keyvalues"
+            {
+		     "OnNewGame" "vortigauntstillworkingonthis,command,oc_weapon_disable_dissolve 1,-1"
+            }
+        }
+
+	 "point_servercommand" {
+		"origin""-697 -7 1487"
+		"keyvalues" {
+                            "targetname" "vortigauntstillworkingonthis"
+	             }
+               }
+
+	"event" 
+	{
+		"classname"	"worldspawn"
+		"keyvalues" 
+		 {
+		"detailmaterial" "detail/detailsprites_hl2"
+		 }
+	}
+
+
+
+"mapadd_trigger_once" {
+		"origin" "-585 3443 -783"
+		"keyvalues" {
+			"radius"	"100"
+			"label"		"vital"
+		}
+	}
+	
+
+
+"player_loadsaved"
+        {
+        "origin" "943 3768 -529"
+        "angle" "0 0 0"
+        "keyvalues"
+            {
+            "targetname" "never_ever_do_it_again"
+            "duration" "2"
+            "loadtime" "2"
+            "holdtime" "2"
+            "renderamt"  "255"
+            "rendercolor" "0 0 0"
+         }
+      }
+
+
+"removeentity" {
+		"classname" "env_sun"
+	}
+
+		"env_sun"
+        {
+
+                "roll"  "-15"  
+                "yaw"   "-70"
+                "pitch" "-155"
+
+                "KeyValues"
+                {
+					"targetname" "riseandshine"
+					"rendercolor" "237 218 143"
+				"size" "16"
+					"disablesprite" "1"
+					"use_angles"	"1"
+					"sunrays_intensity"	"2"
+					"sunrays_color.r"	"0.2"
+					"sunrays_color.g"	"0.2"
+					"sunrays_color.b"	"0.17"
+					"sunrays_color.a"	"1"
+					"sunrays_power"		"0.275"
+					"global_lightning_keyvalues"
+					{
+						"enabled" "1"
+						"enableshadows" "1"			
+							"distance" "10000"
+						"fov" "180"
+						"nearz" "0"
+						"startdisabled" "1"
+						"northoffset" "0"
+						"eastoffset" "0"
+						"forwardoffset" "0"
+						"orthosize" "835"
+						"brightnessscale" "0"
+						"targetname" "g_light"
+						"angles" "83 165 0"
+						"lightcolor" "243 224 158 1200"
+					}
+                }
+        }
+// Lite End
+
+"npc_cockroach"
+        {
+        "origin" "-13 3433 -783"
+        "angle" "0 141 0.00"
+		"keyvalues"
+            {
+             "fademaxdist" "700"
+	        "fademindist" "600"
+            }	
+        }
+		
+
+		"npc_cockroach"
+        {
+        "origin" "-1124 -114 -895"
+        "angle" "0 141 0.00"
+		"keyvalues"
+            {
+             "fademaxdist" "700"
+	        "fademindist" "600"
+            }	
+        }
+		
+		"npc_cockroach"
+        {
+        "origin" "-1877 -861 -831"
+        "angle" "0 141 0.00"
+		"keyvalues"
+            {
+             "fademaxdist" "700"
+	        "fademindist" "600"
+            }	
+        }
+		
+			"prop_ragdoll"
+        {
+        "origin" "-757 3329 -795"
+        "angle" "64 35 0"
+        "keyvalues"
+            {
+			"spawnflags" "260"
+             "fademaxdist" "1700"
+	        "fademindist" "1600"
+            "model" "models/police.mdl"
+            }
+        }
+		
+			"weapon_beretta"
+        {
+        "origin" "-795 3397 -792"
+        "angle" "0 86 0"
+        "keyvalues"
+            {
+             "fademaxdist" "700"
+	        "fademindist" "600"
+            }
+        }
+		
+		
+	"prop_ragdoll"
+        {
+        "origin" "-933 743 -966"
+        "angle" "0 30 0"
+        "keyvalues"
+            {
+			"body" "3"
+			"spawnflags" "260"
+             "fademaxdist" "1700"
+	        "fademindist" "1600"
+            "model" "models/combine_cremator.mdl"
+            }
+        }
+		
+	"prop_physics"
+        {
+        "origin" "-1154 1815 -812"
+        "angle" "0 0 0.00"
+        "keyvalues"
+            {
+			"fademaxdist" "1500"
+            "fademindist" "1000"
+            "model" "models\combine_cremator_headprop.mdl"
+            }
+        }
+		
+	"prop_physics"
+        {
+        "origin" "-1246 1199 -747"
+        "angle" "0 0 0.00"
+        "keyvalues"
+            {
+			"fademaxdist" "1500"
+            "fademindist" "1000"
+            "model" "models\props_debris\concrete_chunk01c.mdl"
+            }
+        }
+
+
+
+"mapadd_trigger_once" {
+		"origin" "-884 878 -900"
+		"keyvalues" {
+			"radius"	"250"
+			"label"		"drop"
+		}
+	}
+
+
+
+
+
+
+  "item_battery"
+        {
+        "origin" "-1857 -1089 -831"
+		"keyvalues"
+            {
+             "fademaxdist" "700"
+	        "fademindist" "600"
+            }	
+        }
+
+
+		
+"prop_ragdoll"
+        {
+        "origin" "-1333 1411 -736"
+        "angle" "90 175 0"
+        "keyvalues"
+          {
+           "fademaxdist" "1300"
+	        "fademindist" "1200"
+          "model" "models\zombie\fast.mdl"
+          }
+        }
+		
+		
+		"npc_houndeye"
+        {
+        "origin" "322 3280 -847"
+        "angle" "0 -31 0.00"
+		 "keyvalues"
+            {
+				"fademaxdist" "1800"
+            "fademindist" "1700"
+            "spawnflags" "512"
+            }
+        }
+		
+		"npc_houndeye_explode"
+        {
+        "origin" "-1208 1426 -839"
+        "angle" "0 89 0.00"
+		 "keyvalues"
+            {
+				"fademaxdist" "1800"
+            "fademindist" "1700"
+            "spawnflags" "512"
+			"squadname" "hnd"
+            }
+        }
+		
+				"npc_houndeye"
+        {
+        "origin" "-1339 1320 -831"
+        "angle" "0 62 0.00"
+		 "keyvalues"
+            {
+				"fademaxdist" "1800"
+            "fademindist" "1700"
+            "spawnflags" "512"
+			"squadname" "hnd"
+            }
+        }
+		
+			"npc_manhack"
+        {
+        "origin" "487 2478 -831"
+        "angle" "0 -31 0.00"
+		 "keyvalues"
+            {
+				"fademaxdist" "1800"
+            "fademindist" "1700"
+            "spawnflags" "512"
+            }
+        }
+		
+		"npc_metropolice"
+	{
+		"origin"	"-622 -818 -751"
+		"angle"		"0 173 0"
+		"KeyValues"
+		{
+		"fademaxdist" "2700"      
+			"fademindist" "2600"	
+			"additionalequipment" "weapon_pistol"
+			"spawnflags" "256"
+		}
+	}
+	
+		"npc_houndeye"
+        {
+        "origin" "-879 91 -1039"
+        "angle" "0 -115 0.00"
+		 "keyvalues"
+            {
+				"fademaxdist" "1800"
+            "fademindist" "1700"
+            "spawnflags" "512"
+            }
+        }
+		
+			"npc_houndeye"
+        {
+        "origin" "-2189 -173 -1135"
+        "angle" "0 -143 0.00"
+		 "keyvalues"
+            {
+				"fademaxdist" "1800"
+            "fademindist" "1700"
+            "spawnflags" "512"
+            }
+        }
+		
+		"npc_metropolice"
+	{
+		"origin"	"122 -603 -767"
+		"angle"		"0 -104 0"
+		"KeyValues"
+		{
+		"fademaxdist" "2700"      
+			"fademindist" "2600"	
+			"additionalequipment" "weapon_beretta"
+		
+		}
+	}
+	
+			"npc_metropolice"
+	{
+		"origin"	"-56 -1351 -767"
+		"angle"		"0 42 0"
+		"KeyValues"
+		{
+		"fademaxdist" "2700"      
+			"fademindist" "2600"	
+			"additionalequipment" "weapon_beretta"
+		
+		}
+	}
+	
+//"npc_ichthyosaur"
+      //  {
+      //  "origin" "-2319 -888 -1636"
+      //  "angle" "0 172 0.00"
+		// "keyvalues"
+        //    {
+        //    "spawnflags" "256"
+       //     }
+      //  }	
+		
+//"npc_ichthyosaur"
+    //    {
+      //  "origin" "-2663 16 -1625"
+      //  "angle" "0 4 0.00"
+		// "keyvalues"
+       //     {
+        //    "spawnflags" "256"
+       //     }
+       // }
 }

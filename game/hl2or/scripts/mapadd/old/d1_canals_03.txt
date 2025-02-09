@@ -1,0 +1,41 @@
+"MapAdd"
+{
+    "1"
+    {
+        "entity"       "weapon_hopwire"
+        "x"            "-486.881256"
+        "y"            "3474.500488"
+        "z"            "783.968750"
+        "pitch"        "0"
+        "yaw"          "0"
+        "roll"         "0"
+        "KeyValues"
+        {
+            "model"    "models/weapons/w_rocket_launcher.mdl"
+        }
+        "Flags"
+        {
+            "spawnflags"    "1"
+        }
+    }
+    "2"
+	{
+        "entity"       "weapon_mp5"
+        "x"            "468.957397"
+        "y"            "3119.086914"
+        "z"            "-783.968750"
+        "pitch"        "0"
+        "yaw"          "0"
+        "roll"         "0"
+    }
+    "3"
+    {
+        "entity"       "weapon_snark"
+        "x"            "-1456.044067"
+        "y"            "896.000061"
+        "z"            "-831.9687"
+        "pitch"        "0"
+        "yaw"          "0"
+        "roll"         "0"
+    }
+}

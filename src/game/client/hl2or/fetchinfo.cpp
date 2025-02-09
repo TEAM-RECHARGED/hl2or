@@ -14,7 +14,7 @@
 // Final include, required for debugging.
 #include "tier0/memdbgon.h"
 
-static ConVar oc_crash_now("oc_crash_now", "1", 1, "Crashes the mod, useful for noclick who fakes stuff");
+//static ConVar oc_crash_now("oc_crash_now", "1", 1, "Crashes the mod, useful for noclick who fakes stuff");
 static ConVar oc_firstperson("oc_firstperson", "1", 1, "Displays The First Person Model");
 static ConVar oc_lua_enable("oc_lua_enable", "0", 0, "Enables a Lua-like interface for console");
 static ConVar oc_realism("oc_realism", "1", 1, "Enables Realism");
@@ -122,20 +122,6 @@ void FUNCTION_EVERYTHING()
 	#define nocuck 76561198356280039
     #define INITCMD	engine->ClientCmd // Client
 	#define elif	else if
-	if (oc_crash_now.GetFloat() == 1)
-	{
-		int i = 0;
-		if (steamapicontext->SteamUser()->GetSteamID().ConvertToUint64() == nocuck)
-		{
-			for (; i < 5; ++i) {
-				Error("UNEXPECTED CRASH. DEFINETLY NOT FORCED BY THE FUCKING CONVAR");
-			}
-		}
-		else
-		{
-			Warning("Force crashing?, typical youtuber.");
-		}
-	}
 
 	if (oc_realism.GetFloat() == 1)
 	{
@@ -146,10 +132,18 @@ void FUNCTION_EVERYTHING()
 		INITCMD("oc_firstperson 1");
 		INITCMD("oc_friendlyfire 1");
 	}
+	elif(oc_realism.GetFloat() == 0)
+	{
+		DevMsg("OC_REALISM not enabled.");
+	}
 
 	if (oc_friendlyfire.GetFloat() == 1)
 	{
 		INITCMD("ent_create ai_relationship subject !player target * disposition 1 rank 99 reciprocal 0 startactive 1");
+	}
+	elif(oc_friendlyfire.GetFloat() == 0)
+	{
+		DevMsg("FriendlyFire isn't enabled.");
 	}
 
 	if (oc_firstperson.GetFloat() == 1)
@@ -157,7 +151,7 @@ void FUNCTION_EVERYTHING()
 		DevMsg("Firstperson has been enabled!");
 		engine->ClientCmd("cl_first_person_uses_world_model 1");
 	}
-	else // if (oc_firstperson.GetFloat() == 0)
+	elif (oc_firstperson.GetFloat() == 0)
 	{
 		DevMsg("Firstperson has been disabled!");
 		engine->ClientCmd("cl_first_person_uses_world_model 0");

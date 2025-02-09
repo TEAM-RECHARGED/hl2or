@@ -1,0 +1,339 @@
+//	OverCharged Steam MAPADD Data
+//	Location: White Forest
+//  Game: Half-Life 2 Episode 2
+
+"precache" {
+}
+
+"Init"
+{
+"Give_Equipment"
+	{
+	    "Ammo"
+		{
+		    "smokegrenade" "1"
+		    "flareround" "5"
+			"combinesniperround" "8"
+			"oicw" "30"
+			"LaserPistol" "10"
+		}
+		"Item"
+		{
+
+		    "weapon" "beretta"
+			"weapon" "shockrifle"
+			"weapon" "smg2"
+			"weapon" "oicw"
+			"weapon" "smokegrenade"
+			"weapon" "flashbang"
+			"weapon" "glock"		
+			"weapon" "combinesniper"
+			"weapon" "dual_pistols"
+		}
+	}
+}
+
+"randomspawn" {
+
+    "item_ammo_ion" {
+                "count" "7"
+				"values" "fademaxdist 700 fademindist 600"
+               }
+
+	"weapon_combinesniper" {
+               "count" "4"
+			   "values" "fademaxdist 700 fademindist 600"
+              }
+}
+
+"entities:vital" {
+
+"event"
+	  {
+		"targetname"	"dog"
+                "action"  "modifyentity"  
+		"ondeath"	"never_ever_do_it_again,reload,,-1"
+
+	  }
+
+"event"
+	  {
+		"targetname"	"MIRT"
+                "action"  "modifyentity"  
+		"ondeath"	"never_ever_do_it_again,reload,,-1"
+
+	  }
+
+"event"
+	  {
+		"targetname"	"eli"
+                "action"  "modifyentity"  
+		"ondeath"	"never_ever_do_it_again,reload,,-1"
+
+	  }
+
+"event"
+	  {
+		"targetname"	"kleiner"
+                "action"  "modifyentity"  
+		"ondeath"	"never_ever_do_it_again,reload,,-1"
+
+	  }
+
+"event"
+	  {
+		"targetname"	"magnusson"
+                "action"  "modifyentity"  
+		"ondeath"	"never_ever_do_it_again,reload,,-1"
+
+	  }
+
+"event"
+	  {
+		"targetname"	"vort_lab"
+                "action"  "modifyentity"  
+		"ondeath"	"never_ever_do_it_again,reload,,-1"
+
+	  }
+}
+
+
+"entities" {
+
+
+"item_longjump"
+        {
+        "origin" "1922 -10067 -248"
+		"angle" "0 -117 0"
+		"KeyValues"
+		{
+			"fademaxdist" "1800"
+	        "fademindist" "1700"
+		}
+        }
+
+	"prop_physics"
+        {
+        "origin" "2273 -9439 -1316"
+        "angle" "0 0 0.00"
+        "keyvalues"
+            {
+            "model" "models/props_eg/hl2_disc.mdl"
+			"fademaxdist" "2500"      
+			"fademindist" "2400"
+			"spawnflags" "260"
+            }
+        }
+		
+"logic_auto"
+        {
+        "origin" "2813 7162 0" 
+		"angle"	"0 0 0"
+        "keyvalues"
+            {
+		    "OnNewGame" "Weather_Display,showhudhint,,4.5"
+			   "OnNewGame" "Weather_Display,hidehudhint,,9.5"
+		"OnMapTransition"	"Weather_Display,showhudhint,,4.5"
+		"OnMapTransition"	"Weather_Display,hidehudhint,,9.5"
+            }
+        }
+
+	"env_hudhint"
+        {
+        "origin" "2230 -1369 87"
+        "angle" "0 0 0.00"
+        "keyvalues"
+            {
+			"message" "          H.E.V MʎRK VI ASSISTANT 
+			|TIME: 16:12|
+			|WEATHER: MOSTLY-CLEAN|
+			|TEMPERATURE: 27°C|"
+			"targetname" "Weather_Display"
+			"spawnflags" "1"
+            }
+        }
+
+	
+
+// Lite Start
+
+  "logic_auto"
+        {
+        "origin" "2813 7162 0" 
+		"angle"	"0 0 0"
+        "keyvalues"
+            {
+		     "OnNewGame" "vortigauntstillworkingonthis,command,oc_weapon_disable_dissolve 1,-1"
+            }
+        }
+
+	 "point_servercommand" {
+		"origin""-697 -7 1487"
+		"keyvalues" {
+                            "targetname" "vortigauntstillworkingonthis"
+	             }
+               }
+	
+
+		
+	"prop_physics"
+        {
+        "origin" "-1047 -11040 85"
+        "angle" "0 10 0.00"
+        "keyvalues"
+            {
+            "fademaxdist" "2500"     
+					"fademindist" "2400"
+            "model" "models/props_c17/chair02a.mdl"
+            }
+        }
+
+"mapadd_trigger_once" {
+		"origin" "-931 -11019 128"
+		"keyvalues" {
+		       "radius"	  "300"
+	               "label"		"vital"
+		}
+	}
+
+"player_loadsaved"
+        {
+        "origin" "-28 2876 -1215"
+        "angle" "0 0 0"
+        "keyvalues"
+            {
+            "targetname" "never_ever_do_it_again"
+            "duration" "2"
+            "loadtime" "2"
+            "holdtime" "2"
+            "renderamt"  "255"
+            "rendercolor" "0 0 0"
+         }
+      }
+
+
+// Lite End
+
+ "weapon_gauss"
+        {
+        "origin" "2313 -9435 -1346"
+		"angle" "0 119 0"
+		"KeyValues"
+		{
+		  "fademaxdist" "1700"     
+		  "fademindist" "1600"
+		}
+    }
+	
+		"item_item_crate"
+	{
+		"origin"	"-212 -10251 139"
+		"angle"		"0 95 0"
+		"KeyValues"
+		{
+		  "fademaxdist" "2500"     
+					"fademindist" "2400"
+			"ItemClass"		"item_ammo_ion"
+			"ItemCount"		"5"
+		}
+	}
+
+ "item_ammo_alyxgun"
+        {
+        "origin" "1915 -9327 -1331"
+		"angle" "0 -93 0"
+		"KeyValues"
+		{
+		  "fademaxdist" "700"     
+					"fademindist" "600"
+		}
+     }
+	 
+	 
+	 
+ "item_ammo_alyxgun"
+        {
+        "origin" "-184 -10313 118"
+		"angle" "0 35 0"
+		"KeyValues"
+		{
+		  "fademaxdist" "700"     
+					"fademindist" "600"
+		}
+    }
+		 "item_ammo_alyxgun"
+        {
+        "origin" "-234 -10208 106"
+		"angle" "0 67 0"
+		"KeyValues"
+		{
+		  "fademaxdist" "700"     
+					"fademindist" "600"
+		}
+    }
+
+	"npc_sporegenerator"
+        {
+        "origin" "-178 -10545 64"
+        "angle" "0 0 0.00"
+		"KeyValues"
+		{
+		  "fademaxdist" "1700"     
+					"fademindist" "1600"
+		}
+        }
+		
+			"npc_sporegenerator"
+        {
+        "origin" "-223 -10545 64"
+        "angle" "0 0 0.00"
+		"KeyValues"
+		{
+		  "fademaxdist" "1700"     
+					"fademindist" "1600"
+		}
+        }
+		
+			"npc_sporegenerator"
+        {
+        "origin" "-227 -10609 65"
+        "angle" "0 114 0.00"
+		"KeyValues"
+		{
+		  "fademaxdist" "1700"     
+					"fademindist" "1600"
+		}
+        }
+
+//"weapon_grenadelauncher"
+     //   {
+      //  "origin" "-181 -10611 152"
+     //   }
+// Grenade Launcher Is only exclusive for HL2 and EP1
+
+// Egon Supposed to be near Vort's Table but was moved
+        "item_ammo_ion"
+        {
+        "origin" "-358 -9770 174"
+		"KeyValues"
+		{
+		  "fademaxdist" "700"     
+					"fademindist" "600"
+		}
+    }
+		
+		  "item_item_crate"
+	{
+		"origin"	"-1077 -10509 160"
+		"angle"		"0 -64 0"
+		"KeyValues"
+		{
+		    "fademaxdist" "700"     
+			"fademindist" "600"
+			"ItemClass"	"item_box_flare_rounds"
+			"ItemCount"		"4"
+
+		}
+	}
+
+}

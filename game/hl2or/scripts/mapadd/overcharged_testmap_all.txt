@@ -1,0 +1,71 @@
+"precache" {
+}
+
+
+
+"entities" {
+
+"prop_ragdoll"
+	{
+		"origin"	"5191 -157 128"
+		"angle"		"0 0 0"
+            "keyvalues" {
+                "model" "models/player/guerilla/guerilla.mdl"
+            }
+	}
+
+"prop_vehicle_jeep" {
+	"origin" "-5941 -2326 212"
+    "angle"		"0 270 0"
+	"keyvalues" {
+         "targetname" "jalopy"
+	    "model" "models/vehicle.mdl"
+        "angles"		"0 270 0"
+        "vehiclescript" "scripts/vehicles/jalopy.txt"
+	}
+   }
+
+	"removeentity" {
+		"classname" "env_sun"
+	}
+	"env_sun"
+        {
+
+
+
+
+                "roll"  "20"  
+                "yaw"   "0"
+                "pitch" "-125"
+
+                "KeyValues"
+                {
+					"targetname" "Sun"
+					//"angle"	"70"
+					"use_angles"	"1"
+					"sunrays_intensity"	"2"
+					"sunrays_color.r"	"0.05"
+					"sunrays_color.g"	"0.25"
+					"sunrays_color.b"	"0.6"
+					"sunrays_color.a"	"1"
+					"sunrays_power"		"0.3"
+					
+					"global_lightning_keyvalues"
+					{
+                                                "targetname" "global_Lightning"
+						"enabled" "1"
+						"enableshadows" "1"			
+						"distance" "10000"
+						"fov" "180"
+						"nearz" "0"
+						"northoffset" "0"
+						"eastoffset" "0"
+						"forwardoffset" "0"
+						"orthosize" "1000"
+						"brightnessscale" "20"
+                                                "lightcolor" "237 218 143 800"
+						"angles" "48 91 0"
+					}
+                }
+        }
+}

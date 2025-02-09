@@ -1,0 +1,17 @@
+"MapAdd"
+{
+    "1"
+    {
+        "entity"       "weapon_ak47"
+        "x"            "-951.968750"
+        "y"            "6140.031250"
+        "z"            "-699.968750"
+        "pitch"        "0"
+        "yaw"          "0"
+        "roll"         "0"
+        "Flags"
+        {
+            "spawnflags"    "1"
+        }
+    }
+}

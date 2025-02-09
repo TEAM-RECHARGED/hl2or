@@ -1,0 +1,77 @@
+"MapAdd"
+{
+    "1"
+    {
+        "entity"       "npc_citizen"
+        "x"            "1491.074951"
+        "y"            "5729.610840"
+        "z"            "-8.824875"
+        "pitch"        "0"
+        "yaw"          "0"
+        "roll"         "0"
+        "KeyValues"
+        {
+            "model"    "models/humans/group01/male_01.mdl"
+            "additionalequipment" "weapon_smg1"
+        }
+        "Flags"
+        {
+            "spawnflags"    "1"
+        }
+    }
+    "2"
+    {
+        "entity"       "npc_houndeye"
+        "x"            "584.648743"
+        "y"            "5382.794434"
+        "z"            "-8.938187"
+        "pitch"        "0"
+        "yaw"          "0"
+        "roll"         "0"
+        "KeyValues"
+    }
+    "3"
+    {
+        "entity"       "npc_houndeye"
+        "x"            "-3046.568604"
+        "y"            "8655.750977"
+        "z"            "34.406139"
+        "pitch"        "0"
+        "yaw"          "0"
+        "roll"         "0"
+        "KeyValues"
+    }
+    "4"
+    {
+        "entity"       "npc_houndeye"
+        "x"            "-114.407738"
+        "y"            "-1130.192017"
+        "z"            "-1007.968750"
+        "pitch"        "0"
+        "yaw"          "0"
+        "roll"         "0"
+        "KeyValues"
+    }
+    "5"
+    {
+        "entity"       "npc_houndeye"
+        "x"            "-255.968750"
+        "y"            "-960.697571"
+        "z"            "-1007.968750"
+        "pitch"        "0"
+        "yaw"          "0"
+        "roll"         "0"
+        "KeyValues"
+    }
+    "6"
+    {
+        "entity"       "weapon_wrench"
+        "x"            "941.742859"
+        "y"            "3183.980225"
+        "z"            "-6.562790"
+        "pitch"        "0"
+        "yaw"          "0"
+        "roll"         "0"
+        "KeyValues"
+    }
+}

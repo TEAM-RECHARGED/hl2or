@@ -1,0 +1,474 @@
+//	OverCharged Steam MAPADD Data
+//	Location: Citadel
+//      Game: Half-Life 2
+
+"precache"{
+       //"sound" "music/the_combines_attack.mp3"
+}
+
+"randomspawn" {
+
+// "npc_combine_armored" {
+      //         "count" "2"
+      //         "weapon" "weapon_oicw"
+        // }
+		
+		// Can't Be Killed With GRAVGUN
+
+		
+}
+
+
+
+"entities:weather" {
+
+	
+"event"
+	  {
+		"targetname"	"weather_relay"
+                "action"  "trigger"  
+	  }
+
+}
+
+"entities" {
+
+"event"
+	  {
+		"targetname"	"logic_weapon_strip_announce"
+                "action"  "modifyentity"
+                "ontrigger" "vortigauntstillworkingonthis,command,ent_fire weapon_snark kill,-1"
+                "ontrigger" "vortigauntstillworkingonthis,command,ent_fire weapon_pistol kill,-1"
+                "ontrigger" "vortigauntstillworkingonthis,command,ent_fire weapon_extinguisher kill,-1"
+	  }
+
+"logic_relay"
+        {
+        "origin" "-949 1430 -765"
+        "angle" "0 0 0.00"
+        "keyvalues"
+            {
+			"OnTrigger"  "weather_display,showhudhint,,0.5"
+			"OnTrigger"  "weather_display,hidehudhint,,5.5"
+			"targetname" "Weather_relay"
+
+            }
+        }
+
+		"env_hudhint"
+        {
+        "origin" "2230 -1369 87"
+        "angle" "0 0 0.00"
+        "keyvalues"
+            {
+			"message" "          H.E.V MʎRK VI ASSISTANT 
+			|TIME: NO INFORMATION|
+			|WEATHER: NO INFORMATION|
+			|TEMPERATURE: 25°C|"
+			"targetname" "Weather_Display"
+			"spawnflags" "1"
+            }
+        }
+		
+		"mapadd_trigger_once" {
+		"origin" "7684 8 2176"
+		"keyvalues" {
+			"radius"	"80"
+			"label"		"weather"
+		}
+	}
+
+
+// Lite Start
+
+  "logic_auto"
+        {
+        "origin" "2813 7162 0" 
+		"angle"	"0 0 0"
+        "keyvalues"
+            {
+		     "OnNewGame" "vortigauntstillworkingonthis,command,oc_weapon_disable_dissolve 0,-1"
+            }
+        }
+
+	 "point_servercommand" {
+		"origin""-697 -7 1487"
+		"keyvalues" {
+                            "targetname" "vortigauntstillworkingonthis"
+	             }
+               }
+
+"prop_dynamic" {
+	"origin" "6148 2952 2528"  
+	"angle" "0 270 0"
+	"keyvalues" {
+        "solid" "0"
+		"targetname" "combine_wall_fixing_nodraw"
+	    "model" "models/props_combine/combineinnerwall001a.mdl"
+	  }
+    }
+	"prop_dynamic" {
+	"origin" "6140 2952 3256"  
+	"angle" "0 270 0"
+	"keyvalues" {
+        "solid" "0"
+		"targetname" "combine_wall_fixing_nodraw"
+	    "model" "models/props_combine/combineinnerwall001a.mdl"
+	  }
+    }
+
+// Lite End
+
+
+	   
+
+	   
+"npc_assassin"
+        {
+        "origin" "6336 948 2176" 
+        "angle" "0 100 0.00"
+		"keyvalues"
+            {
+			"fademaxdist" "2700"     
+			"fademindist" "2600"
+            }
+        }
+		
+	"npc_assassin"
+        {
+        "origin" "4576 -45 2113" 
+        "angle" "0 29 0.00"
+		"keyvalues"
+            {
+			"fademaxdist" "2700"     
+			"fademindist" "2600"
+            }
+        }
+		
+			"npc_assassin"
+        {
+        "origin" "2593 198 2368" 
+        "angle" "0 2 0.00"
+		"keyvalues"
+            {
+			"fademaxdist" "2700"     
+			"fademindist" "2600"
+            }
+        }
+		
+					"npc_assassin"
+        {
+        "origin" "1883 -497 2368" 
+        "angle" "0 57 0.00"
+		"keyvalues"
+            {
+			"fademaxdist" "2700"     
+			"fademindist" "2600"
+            }
+        }
+		
+		
+					"npc_assassin"
+        {
+        "origin" "2090 -487 2368" 
+        "angle" "0 100 0.00"
+		"keyvalues"
+            {
+			"fademaxdist" "2700"     
+			"fademindist" "2600"
+            }
+        }
+		
+"npc_assassin"
+        {
+        "origin" "6191 1371 2176" 
+        "angle" "0 70 0.00"
+		"keyvalues"
+            {
+			"fademaxdist" "2700"     
+			"fademindist" "2600"
+            }
+        }
+		
+"npc_assassin"
+        {
+        "origin" "6672 167 2176" 
+        "angle" "0 0 0.00"
+		"keyvalues"
+            {
+			"fademaxdist" "2700"     
+			"fademindist" "2600"
+            }
+        }
+		
+
+
+
+
+
+"info_target"
+        {
+        "origin" "7681 -1001 2176"
+        "angle" "0 0 0"
+        "keyvalues"
+            {
+            "targetname" "disp_target"
+            }
+        }
+
+"npc_combine_s"
+        {
+        "origin" "6694 1560 2176"
+        "angle" "0 -65 0"
+        "keyvalues"
+            {
+			"fademaxdist" "2700"     
+			"fademindist" "2600"
+            "additionalequipment" "weapon_oicw"
+            }
+        }
+
+
+ 
+
+"npc_combine_s"
+        {
+        "origin" "3515 641 2119"
+        "angle" "0 -2 0"
+        "keyvalues"
+            {
+			"spawnflags" "256"
+			"fademaxdist" "2700"     
+			"fademindist" "2600"
+            "additionalequipment" "weapon_smg2"
+            }
+        }
+
+"npc_mortarsynth"
+        {
+        "origin" "2747 208 2396"
+        "angle" "0 -1 0"
+		"keyvalues"
+            {
+			"fademaxdist" "2700"     
+			"fademindist" "2600"
+            }
+        }
+
+"npc_mortarsynth"
+        {
+        "origin" "5830 411 2176"
+        "angle" "0 -67 0"
+		"keyvalues"
+            {
+			"fademaxdist" "2700"     
+			"fademindist" "2600"
+            }
+        }
+
+  
+
+		
+
+"npc_assassin"
+        {
+        "origin" "1956 -210 2442"
+        "angle" "0 56 0"
+		"keyvalues"
+            {
+			"fademaxdist" "2700"     
+			"fademindist" "2600"
+            }
+        }
+ 
+
+"npc_combine_s"
+        {
+        "origin" "3507 313 2484"
+        "angle" "0 106 0"
+		"keyvalues"
+            {
+			 "model" "models/combine_skullbreaker_soldier.mdl"
+		"tacticalvariant" "1"
+		"skin" "2"
+		"additionalequipment" "weapon_autoshotgun"
+			"fademaxdist" "2700"     
+			"fademindist" "2600"
+            }
+        }
+ 
+
+"weapon_hopwire"
+	{
+		"origin"	"6972 324 2176"
+		"angle"		"0 0 0"
+		"keyvalues"
+            {
+			"fademaxdist" "700"     
+			"fademindist" "600"
+            }
+	}
+
+"weapon_hopwire"
+	{
+		"origin"	"7141 443 2176"
+		"angle"		"0 0 0"
+		"keyvalues"
+            {
+			"fademaxdist" "700"     
+			"fademindist" "600"
+            }
+	}
+	
+	"weapon_hopwire"
+	{
+		"origin"	"7133 86 2176"
+		"angle"		"0 0 0"
+		"keyvalues"
+            {
+			"fademaxdist" "700"     
+			"fademindist" "600"
+            }
+	}
+	
+"weapon_tripwire"
+	{
+		"origin"	"5892 471 2176"
+		"angle"		"0 0 0"
+		"keyvalues"
+            {
+			"fademaxdist" "700"     
+			"fademindist" "600"
+            }
+	}
+
+"weapon_tripwire"
+	{
+		"origin"	"5817 209 2176"
+		"angle"		"0 0 0"
+		"keyvalues"
+            {
+			"fademaxdist" "700"     
+			"fademindist" "600"
+            }
+	}
+
+"weapon_tripwire"
+	{
+		"origin"	"6137 -40 2176"
+		"angle"		"0 0 0"
+		"keyvalues"
+            {
+			"fademaxdist" "700"     
+			"fademindist" "600"
+            }
+	}
+	
+	"weapon_tripwire"
+	{
+		"origin"	"5827 843 2176"
+		"angle"		"0 0 0"
+		"keyvalues"
+            {
+			"fademaxdist" "700"     
+			"fademindist" "600"
+            }
+	}
+
+
+}
+
+"entities:steamupdate" {
+
+
+
+  "npc_assassin_alien"
+        {
+        "origin" "5923 433 2176"
+        "angle" "0 -69 0"
+		"keyvalues"
+            {
+			"fademaxdist" "2700"     
+			"fademindist" "2600"
+            }
+       }
+
+"npc_combot"
+        {
+        "origin" "6636 1283 2257"
+        "angle" "0 -75 0.00"
+		"keyvalues"
+            {
+			"fademaxdist" "2700"     
+			"fademindist" "2600"
+            }
+        }
+		
+		
+		"npc_combot"
+        {
+        "origin" "6615 1834 2229"
+        "angle" "0 -47 0.00"
+			"keyvalues"
+            {
+			"fademaxdist" "2700"     
+			"fademindist" "2600"
+            }
+        }
+		
+		"npc_combot"
+        {
+        "origin" "5528 62 2211"
+        "angle" "0 -75 0.00"
+			"keyvalues"
+            {
+			"fademaxdist" "2700"     
+			"fademindist" "2600"
+            }
+        }
+		
+		"npc_combot"
+        {
+        "origin" "4259 127 2194"
+        "angle" "0 -6 0.00"
+			"keyvalues"
+            {
+			"fademaxdist" "2700"     
+			"fademindist" "2600"
+            }
+        }
+		
+		"npc_combot"
+        {
+        "origin" "3364 890 2420"
+        "angle" "0 -86 0.00"
+			"keyvalues"
+            {
+			"fademaxdist" "2700"     
+			"fademindist" "2600"
+            }
+        }
+		
+		"npc_combot"
+        {
+        "origin" "2194 366 2488"
+        "angle" "0 -95 0.00"
+			"keyvalues"
+            {
+			"fademaxdist" "2700"     
+			"fademindist" "2600"
+            }
+        }
+		
+		"npc_combot"
+        {
+        "origin" "1686 -250 2451"
+        "angle" "0 26 0.00"
+			"keyvalues"
+            {
+			"fademaxdist" "2700"     
+			"fademindist" "2600"
+            }
+        }
+		
+}

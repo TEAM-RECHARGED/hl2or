@@ -1,0 +1,495 @@
+//	OverCharged Steam MAPADD Data
+//	Location: Caves
+//  Game: Half-Life 2 Episode 2
+
+"precache" {
+    "entity" "npc_antlion"
+    "entity" "npc_shocktrooper"
+    "entity" "npc_shockroach"
+    "entity" "npc_sporefish"
+	"entity" "npc_charger"
+    "sound" "ambient\machines\teleport3.wav"
+}
+
+
+
+
+"randomspawn" {
+
+"npc_zombine" {
+               "count" "2"
+			   "values" "fademaxdist 2700 fademindist 2600"
+             }
+
+"npc_zombie" {
+               "count" "2"
+			   "values" "fademaxdist 2700 fademindist 2600"
+             }
+
+
+"npc_fastzombie" {
+               "count" "2"
+			   "values" "fademaxdist 2700 fademindist 2600"
+             }
+}
+
+"entities:racexinvasion" {
+
+
+
+"npc_shocktrooper"
+        {
+        "origin" "-8868 -8645 107"
+        "angle" "0 0.86 0.00"
+		 "keyvalues"
+            {
+			"fademaxdist" "2900"
+            "fademindist" "2800"
+			}
+        }
+
+
+
+
+        "npc_shocktrooper"
+        {
+        "origin" "-6756 -7828 -18"
+        "angle" "0 0.86 0.00"
+		 "keyvalues"
+            {
+			"fademaxdist" "2900"
+            "fademindist" "2800"
+			}
+        }
+
+        "npc_shocktrooper"
+        {
+        "origin" "-5900 -4955 -17"
+        "angle" "0 -94.86 0.00"
+		 "keyvalues"
+            {
+			"fademaxdist" "2900"
+            "fademindist" "2800"
+			}
+        }
+
+
+"mapadd_trigger_once" {
+		"origin" "-6521 -6874 -240"
+		"keyvalues" {
+			"radius"	"26"
+			"label"		"give"
+			"targetname" "fish_found"
+		}
+	}
+
+ "npc_sporefish"
+        {
+        "origin" "-6521 -6874 -211"
+        "angle" "0 0.86 0.00"
+		"keyvalues" 
+		  {
+		  "targetname" "lost_fish"
+		  }
+        }
+
+
+		
+		"event"
+	  {
+		"targetname"	"fish_foundt"
+                "action"  "trigger"
+	  }
+		
+//"event"
+	//  {
+	//	"targetname"	"spore_sound"
+     //           "action"  "playsound"  
+	//
+	//  }
+//OverCharged Beta Content
+
+}
+
+"entities:give" {
+
+	"event"
+	  {
+		"targetname"	"fish_found2"
+                "action"  "trigger"
+	  }
+
+}
+
+"entities:weather" {
+
+	
+"event"
+	  {
+		"targetname"	"weather_relay"
+                "action"  "trigger"  
+	  }
+
+}
+
+"entities" {
+
+		
+			"npc_stbat" 
+        {
+        "origin" "-10518 -7099 343"
+        "angle" "0 -87 0.00"
+		"keyvalues"
+            {
+			"spawnsleep" "1"
+			"spawnflags" "516"
+			"fademaxdist" "2700"      
+			"fademindist" "2600"
+            }
+        }
+		
+			"npc_stbat" 
+        {
+        "origin" "-6700 -8617 79"
+        "angle" "0 -165 0.00"
+		"keyvalues"
+            {
+			"spawnsleep" "1"
+			"spawnflags" "516"
+			"fademaxdist" "2700"      
+			"fademindist" "2600"
+            }
+        }
+		
+		"npc_stbat" 
+        {
+        "origin" "-6506 -9206 -96"
+        "angle" "0 -165 0.00"
+		"keyvalues"
+            {
+			"spawnsleep" "1"
+			"spawnflags" "516"
+			"fademaxdist" "2700"      
+			"fademindist" "2600"
+            }
+        }
+
+"npc_stbat" 
+        {
+        "origin" "-4961 -5848 -56"
+        "angle" "0 -107 0.00"
+		"keyvalues"
+            {
+			"spawnsleep" "1"
+			"spawnflags" "516"
+			"fademaxdist" "2700"      
+			"fademindist" "2600"
+            }
+        }
+		
+			
+"npc_boid_flocks"
+        {
+        "origin" "-7462 -8188 97"
+        "angle" "0 0 0.00"
+		 "keyvalues"
+            {
+            "fSize" "3"
+	        "fRadius" "128"
+            "spawnflags" "512"
+            }
+        }
+		
+		"npc_boid_flocks"
+        {
+        "origin" "-6490 -8618 183"
+        "angle" "0 0 0.00"
+		 "keyvalues"
+            {
+            "fSize" "4"
+	        "fRadius" "128"
+            "spawnflags" "512"
+            }
+        }
+		
+		
+"npc_boid"
+        {
+        "origin" "-10477 -7087 273"
+        "angle" "0 0 0.00"
+		 "keyvalues"
+            {
+			"ModelType"  "1"
+            "fSize" "3"
+	        "fRadius" "128"
+            "spawnflags" "512"
+            }
+        }
+		
+// Lite Start
+
+  "logic_auto"
+        {
+        "origin" "2813 7162 0" 
+		"angle"	"0 0 0"
+        "keyvalues"
+            {
+		     "OnNewGame" "vortigauntstillworkingonthis,command,oc_weapon_disable_dissolve 1,-1"
+            }
+        }
+
+	 "point_servercommand" {
+		"origin""-697 -7 1487"
+		"keyvalues" {
+                            "targetname" "vortigauntstillworkingonthis"
+	             }
+               }
+
+
+
+// Lite End
+
+"logic_relay"
+        {
+        "origin" "-949 1430 -765"
+        "angle" "0 0 0.00"
+        "keyvalues"
+            {
+			"OnTrigger"  "vortigauntstillworkingonthis,command,give weapon_spore_launcher,-1"
+			"OnTrigger"  "lost_fish,kill,,-1"
+			"targetname" "fish_found2"
+
+            }
+        }
+
+"logic_relay"
+        {
+        "origin" "-949 1430 -765"
+        "angle" "0 0 0.00"
+        "keyvalues"
+            {
+			"OnTrigger"  "fish_found,setparent,lost_fish,,0.1"
+			"targetname" "fish_foundt"
+
+            }
+        }
+		
+"logic_relay"
+        {
+        "origin" "-949 1430 -765"
+        "angle" "0 0 0.00"
+        "keyvalues"
+            {
+			"OnTrigger"  "weather_display,showhudhint,,0.5"
+			"OnTrigger"  "weather_display,hidehudhint,,5.5"
+			"targetname" "Weather_relay"
+
+            }
+        }
+
+		"env_hudhint"
+        {
+        "origin" "2230 -1369 87"
+        "angle" "0 0 0.00"
+        "keyvalues"
+            {
+			"message" "          H.E.V MʎRK VI ASSISTANT 
+			|TIME: NO INFORMATION|
+			|WEATHER: NO INFORMATION|
+			|TEMPERATURE: 8°C|"
+			"targetname" "Weather_Display"
+			"spawnflags" "1"
+            }
+        }
+		
+		"mapadd_trigger_once" {
+		"origin" "-11250 -6732 1351"
+		"keyvalues" {
+			"radius"	"100"
+			"label"		"weather"
+		}
+	}
+
+"ai_relationship"
+        {
+        "keyvalues"
+            {
+            "targetname"  "coop"
+            "subject"        "npc_zombine"
+            "target"       "npc_sporefish"
+            "startactive" "1"
+            "disposition" "3"
+            "rank" "9999"
+            }
+        }
+"ai_relationship"
+        {
+        "keyvalues"
+            {
+            "targetname"  "coop"
+            "subject"        "npc_zombie"
+            "target"       "npc_sporefish"
+            "startactive" "1"
+            "disposition" "3"
+            "rank" "9999"
+            }
+        }
+
+"ai_relationship"
+        {
+        "keyvalues"
+            {
+            "targetname"  "coop"
+            "subject"        "npc_fastzombie"
+            "target"       "npc_sporefish"
+            "startactive" "1"
+            "disposition" "3"
+            "rank" "9999"
+            }
+        }
+
+"npc_charger"
+        {
+        "origin" "-2617 -7031 -280"
+        "angle" "0 -157 0.00"
+	    "keyvalues"
+            {
+			"fademaxdist" "2900"
+            "fademindist" "2800"
+			}
+        }
+	
+		"npc_voltigore_baby"
+        {
+        "origin" "-5933 -5657 -42"
+        "angle" "0 85 0.00"
+		 "keyvalues"
+            {
+			"fademaxdist" "2900"
+            "fademindist" "2800"
+			}
+        }
+
+"npc_voltigore_baby"
+        {
+        "origin" "-9035 -8064 296"
+        "angle" "0 155 0.00"
+		 "keyvalues"
+            {
+			"fademaxdist" "2900"
+            "fademindist" "2800"
+			}
+        }
+		
+		"npc_voltigore_baby"
+        {
+        "origin" "-6898 -6694 -28"
+        "angle" "0 -25 0.00"
+		 "keyvalues"
+            {
+			"fademaxdist" "2900"
+            "fademindist" "2800"
+			}
+        }
+		
+
+"npc_voltigore_baby"
+        {
+        "origin" "-8384 -8506 286"
+        "angle" "0 109 0.00"
+		 "keyvalues"
+            {
+			"fademaxdist" "2900"
+            "fademindist" "2800"
+			}
+        }
+		
+		
+        "npc_shocktrooper"
+        {
+        "origin" "-4054 -6554 -94"
+        "angle" "0 156.86 0.00"
+		 "keyvalues"
+            {
+			"fademaxdist" "2900"
+            "fademindist" "2800"
+			}
+        }
+
+
+"weapon_flaregun" {
+                   "origin" "-10946 -7055 1677"
+				    "keyvalues"
+            {
+			"fademaxdist" "900"
+            "fademindist" "800"
+			}
+                  }
+
+  "npc_gonome"
+        {
+        "origin" "-7244 -7533 82"
+        "angle" "0 -168 0.00"
+		 "keyvalues"
+            {
+			"fademaxdist" "2900"
+            "fademindist" "2800"
+			}
+        }
+
+
+
+
+  "npc_sporegenerator"
+        {
+        "origin" "-3095 -6670 -274"
+        "angle" "0 78 0.00"
+		 "keyvalues"
+            {
+			"fademaxdist" "1900"
+            "fademindist" "1800"
+			}
+        }
+
+"ambient_generic"
+        {
+        "origin" "-8368 -8599 255"
+        "angle" "0 -179 0"
+        "keyvalues"
+            {
+            "targetname" "spore_sound"
+            "health" "10"
+            "message" "ambient\machines\teleport3.wav"
+            "pitch"   "100"
+            "spawnflags" "49"
+            "radius" "9999"
+            "pitchstart" "100"
+         }
+      }
+
+
+"mapadd_trigger_once" {
+        "origin" "-8368 -8599 255"
+        "keyvalues" {
+              "label" "racexinvasion"
+              "radius" "230"
+       }  
+   }
+
+	
+"npc_aliencontroller"
+        {
+        "origin" "-11024 -6860 1362"
+        "angle" "0 71 0.00"
+		"keyvalues"
+            {
+			"fademaxdist" "2900"
+            "fademindist" "2800"
+			"spawnflags" "65536"
+			}
+        }
+       
+
+
+}
+

@@ -1,0 +1,915 @@
+//	OverCharged Steam MAPADD Data
+//	Location: C17
+//      Game: Half-Life 2
+
+"precache" {
+}
+
+"Init"
+{
+"Give_Equipment"
+	{
+	    "Ammo"
+		{
+		    "FlashGrenade" "1"
+			"smokegrenade" "1"
+			"combinesniperround" "7"
+			"oicw" "75"
+			"m249" "100"
+		}
+		"Item"
+		{
+		    "weapon" "stunstick"
+			"weapon" "beretta"
+			"weapon" "tau"
+			"weapon" "mp5"
+			"weapon" "oicw"
+			"weapon" "sg552"
+			"weapon" "glock"
+			"weapon" "deagle"
+			"weapon" "smg2"
+			"weapon" "machinegun"
+			"weapon" "shockrifle"
+			"weapon" "immolator"
+			"weapon" "dual_pistols"
+			"weapon" "cguard"
+			"weapon" "combinesniper"	
+            "weapon" "autoshotgun"			
+			"weapon" "flashbang"
+			"weapon" "vector"
+			"weapon" "slam"
+			"weapon" "snark"
+			"weapon" "molotov"
+			"weapon" "smokegrenade"	
+		}
+	}
+}
+
+"randomspawn" {
+
+	"npc_combine_s" {
+		"count"		"2"
+		"model" "models/combine_super_soldier.mdl"
+		"weapon"	"weapon_oicw"
+		"values" "fademaxdist 3700 fademindist 3600" 
+	}
+
+
+	"npc_assassin" {
+		"count"		"2"
+		"values" "fademaxdist 3700 fademindist 3600" 
+	}
+	
+		"npc_combine_s" {
+		"count"		"1"
+		"weapon"	"weapon_vector"
+		"model" "models/combine_skullbreaker_soldier.mdl"
+		"values" "fademaxdist 2700 fademindist 2600 tacticalvariant 1"
+	}
+	
+	"npc_combine_s" {
+		"count"		"2"
+		"weapon"	"weapon_smg1"
+		"values" "fademaxdist 2700 fademindist 2600" 
+	}
+
+        "npc_combine_s" {
+		"count"		"1"
+		"weapon"	"weapon_smg2"
+		"values" "fademaxdist 2700 fademindist 2600" 
+		
+	}
+
+"npc_combine_s" {
+		"count"		"2"
+		"weapon"	"weapon_ar2"
+		"values" "fademaxdist 2700 fademindist 2600" 
+	}
+}
+
+
+"entities:weather" {
+
+	
+"event"
+	  {
+		"targetname"	"weather_relay"
+                "action"  "trigger"  
+	  }
+
+}
+
+"entities" {
+
+	
+"npc_turret_patrol"
+        {
+        "origin" "2498 -883 320"
+        "angle" "0 -7 0.00"
+        "keyvalues"
+            {
+            "fademaxdist" "3700"      
+			"fademindist" "3600"
+            }    
+        }
+
+"npc_turret_patrol"
+        {
+        "origin" "3887 -642 320"
+        "angle" "0 107 0.00"
+        "keyvalues"
+            {
+            "fademaxdist" "3700"      
+			"fademindist" "3600"
+            }    
+        }
+
+"npc_turret_patrol"
+        {
+        "origin" "3233 -629 576"
+        "angle" "0 93 0.00"
+        "keyvalues"
+            {
+            "fademaxdist" "3700"      
+			"fademindist" "3600"
+            }    
+        }
+
+"npc_turret_patrol"
+        {
+        "origin" "3460 -1506 576"
+        "angle" "0 4 0.00"
+        "keyvalues"
+            {
+            "fademaxdist" "3700"      
+			"fademindist" "3600"
+            }    
+        }
+		
+		"npc_turret_patrol"
+        {
+        "origin" "2620 -1357 576"
+        "angle" "0 -72 0.00"
+        "keyvalues"
+            {
+            "fademaxdist" "3700"      
+			"fademindist" "3600"
+            }    
+        }
+		
+		"npc_turret_patrol"
+        {
+        "origin" "3631 606 576"
+        "angle" "0 -94 0.00"
+        "keyvalues"
+            {
+            "fademaxdist" "3700"      
+			"fademindist" "3600"
+            }    
+        }
+		
+		"npc_turret_patrol"
+        {
+        "origin" "2647 459 576"
+        "angle" "0 -108 0.00"
+        "keyvalues"
+            {
+            "fademaxdist" "3700"      
+			"fademindist" "3600"
+            }    
+        }
+		
+		"npc_turret_patrol"
+        {
+        "origin" "2873 873 320"
+        "angle" "0 -176 0.00"
+        "keyvalues"
+            {
+            "fademaxdist" "3700"      
+			"fademindist" "3600"
+            }    
+        }
+
+"logic_relay"
+        {
+        "origin" "-949 1430 -765"
+        "angle" "0 0 0.00"
+        "keyvalues"
+            {
+			"OnTrigger"  "weather_display,showhudhint,,0.5"
+			"OnTrigger"  "weather_display,hidehudhint,,5.5"
+			"targetname" "Weather_relay"
+
+            }
+        }
+
+		"env_hudhint"
+        {
+        "origin" "2230 -1369 87"
+        "angle" "0 0 0.00"
+        "keyvalues"
+            {
+			"message" "          H.E.V MʎRK VI ASSISTANT 
+			|TIME: 16:00|
+			|WEATHER: CLOUDY|
+			|TEMPERATURE: 27°C|"
+			"targetname" "Weather_Display"
+			"spawnflags" "1"
+            }
+        }
+		
+		"mapadd_trigger_once" {
+		"origin" "3647 -920 576"
+		"keyvalues" {
+			"radius"	"80"
+			"label"		"weather"
+		}
+	}
+
+		"mapadd_trigger_once" {
+		"origin" "3580 959 565"
+		"keyvalues" {
+			"radius"	"120"
+			"label"		"cguardo"
+		}
+	}
+
+// Lite Start
+
+	
+"event"
+	  {
+		"targetname"	"lcs_barney_h4x"
+                "action"  "modifyentity"
+        "OnCompletion" "fake_combine_seq,movetoposition,,-1"		
+		 "OnCompletion" "fake_combine_seq,cancelsequence,,3"		
+	  }
+
+
+"scripted_sequence" 
+        {
+        "origin" "2712 -901 256"
+        "angle" "0 90 0"
+        "keyvalues"
+            {
+            "targetname" "fake_combine_seq"
+            "m_iszEntity" "barney"   
+            "m_iszPlay" "Idle01"
+            "m_fMoveTo" "2"    
+            "spawnflags" "32"    
+       
+            }
+        }
+
+
+  "logic_auto"
+        {
+        "origin" "2813 7162 0" 
+		"angle"	"0 0 0"
+        "keyvalues"
+            {
+
+		     "OnNewGame" "vortigauntstillworkingonthis,command,oc_weapon_disable_dissolve 1,-1"
+            }
+        }
+
+
+	 "point_servercommand" {
+		"origin""-697 -7 1487"
+		"keyvalues" {
+                            "targetname" "vortigauntstillworkingonthis"
+	             }
+               }
+
+	"event" 
+	{
+		"classname"	"worldspawn"
+		"keyvalues" 
+		 {
+		"detailmaterial" "detail/detailsprites_hl2"
+		 }
+	}
+
+"removeentity" {
+            "classname" "env_sun"
+           }
+
+"env_sun"
+        {
+
+                "roll"  "20"  
+                "yaw"   "0"
+                "pitch" "-125"
+
+                "KeyValues"
+                {
+					"targetname" "riseandshine"
+					"rendercolor" "237 218 143"
+				"size" "16"
+					"disablesprite" "1"
+									"overlaysize" "22"	
+					"use_angles"	"1"
+					"sunrays_intensity"	"2"
+					"sunrays_color.r"	"0.205"
+					"sunrays_color.g"	"0.203"
+					"sunrays_color.b"	"0.10"
+					"sunrays_color.a"	"1"
+					"sunrays_power"		"0.15"
+								
+                }
+        }
+
+// Lite End
+
+	"ai_goal_follow"
+	{
+		"origin"	"4750 -2418 64"
+		"KeyValues"
+		{
+			"targetname"		"we_will_follow_you_freeman"
+            "startactive" "1"
+			"searchtype" "0"
+			"goal" "!player"
+			"actor" "vort"
+			"maximumstate" "3"
+			"formation" "8"
+		
+		}
+	}
+	
+
+
+"item_ammo_ak47"
+        {
+        "origin" "3495 -704 576"
+        "angle" "0 -172 0"
+        "keyvalues"
+            {
+			"fademaxdist" "2700"
+	        "fademindist" "2600"
+            }
+        }
+		
+		"item_ammo_ak47"
+        {
+        "origin" "2599 477 326"
+        "angle" "0 -116 0"
+        "keyvalues"
+            {
+			"fademaxdist" "2700"
+	        "fademindist" "2600"
+            }
+        }
+		
+			"item_ammo_ak47"
+        {
+        "origin" "2599 477 346"
+        "angle" "0 -116 0"
+        "keyvalues"
+            {
+			"fademaxdist" "2700"
+	        "fademindist" "2600"
+            }
+        }
+		
+		"item_ammo_ak47"
+        {
+        "origin" "3283 697 596"
+        "angle" "0 -120 0"
+        "keyvalues"
+            {
+			"fademaxdist" "2700"
+	        "fademindist" "2600"
+            }
+        }
+		
+
+"npc_assassin"
+        {
+        "origin" "3774 -1503 576" 
+        "angle" "0 177 0.00"
+			"keyvalues"
+            {
+			"fademaxdist" "1700"      
+			"fademindist" "1600"
+            }
+        }
+
+
+
+
+        "item_item_crate"
+	{
+		"origin"	"3117 -378 342"
+		"angle"		"0 0 0"
+		"KeyValues"
+		{
+			"fademaxdist" "1700"      
+			"fademindist" "1600"
+			"ItemClass"		"item_healthkit"
+			"ItemCount"		"4"
+		}
+	}
+
+
+
+"item_item_crate"
+	{
+		"origin"	"2624 -1178 576"
+		"angle"		"0 0 0"
+		"KeyValues"
+		{
+		"fademaxdist" "1700"      
+			"fademindist" "1600"
+			"ItemClass"		"weapon_hopwire"
+			"ItemCount"		"2"
+		}
+	}
+
+"item_item_crate"
+	{
+		"origin"	"2788 231 609"
+		"angle"		"0 0 0"
+		"KeyValues"
+		{
+		"fademaxdist" "1700"      
+			"fademindist" "1600"
+			"ItemClass"		"weapon_hopwire"
+			"ItemCount"		"4"
+		}
+	}
+
+
+"item_item_crate"
+	{
+		"origin"	"3117 -378 389"
+		"angle"		"0 0 0"
+		"KeyValues"
+		{
+		"fademaxdist" "1700"      
+			"fademindist" "1600"
+			"ItemClass"		"item_battery"
+			"ItemCount"		"2"
+		}
+	}
+
+"item_item_crate"
+	{
+		"origin"	"2773 260 339"
+		"angle"		"0 0 0"
+		"KeyValues"
+		{
+		"fademaxdist" "1700"      
+			"fademindist" "1600"
+			"ItemClass"		"item_battery"
+			"ItemCount"		"2"
+		}
+	}
+
+"item_item_crate"
+	{
+		"origin"	"2773 260 379"
+		"angle"		"0 0 0"
+		"KeyValues"
+		{
+		"fademaxdist" "1700"      
+			"fademindist" "1600"
+			"ItemClass"		"item_healthkit"
+			"ItemCount"		"2"
+		}
+	}
+
+"item_item_crate"
+	{
+		"origin"	"2745 -1279 600"
+		"angle"		"0 0 0"
+		"KeyValues"
+		{
+		"fademaxdist" "1700"      
+			"fademindist" "1600"
+			"ItemClass"		"item_battery"
+			"ItemCount"		"4"
+		}
+	}
+
+"item_item_crate"
+	{
+		"origin"	"3079 1185 576"
+		"angle"		"0 0 0"
+		"KeyValues"
+		{
+		"fademaxdist" "1700"      
+			"fademindist" "1600"
+			"ItemClass"		"weapon_smokegrenade"
+			"ItemCount"		"3"
+		}
+	}
+
+"item_item_crate"
+	{
+		"origin"	"3183 1115 576"
+		"angle"		"0 45 0"
+		"KeyValues"
+		{
+		"fademaxdist" "1700"      
+			"fademindist" "1600"
+			"ItemClass"		"weapon_flashbang"
+			"ItemCount"		"3"
+		}
+	}
+
+"item_item_crate"
+	{
+		"origin"	"2808 773 655"
+		"angle"		"0 0 0"
+		"KeyValues"
+		{
+		"fademaxdist" "1700"      
+			"fademindist" "1600"
+			"ItemClass"		"item_ammo_gauss"
+			"ItemCount"		"4"
+		}
+	}
+	
+		
+"item_item_crate"
+	{
+		"origin"	"3117 -378 414"
+		"angle"		"0 0 0"
+		"KeyValues"
+		{
+		"fademaxdist" "1700"      
+			"fademindist" "1600"
+			"ItemClass"		"item_ammo_gauss"
+			"ItemCount"		"2"
+		}
+	}
+
+"item_ammo_rifle"
+	{
+		"origin"	"2758 -744 440"
+		"angle"		"0 172 0"
+				"keyvalues"
+            {
+			"fademaxdist" "700"      
+			"fademindist" "600"
+            }
+	}
+	
+	"item_ammo_gauss"
+	{
+		"origin"	"2735 -754 440"
+		"angle"		"0 177 0"
+			"keyvalues"
+            {
+			"fademaxdist" "700"      
+			"fademindist" "600"
+            }
+	}
+	
+	"item_battery"
+	{
+		"origin"	"2843 -751 440"
+		"angle"		"0 20 0"
+			"keyvalues"
+            {
+			"fademaxdist" "700"      
+			"fademindist" "600"
+            }
+	}
+
+		"item_ammo_gauss"
+	{
+		"origin"	"2735 -754 440"
+		"angle"		"0 177 0"
+			"keyvalues"
+            {
+			"fademaxdist" "700"      
+			"fademindist" "600"
+            }
+	}
+
+		
+
+"item_ammo_alyxgun"
+	{
+		"origin"	"2820 -1602 680"
+		"angle"		"0 -92 0"
+			"keyvalues"
+            {
+			"fademaxdist" "700"      
+			"fademindist" "600"
+            }
+	}
+	
+	
+"item_ammo_alyxgun"
+	{
+		"origin"	"2820 -1602 700"
+		"angle"		"0 20 0"
+			"keyvalues"
+            {
+			"fademaxdist" "700"      
+			"fademindist" "600"
+            }
+	}
+
+	
+"item_ammo_ak47"
+	{
+		"origin"	"2738 -1633 608"
+		"angle"		"0 -70 0"
+			"keyvalues"
+            {
+			"fademaxdist" "700"      
+			"fademindist" "600"
+            }
+	}
+	
+"item_ammo_alyxgun"
+	{
+		"origin"	"3015 -1949 704"
+		"angle"		"0 5 0"
+			"keyvalues"
+            {
+			"fademaxdist" "700"      
+			"fademindist" "600"
+            }
+	}
+
+	"point_teleport"
+        {
+        "origin" "2814 -1610 680"
+        "angle" "0 -90 0"
+        "keyvalues"
+            {
+			"targetname" "disp_target_tp_1"
+            "target" "disp_target"
+            }
+        }
+		
+		
+		"point_teleport"
+        {
+        "origin" "3105 1036 662"
+        "angle" "0 -105 0"
+        "keyvalues"
+            {
+			"targetname" "disp_target_tp_2"
+            "target" "disp_target"
+            }
+        }
+		
+		
+		"point_teleport"
+        {
+        "origin" "2848 -760 440"
+        "angle" "0 180 0"
+        "keyvalues"
+            {
+			"targetname" "disp_target_tp_spawn"
+            "target" "disp_target"
+            }
+        }
+
+			"mapadd_trigger_once" {
+	    "origin" "3053 -191 320"
+		"keyvalues" {
+			"radius"	"50"
+			"label"		"displacer_target_spawn"
+		}
+	}
+	
+	"mapadd_trigger_multiple" {
+	    "origin" "2934 -1024 576"
+		"keyvalues" {
+			"radius"	"100"
+			"label"		"displacer_target_teleport_spawn"
+			"wait" "0.1"
+			"delay" "0.1"
+			"limit" "9999"
+		}
+	}
+	
+	"mapadd_trigger_multiple" {
+	    "origin" "2979 266 576"
+		"keyvalues" {
+			"radius"	"100"
+			"label"		"displacer_target_teleport_spawn"
+			"wait" "0.1"
+			"delay" "0.1"
+			"limit" "9999"
+		}
+	}
+	
+		"mapadd_trigger_multiple" {
+	    "origin" "3169 -1574 576"
+		"keyvalues" {
+			"radius"	"50"
+			"label"		"displacer_target_teleport_1"
+			"wait" "0.1"
+			"delay" "0.1"
+			"limit" "9999"
+		}
+	}
+	
+		"mapadd_trigger_multiple" {
+	    "origin" "2561 -1985 576"
+		"keyvalues" {
+			"radius"	"100"
+			"label"		"displacer_target_teleport_1"
+			"wait" "0.1"
+			"delay" "0.1"
+			"limit" "9999"
+		}
+	}
+	
+	"mapadd_trigger_multiple" {
+	    "origin" "2453 556 576"
+		"keyvalues" {
+			"radius"	"100"
+			"label"		"displacer_target_teleport_spawn"
+			"wait" "0.1"
+			"delay" "0.1"
+			"limit" "9999"
+		}
+	}
+	
+		"mapadd_trigger_multiple" {
+	    "origin" "2565 928 576"
+		"keyvalues" {
+			"radius"	"100"
+			"label"		"displacer_target_teleport_2"
+			"wait" "0.1"
+			"delay" "0.1"
+			"limit" "9999"
+		}
+	}
+	
+		"mapadd_trigger_multiple" {
+	    "origin" "3580 960 576"
+		"keyvalues" {
+			"radius"	"100"
+			"label"		"displacer_target_teleport_2"
+			"wait" "0.1"
+			"delay" "0.1"
+			"limit" "9999"
+		}
+	}
+	
+	
+"event" {
+		"targetname"	"barney_stay_lcs1"
+		"action"	"modifyentity"
+		"OnTrigger2" "disp_target,kill,,-1"
+	}
+	
+		
+	
+		
+			"npc_turret_ceiling"
+        {
+        "origin" "2822 460 705"
+        "angle" "0 255 0.00"
+		"keyvalues"
+            {
+            "spawnflags"        "32"
+            "targetname" "changeling_on_the_ceiling"
+			"fademaxdist" "2700"      
+			"fademindist" "2600"
+			//"OnDeploy" "changeling_on_the_ceiling,sethealth,100,-1"
+			"OnDeploy" "changeling_on_the_ceiling_relay,trigger,,-1"
+			"OnDeploy" "changeling_on_the_ceiling_relay,kill,,0.1"
+            }
+        }
+		
+			"logic_relay"
+			{
+			"origin" "2822 460 700"
+			"keyvalues"
+				{
+				"targetname"    "changeling_on_the_ceiling_relay"
+				"OnTrigger" "changeling_on_the_ceiling,sethealth,100,-1"
+			   
+				}
+			}
+		
+			"npc_turret_ceiling"
+        {
+        "origin" "2832 -1472 705"
+        "angle" "0 150 0.00"
+		"keyvalues"
+            {
+            "spawnflags"        "32"
+			"fademaxdist" "2700"      
+			"fademindist" "2600"
+            "targetname" "changeling_on_the_ceiling_2"
+			//"OnDeploy" "changeling_on_the_ceiling,sethealth,100,-1"
+			"OnDeploy" "changeling_on_the_ceiling_2_relay,trigger,,-1"
+			"OnDeploy" "changeling_on_the_ceiling_2_relay,kill,,0.1"
+            }
+        }
+		
+			"npc_turret_ceiling"
+        {
+        "origin" "3114 -372 705"
+        "angle" "0 330 0.00"
+		"keyvalues"
+            {
+            "spawnflags"        "32"
+            "targetname" "changeling_on_the_ceiling_3"
+			"fademaxdist" "2700"      
+			"fademindist" "2600"
+			//"OnDeploy" "changeling_on_the_ceiling,sethealth,100,-1"
+			"OnDeploy" "changeling_on_the_ceiling_3_relay,trigger,,-1"
+			"OnDeploy" "changeling_on_the_ceiling_3_relay,kill,,0.1"
+            }
+        }
+		
+	
+			
+				"logic_relay"
+			{
+			"origin" "2822 460 700"
+			"keyvalues"
+				{
+				"targetname"    "changeling_on_the_ceiling_2_relay"
+				"OnTrigger" "changeling_on_the_ceiling_2,sethealth,100,-1"
+			   
+				}
+			}
+			
+				"logic_relay"
+			{
+			"origin" "2822 460 700"
+			"keyvalues"
+				{
+				"targetname"    "changeling_on_the_ceiling_3_relay"
+				"OnTrigger" "changeling_on_the_ceiling_3,sethealth,100,-1"
+			   
+				}
+			}
+
+}
+
+"entities:cguardo" {
+
+"npc_combineguard"
+        {
+        "origin" "2466.84 1186.95 576.97"
+        "angle" "0 -93.18 0.00"   
+				"keyvalues"
+            {
+			"fademaxdist" "1700"      
+			"fademindist" "1600"
+            }
+        }
+}
+
+"entities:displacer_target_teleport_2" {
+
+"event" {
+		"targetname"	"disp_target_tp_2"
+		"action"	"teleport"
+	}
+
+}
+
+"entities:displacer_target_teleport_1" {
+
+
+
+"event" {
+		"targetname"	"disp_target_tp_1"
+		"action"	"teleport"
+	}
+
+
+}
+
+"entities:displacer_target_teleport_spawn" {
+
+
+
+"event" {
+		"targetname"	"disp_target_tp_spawn"
+		"action"	"teleport"
+	}
+
+
+}
+
+"entities:displacer_target_spawn" {
+
+"info_target"
+        {
+        "origin" "2848 -760 440"
+        "angle" "0 -167 0"
+        "keyvalues"
+            {
+            "targetname" "disp_target"
+            }
+        }
+
+}
+

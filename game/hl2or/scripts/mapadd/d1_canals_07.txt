@@ -1,0 +1,438 @@
+//	OverCharged Steam MAPADD Data
+//	Location: C17
+//      Game: Half-Life 2
+
+"randomspawn" {
+
+
+}
+
+"Init"
+{
+	"Give_Equipment"
+	{
+		"Item"
+		{
+		    "weapon" "stunstick"
+			"weapon" "dual_pistols"
+			"weapon" "beretta"
+		}
+	}
+}
+
+"entities:block" {
+
+"event" {
+      "targetname" "no_just_no"
+      "action"     "kill"
+     }
+
+}
+
+
+"entities:weather" {
+
+	
+"event"
+	  {
+		"targetname"	"weather_relay"
+                "action"  "trigger"  
+	  }
+
+}
+
+
+// Lite Start
+
+
+"entities:g_light_enable" {
+
+
+"event" {
+		"targetname"	"g_light"
+		KeyValues
+        {
+        "enabled" "1"
+        }
+	 }
+
+}
+
+"entities:g_light_disable" {
+
+
+"event" {
+		"targetname"	"g_light"
+		KeyValues
+        {
+        "enabled" "0"
+        }
+	 }
+
+}
+
+// Lite End
+
+"entities" {
+
+
+
+"logic_relay"
+        {
+        "origin" "-949 1430 -765"
+        "angle" "0 0 0.00"
+        "keyvalues"
+            {
+			"OnTrigger"  "weather_display,showhudhint,,0.5"
+			"OnTrigger"  "weather_display,hidehudhint,,5.5"
+			"targetname" "Weather_relay"
+
+            }
+        }
+
+		"env_hudhint"
+        {
+        "origin" "2230 -1369 87"
+        "angle" "0 0 0.00"
+        "keyvalues"
+            {
+			"message" "          H.E.V MʎRK VI ASSISTANT 
+			|TIME: 13:32|
+			|WEATHER: PARTLY-SUNNY|
+			|TEMPERATURE: 25°C|"
+				
+			"targetname" "Weather_Display"
+			"spawnflags" "1"
+            }
+        }
+		
+		"mapadd_trigger_once" {
+		"origin" "11010 1549 -191"
+		"keyvalues" {
+			"radius"	"100"
+			"label"		"weather"
+		}
+	}
+
+
+
+ 
+// Lite Start
+
+			"mapadd_trigger_multiple" {
+		"origin" "-10484 -7122 -959"
+		"keyvalues" {
+			"radius"	"200"
+			"label"		"g_light_enable"
+			"wait" "0.1"
+			"delay" "0.1"
+			"limit" "9999"
+		}
+	}
+	
+	
+			"mapadd_trigger_multiple" {
+		"origin" "-11041 -7122 -959"
+		"keyvalues" {
+			"radius"	"200"
+			"label"		"g_light_enable"
+			"wait" "0.1"
+			"delay" "0.1"
+			"limit" "9999"
+		}
+	}
+	
+	
+	
+	
+	
+		"mapadd_trigger_multiple" {
+		"origin" "-10992 -6324 -939"
+		"keyvalues" {
+			"radius"	"200"
+			"wait" "0.1"
+			"delay" "0.1"
+			"limit" "9999"
+			"label"		"g_light_disable"
+		}
+	}
+	
+		"mapadd_trigger_multiple" {
+		"origin" "-10492 -6324 -939"
+		"keyvalues" {
+			"radius"	"200"
+			"wait" "0.1"
+			"delay" "0.1"
+			"limit" "9999"
+			"label"		"g_light_disable"
+		}
+	}
+
+
+  "logic_auto"
+        {
+        "origin" "2813 7162 0" 
+		"angle"	"0 0 0"
+        "keyvalues"
+            {
+		     "OnNewGame" "vortigauntstillworkingonthis,command,oc_weapon_disable_dissolve 1,-1"
+            }
+        }
+
+	 "point_servercommand" {
+		"origin""-697 -7 1487"
+		"keyvalues" {
+                            "targetname" "vortigauntstillworkingonthis"
+	             }
+               }
+		
+	"event" 
+	{
+		"classname"	"worldspawn"
+		"keyvalues" 
+		 {
+		"detailmaterial" "detail/detailsprites_hl2"
+		 }
+	}
+
+	
+	
+"removeentity" {
+		"classname" "env_sun"
+	}
+
+			"env_sun"
+        {
+
+                "roll"  "-15"  
+                "yaw"   "-70"
+                "pitch" "-115"
+
+                "KeyValues"
+                {
+					"targetname" "riseandshine"
+					"rendercolor" "237 218 143"
+				"size" "16"
+					"disablesprite" "1"
+					"use_angles"	"1"
+					"overlaymaterial" "sprites/light_glow02_add_noz.spr"
+					"material" "sprites/light_glow02_add_noz.spr"
+					"HDRColorScale" ".7"
+					"sunrays_intensity"	"2"
+					"sunrays_color.r"	"0.2"
+					"sunrays_color.g"	"0.2"
+					"sunrays_color.b"	"0.17"
+					"sunrays_color.a"	"1"
+					"sunrays_power"		"0.275"
+					"global_lightning_keyvalues"
+					{
+						"enabled" "1"
+						"enableshadows" "1"			
+						"distance" "10000"
+						"fov" "180"
+						"nearz" "6"
+						"targetname" "g_light"
+						"northoffset" "0"
+						"eastoffset" "0"
+						"forwardoffset" "0"
+						"orthosize" "1250"
+						"brightnessscale" "5"
+						"angles" "35 104 0"
+						"lightcolor" "248 233 186 160"
+					}					
+                }
+        }
+
+
+	
+// Lite End
+
+
+	
+	
+		"item_healthvial"
+        {
+        "origin" "10878 1642 -194"
+        "angle" "0 0 0.00"
+        "keyvalues"
+            {
+			"fademaxdist" "1500"
+            "fademindist" "1000"
+            }
+        }
+		
+
+
+
+
+
+
+
+
+
+
+		
+//
+
+"npc_assassin"
+        {
+        "origin" "9807 2110 -191"
+        "angle" "0 4 0.00"
+		 "keyvalues"
+            {
+				"fademaxdist" "4800"
+            "fademindist" "4700"
+            "spawnflags" "512"
+			"squadname" "assins"
+            }
+        }
+		
+		"npc_assassin"
+        {
+        "origin" "10043 1936 -191"
+        "angle" "0 153 0.00"
+		 "keyvalues"
+            {
+				"fademaxdist" "4800"
+            "fademindist" "4700"
+			"squadname" "assins"
+            "spawnflags" "512"
+            }
+        }
+		
+		"npc_assassin"
+        {
+        "origin" "7601 1938 -255"
+        "angle" "0 -90 0.00"
+		 "keyvalues"
+            {
+				"fademaxdist" "4800"
+            "fademindist" "4700"
+            "spawnflags" "512"
+            }
+        }
+
+"npc_metropolice"
+        {
+        "origin" "12704 2156 -190"
+        "angle" "0 94 0.00"
+		 "keyvalues"
+            {
+				"fademaxdist" "4800"
+            "fademindist" "4700"
+            "spawnflags" "512"
+			"additionalequipment" "weapon_mp5"
+            }
+        }
+		
+		"npc_metropolice"
+        {
+        "origin" "10795 1367 -191"
+        "angle" "0 -39 0.00"
+		 "keyvalues"
+            {
+				"fademaxdist" "4800"
+            "fademindist" "4700"
+            "spawnflags" "512"
+			"additionalequipment" "weapon_beretta"
+            }
+        }
+		
+			"npc_metropolice"
+        {
+        "origin" "10638 1475 -191"
+        "angle" "0 92 0.00"
+		 "keyvalues"
+            {
+				"fademaxdist" "4800"
+            "fademindist" "4700"
+            "spawnflags" "512"
+			"additionalequipment" "weapon_beretta"
+            }
+        }
+
+
+
+	"npc_bullsquid"
+        {
+        "origin" "4472 -1840 -391"
+        "angle" "0 53 0.00"
+		 "keyvalues"
+            {
+				"fademaxdist" "3800"
+            "fademindist" "3700"
+            "spawnflags" "512"
+            }
+        }
+		
+		
+	"npc_bullsquid"
+        {
+        "origin" "-6691 -12666 -922"
+        "angle" "0 40 0.00"
+		 "keyvalues"
+            {
+				"fademaxdist" "3800"
+            "fademindist" "3700"
+            "spawnflags" "512"
+            }
+        }
+		
+	"npc_bullsquid"
+        {
+        "origin" "-2238 -7510 -916"
+        "angle" "0 -7 0.00"
+		 "keyvalues"
+            {
+				"fademaxdist" "3800"
+            "fademindist" "3700"
+            "spawnflags" "512"
+            }
+        }
+		
+	"npc_bullsquid"
+        {
+        "origin" "9646 9306 -406"
+        "angle" "0 -81 0.00"
+		 "keyvalues"
+            {
+				"fademaxdist" "3800"
+            "fademindist" "3700"
+            "spawnflags" "512"
+            }
+        }
+
+
+	"npc_bullsquid"
+        {
+        "origin" "12622 5916 -379"
+        "angle" "0 139 0.00"
+		 "keyvalues"
+            {
+				"fademaxdist" "3800"
+            "fademindist" "3700"
+            "spawnflags" "512"
+            }
+        }
+
+	
+"item_healthkit" {
+		"origin" "-3976 -9378 -933"
+		"keyvalues"
+            {
+             "fademaxdist" "700"
+	        "fademindist" "600"
+            }	
+	    }
+	
+	"item_healthkit" {
+		"origin" "-11100 -10171 -934"
+		"keyvalues"
+            {
+             "fademaxdist" "700"
+	        "fademindist" "600"
+            }	
+	    }
+	
+
+}

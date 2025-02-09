@@ -1,0 +1,723 @@
+//	OverCharged Steam MAPADD Data
+//	Location: Caves
+//  Game: Half-Life 2 Episode 2
+
+"precache" {
+    "entity" "npc_antlion"
+    "entity" "npc_shocktrooper"
+
+}
+
+"Init"
+{
+"Give_Equipment"
+	{
+	    "Ammo"
+		{
+		    "flareround" "5"
+		}
+		"Item"
+		{
+		    "weapon" "beretta"
+			"weapon" "glock"
+			"weapon" "357"
+			"weapon" "crowbar"
+			"item" "suit"
+			"weapon" "physcannon"
+			"weapon" "pistol"
+			"weapon" "shotgun"
+			"weapon" "smg1"
+			"item" "battery"
+			"item" "battery"
+				"weapon" "shockrifle"
+			"weapon" "dual_pistols"
+		}
+	}
+}
+
+"randomspawn" {
+
+    "npc_antlion_acid" {
+              "count" "3"
+			  "values" "fademaxdist 2700 fademindist 2600"
+             }
+
+    "npc_zombie" {
+             "count" "1"
+			 "values" "fademaxdist 2700 fademindist 2600"
+           }
+
+}
+
+"entities:weather" {
+
+	
+"event"
+	  {
+		"targetname"	"weather_relay"
+                "action"  "trigger"  
+	  }
+
+}
+
+"entities:oldevilwasawoken" {
+
+
+
+"event"
+	  {
+		"targetname"	"no_abbuse_racex"
+                "action"  "applyrelationship"  
+	  }
+
+
+
+
+}
+
+"entities" {
+// 
+
+"npc_antlion_acid"
+        {
+        "origin" "2219 227 -1628"
+        "angle" "0 15 0"
+        "keyvalues"
+            {
+			"fademaxdist" "2800"
+            "fademindist" "2700"  
+            }
+        }
+
+
+
+"npc_antlion_acid"
+        {
+        "origin" "2715 -3645 -1867"
+        "angle" "0 100 0"
+        "keyvalues"
+            {
+			"fademaxdist" "2800"
+            "fademindist" "2700"  
+            }
+        }
+
+	"npc_stbat" 
+        {
+        "origin" "6156 -3062 -1084"
+        "angle" "0 28 0.00"
+		"keyvalues"
+            {
+			"spawnsleep" "1"
+			"spawnflags" "516"
+			"fademaxdist" "2700"      
+			"fademindist" "2600"
+            }
+        }
+		
+		"npc_stbat" 
+        {
+        "origin" "4223 -442 -1325"
+        "angle" "0 -36 0.00"
+		"keyvalues"
+            {
+			"spawnsleep" "1"
+			"spawnflags" "516"
+			"fademaxdist" "2700"      
+			"fademindist" "2600"
+            }
+        }
+		
+			"npc_stbat" 
+        {
+        "origin" "2229 -1783 -1737"
+        "angle" "0 -67 0.00"
+		"keyvalues"
+            {
+			"spawnsleep" "1"
+			"spawnflags" "516"
+			"fademaxdist" "2700"      
+			"fademindist" "2600"
+            }
+        }
+		
+			"npc_stbat" 
+        {
+        "origin" "2499 -2254 -1854"
+        "angle" "0 161 0.00"
+		"keyvalues"
+            {
+			"spawnsleep" "1"
+			"spawnflags" "516"
+			"fademaxdist" "2700"      
+			"fademindist" "2600"
+            }
+        }
+
+
+	"mapadd_trigger_once" {
+		"origin" "5956 158 -2470"
+		"keyvalues" {
+			"radius"	"130"
+			"label"		"oldevilwasawoken"
+		}
+	}
+	
+"ai_relationship"
+        {
+        "origin" "-2880 -351 512"
+        "angle" "0 0 0"
+        "keyvalues"
+            {
+            "targetname"  "no_abbuse_racex"
+            "target"        "dead_bguard"
+            "subject"       "npc_antlionguard"
+            "startactive" "0"
+            "disposition" "1"
+            "rank" "9999"
+            }
+        }
+		
+"npc_bullseye"
+        {
+        "origin" "8650 1440 -2588"
+        "angle" "0 107.86 0.00"
+        "keyvalues"
+            {
+            
+            "health" "1"
+            "targetname" "dead_bguard"
+            "OnDeath" "guardblue_1,kill,,-1"
+
+            }
+        }
+
+"npc_bullseye"
+        {
+        "origin" "8148 1403 -2613"
+        "angle" "0 107.86 0.00"
+        "keyvalues"
+            {
+            
+            "health" "1"
+            "targetname" "dead_bguard"
+           
+
+            }
+        }
+
+"npc_bullseye"
+        {
+        "origin" "7769 1361 -2561"
+        "angle" "0 107.86 0.00"
+        "keyvalues"
+            {
+            
+            "health" "1"
+            "targetname" "dead_bguard"
+           
+
+            }
+        }
+
+	   "npc_antlionguard"
+        {
+        "origin" "7533 1392 -2627"
+        "angle" "0 0 0"
+        "keyvalues"
+            {
+			"targetname" "guardblue_1"
+			"skin" "2"
+			
+			"allowbark" "0"
+            }
+        }
+	
+
+			  "light_dynamic"
+        {
+        "origin" "7565 1390 -2603"
+        "angle" "0 0 0.00"
+       "keyvalues"
+            {
+			"targetname" "megaguard_light"
+           "_cone" "0"
+		   "parentname" "guardblue_1"
+            "_light" "43 112 240"
+                      "enabled" "0"
+			"brightness" "5.5"
+			"distance" "105"
+			"pitch" "0"
+			"spotlight_radius" "50"
+			//"style" "10"
+                        "spawnflags" "0"
+           }
+        }
+
+
+"logic_relay"
+        {
+        "origin" "-949 1430 -765"
+        "angle" "0 0 0.00"
+        "keyvalues"
+            {
+			"OnTrigger"  "weather_display,showhudhint,,0.5"
+			"OnTrigger"  "weather_display,hidehudhint,,5.5"
+			"targetname" "Weather_relay"
+
+            }
+        }
+
+		"env_hudhint"
+        {
+        "origin" "2230 -1369 87"
+        "angle" "0 0 0.00"
+        "keyvalues"
+            {
+			"message" "          H.E.V MʎRK VI ASSISTANT 
+			|TIME: NO INFORMATION|
+			|WEATHER: NO INFORMATION|
+			|TEMPERATURE: 5°C|"
+			"targetname" "Weather_Display"
+			"spawnflags" "1"
+            }
+        }
+		
+		"mapadd_trigger_once" {
+		"origin" "4990 -1945 259"
+		"keyvalues" {
+			"radius"	"100"
+			"label"		"weather"
+		}
+	}
+
+
+
+
+// Lite Start
+
+		
+				
+
+
+	
+		//	"light_dynamic"
+      //  {
+      //  "origin" "3867 292 -1429"
+      //  "angle" "0 0 0.00"
+      //  "keyvalues"
+        //    {
+		//	"targetname" "guard_light"
+        //    "_cone" "0"
+        //    "_light" "128 255 0 200"
+		//	"brightness" "3"
+		//	"distance" "155"
+		//	"pitch" "-90"
+		//	"spotlight_radius" "20"
+		//	"style" "0"
+		//	"parentname" "maze_guard"
+        //    }
+       // }
+		
+		"event"
+	  {
+		"targetname"	"guard_light"
+        "action"  "setparent"  
+		"value"	"maze_guard"
+	  }
+
+
+
+
+	
+	  "logic_auto"
+        {
+        "origin" "2813 7162 0" 
+		"angle"	"0 0 0"
+        "keyvalues"
+            {
+		     "OnNewGame" "vortigauntstillworkingonthis,command,oc_weapon_disable_dissolve 1,-1"
+            }
+        }
+
+	 "point_servercommand" {
+		"origin""-697 -7 1487"
+		"keyvalues" {
+                            "targetname" "vortigauntstillworkingonthis"
+	             }
+               }
+// Lite End
+
+	"npc_zombine"
+        {
+        "origin" "4784 -1774 448"
+        "angle" "0 120 0.00"
+		"keyvalues"
+            {
+			"fademaxdist" "2000"
+            "fademindist" "1900"
+            }
+        }
+		
+"npc_cockroach"
+        {
+        "origin" "4649 -1219 448"
+        "angle" "0 141 0.00"
+		"keyvalues"
+            {
+			"fademaxdist" "2000"
+            "fademindist" "1900"
+            }
+        }
+		
+"npc_cockroach"
+        {
+        "origin" "5110 -976 448"
+        "angle" "0 141 0.00"
+		"keyvalues"
+            {
+			"fademaxdist" "700"
+            "fademindist" "600"
+            }
+        }
+		
+		"npc_cockroach"
+        {
+        "origin" "4992 -2559 259"
+        "angle" "0 141 0.00"
+		"keyvalues"
+            {
+			"fademaxdist" "700"
+            "fademindist" "600"
+            }
+        }
+		
+		"npc_cockroach"
+        {
+        "origin" "4994 -2925 259"
+        "angle" "0 141 0.00"
+		"keyvalues"
+            {
+			"fademaxdist" "700"
+            "fademindist" "600"
+            }
+        }
+		
+		"npc_cockroach"
+        {
+        "origin" "5745 -3375 262"
+        "angle" "0 141 0.00"
+		"keyvalues"
+            {
+			"fademaxdist" "700"
+            "fademindist" "600"
+            }
+        }
+		
+		"npc_cockroach"
+        {
+        "origin" "5714 -2084 -1152"
+        "angle" "0 141 0.00"
+		"keyvalues"
+            {
+			"fademaxdist" "700"
+            "fademindist" "600"
+            }
+        }
+	
+
+		
+	"prop_physics"
+        {
+        "origin" "4607 -1759 514"
+        "angle" "0 0 0.00"
+        "keyvalues"
+            {
+			"fademaxdist" "1500"
+            "fademindist" "1000"
+            "model" "models\combine_cremator_headprop.mdl"
+            }
+        }
+		
+		
+"npc_voltigore_baby"
+        {
+        "origin" "5692 -2634 -1184"
+        "angle" "0 48 0.00"
+		"keyvalues"
+            {
+			"fademaxdist" "2900"
+            "fademindist" "2800"
+            }
+        }
+		
+"npc_voltigore_baby"
+        {
+        "origin" "4997 -2585 253"
+        "angle" "0 90 0.00"
+		"keyvalues"
+            {
+			"fademaxdist" "2900"
+            "fademindist" "2800"
+            }
+        }
+
+
+"item_item_crate"
+	{
+		"origin"	"4890 -1088 448"
+		"angle"		"0 0 0"
+		"KeyValues"
+		{ 
+            "ItemClass"		"item_dynamic_resupply"
+			"ItemCount"		"3"
+		}
+	}
+
+
+
+
+"npc_zombine"
+        {
+        "origin" "4700 -1788 448"
+        "angle" "0 77.86 0.00"
+		"keyvalues"
+            {
+			"fademaxdist" "2900"
+            "fademindist" "2800"
+            }
+        }
+
+"npc_zombine"
+        {
+        "origin" "5709 -1881 -2207"
+        "angle" "0 -152.86 0.00"
+		"keyvalues"
+            {
+			"fademaxdist" "2900"
+            "fademindist" "2800"
+            }
+        }
+
+
+
+"npc_xenlight"
+        {
+        "origin" "289 -969 -1789"
+        "angle" "0 69.86 0.00"
+		"keyvalues"
+            {
+			"sleepstate" "4"
+            "fademaxdist" "1000"      
+			"fademindist" "900"
+            }
+        }
+
+
+
+
+
+"npc_voltigore_baby"
+        {
+        "origin" "4747 -3351 260"
+        "angle" "0 2 0.00"
+		"keyvalues"
+            {
+			"fademaxdist" "2900"
+            "fademindist" "2800"
+            }
+        }
+		
+"npc_poisonzombie"
+        {
+        "origin" "5327 -3746 -2236"
+        "angle" "0 -90.86 0.00"
+		"keyvalues"
+            {
+			"fademaxdist" "2900"
+            "fademindist" "2800"
+            }
+        }
+
+
+
+"npc_shocktrooper"
+        {
+        "origin" "4647 -1892 -1222"
+        "angle" "0 -12.86 0.00"
+		"keyvalues"
+            {
+			"fademaxdist" "2900"
+            "fademindist" "2800"
+            }
+        }
+		
+		"npc_voltigore_baby"
+        {
+        "origin" "2627 -368 -1737"
+        "angle" "0 96 0.00"
+		"keyvalues"
+            {
+			"fademaxdist" "2900"
+            "fademindist" "2800"
+            }
+        }
+		
+	
+		
+		
+			"prop_dynamic"
+        {
+        "origin" "5779 670 -2221"
+        "angle" "90 -91 0"
+        "keyvalues"
+            {
+			"fademaxdist" "1900"
+            "fademindist" "1800"
+			 "solid" "0"
+             "model" "models/props_hive/nest_sm_flat.mdl"
+            }
+        }
+
+
+			"prop_dynamic"
+        {
+        "origin" "5934 -52 -2235"
+        "angle" "90 98 0"
+        "keyvalues"
+            {
+			"fademaxdist" "1900"
+            "fademindist" "1800"
+			 "solid" "0"
+             "model" "models/props_hive/nest_sm_flat.mdl"
+            }
+        }
+		
+		
+//"npc_ichthyosaur"
+    //    {
+      //  "origin" "6993 -3145 -1176"
+       // "angle" "0 153 0.00"
+		// "keyvalues"
+        //    {
+        //    "spawnflags" "256"
+       //     }
+      //  }
+
+//"npc_ichthyosaur"
+     //   {
+     //   "origin" "6547 -3381 -1255"
+     //   "angle" "0 130 0.00"
+	//	 "keyvalues"
+       //     {
+     //       "spawnflags" "256"
+      //      }
+     //	 }
+	 
+		// 1
+		
+		"npc_zombie"
+        {
+        "origin" "5705 -2105 -2239"
+        "angle" "0 -122.86 0.00"
+		"keyvalues"
+            {
+			"targetname" "sleeping_zombie_1"
+			"fademaxdist" "2900"
+            "fademindist" "2800"
+            }
+        }
+		
+	  "scripted_sequence" 
+        {
+       "origin" "5705 -2105 -2301"
+        "angle" "0 -122.86 0.00"
+        "keyvalues"
+            {
+            "targetname" "rising_zombie_1"
+            "m_iszEntity" "sleeping_zombie_1"
+            "m_iszIdle" "slump_b"     
+            "m_iszPlay" "slumprise_b"
+            "m_fMoveTo" "4"    
+            "spawnflags" "4112"   
+			"OnEndSequence" "!self,kill,,-1"
+            }
+        }
+
+
+	"mapadd_trigger_once" {
+		"origin" "5705 -2105 -2239"
+		"keyvalues" {
+			"radius"	"250"
+			"label"		"rising_zombie_1_trigger"
+		}
+	}
+
+
+// 2
+
+	
+	  "scripted_sequence" 
+        {
+      "origin" "5026 -1605 -2247"
+        "angle" "0 -81.86 0.00"
+        "keyvalues"
+            {
+            "targetname" "rising_zombie_2"
+            "m_iszEntity" "sleeping_zombie_2"
+            "m_iszIdle" "slump_b"     
+            "m_iszPlay" "slumprise_b"
+            "m_fMoveTo" "4"    
+            "spawnflags" "4112"   
+			"OnEndSequence" "!self,kill,,-1"
+            }
+        }
+
+
+	"mapadd_trigger_once" {
+		"origin" "5026 -1605 -2164"
+		"keyvalues" {
+			"radius"	"250"
+			"label"		"rising_zombie_2_trigger"
+		}
+	}
+
+
+"npc_fastzombie"
+        {
+        "origin" "5026 -1605 -2164"
+        "angle" "0 -81.86 0.00"
+		"keyvalues"
+            {
+			"targetname" "sleeping_zombie_2"
+			"fademaxdist" "2900"
+            "fademindist" "2800"
+            }
+        }
+		
+}
+
+"entities:rising_zombie_2_trigger" {
+
+	
+"event"
+	  {
+		"targetname"	"rising_zombie_2"
+                "action"  "beginsequence"  
+	  }
+
+
+}
+
+"entities:rising_zombie_1_trigger" {
+
+	
+"event"
+	  {
+		"targetname"	"rising_zombie_1"
+                "action"  "beginsequence"  
+	  }
+
+
+}
+

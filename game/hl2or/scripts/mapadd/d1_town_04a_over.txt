@@ -1,0 +1,43 @@
+//	OverCharged MAPADD Data
+//	Location: Ravenholm
+//      Game: Half-Life 2
+
+
+
+
+"entities" {
+
+
+"weapon_shovel"
+	{
+		"origin"		"-1405 4848 268"
+		"angle"		"-65.5 0 -142"
+		 "keyvalues" {
+                "spawnflags" "1"
+            }
+	}
+
+"weapon_shovel"
+	{
+		"origin"		"1128 -600 -16"
+		"angle"		"-65.5 66 -142"
+		 "keyvalues" {
+                "spawnflags" "1"
+            }
+	}
+	
+	
+
+"prop_dynamic"
+	{
+		"origin"	"2 -353 -605"
+		"angle"		"0 267.5 0"
+            "keyvalues" {
+                "model" "models/props_c17/gravestone004a.mdl"
+		"solid" "6"
+            }
+	}
+
+
+		
+}

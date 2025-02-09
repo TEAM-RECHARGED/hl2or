@@ -1,0 +1,169 @@
+//	OverCharged Steam MAPADD Data
+//	Location: Citadel
+//  Game: Half-Life 2 Episode 1
+
+"precache" {
+}
+
+
+
+"entities:weather" {
+
+	
+"event"
+	  {
+		"targetname"	"weather_relay"
+                "action"  "trigger"  
+	  }
+
+}
+
+"entities" {
+
+
+"logic_relay"
+        {
+        "origin" "-949 1430 -765"
+        "angle" "0 0 0.00"
+        "keyvalues"
+            {
+			"OnTrigger"  "weather_display,showhudhint,,0.5"
+			"OnTrigger"  "weather_display,hidehudhint,,5.5"
+			"targetname" "Weather_relay"
+
+            }
+        }
+
+		"env_hudhint"
+        {
+        "origin" "2230 -1369 87"
+        "angle" "0 0 0.00"
+        "keyvalues"
+            {
+			"message" "          H.E.V MʎRK VI ASSISTANT 
+			|TIME: NO INFORMATION|
+			|WEATHER: NO INFORMATION|
+			|TEMPERATURE: 18°C|"
+			"targetname" "Weather_Display"
+			"spawnflags" "1"
+            }
+        }
+		
+		"mapadd_trigger_once" {
+		"origin" "3372 11892 3664"
+		"keyvalues" {
+			"radius"	"120"
+			"label"		"weather"
+		}
+	}
+
+
+		
+"npc_assassin"
+        {
+        "origin" "4012 11492 3584"
+        "angle" "0 148 0.00"
+		"keyvalues"
+		    {
+			 "fademaxdist" "2700"     
+			"fademindist" "2600"
+			"spawnflags" "256"
+			}
+        }
+			
+
+
+"weapon_tripwire"
+	{
+		"origin"	"3735 10975 3584"
+		"angle"		"0 -30 0"
+		"keyvalues"
+		    {
+			 "fademaxdist" "2700"     
+			"fademindist" "2600"
+			}
+    }
+
+"weapon_tripwire"
+	{
+		"origin"	"3754 10958 3584"
+		"angle"		"0 -30 0"
+		"keyvalues"
+		    {
+			 "fademaxdist" "2700"     
+			"fademindist" "2600"
+			}
+    }
+
+"ai_relationship"
+        {
+        "origin" "3754 10958 3584"
+        "angle" "0 0 0"
+        "keyvalues"
+            {
+            "subject"        "npc_alyx"
+            "target"       "npc_assassin"
+            "startactive" "1"
+            "disposition" "3"
+            "rank" "9999"
+            }
+        }
+		
+// Lite Start
+
+"event"
+	  {
+		"targetname"	"ss_alyx_stalkertrain_01"
+                "action"  "kill"  
+	  }
+
+  "logic_auto"
+        {
+        "origin" "2813 7162 0" 
+		"angle"	"0 0 0"
+        "keyvalues"
+            {
+		     "OnNewGame" "vortigauntstillworkingonthis,command,oc_weapon_disable_dissolve 0,-1"
+            }
+        }
+		
+		"scripted_sequence" 
+        {
+        "origin" "4221 7986 3453"
+        "angle" "0 180 0"
+        "keyvalues"
+            {
+            "targetname" "ss_alyx_stalkertrain_01"
+            "m_iszEntity" "alyx"   
+            "m_iszPlay" "StalkerTrain_ToTrapped_Idle"
+			"m_iszPostIdle" "StalkerTrain_Trapped_Idle"
+            "m_bLoopActionSequence" "0"
+            "m_fMoveTo" "4"    
+            "spawnflags" "992"    
+       
+            }
+        }
+
+
+	 "point_servercommand" {
+		"origin""-697 -7 1487"
+		"keyvalues" {
+                            "targetname" "vortigauntstillworkingonthis"
+	             }
+               }
+
+
+	"event" 
+	{
+		"classname"	"worldspawn"
+		"keyvalues" 
+		 {
+		"detailmaterial" "detail/detailsprites_hl2"
+		 }
+	}
+
+// Lite End
+
+}
+
+

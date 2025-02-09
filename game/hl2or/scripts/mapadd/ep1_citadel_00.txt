@@ -1,0 +1,761 @@
+//	OverCharged Steam MAPADD Data
+//	Location: Near Citadel in C17
+//   Game: Half-Life 2 Episode 1
+"precache" {
+      "model" "models/blackout_ep1.mdl"
+	//  "sound" "vo/gman_comebacknow.wav"
+	"sound" "ambient/levels/labs/electric_explosion2.wav"
+	   "model"  "models/props_fix_allmaps/vortigaunt_blue_ep1.mdl"
+}
+
+"entities:fixthis" {
+
+"event"
+	  {
+		"targetname"	"blackout"
+                "action"  "modifyentity"  
+		"model"	"models/blackout_ep1.mdl"
+	  }
+
+
+"event"
+	  {
+		"targetname"	"alyx_01"
+                "action"  "modifyentity"  
+		"gameendally"	"1"
+		"ondamaged" "never_ever_do_it_again1,reload,,-1"
+
+	  }
+
+
+"event"
+	  {
+		"targetname"	"dog"
+                "action"  "modifyentity"  
+		"ondeath"	"never_ever_do_it_again,reload,,-1"
+
+	  }
+
+
+		
+}
+
+"entities:kill" {
+
+"event"
+	  {
+		"targetname"	"g_light"
+                "action"  "kill"  
+	  }
+}
+
+"entities:weather" {
+
+	
+"event"
+	  {
+		"targetname"	"weather_relay"
+                "action"  "trigger"  
+	  }
+
+}
+
+"entities:entr" {
+
+"event"
+	  {
+		"targetname"	"entr_relay"
+                "action"  "trigger"  
+	  }
+
+
+}
+
+"entities:goodoldlightning" {
+
+"event"
+	  {
+		"targetname"	"g_light"
+                "action"  "setbrightness"
+        "value" "0"				
+	  }
+
+"event" {
+		"targetname"	"g_light"
+		KeyValues
+        {
+        "enabled" "0"
+        }
+	 }
+}
+
+"entities:nodamag" {
+
+ "event"
+	  {
+		"targetname"	"alyx"
+                "action"  "modifyentity"
+        "OnDamagedByPlayer" "never_ever_do_it_again1,reload,,-1"
+	  }
+
+}
+
+"entities" {
+
+
+"npc_boid_flocks"
+        {
+        "origin" "-8192 5915 280"
+        "angle" "0 0 0.00"
+		 "keyvalues"
+            {
+            "fSize" "5"
+	        "fRadius" "128"
+            "spawnflags" "512"
+            }
+        }
+
+		"mapadd_trigger_once" {
+		"origin" "-9021 5692 -126"
+		"keyvalues" {
+			"radius"	"100"
+			"label"		"nodamag"
+		}
+	}
+
+"event"
+	  {
+		"targetname"	"SS_alyx_pathedge_hopdown"
+                "action"  "modifyentity"
+        "onendsequence" "alyx_fix_tp,teleport,,-1"				
+	  }
+	  
+	  "event"
+	  {
+		"targetname"	"template_alyx"
+                "action"  "modifyentity"
+        "OnEntitySpawned" "vortigauntstillworkingonthis,command,ent_fire alyx setdamagefilter striders_are_protected,-1"
+	  }
+	  
+	    "event"
+	  {
+		"targetname"	"path_VanRide_fast_36"
+                "action"  "modifyentity"
+        "onpass" "alyx,setdamagefilter,0,-1"	
+	  }
+	  
+	  	  "event"
+	  {
+		"targetname"	"SS_alyx_pathedge_hopdown_2"
+                "action"  "modifyentity"
+        "onendsequence" "alyx_fix_tp2,teleport,,-1"				
+	  }
+
+"filter_damage_type"
+        {
+        "origin" "4706 -2747 69"
+        "angle" "0 0 0.00"
+        "keyvalues"
+            {
+			"targetname" "striders_are_protected"
+            "damagetype" "64"
+			"negated" "0"
+            }
+        }
+	
+
+"point_teleport" 
+        {
+        "origin" "-7776 5464 -156"
+        "angle" "0 0 0.00"
+        "keyvalues"
+            {
+			"targetname" "alyx_fix_tp2"
+            "target" "alyx"
+            }
+        }
+		
+"point_teleport" 
+        {
+        "origin" "-7960 5446 -92"
+        "angle" "0 270 0.00"
+        "keyvalues"
+            {
+			"targetname" "alyx_fix_tp"
+            "target" "alyx"
+            }
+        }
+		
+"env_hudhint"
+        {
+        "origin" "2230 -1369 87"
+        "angle" "0 0 0.00"
+        "keyvalues"
+            {
+			"message" "               H.E.V MʎRK VI ASSISTANT 
+			|COMMUNICATIONS SYSTEM = OK|
+			|WEAPON SELECTION SYSTEM = OK|
+			|UNAUTHORIZED WEAPON SYSTEM = OK|
+			|TIME AND WEATHER SYSTEM = OK|
+			|HEADS-UP DISPLAY = OK|
+			|MEDICAL SYSTEM = OK|
+			|ARMOR = OK|"
+				
+			"targetname" "Entry"
+			"spawnflags" "1"
+            }
+        }
+		
+
+"logic_relay"
+        {
+        "origin" "-949 1430 -765"
+        "angle" "0 0 0.00"
+        "keyvalues"
+            {
+			"OnTrigger"  "entry,showhudhint,,0.5"
+			"OnTrigger"  "entry,hidehudhint,,10.5"
+			"targetname" "entr_relay"
+
+            }
+        }
+
+"logic_relay"
+        {
+        "origin" "-949 1430 -765"
+        "angle" "0 0 0.00"
+        "keyvalues"
+            {
+			"OnTrigger"  "weather_display,showhudhint,,0.5"
+			"OnTrigger"  "weather_display,hidehudhint,,5.5"
+			"targetname" "Weather_relay"
+
+            }
+        }
+
+		"env_hudhint"
+        {
+        "origin" "2230 -1369 87"
+        "angle" "0 0 0.00"
+        "keyvalues"
+            {
+			"message" "          H.E.V MʎRK VI ASSISTANT 
+			|TIME: 7:08|
+			|WEATHER: PARTLY-SUNNY|
+			|TEMPERATURE: 14°C|"
+			"targetname" "Weather_Display"
+			"spawnflags" "1"
+            }
+        }
+		
+		
+			
+		"mapadd_trigger_once" {
+		"origin" "-9021 5692 -126"
+		"keyvalues" {
+			"radius"	"100"
+			"label"		"entr"
+		}
+	}
+		
+		"mapadd_trigger_once" {
+		"origin" "-8529 5968 14"
+		"keyvalues" {
+			"radius"	"100"
+			"label"		"weather"
+		}
+	}
+	
+	
+// Lite Start
+
+
+
+"game_text"
+        {
+        "origin" "-3624 2284 60"
+        "angle" "0 -138.16 0.01"
+        "keyvalues"
+            {
+            "targetname"    "sign_of_found_coast"
+            "channel"       "1"
+            "color"         "100 100 100"
+            "y"             "0.6"
+            "color2"        "240 110 0"
+            "message"       "#Overcharged_Chapter14_Title"
+            "x"             "-1"       
+            "effect"        "2"
+            "fadein"        "0.10"
+            "fadeout"       "0.10"
+            "holdtime"      "9"
+            "fxtime"        "0.25"
+            }
+        }
+
+
+"event"
+	  {
+		"targetname"	"relay_start_dogintro_1"
+                "action"  "modifyentity"
+				"OnTrigger" "sign_of_found_coast,display,,-1"
+	   }
+
+
+
+
+"event"
+	  {
+		"targetname"	"lcs_ep1_intro_01"
+                "action"  "kill"
+	   }
+
+
+"logic_choreographed_scene"
+        {
+        "origin" "-649 5266 255"
+        "keyvalues"
+            {
+            "targetname" "lcs_ep1_intro_01"
+            "busyactor" "0"
+            "onplayerdeath" "1"			
+            "OnStart" "Alyx,startscripting,,-1"
+			"ontrigger1" "ss_dogintro,beginsequence,-1"
+			"OnTrigger2" "dog_handgravgun_2,beginsequence,,-1"
+			"ontrigger2" "trigger_givegravgun,enable,,-1"
+			"ontrigger3" "dog_handgravgun,beginsequence,,-1"
+            "scenefile" "scenes/episode_1/intro/ep1_intro_01.vcd"
+            }
+        }
+		
+
+
+	  
+	    "event"
+	  {
+		"targetname"	"lrelay_alyx_vanish"
+        "action"  "modifyentity"  
+		"OnTrigger" "gmn_snd,playsound,,15.5"
+	  }
+	  
+	  "event"
+	  {
+		"targetname"	"relay_gman_start"
+        "action"  "modifyentity"  
+		
+		"OnTrigger" "vort_gordon_grab2,setsequence,gordon_grab_2_prei,,-1"
+	  }
+	 
+"event"
+	  {
+		"targetname"	"physgun_dog"
+                "action"  "modifyentity"  
+		"model"	"models/weapons/overcharged/world/w_gravitygun_cutscene.mdl"
+	  }
+
+
+	"mapadd_trigger_once" {
+		"origin" "-6041 5067 83"
+		"keyvalues" {
+			"radius"	"100"
+			"label"		"goodoldlightning"
+		}
+	}
+	
+"event"
+    {
+    "targetname" "eli"
+    "action" "modifyentity"
+    "model"  "models/props_fix_allmaps/eli.mdl"
+   }
+   
+   "event"
+    {
+    "targetname" "kleiner"
+    "action" "modifyentity"
+    "model"  "models/props_fix_allmaps/kleiner_hl2.mdl"
+   }
+
+
+
+
+"removeentity" {
+            "classname" "env_credits"
+           }
+
+	"event" 
+	{
+		"classname"	"worldspawn"
+		"keyvalues" 
+		 {
+		"detailmaterial" "detail/detailsprites_hl2"
+		 }
+	}
+
+"mapadd_trigger_once" {
+		"origin" "-5767 4998 -1794"
+		"keyvalues" {
+			"radius"	"150"
+			"label"		"kill"
+		}
+	}
+	
+"player_loadsaved"
+        {
+        "origin" "-28 2876 -1215"
+        "angle" "0 0 0"
+        "keyvalues"
+            {
+            "targetname" "never_ever_do_it_again"
+            "duration" "2"
+            "loadtime" "2"
+            "holdtime" "2"
+            "renderamt"  "255"
+            "rendercolor" "0 0 0"
+         }
+      }
+	  
+"player_loadsaved"
+        {
+        "origin" "-28 2876 -1215"
+        "angle" "0 0 0"
+        "keyvalues"
+            {
+            "targetname" "never_ever_do_it_again1"
+            "duration" "2"
+            "loadtime" "2"
+            "holdtime" "2"
+            "renderamt"  "255"
+            "rendercolor" "0 0 0"
+         }
+      }
+
+
+"mapadd_trigger_once" {
+		"origin" "10784 -5343 -9407"
+		"keyvalues" {
+			"radius"	"150"
+			"label"		"fixthis"
+		}
+	}
+	
+  "logic_auto"
+        {
+        "origin" "2813 7162 0" 
+		"angle"	"0 0 0"
+        "keyvalues"
+            {
+                 "spawnflags" "1"
+                         "OnMapSpawn"  "relay_VanParentToShotput,trigger,,-1"
+			 "OnMapSpawn"  "electrical_boom,setparent,broken_tau,,-1"
+			 "OnMapSpawn"  "electrical_explosion,setparent,broken_tau,,-1"
+			 "OnMapSpawn"  "electrical_sparks,setparent,broken_tau,,-1"
+			 "OnMapSpawn"  "electrical_sparks,setparentattachment,muzzle,1"
+			 "OnMapSpawn"  "tau_sparks,setparent,broken_tau,,-1"
+		     "OnNewGame" "vortigauntstillworkingonthis,command,oc_weapon_disable_dissolve 1,-1"
+            }
+        }
+		
+		"ambient_generic"
+        {
+        "origin" "-8368 -8599 255"
+        "angle" "0 -179 0"
+        "keyvalues"
+            {
+            "targetname" "boom_snd"
+            "health" "10"
+            "message" "ambient/levels/labs/electric_explosion2.wav"
+            "pitch"   "100"
+            "spawnflags" "49"
+            "radius" "9999"
+            "pitchstart" "100"
+         }
+      }
+
+	 "point_servercommand" {
+		"origin""-697 -7 1487"
+		"keyvalues" {
+                            "targetname" "vortigauntstillworkingonthis"
+	             }
+               }
+	
+"removeentity" {
+            "classname" "env_sun"
+           }
+
+"env_sun"
+        {
+
+                "roll"  "20"  
+                "yaw"   "180"
+                "pitch" "-125"
+
+                "KeyValues"
+                {
+					"targetname" "riseandshine"
+					"rendercolor" "237 218 143"
+				"size" "16"
+					"disablesprite" "1"
+									"overlaysize" "24"
+					"use_angles"	"1"
+					"sunrays_intensity"	"2"
+					"sunrays_color.r"	"0.255"
+					"sunrays_color.g"	"0.237"
+					"sunrays_color.b"	"0.10"
+					"sunrays_color.a"	"1"
+					"sunrays_power"		"0.3"
+					"global_lightning_keyvalues"
+					{
+						"enabled" "1"
+						"enableshadows" "1"			
+						"distance" "7000"
+						"fov" "180"
+						"nearz" "0"
+						"northoffset" "0"
+						"eastoffset" "0"
+						"targetname" "g_light"
+						"forwardoffset" "0"
+						"orthosize" "1300"
+						"brightnessscale" "1"
+						"angles" "30 90 0"
+						"lightcolor" "237 228 209 400"
+					}
+                }
+        }
+		
+		
+"prop_dynamic"
+        {
+        "origin" "-8371 5582 -137"
+        "angle" "0 0 0.00"
+        "keyvalues"
+            {
+            "modelscale" "3"
+			"disableshadows" "1"
+			"disablereceiveshadows" "1"
+			"fademaxdist" "2500"
+            "fademindist" "2000"
+            "model" "models/props_dev/plank_long_fat.mdl"
+			"targetname" "props_ep1_citadel00_area1"
+            }
+        }
+
+
+"prop_dynamic"
+        {
+        "origin" "-8371 5582 -360"
+        "angle" "0 0 0.00"
+        "keyvalues"
+            {
+            "modelscale" "3"
+			"disableshadows" "1"
+			"disablereceiveshadows" "1"
+			"fademaxdist" "2500"
+            "fademindist" "2000"
+            "model" "models/props_dev/plank_long_fat.mdl"
+			"targetname" "props_ep1_citadel00_area1"
+            }
+        }
+
+
+"prop_dynamic"
+        {
+        "origin" "-8371 5582 -247"
+        "angle" "0 0 0.00"
+        "keyvalues"
+            {
+            "modelscale" "3"
+			"disableshadows" "1"
+			"disablereceiveshadows" "1"
+			"fademaxdist" "2500"
+            "fademindist" "2000"
+            "model" "models/props_dev/plank_long_fat.mdl"
+			"targetname" "props_ep1_citadel00_area1"
+            }
+        }
+
+		
+"prop_ragdoll"
+	{
+		"origin"	"-6516 6042 -37"
+		"angle"		"74 -90 0"
+		"KeyValues"
+		{
+		    "fademaxdist" "4700"     
+			"fademindist" "4600"
+			"model"		"models/racex/shock_trooper.mdl"
+		}
+	}
+
+
+
+"prop_ragdoll"
+	{
+		"origin"	"-6060 5023 64"
+		"angle"		"40 58 0"
+		"KeyValues"
+		{
+		    "fademaxdist" "4700"     
+			"fademindist" "4600"
+			"model"		"models/combine_guard.mdl"
+		}
+	}
+
+
+
+"prop_ragdoll"
+	{
+		"origin"	"-8156 5876 117"
+		"angle"		"74 -90 0"
+		"KeyValues"
+		{
+		    "spawnflags" "260"
+			"fademaxdist" "4700"     
+			"fademindist" "4600"
+			"model"		"models/racex/pit_drone.mdl"
+		}
+	}
+
+//npc\combine_soldier\vo\prison_soldier_fallback_b4.wav
+
+"prop_ragdoll"
+	{
+		"origin"	"-6843 5515 -63"
+		"angle"		"90 -165 0"
+		"KeyValues"
+		{
+		    "skin" "2"
+		    "spawnflags" "260"
+			"fademaxdist" "4700"     
+			"fademindist" "4600"
+			 "model" "models/combine_skullbreaker_soldier.mdl"
+		}
+	}
+	
+"prop_ragdoll"
+	{
+		"origin"	"-6202 5940 80"
+		"angle"		"90 -165 0"
+		"KeyValues"
+		{
+		    "skin" "2"
+			"fademaxdist" "4700"     
+			"fademindist" "4600"
+		    "spawnflags" "260"
+			 "model" "models/combine_skullbreaker_soldier.mdl"
+		}
+	}
+
+	
+
+
+
+}
+
+
+// Lite End
+
+"entities:steamupdate" {
+
+	"prop_physics_override"
+	{
+		"origin"		"-7821.94 5879.91 62.60"
+		"angle"		"7.41 139.57 9.82"
+		"keyvalues"
+		{
+		    "health" "60555"
+			"ontakedamage" "electrical_explosion,explode,,3"
+			"ontakedamage" "electrical_boom,start,,3"
+			"ontakedamage" "!player,sethealth,0,3"
+			"ontakedamage" "boom_snd,playsound,,3"
+			"ontakedamage" "!self,kill,,3.2"
+			"ontakedamage" "!player,setdamagefilter,0,2.9"
+			"ontakedamage" "electrical_sparks,start,,-1"
+			"targetname"		"broken_tau"
+			"model"		"models/weapons/overcharged/world/w_gauss.mdl"
+		}
+	}
+	
+	"info_particle_system"
+        {
+        "origin" "-7821.94 5879.91 62.60"
+        "angle" "0 0 0.00"
+        "keyvalues"
+          {
+		  "start_active" "0"
+		  "targetname" "electrical_boom"
+          "effect_name" "electrical_arc_01_system"
+          }
+        }
+	
+	//"info_particle_system"
+    //    {
+     //   "origin" "-7821.94 5879.91 62.60"
+     //   "angle" "0 0 0.00"
+    //    "keyvalues"
+     //     {
+	//	  "start_active" "0"
+	//	  "targetname" "electrical_sparks"
+  //        "effect_name" "tau_fully_charged_outer_2"
+  //        }
+   //     }
+		
+		"env_explosion"
+        {
+        "origin" "-7821.94 5879.91 62.60"
+        "angle"  "0 0 0"
+        "keyvalues"
+            {
+            "targetname" "electrical_explosion"
+            "magnitude" "200"
+            }
+        }
+
+		
+"event"
+	  {
+		"targetname"	"tau_sparks"
+                "action"  "setparent"
+				"value" "broken_tau"
+	   }
+
+
+	
+"event"
+	  {
+		"targetname"	"parentmaker"
+                "action"  "trigger"
+	   }
+
+
+
+		"env_spark" {
+		"origin"		"-7821.94 5879.91 62.60"
+		"keyvalues" {
+			"magnitude"	"2"
+			"parentname" "broken_tau"
+			"targetname" "tau_sparks"
+			"spawnflags" "64"
+			"TrailLength"		"1"
+			"maxdelay" "2.5"
+		}
+	}
+	
+
+"logic_relay"
+        {
+        "origin" "-949 1430 -765"
+        "angle" "0 0 0.00"
+        "keyvalues"
+            {
+			"OnTrigger"  "tau_sparks,setparent,broken_tau,,-1"
+			"OnTrigger"  "tau_sparks,setparent,broken_tau,,1"
+			"OnTrigger"  "tau_sparks,setparent,broken_tau,,3"
+			"OnTrigger"  "tau_sparks,setparent,broken_tau,,5"
+			"targetname" "parentmaker"
+
+            }
+        }
+	
+// Those boids are the ones,which you have seen before entering the citadel in HL2
+
+}

@@ -1,0 +1,3518 @@
+//	OverCharged Steam MAPADD Data
+//	Location: White Forest
+//  Game: Half-Life 2 Episode 2
+//      This will be a long fight,Vort from Nova Prospekt must help Freeman
+
+"precache" {
+    "entity" "npc_hunter"
+	// "entity" "npc_combot"
+	"sound" "vo\outland_01\intro\ol01_vortresp01.wav"
+	"sound" "vo\outland_01\intro\ol01_vortcall02c.wav"
+    "sound"  "npc\combine_gunship\gunship_explode2.wav"
+	"sound" "music/over_ost_navilonsark_vortal_combat.mp3"
+    "sound"  "music/over_ost_darkxius_the_combines_attack.mp3"
+	"sound"  "music/over_ost_navilonsark_kaon.mp3"
+    "sound"  "ambient\explosions\explode_3.wav"
+}
+
+"randomspawn" {
+
+    "item_ammo_ion" {
+           "count" "15"
+		   "values" "fademaxdist 700 fademindist 600"
+         }
+}
+
+"Init"
+{
+"Give_Equipment"
+	{
+	    "Ammo"
+		{
+		    "smokegrenade" "1"
+		    "flareround" "5"
+			"combinesniperround" "8"
+			"oicw" "60"
+			"LaserPistol" "10"
+		}
+		"Item"
+		{
+		    "weapon" "beretta"
+			"weapon" "shockrifle"
+			"weapon" "smg2"
+			"weapon" "oicw"
+			"weapon" "ak47"
+			"weapon" "smokegrenade"
+			"weapon" "flashbang"
+			"weapon" "glock"		
+			"weapon" "combinesniper"
+			"weapon" "dual_pistols"
+		}
+	}
+}
+
+
+"entities:all" {
+
+"event"
+	  {
+		"targetname"	"strider_first_template"
+                "action"  "modifyentity"  
+                 "OnEntitySpawned" "rainbowrock,playsound,,2"
+				  "OnEntitySpawned" "rainbowrock2,playsound,,144"
+				  "OnEntitySpawned" "rainbowrock3,playsound,,266"
+                "OnEntitySpawned" "we_will_follow_you_freeman,activate,,-1"
+                 "OnEntitySpawned" "vory_talk_2,start,,7"
+				  "OnEntitySpawned" "vort_look,cancelsequence,,2.5"
+	        "OnEntitySpawned" "cmb1spawner,enable,,-1"
+                "OnEntitySpawned" "cmb2spawner,enable,,2" 
+                "OnEntitySpawned" "cmb3spawner,enable,,4" 
+                "OnEntitySpawned" "mortarsynth1,enable,,-1"
+	  }
+
+
+"event"
+	  {
+		"targetname"	"strider_3_east_maker"
+                "action"  "modifyentity"  
+                "OnSpawnNPC" "cmb7spawner,enable,,-1" 
+                "OnSpawnNPC" "cmb8spawner,enable,,2" 
+                "OnSpawnNPC" "cmb9spawner,enable,,4" 
+                "OnSpawnNPC" "mortarsynth2,enable,,-1"
+	  }
+
+
+
+"event"
+	  {
+		"targetname"	"strider_4_west_maker"
+                "action"  "modifyentity"  
+                "OnSpawnNPC" "cmb10spawner,enable,,-1" 
+  
+	  }
+
+"event"
+	  {
+		"targetname"	"strider_2_north_maker"
+                "action"  "modifyentity"  
+                	"OnSpawnNPC" "cmb4spawner,enable,,-1" 
+                "OnSpawnNPC" "cmb5spawner,enable,,-1" 
+                "OnSpawnNPC" "cmb6spawner,enable,,-1" 
+                "OnSpawnNPC" "mortarsynth3,enable,,85"
+  
+	  }
+
+
+		
+
+"event"
+	  {
+		"targetname"	"strider_6_east_maker"
+                "action"  "modifyentity"  
+                "OnSpawnNPC" "cmb11lastspawner,enable,,-1"
+        //       "OnSpawnNPC" "killer,command,ent_remove_all func_vehicleclip,-1"  
+          //      "OnSpawnNPC" "apd1,gotopathcorner,ap1,-1" 
+           //     "OnSpawnNPC" "apd1,firemissileat,!player,1" 
+            //    "OnSpawnNPC" "apd1,setdriversmaxspeed,100,-1" 
+	 }
+
+//"event"
+	//  {
+	//	"targetname"	"strider_7_west_maker"
+       //         "action"  "modifyentity"  
+      //          "OnSpawnNPC" "jeep_teleport,teleport,,-1"
+      //          "OnSpawnNPC" "jeep_teleport_dropship,teleport,,-1"
+      //          "OnSpawnNPC" "jeep_fade,fade,,-1"
+       //         "OnSpawnNPC" "exp,explode,,1"
+        //        "OnSpawnNPC" "jeep_sound,PlaySound,,0.1"
+         //       "OnSpawnNPC" "jeep_sound_2nd,PlaySound,,0.1"
+	//  }
+
+
+"event"
+	  {
+		"targetname"	"strider_13_west_maker"
+                "action"  "modifyentity"  
+                "OnSpawnNPC" "cmb1spawner,kill,,-1"
+                "OnSpawnNPC" "cmb2spawner,kill,,-1"
+                "OnSpawnNPC" "cmb3spawner,kill,,-1"
+                "OnSpawnNPC" "cmb4spawner,kill,,-1"
+                "OnSpawnNPC" "cmb5spawner,kill,,-1"
+                "OnSpawnNPC" "cmb6spawner,kill,,-1"
+                "OnSpawnNPC" "cmb7spawner,kill,,-1"
+                "OnSpawnNPC" "cmb8spawner,kill,,-1"
+                "OnSpawnNPC" "cmb9spawner,kill,,-1"
+                "OnSpawnNPC" "cmb10spawner,kill,,-1"
+				"OnSpawnNPC" "cmb11lastspawner,kill,,-1"
+                "OnSpawnNPC" "cmb1,sethealth,0,-1"
+                "OnSpawnNPC" "cmb2,sethealth,0,-1"
+                "OnSpawnNPC" "cmb3,sethealth,0,-1"
+                "OnSpawnNPC" "cmb4,sethealth,0,-1"
+                "OnSpawnNPC" "cmb5,sethealth,0,-1"
+                "OnSpawnNPC" "cmb6,sethealth,0,-1"
+                "OnSpawnNPC" "cmb7,sethealth,0,-1"
+                "OnSpawnNPC" "cmb8,sethealth,0,-1"
+                "OnSpawnNPC" "cmb9,sethealth,0,-1"
+                "OnSpawnNPC" "cmb10,sethealth,0,-1"
+                "OnSpawnNPC" "mortarsynth3,kill,,-1"
+				 "OnSpawnNPC" "crabsynth,kill,,-1"
+				  "OnSpawnNPC" "crabsynth2,kill,,-1"
+				   "OnSpawnNPC" "asynth,kill,,-1"
+                "OnSpawnNPC" "mortarsynth2,kill,,-1"
+                "OnSpawnNPC" "mortarsynth1,kill,,-1"
+                "OnSpawnNPC" "vort_look_goodbye,beginsequence,,20"
+				//"OnSpawnNPC" "vory_say_friend_1,playsound,,12"
+				//"OnSpawnNPC" "vory_say_friend_2,playsound,,16"
+                "OnSpawnNPC" "mortarsynthies,kill,,-1"
+				"OnSpawnNPC" "last_gunshipevermade,SelfDestruct,,15"
+				"OnSpawnNPC" "we_will_follow_you_freeman,deactivate,,-1"
+	  }
+
+
+
+"event"
+	  {
+		"targetname"	"victory_counter"
+                "action"  "modifyentity"  
+				"OnHitMax" "base_gate_door,close,,1"
+	  }
+	  
+	     "event"
+	  {
+		"targetname"	"basetop_citizens_template"
+                "action"  "modifyentity"  
+                "OnEntitySpawned" "vory_talk_3,start,,-1"
+
+	  }
+	  
+	  
+	   "event"
+	  {
+		"targetname"	"sawmill_briefing_lcs"
+                "action"  "modifyentity"  
+                "OnStart" "vort_look,movetoposition,,-1"
+
+	  }
+	  
+	  "event"
+	  {
+		"targetname"	"sawmill_briefing_lcs"
+                "action"  "modifyentity"  
+                "OnStart" "vort_look,beginsequence,,1"
+
+	  }
+
+}
+
+"entities:vory_talk_start" {
+
+
+
+"event"
+	  {
+		"targetname"	"vory_talk_1"
+                "action"  "start"  
+              
+	  }
+
+
+}
+
+
+
+"entities" {
+	
+	//
+	
+	
+
+"weapon_minigun"
+        {
+        "origin" "-857 -7724 -246"
+        "angle" "0 0 0.00"
+        }
+		
+		
+
+	
+"event" {
+      "targetname" "mirt_lcs_1"
+      "action"     "modifyentity"
+				 "onStart"  "mirt,makegameendally,,-1"
+          }
+
+
+"logic_auto"
+        {
+        "origin" "2813 7162 0" 
+		"angle"	"0 0 0"
+        "keyvalues"
+            {
+			"onmapspawn" "vort_essence,setparent,vort,-1"
+			"onmapspawn" "vort_essence,setparentattachment,eyes,1"
+		    "OnNewGame" "Weather_Display,showhudhint,,4.5"
+			   "OnNewGame" "Weather_Display,hidehudhint,,9.5"
+		"OnMapTransition"	"Weather_Display,showhudhint,,4.5"
+		"OnMapTransition"	"Weather_Display,hidehudhint,,9.5"
+			"OnMapTransition"	"Weather_Display,kill,,9.6"
+            }
+        }
+
+	"env_hudhint"
+        {
+        "origin" "2230 -1369 87"
+        "angle" "0 0 0.00"
+        "keyvalues"
+            {
+			"message" "          H.E.V MʎRK VI ASSISTANT 
+			|TIME: 17:04|
+			|WEATHER: CLOUDY|
+			|TEMPERATURE: 19°C|"
+			"targetname" "Weather_Display"
+			"spawnflags" "1"
+            }
+        }
+
+//
+
+
+// Lite Start
+
+
+  "logic_auto"
+        {
+        "origin" "2813 7162 0" 
+		"angle"	"0 0 0"
+        "keyvalues"
+            {
+		     "OnNewGame" "vortigauntstillworkingonthis,command,oc_weapon_disable_dissolve 1,-1"
+            }
+        }
+
+	 "point_servercommand" {
+		"origin""-697 -7 1487"
+		"keyvalues" {
+                            "targetname" "vortigauntstillworkingonthis"
+	             }
+               }
+			   
+"event" {
+      "targetname" "mirt"
+      "action"     "makegameendally"
+	  
+     }
+
+
+
+	
+"removeentity" {
+            "classname" "env_sun"
+           }
+		   
+		   "env_sun"
+        {
+
+                "roll"  "20"  
+                "yaw"   "100"
+                "pitch" "-125"
+
+                "KeyValues"
+                {
+					"targetname" "riseandshine"
+					"rendercolor" "237 218 143"
+				"size" "16"
+					"disablesprite" "1"
+									"overlaysize" "24"
+					"use_angles"	"1"
+					"sunrays_intensity"	"2"
+					"sunrays_color.r"	"0.1"
+					"sunrays_color.g"	"0.15"
+					"sunrays_color.b"	"0.2"
+					"sunrays_color.a"	"1"
+					"sunrays_power"		"0.15"
+					"global_lightning_keyvalues"
+					{
+						"enabled" "1"
+						"enableshadows" "1"			
+						"distance" "25000"
+						"fov" "180"
+						"nearz" "2"
+						"northoffset" "0"
+						"eastoffset" "0"
+						"forwardoffset" "0"
+						"orthosize" "1500"
+						"brightnessscale" "15"
+						"angles" "35 45 0"
+						"lightcolor" "255 165 100 800"
+                        "targetname" "g_light"
+					}					
+                }
+        }
+
+		
+
+"event"
+	  {
+		"targetname"	"alyx_template"
+                "action"  "modifyentity"  
+		"onspawnnpc"	"alyx,makegameendally,,0.5"
+
+	  }
+	  
+"prop_dynamic"
+        {
+        "origin" "-242 -8881 -161"
+        "angle" "0 90 0.00"
+        "keyvalues"
+            {
+            "modelscale" "3"
+			"disableshadows" "1"
+			"disablereceiveshadows" "1"
+			"fademaxdist" "2500"      "fademindist" "2000"      "model" "models/props_dev/plank_long_fat.mdl"
+			"targetname" "props_ep2_out12_area1"
+            }
+        }
+		
+		"prop_dynamic"
+        {
+        "origin" "-348 -8414 -254"
+        "angle" "0 90 0.00"
+        "keyvalues"
+            {
+            "modelscale" "1"
+			"disableshadows" "1"
+			"disablereceiveshadows" "1"
+			"fademaxdist" "2500"      "fademindist" "2000"      "model" "models/props_dev/plank_long_fat.mdl"
+			"targetname" "props_ep2_out12_area1"
+            }
+        }
+		
+		"prop_dynamic"
+        {
+        "origin" "-477 -9190 -252"
+        "angle" "0 180 0.00"
+        "keyvalues"
+            {
+            "modelscale" "3"
+			"disableshadows" "1"
+			"disablereceiveshadows" "1"
+			"fademaxdist" "2500"      "fademindist" "2000"      "model" "models/props_dev/plank_long_fat.mdl"
+			"targetname" "props_ep2_out12_area1"
+            }
+        }
+		
+		"prop_dynamic"
+        {
+        "origin" "-889 -9262 -181"
+        "angle" "0 180 0.00"
+        "keyvalues"
+            {
+            "modelscale" "3"
+			"disableshadows" "1"
+			"disablereceiveshadows" "1"
+			"fademaxdist" "2500"      "fademindist" "2000"      "model" "models/props_dev/plank_long_fat.mdl"
+			"targetname" "props_ep2_out12_area1"
+            }
+        }
+		
+		"prop_dynamic"
+        {
+        "origin" "-758 -9303 -290"
+        "angle" "0 90 0.00"
+        "keyvalues"
+            {
+            "modelscale" "2"
+			"disableshadows" "1"
+			"disablereceiveshadows" "1"
+			"fademaxdist" "2500"      "fademindist" "2000"      "model" "models/props_dev/plank_long_fat.mdl"
+			"targetname" "props_ep2_out12_area1"
+            }
+        }
+		
+		"prop_dynamic"
+        {
+        "origin" "-477 -8087 -254"
+        "angle" "0 180 0.00"
+        "keyvalues"
+            {
+            "modelscale" "3"
+			"disableshadows" "1"
+			"disablereceiveshadows" "1"
+			"fademaxdist" "2500"      "fademindist" "2000"      "model" "models/props_dev/plank_long_fat.mdl"
+			"targetname" "props_ep2_out12_area1"
+            }
+        }
+		
+		"prop_dynamic"
+        {
+        "origin" "-1353 -4078 -30"
+        "angle" "90 90 0.00"
+        "keyvalues"
+            {
+            "modelscale" "2"
+			"disableshadows" "1"
+			"disablereceiveshadows" "1"
+			"fademaxdist" "2500"      "fademindist" "2000"      "model" "models/props_dev/plank_long_fat.mdl"
+			"targetname" "props_ep2_out12_area1"
+            }
+        }
+		
+		"prop_dynamic"
+        {
+        "origin" "914 -2783 193"
+        "angle" "0 90 0.00"
+        "keyvalues"
+            {
+            "modelscale" "2.5"
+			"disableshadows" "1"
+			"disablereceiveshadows" "1"
+			"fademaxdist" "2500"      "fademindist" "2000"      "model" "models/props_dev/plank_long_fat.mdl"
+			"targetname" "props_ep2_out12_area1"
+            }
+        }
+		
+		"prop_dynamic"
+        {
+        "origin" "-2319 -29 263"
+        "angle" "0 0 0.00"
+        "keyvalues"
+            {
+            "modelscale" "2.5"
+			"disableshadows" "1"
+			"disablereceiveshadows" "1"
+			"fademaxdist" "2500"      "fademindist" "2000"      "model" "models/props_dev/plank_long_fat.mdl"
+			"targetname" "props_ep2_out12_area1"
+            }
+        }
+		
+		"prop_dynamic"
+        {
+        "origin" "-1545 6968 268"
+        "angle" "0 0 0.00"
+        "keyvalues"
+            {
+            "modelscale" "3"
+			"disableshadows" "1"
+			"disablereceiveshadows" "1"
+			"fademaxdist" "2500"      "fademindist" "2000"      "model" "models/props_dev/plank_long_fat.mdl"
+			"targetname" "props_ep2_out12_area1"
+            }
+        }
+		
+		"prop_dynamic"
+        {
+        "origin" "-567 5411 452"
+        "angle" "0 90 0.00"
+        "keyvalues"
+            {
+            "modelscale" "3"
+			"disableshadows" "1"
+			"disablereceiveshadows" "1"
+			"fademaxdist" "2500"      "fademindist" "2000"      "model" "models/props_dev/plank_long_fat.mdl"
+			"targetname" "props_ep2_out12_area1"
+            }
+        }
+		
+		"prop_dynamic"
+        {
+        "origin" "-3140 2652 435"
+        "angle" "0 90 0.00"
+        "keyvalues"
+            {
+            "modelscale" "3"
+			"disableshadows" "1"
+			"disablereceiveshadows" "1"
+			"fademaxdist" "2500"      "fademindist" "2000"      "model" "models/props_dev/plank_long_fat.mdl"
+			"targetname" "props_ep2_out12_area1"
+            }
+        }
+		
+		"prop_dynamic"
+        {
+        "origin" "238 -8589 -264"
+        "angle" "90 180 0.00"
+        "keyvalues"
+            {
+            "modelscale" "3"
+			"disableshadows" "1"
+			"disablereceiveshadows" "1"
+			"fademaxdist" "2500"      "fademindist" "2000"      "model" "models/props_dev/plank_long_fat.mdl"
+			"targetname" "props_ep2_out12_area1"
+            }
+        }
+		
+		"prop_dynamic"
+        {
+        "origin" "81 -8543 -129"
+        "angle" "90 180 0.00"
+        "keyvalues"
+            {
+            "modelscale" "3"
+			"disableshadows" "1"
+			"disablereceiveshadows" "1"
+			"fademaxdist" "2500"      "fademindist" "2000"      "model" "models/props_dev/plank_long_fat.mdl"
+			"targetname" "props_ep2_out12_area1"
+            }
+        }
+		
+		
+	
+	"prop_dynamic"
+        {
+        "origin" "-92 -8640 -87"
+        "angle" "0 0 0.00"
+        "keyvalues"
+            {
+            "modelscale" "9"
+			"disableshadows" "1"
+			"disablereceiveshadows" "1"
+			"fademaxdist" "2500"     
+			"fademindist" "2000"     
+			"model" "models/props_dev/plank_long_fat.mdl"
+			"targetname" "props_ep2_out12_area1"
+            }
+        }
+		
+		"prop_dynamic"
+        {
+        "origin" "-583 -9148 -126"
+        "angle" "0 0 0.00"
+        "keyvalues"
+            {
+            "modelscale" "6"
+			"disableshadows" "1"
+			"disablereceiveshadows" "1"
+			"fademaxdist" "2500"     
+			"fademindist" "2000"     
+			"model" "models/props_dev/plank_long_fat.mdl"
+			"targetname" "props_ep2_out12_area1"
+            }
+        }
+		
+			"prop_dynamic"
+        {
+        "origin" "-591 -7925 -122"
+        "angle" "0 0 0.00"
+        "keyvalues"
+            {
+            "modelscale" "8"
+			"disableshadows" "1"
+			"disablereceiveshadows" "1"
+			"fademaxdist" "2500"     
+			"fademindist" "2000"     
+			"model" "models/props_dev/plank_long_fat.mdl"
+			"targetname" "props_ep2_out12_area1"
+            }
+        }
+		
+			"prop_dynamic"
+        {
+        "origin" "-931 -8488 -260"
+        "angle" "0 0 0.00"
+        "keyvalues"
+            {
+            "modelscale" "8"
+			"disableshadows" "1"
+			"disablereceiveshadows" "1"
+			"fademaxdist" "2500"     
+			"fademindist" "2000"     
+			"model" "models/props_dev/plank_long_fat.mdl"
+			"targetname" "props_ep2_out12_area1"
+            }
+        }
+		
+				"prop_dynamic"
+        {
+        "origin" "-1144 -6996 -222"
+        "angle" "0 0 0.00"
+        "keyvalues"
+            {
+            "modelscale" "4"
+			"disableshadows" "1"
+			"disablereceiveshadows" "1"
+			"fademaxdist" "2500"     
+			"fademindist" "2000"     
+			"model" "models/props_dev/plank_long_fat.mdl"
+			"targetname" "props_ep2_out12_area1"
+            }
+        }
+		
+					"prop_dynamic"
+        {
+        "origin" "-2179 -83 282"
+        "angle" "0 0 0.00"
+        "keyvalues"
+            {
+            "modelscale" "2"
+			"disableshadows" "1"
+			"disablereceiveshadows" "1"
+			"fademaxdist" "2500"     
+			"fademindist" "2000"     
+			"model" "models/props_dev/plank_long_fat.mdl"
+			"targetname" "props_ep2_out12_area1"
+            }
+        }
+		
+						"prop_dynamic"
+        {
+        "origin" "2899 -189 219"
+        "angle" "0 0 0.00"
+        "keyvalues"
+            {
+            "modelscale" "2"
+			"disableshadows" "1"
+			"disablereceiveshadows" "1"
+			"fademaxdist" "2500"     
+			"fademindist" "2000"     
+			"model" "models/props_dev/plank_long_fat.mdl"
+			"targetname" "props_ep2_out12_area1"
+            }
+        }
+		
+						"prop_dynamic"
+        {
+        "origin" "2931 -310 107"
+        "angle" "0 0 0.00"
+        "keyvalues"
+            {
+            "modelscale" "2"
+			"disableshadows" "1"
+			"disablereceiveshadows" "1"
+			"fademaxdist" "2500"     
+			"fademindist" "2000"     
+			"model" "models/props_dev/plank_long_fat.mdl"
+			"targetname" "props_ep2_out12_area1"
+            }
+        }
+		
+					"prop_dynamic"
+        {
+        "origin" "3238 -414 196"
+        "angle" "90 90 0.00"
+        "keyvalues"
+            {
+            "modelscale" "3"
+			"disableshadows" "1"
+			"disablereceiveshadows" "1"
+			"fademaxdist" "2500"     
+			"fademindist" "2000"     
+			"model" "models/props_dev/plank_long_fat.mdl"
+			"targetname" "props_ep2_out12_area1"
+            }
+        }
+		
+					"prop_dynamic"
+        {
+        "origin" "-3166 2495 348"
+        "angle" "40 270 0.00"
+        "keyvalues"
+            {
+            "modelscale" "2.1"
+			"disableshadows" "1"
+			"disablereceiveshadows" "1"
+			"fademaxdist" "2500"     
+			"fademindist" "2000"     
+			"model" "models/props_dev/plank_long_fat.mdl"
+			"targetname" "props_ep2_out12_area1"
+            }
+        }
+		
+		
+				"prop_dynamic"
+        {
+        "origin" "3623 -315 193"
+        "angle" "90 90 0.00"
+        "keyvalues"
+            {
+            "modelscale" "3"
+			"disableshadows" "1"
+			"disablereceiveshadows" "1"
+			"fademaxdist" "2500"     
+			"fademindist" "2000"     
+			"model" "models/props_dev/plank_long_fat.mdl"
+			"targetname" "props_ep2_out12_area1"
+            }
+        }
+		
+			"prop_dynamic"
+        {
+        "origin" "-1405 6991 275"
+        "angle" "0 0 0.00"
+        "keyvalues"
+            {
+            "modelscale" "3"
+			"disableshadows" "1"
+			"disablereceiveshadows" "1"
+			"fademaxdist" "2500"     
+			"fademindist" "2000"     
+			"model" "models/props_dev/plank_long_fat.mdl"
+			"targetname" "props_ep2_out12_area1"
+            }
+        }
+		
+			"prop_dynamic"
+        {
+        "origin" "-3403 2496 183"
+        "angle" "90 0 0.00"
+        "keyvalues"
+            {
+            "modelscale" "1.4"
+			"disableshadows" "1"
+			"disablereceiveshadows" "1"
+			"fademaxdist" "2500"     
+			"fademindist" "2000"     
+			"model" "models/props_dev/plank_long_fat.mdl"
+			"targetname" "props_ep2_out12_area1"
+            }
+        }
+		
+			"prop_dynamic"
+        {
+        "origin" "-3403 2496 183"
+        "angle" "0 90 0.00"
+        "keyvalues"
+            {
+            "modelscale" "1.4"
+			"disableshadows" "1"
+			"disablereceiveshadows" "1"
+			"fademaxdist" "2500"     
+			"fademindist" "2000"     
+			"model" "models/props_dev/plank_long_fat.mdl"
+			"targetname" "props_ep2_out12_area1"
+            }
+        }
+		
+			"prop_dynamic"
+        {
+        "origin" "-3334 2853 143"
+        "angle" "0 90 0.00"
+        "keyvalues"
+            {
+            "modelscale" "0.7"
+			"disableshadows" "1"
+			"disablereceiveshadows" "1"
+			"fademaxdist" "2500"     
+			"fademindist" "2000"     
+			"model" "models/props_dev/plank_long_fat.mdl"
+			"targetname" "props_ep2_out12_area1"
+            }
+        }
+		
+			"prop_dynamic"
+        {
+        "origin" "-3398 2728 221"
+        "angle" "0 90 0.00"
+        "keyvalues"
+            {
+            "modelscale" "1"
+			"disableshadows" "1"
+			"disablereceiveshadows" "1"
+			"fademaxdist" "2500"     
+			"fademindist" "2000"     
+			"model" "models/props_dev/plank_long_fat.mdl"
+			"targetname" "props_ep2_out12_area1"
+            }
+        }
+		
+			"prop_dynamic"
+        {
+        "origin" "-3398 2728 160"
+        "angle" "0 90 0.00"
+        "keyvalues"
+            {
+            "modelscale" "1"
+			"disableshadows" "1"
+			"disablereceiveshadows" "1"
+			"fademaxdist" "2500"     
+			"fademindist" "2000"     
+			"model" "models/props_dev/plank_long_fat.mdl"
+			"targetname" "props_ep2_out12_area1"
+            }
+        }
+// Lite End
+
+  "item_item_crate"
+	{
+		"origin" "-1425 -3962 -18"
+		"angle" "0 4 0"
+		"keyvalues"
+		{
+			"ItemClass"		"weapon_smokegrenade"
+			"ItemCount"		"5"
+		}
+	}
+
+  "item_item_crate"
+	{
+		"origin" "3313 -72 160"
+		"angle" "0 139 0"
+		"keyvalues"
+		{
+			"ItemClass"		"weapon_smokegrenade"
+			"ItemCount"		"5"
+		}
+	}
+
+"item_item_crate"
+	{
+		"origin" "2935 -353 160"
+		"angle" "0 80 0"
+		"keyvalues"
+		{
+			"ItemClass"		"weapon_flashbang"
+			"ItemCount"		"5"
+		}
+	}
+	
+"item_item_crate"
+	{
+		"origin" "-1424 -3888 1"
+		"angle" "0 43 0"
+		"keyvalues"
+		{
+			"ItemClass"		"weapon_flashbang"
+			"ItemCount"		"5"
+		}
+	}
+	
+	"item_ammo_uranium"
+        {
+        "origin" "-855 -7806 -218"
+        "angle"  "0 -45 0"
+        }
+		
+			"item_ammo_uranium"
+        {
+        "origin" "-854 -7875 -221"
+        "angle"  "0 -25 0"
+        }
+
+
+"item_item_crate"
+	{
+		"origin"	"955 -3144 28"
+		"angle"		"0 -153 0"
+		"KeyValues"
+		{
+			"ItemClass"		"weapon_oicw"
+			"ItemCount"		"3"
+		}
+	}
+
+"item_item_crate"
+	{
+		"origin"	"3055 -378 167"
+		"angle"		"0 29 0"
+		"KeyValues"
+		{
+			"ItemClass"		"item_ammo_uranium"
+			"ItemCount"		"1"
+		}
+	}
+
+"item_item_crate"
+	{
+		"origin"	"-3334 2683 192"
+		"angle"		"0 -43 0"
+		"KeyValues"
+		{
+			"ItemClass"		"item_ammo_uranium"
+			"ItemCount"		"2"
+		}
+	}
+	
+	"prop_physics"
+        {
+        "origin" "787 -2839 24"
+        "angle" "0 0 0.00"
+        "keyvalues"
+            {
+			"fademaxdist" "1500"
+            "fademindist" "1000"
+            "model" "models\combine_cremator_headprop.mdl"
+            }
+        }
+		
+	"prop_physics"
+        {
+        "origin" "3054 -374 169"
+        "angle" "0 0 0.00"
+        "keyvalues"
+            {
+			"fademaxdist" "1500"
+            "fademindist" "1000"
+            "model" "models\combine_cremator_headprop.mdl"
+            }
+        }
+		
+		
+
+"combine_mine"
+        {
+        "origin" "-658 5267 256"
+        "angle" "0 0 0"
+        "keyvalues"
+            {
+            "skin" "3"
+			"LockSilently" "0"
+            "bounce" "1"
+            "modification" "1"
+            "startdisarmed" "1"
+            }
+        }
+		
+		"combine_mine"
+        {
+        "origin" "-2926 2367 192"
+        "angle" "0 0 0"
+        "keyvalues"
+            {
+            "skin" "3"
+			"LockSilently" "0"
+            "bounce" "1"
+            "modification" "1"
+            "startdisarmed" "1"
+            }
+        }
+		
+		"combine_mine"
+        {
+        "origin" "-3093 2371 192"
+        "angle" "0 0 0"
+        "keyvalues"
+            {
+                "skin" "3"
+			"LockSilently" "0"
+            "bounce" "1"
+            "modification" "1"
+            "startdisarmed" "1"
+            }
+        }
+		
+"combine_mine"
+        {
+        "origin" "-658 5267 245"
+        "angle" "0 0 0"
+        "keyvalues"
+            {
+              "skin" "3"
+			"LockSilently" "0"
+            "bounce" "1"
+            "modification" "1"
+            "startdisarmed" "1"
+            }
+        }
+		
+"combine_mine"
+        {
+        "origin" "-658 5267 233"
+        "angle" "0 0 0"
+        "keyvalues"
+            {
+             "skin" "3"
+			"LockSilently" "0"
+            "bounce" "1"
+            "modification" "1"
+            "startdisarmed" "1"
+            }
+        }
+
+"combine_mine"
+        {
+        "origin" "804 -2801 48"
+        "angle" "0 0 0"
+        "keyvalues"
+            {
+              "skin" "3"
+			"LockSilently" "0"
+            "bounce" "1"
+            "modification" "1"
+            "startdisarmed" "1"
+            }
+        }
+		
+"combine_mine"
+        {
+        "origin" "-13 -4914 -119"
+        "angle" "0 0 0"
+        "keyvalues"
+            {
+             "skin" "3"
+			"LockSilently" "0"
+            "bounce" "1"
+            "modification" "1"
+            "startdisarmed" "1"
+            }
+        }
+
+"prop_physics"
+        {
+        "origin" "3025 -305 152"
+        "angle" "0 0 0"
+        "keyvalues"
+            {
+			 "fademaxdist" "2800"
+	        "fademindist" "2200"
+
+            "model" "models/props_wasteland/controlroom_storagecloset001a.mdl"
+            }
+        }
+
+
+	
+"ambient_generic" {
+          "origin" "-324 -6061 -295"
+          "keyvalues" {
+                  "message" "vo\outland_01\intro\ol01_vortcall02c.wav"
+                  "health"  "8"
+                  "radius"  "9999"
+                  "spawnflags" "49"
+				  "sourceentityname" "vort"
+                  "targetname" "vory_say_friend_1"
+                 }
+              }
+			  
+"ambient_generic" {
+          "origin" "-324 -6061 -295"
+          "keyvalues" {
+                  "message" "vo\outland_01\intro\ol01_vortresp01.wav"
+                  "health"  "6"
+                  "radius"  "9999"
+                  "spawnflags" "49"
+				   "sourceentityname" "vort"
+                  "targetname" "vory_say_friend_2"
+                 }
+              }
+			 
+
+		"scripted_sequence" 
+        {
+        "origin" "-437 -6116 -295"
+        "angle" "0 103 0"
+        "keyvalues"
+            {
+            "targetname" "vort_look_goodbye"
+            "m_iszEntity" "vort"   
+            "m_iszPlay" "Idle01"
+            "m_bLoopActionSequence" "1"
+            "m_fMoveTo" "2"    
+            "spawnflags" "32"   
+			"onbeginsequence" "vort_look_goodbye,cancelsequence,,0.02"
+			"onbeginsequence" "coop,applyrelationship,,-1"
+            }
+        }
+		
+"ai_relationship"
+        {
+        "origin" "-3985 4668 64"
+        "angle" "0 0 0"
+        "keyvalues"
+            {
+            "targetname"  "coop"
+            "subject"        "npc_vortigaunt"
+            "target"       "npc_combine_s"
+            "startactive" "0"
+            "disposition" "3"
+            "rank" "9999"
+            }
+        }
+		
+		"ai_relationship"
+        {
+        "origin" "-3985 4668 64"
+        "angle" "0 0 0"
+        "keyvalues"
+            {
+            "targetname"  "coop"
+            "subject"        "npc_vortigaunt"
+            "target"       "npc_strider"
+            "startactive" "0"
+            "disposition" "3"
+            "rank" "9999"
+            }
+        }
+		
+		"ai_relationship"
+        {
+        "origin" "-3985 4668 64"
+        "angle" "0 0 0"
+        "keyvalues"
+            {
+            "targetname"  "coop"
+            "subject"        "npc_vortigaunt"
+            "target"       "npc_mortarsynth"
+            "startactive" "0"
+            "disposition" "3"
+            "rank" "9999"
+            }
+        }
+
+"ai_relationship"
+        {
+        "origin" "-3985 4668 64"
+        "angle" "0 0 0"
+        "keyvalues"
+            {
+            "targetname"  "coop"
+            "subject"        "npc_vortigaunt"
+            "target"       "npc_hunter"
+            "startactive" "0"
+            "disposition" "3"
+            "rank" "9999"
+            }
+        }
+
+	
+		
+	"logic_choreographed_scene"
+        {
+        "origin" "-649 5266 255"
+        "keyvalues"
+            {
+            "targetname" "vory_talk_4"
+            "busyactor" "1"
+            "OnCompletion"   "vory_talk_4,kill,,1"
+			"OnCompletion"   "vory_talk_5,start,,-1"
+			"OnCompletion"   "base_gate_door,open,,0.25"
+            "scenefile" "scenes\npc\vortigaunt\giveover.vcd"
+            "target1" "vort"
+			"target2" "!player"
+            }
+        }
+		
+	"logic_choreographed_scene"
+        {
+        "origin" "-649 5266 255"
+        "keyvalues"
+            {
+            "targetname" "vory_talk_5"
+            "busyactor" "1"
+            "OnCompletion"   "vory_talk_5,kill,,1"
+            "scenefile" "scenes\npc\vortigaunt\gloriousend.vcd"
+            "target1" "vort"
+			"target2" "!player"
+            }
+        }		
+
+
+		
+"logic_choreographed_scene"
+        {
+        "origin" "-649 5266 255"
+        "keyvalues"
+            {
+            "targetname" "vory_talk_3"
+            "busyactor" "1"
+			"OnCompletion"   "vory_talk_4,start,,-1"
+  "OnCompletion"   "vory_talk_3,kill,,1"
+            "scenefile" "scenes\npc\vortigaunt\ourplacehere.vcd"
+            "target1" "vort"
+			"target2" "!player"
+            }
+        }		
+		
+
+
+"mapadd_trigger_once" {
+		"origin" "-704 -8405 -255"
+		"keyvalues" {
+			"radius"	"105"
+			"label"		"vory_goodbye_forever"
+                        
+		}
+	}
+
+		"scripted_sequence" 
+        {
+        "origin" "-733 5078 98"
+        "angle" "0 60 0"
+        "keyvalues"
+            {
+            "targetname" "vort_look"
+            "m_iszEntity" "vort"   
+            "m_iszPlay" "Idle_ready"
+            "m_bLoopActionSequence" "1"
+            "m_fMoveTo" "2"    
+            "spawnflags" "32"   
+            }
+        }
+		
+"logic_choreographed_scene"
+        {
+        "origin" "-649 5266 255"
+        "keyvalues"
+            {
+            "targetname" "vory_talk_1"
+            "busyactor" "1"
+                                                                                                   
+            "OnCompletion"   "vory_talk_1,kill,,1"
+            "scenefile" "scenes\outland_06\vort_see_freeman.vcd"
+            "target1" "vort"
+            }
+        }
+		
+"logic_choreographed_scene"
+        {
+        "origin" "-649 5266 255"
+        "keyvalues"
+            {
+            "targetname" "vory_talk_2"
+            "busyactor" "1"
+  "OnCompletion"   "vory_talk_2,kill,,1"
+            "scenefile" "scenes\npc\vortigaunt\forfreedom.vcd"
+            "target1" "vort"
+            }
+        }		
+
+
+"npc_vortigaunt"
+        {
+        "origin" "-763 5056 176"
+        "angle" "0 -126 0.00"
+        "keyvalues"
+            {
+             "targetname" "vort" // actually that vort from NOVA PROSPEKT
+             "gameendally" "1"
+			 "spawnflags" "256"
+			  "model" "models/vortigaunt_blue_ep2.mdl"
+			 "healthregenerateenabled" "1"
+             "OnDamaged" "!self,sethealth,100,,-1"
+		     "ArmorRechargeEnabled" "1"
+			 "OnFoundEnemy" "!self,turnblue,1,-1"
+             "OnLostEnemy" "!self,turnblue,0,1"
+			  "OnFoundEnemy" "vort_essence,start,,0.3"
+             "OnLostEnemy" "vort_essence,stop,,1"
+            }
+        }
+		
+		  "info_particle_system"
+        {
+        "origin" "-763 5056 176"
+        "angle" "0 0 0.00"
+        "keyvalues"
+          {
+		  "targetname" "vort_essence"
+		  "start_active" "0"
+          "effect_name" "vheadglow"
+          }
+        }
+		
+		"ai_goal_follow"
+	{
+		"origin"	"-649 5266 255"
+		//"angle"		"0 -30 0"
+		"KeyValues"
+		{
+			"targetname"		"we_will_follow_you_freeman"
+            "startactive" "0"
+			"searchtype" "0"
+			"goal" "!player"
+			"actor" "vort"
+			"maximumstate" "3"
+				"formation" "8"
+		}
+	}
+	
+
+	"npc_sporegenerator"
+        {
+        "origin" "-24 -8767 -319"
+        "angle" "0 114 0.00"
+        }
+
+			"npc_sporegenerator"
+        {
+        "origin" "42 -8760 -319"
+        "angle" "0 114 0.00"
+        }
+		
+			"npc_sporegenerator"
+        {
+        "origin" "-12 -8847 -319"
+        "angle" "0 114 0.00"
+        }
+		
+			"npc_sporegenerator"
+        {
+        "origin" "977 -2721 -40"
+        "angle" "0 114 0.00"
+        }
+
+	"npc_sporegenerator"
+        {
+        "origin" "989 -2792 -39"
+        "angle" "0 114 0.00"
+        }
+
+	"npc_sporegenerator"
+        {
+        "origin" "-1298 -4061 -73"
+        "angle" "0 180 90.00"
+        }
+		
+			"npc_sporegenerator"
+        {
+        "origin" "-1286 -3891 -119"
+        "angle" "0 114 0.00"
+        }
+		
+			
+	
+"ambient_generic" {
+          "origin" "-8714 1048 -191"
+          "keyvalues" {
+                  "message" "#music/over_ost_navilonsark_vortal_combat.mp3"
+                  "health"  "10"
+                  "radius"  "1250"
+                  "spawnflags" "49"
+                  "targetname" "rainbowrock3"
+                 }
+              }
+			  
+
+
+"ambient_generic" {
+          "origin" "-8714 1048 -191"
+          "keyvalues" {
+                  "message" "#music/over_ost_navilonsark_kaon.mp3"
+                  "health"  "10"
+                  "radius"  "1250"
+                  "spawnflags" "49"
+                  "targetname" "rainbowrock2"
+                 }
+              }
+			  
+
+
+
+"ambient_generic" {
+          "origin" "-8714 1048 -191"
+          "keyvalues" {
+                  "message" "#music/over_ost_darkxius_the_combines_attack.mp3"
+                  "health"  "10"
+                  "radius"  "1250"
+                  "spawnflags" "49"
+                  "targetname" "rainbowrock"
+                 }
+              }
+			  
+	"npc_citizen"
+        {
+        "origin" "-495 -6210 -95"
+        "angle" "0 90 0"
+        "keyvalues"
+            {
+            "citizentype" "3"
+			"spawnflags" "1310720"
+            "additionalequipment" "weapon_sniper"
+
+         }
+      }
+	  
+			  
+	"npc_citizen"
+        {
+        "origin" "-507 4929 149"
+        "angle" "0 130 0"
+        "keyvalues"
+            {
+            "citizentype" "3"
+            "additionalequipment" "weapon_sg552" // weapon_ionrifle
+
+         }
+      }
+	  
+"npc_citizen"
+        {
+        "origin" "3475 245 262"
+        "angle" "0 30 0"
+        "keyvalues"
+            {
+            "citizentype" "3"
+			"spawnflags" "1310720"
+            "additionalequipment" "weapon_sniper"
+
+         }
+      }
+
+	
+
+"npc_citizen"
+        {
+        "origin" "807 -3236 11"
+        "angle" "0 160 0"
+        "keyvalues"
+            {
+            "citizentype" "3"
+			"spawnflags" "1310720"
+            "additionalequipment" "weapon_oicw"
+
+         }
+      }
+
+
+"npc_citizen"
+        {
+        "origin" "-2986 2251 177"
+        "angle" "0 -162 0"
+        "keyvalues"
+            {
+            "citizentype" "3"
+			"spawnflags" "1310720"
+            "additionalequipment" "weapon_ak47"
+
+         }
+      }
+
+"npc_citizen"
+        {
+        "origin" "-1064 -3893 -71"
+        "angle" "0 29 0"
+        "keyvalues"
+            {
+            "citizentype" "3"
+			"spawnflags" "1310720"
+            "additionalequipment" "weapon_autoshotgun"
+
+         }
+      }
+
+
+
+"point_teleport" {
+		"origin" "3447 1763 396"
+		"keyvalues" {      
+			"targetname" "jeep_teleport"
+			"target" "jeep_from_coast"
+                       
+                   
+                
+		}
+	}
+
+"point_teleport" {
+		"origin" "3483 1954 730"
+		"keyvalues" {      
+			"targetname" "jeep_teleport_dropship"
+			"target" "drp"
+                       
+                   
+                
+		}
+	}
+
+
+
+"assault_rallypoint"
+        {
+        "origin" "-1527 5448 144"
+        "angles" "0 -82 0"
+        "keyvalues"
+            {
+            "assaultdelay" "0"
+            "assaultpoint" "assault_4_2"
+            "priority"       "1"
+            "urgent"               "0"
+            "forcecrouch"          "0"
+            "targetname"           "assault_4_1"
+           }
+      }
+
+
+"assault_assaultpoint"
+        {
+        "origin" "-2081 2853 144"
+        "angles" "0 -107 0"
+        "keyvalues"
+            {
+            "nevertimeout" "0"
+            "allowdiversion" "0"
+            "allowdiversionradius" "0"
+            "assaulttimeout"       "0"
+            "urgent"               "0"
+            "forcecrouch"          "0"
+            "targetname"           "assault_4_2"
+            "asssaulttolerance"    "126"
+            "strict"               "0"
+            "clearoncontact"       "0"
+            "nextassaultpoint"     "assault_4_3"
+           }
+      }
+
+
+"assault_assaultpoint"
+        {
+        "origin" "-2181 982 144"
+        "angles" "0 -70 0"
+        "keyvalues"
+            {
+            "nevertimeout" "0"
+            "allowdiversion" "0"
+            "allowdiversionradius" "0"
+            "assaulttimeout"       "0"
+            "urgent"               "0"
+            "forcecrouch"          "0"
+            "targetname"           "assault_4_3"
+            "asssaulttolerance"    "126"
+            "strict"               "0"
+            "clearoncontact"       "0"
+            "nextassaultpoint"     "assault_4_4"
+           }
+      }
+
+
+
+
+"assault_assaultpoint"
+        {
+        "origin" "-784 -198 235"
+        "angles" "0 -83 0"
+        "keyvalues"
+            {
+            "nevertimeout" "0"
+            "allowdiversion" "0"
+            "allowdiversionradius" "0"
+            "assaulttimeout"       "0"
+            "urgent"               "0"
+            "forcecrouch"          "0"
+            "targetname"           "assault_4_4"
+            "asssaulttolerance"    "126"
+            "strict"               "0"
+            "clearoncontact"       "0"
+            "nextassaultpoint"     "assault_4_5"
+           }
+      }
+
+"assault_assaultpoint"
+        {
+        "origin" "-784 -198 235"
+        "angle" "0 -81 0"
+        "keyvalues"
+            {
+            "nevertimeout" "0"
+            "allowdiversion" "0"
+            "allowdiversionradius" "0"
+            "assaulttimeout"       "0"
+            "urgent"               "0"
+            "forcecrouch"          "0"
+            "targetname"           "assault_4_5"
+            "asssaulttolerance"    "126"
+            "strict"               "0"
+            "clearoncontact"       "0"
+            "nextassaultpoint"     "assault_4_6"
+           }
+      }
+
+"assault_assaultpoint"
+        {
+        "origin" "-1180 -3680 -30"
+        "angle" "0 -48 0"
+        "keyvalues"
+            {
+            "nevertimeout" "0"
+            "allowdiversion" "0"
+            "allowdiversionradius" "0"
+            "assaulttimeout"       "0"
+            "urgent"               "0"
+            "forcecrouch"          "0"
+            "targetname"           "assault_4_6"
+            "asssaulttolerance"    "126"
+            "strict"               "0"
+            "clearoncontact"       "0"
+           }
+      }
+
+
+"npc_maker"
+        {
+        "origin" "-1623 6326 150"
+        "angle" "0 -91.86 0.00"
+        "keyvalues"
+            {
+            "targetname" "cmb10spawner"
+            "NPCType"    "npc_combine_armored"
+            "NPCTargetname" "cmb10"
+            "StartDisabled" "1"
+            "MaxNPCCount"   "9999"
+            "SpawnFrequency" "135"
+            "additionalequipment" "weapon_sg552" // weapon_ionrifle
+            "MaxLiveChildren" "1"
+			"skins" "1"
+            "OnSpawnNPC" "cmb10,assault,assault_4_1,-1"
+            }
+        }
+
+
+"path_corner" {
+		"origin" "-6849 9761 440"
+		"keyvalues" {
+			"targetname" "ap1"
+                        "target"     "ap2"
+              
+
+		}
+	}
+
+
+"path_track" {
+		"origin" "-5586 7799 385"
+		"keyvalues" {
+			"targetname" "ap2"
+                        "target"     "ap3"
+              
+
+		}
+	}
+
+"path_track" {
+		"origin" "-4969 6565 204"
+		"keyvalues" {
+			"targetname" "ap3"
+                        "target"     "ap4"
+              
+
+		}
+	}
+
+
+"path_track" {
+		"origin" "-4768 5790 220"
+		"keyvalues" {
+			"targetname" "ap4"
+                        "target"     "ap5"
+              
+
+		}
+	}
+
+"path_track" {
+		"origin" "-2651 5629 98"
+		"keyvalues" {
+			"targetname" "ap5"
+                        "target"     "ap6"
+              
+
+		}
+	}
+
+"path_track" {
+		"origin" "-1603 5288 133"
+		"keyvalues" {
+			"targetname" "ap6"
+                        "target"     "ap7"
+              
+
+		}
+	}
+
+
+"path_track" {
+		"origin" "134 4841 128"
+		"keyvalues" {
+			"targetname" "ap7"
+                        "target"     "ap8"
+              
+
+		}
+	}
+
+"path_track" {
+		"origin" "2199 6233 101"
+		"keyvalues" {
+			"targetname" "ap8"
+                        "target"     "ap9"
+              
+
+		}
+	}
+
+
+"path_track" {
+		"origin" "3759 5624 112"
+		"keyvalues" {
+			"targetname" "ap9"
+                        "target"     "ap10"
+              
+
+		}
+	}
+
+"path_track" {
+		"origin" "4904 4593 102"
+		"keyvalues" {
+			"targetname" "ap10"
+                        "target"     "ap11"
+              
+
+		}
+	}
+
+"path_track" {
+		"origin" "5561 2902 128"
+		"keyvalues" {
+			"targetname" "ap11"
+                        "target"     "ap12"
+              
+
+		}
+	}
+
+"path_track" {
+		"origin" "5310 1515 132"
+		"keyvalues" {
+			"targetname" "ap12"
+                        "target"     "ap13"
+              
+
+		}
+	}
+
+"path_track" {
+		"origin" "3987 578 116"
+		"keyvalues" {
+			"targetname" "ap13"
+                        "target"     "ap14"
+              
+
+		}
+	}
+
+"path_track" {
+		"origin" "2530 586 105"
+		"keyvalues" {
+			"targetname" "ap14"
+                        "target"     "ap15"
+              
+
+		}
+	}
+
+"path_track" {
+		"origin" "1706 -501 45"
+		"keyvalues" {
+			"targetname" "ap15"
+                        "target"     "ap16"
+              
+
+		}
+	}
+
+
+"path_track" {
+		"origin" "-132 -1026 131"
+		"keyvalues" {
+			"targetname" "ap16"
+                        "target"     "ap17"
+              
+
+		}
+	}
+
+
+
+"path_track" {
+		"origin" "-521 -2286 57"
+		"keyvalues" {
+			"targetname" "ap17"
+                        "target"     "ap18"
+              
+
+		}
+	}
+
+
+"path_track" {
+		"origin" "452 -3259 -16"
+		"keyvalues" {
+			"targetname" "ap18"
+              
+
+		}
+	}
+
+
+"prop_vehicle_apc" {
+                "origin" "-7159 9880 506"
+                "angle"  "0 -90 0"
+                "stabilize"	"10"
+		"keyvalues" {
+		"VehicleLocked" "1"
+			"vehiclescript"	"scripts/vehicles/apc_npc.txt"
+			"model"		"models/combine_apc.mdl"
+			"targetname"	"apc1"
+			"solid"		"6"
+		}
+	}
+
+"npc_apcdriver" 
+                 {
+		"keyvalues" {
+			
+			"vehicle" "apc1"
+			"targetname" "apd1"
+                        "sleepstate" "3"
+		}
+	}
+
+
+
+
+
+
+
+
+
+"assault_rallypoint"
+        {
+        "origin" "5418 5596 -103"
+        "angles" "0 -149 0"
+        "keyvalues"
+            {
+            "assaultdelay" "0"
+            "assaultpoint" "assault_3_2"
+            "priority"       "1"
+            "urgent"               "0"
+            "forcecrouch"          "0"
+            "targetname"           "assault_3_1_1"
+           }
+      }
+
+"assault_rallypoint"
+        {
+        "origin" "5418 5596 -103"
+        "angles" "0 -149 0"
+        "keyvalues"
+            {
+            "assaultdelay" "0"
+            "assaultpoint" "assault_3_2"
+            "priority"       "1"
+            "urgent"               "0"
+            "forcecrouch"          "0"
+            "targetname"           "assault_3_1_2"
+           }
+      }
+
+
+
+"assault_rallypoint"
+        {
+        "origin" "5418 5596 -103"
+        "angles" "0 -149 0"
+        "keyvalues"
+            {
+            "assaultdelay" "0"
+            "assaultpoint" "assault_3_2"
+            "priority"       "1"
+            "urgent"               "0"
+            "forcecrouch"          "0"
+            "targetname"           "assault_3_1"
+           }
+      }
+
+
+"assault_assaultpoint"
+        {
+        "origin" "4579 5145 96"
+        "angles" "0 -107 0"
+        "keyvalues"
+            {
+            "nevertimeout" "0"
+            "allowdiversion" "0"
+            "allowdiversionradius" "0"
+            "assaulttimeout"       "0"
+            "urgent"               "0"
+            "forcecrouch"          "0"
+            "targetname"           "assault_3_2"
+            "asssaulttolerance"    "126"
+            "strict"               "0"
+            "clearoncontact"       "0"
+            "nextassaultpoint"     "assault_3_3"
+           }
+      }
+
+"assault_assaultpoint"
+        {
+        "origin" "5245 4082 114"
+        "angles" "0 -59 0"
+        "keyvalues"
+            {
+            "nevertimeout" "0"
+            "allowdiversion" "0"
+            "allowdiversionradius" "0"
+            "assaulttimeout"       "0"
+            "urgent"               "0"
+            "forcecrouch"          "0"
+            "targetname"           "assault_3_3"
+            "asssaulttolerance"    "126"
+            "strict"               "0"
+            "clearoncontact"       "0"
+            "nextassaultpoint"     "assault_3_4"
+           }
+      }
+
+"assault_assaultpoint"
+        {
+        "origin" "5733 2232 128"
+        "angles" "0 -111 0"
+        "keyvalues"
+            {
+            "nevertimeout" "0"
+            "allowdiversion" "0"
+            "allowdiversionradius" "0"
+            "assaulttimeout"       "0"
+            "urgent"               "0"
+            "forcecrouch"          "0"
+            "targetname"           "assault_3_4"
+            "asssaulttolerance"    "126"
+            "strict"               "0"
+            "clearoncontact"       "0"
+            "nextassaultpoint"     "assault_3_5"
+           }
+      }
+
+
+"assault_assaultpoint"
+        {
+        "origin" "4659 823 126"
+        "angles" "0 -163 0"
+        "keyvalues"
+            {
+            "nevertimeout" "0"
+            "allowdiversion" "0"
+            "allowdiversionradius" "0"
+            "assaulttimeout"       "0"
+            "urgent"               "0"
+            "forcecrouch"          "0"
+            "targetname"           "assault_3_5"
+            "asssaulttolerance"    "126"
+            "strict"               "0"
+            "clearoncontact"       "0"
+            "nextassaultpoint"     "assault_3_6"
+           }
+      }
+
+"assault_assaultpoint"
+        {
+        "origin" "3143 663 126"
+        "angles" "0 -95 0"
+        "keyvalues"
+            {
+            "nevertimeout" "0"
+            "allowdiversion" "0"
+            "allowdiversionradius" "0"
+            "assaulttimeout"       "0"
+            "urgent"               "0"
+            "forcecrouch"          "0"
+            "targetname"           "assault_3_6"
+            "asssaulttolerance"    "126"
+            "strict"               "0"
+            "clearoncontact"       "0"
+            "nextassaultpoint"     "assault_3_7"
+           }
+      }
+
+
+"assault_assaultpoint"
+        {
+        "origin" "1384 -570 62"
+        "angles" "0 -138 0"
+        "keyvalues"
+            {
+            "nevertimeout" "0"
+            "allowdiversion" "0"
+            "allowdiversionradius" "0"
+            "assaulttimeout"       "0"
+            "urgent"               "0"
+            "forcecrouch"          "0"
+            "targetname"           "assault_3_7"
+            "asssaulttolerance"    "126"
+            "strict"               "0"
+            "clearoncontact"       "0"
+            "nextassaultpoint"     "assault_3_8"
+           }
+      }
+
+
+"assault_assaultpoint"
+        {
+        "origin" "355 -2028 153"
+        "angles" "0 -114 0"
+        "keyvalues"
+            {
+            "nevertimeout" "0"
+            "allowdiversion" "0"
+            "allowdiversionradius" "0"
+            "assaulttimeout"       "0"
+            "urgent"               "0"
+            "forcecrouch"          "0"
+            "targetname"           "assault_3_8"
+            "asssaulttolerance"    "126"
+            "strict"               "0"
+            "clearoncontact"       "0"
+            "nextassaultpoint"     "assault_3_9"
+           }
+      }
+
+"assault_assaultpoint"
+        {
+        "origin" "-647 -4756 -94"
+        "angles" "0 -74 0"
+        "keyvalues"
+            {
+            "nevertimeout" "0"
+            "allowdiversion" "0"
+            "allowdiversionradius" "0"
+            "assaulttimeout"       "0"
+            "urgent"               "0"
+            "forcecrouch"          "0"
+            "targetname"           "assault_3_9"
+            "asssaulttolerance"    "126"
+            "strict"               "0"
+            "clearoncontact"       "0"
+           }
+      }
+
+"item_ammo_snark"
+        {
+        "origin" "861 -2964 81"
+        "angle" "0 -46 0.00"
+		"keyvalues" {
+		    "OnPlayerTouch" "vortigauntstillworkingonthis,command,give weapon_snark,,-1"
+		 }
+        }
+		
+
+
+"item_ammo_snark"
+        {
+        "origin" "-1226 -3911 -55"
+        "angle" "0 -21 0.00"
+		"keyvalues" {
+		    "OnPlayerTouch" "vortigauntstillworkingonthis,command,give weapon_snark,,-1"
+		 }
+        }
+		
+"item_ammo_snark"
+        {
+        "origin" "-1573 -3020 10"
+        "angle" "0 28 0.00"
+		"keyvalues" {
+		    "OnPlayerTouch" "vortigauntstillworkingonthis,command,give weapon_snark,,-1"
+		 }
+        }
+		
+
+
+
+"item_ammo_snark"
+        {
+        "origin" "1018 -2719 24"
+        "angle" "0 -98 0.00"
+		"keyvalues" {
+		    "OnPlayerTouch" "vortigauntstillworkingonthis,command,give weapon_snark,,-1"
+		 }
+        }
+		
+
+"npc_maker"
+        {
+        "origin" "5640 6399 -112"
+        "angle" "0 -91.86 0.00"
+        "keyvalues"
+            {
+            "targetname" "cmb7spawner"
+            //"NPCType"    "npc_combot"
+			"NPCType"    "npc_combine_s"
+            "NPCTargetname" "cmb7"
+            "StartDisabled" "1"
+            "MaxNPCCount"   "9999"
+            "SpawnFrequency" "54"
+            "MaxLiveChildren" "1"
+			"additionalequipment" "weapon_ak47"
+			"models" "models/combine_skullbreaker_soldier.mdl"
+			 "OnSpawnNPC" "love,applyrelationship,,-1"
+            }
+        }
+
+
+"npc_maker"
+        {
+        "origin" "5023 6234 -0"
+        "angle" "0 -91.86 0.00"
+        "keyvalues"
+            {
+            "targetname" "cmb8spawner"
+            "NPCType"    "npc_combine_s"
+            "NPCTargetname" "cmb8"
+            "StartDisabled" "1"
+            "MaxNPCCount"   "9999"
+            "SpawnFrequency" "32"
+            "additionalequipment" "weapon_mp5"
+            "MaxLiveChildren" "1"
+			"models" "models/combine_skullbreaker_soldier.mdl||models/combine_soldier.mdl"
+            "OnSpawnNPC" "love,applyrelationship,,-1"
+            }
+        }
+
+
+"npc_maker"
+        {
+        "origin" "5835 5178 -96"
+        "angle" "0 -91.86 0.00"
+        "keyvalues"
+            {
+            "targetname" "cmb9spawner"
+            "NPCType"    "npc_combine_s"
+            "NPCTargetname" "cmb9"
+            "StartDisabled" "1"
+            "MaxNPCCount"   "9999"
+            "SpawnFrequency" "22"
+            "additionalequipment" "weapon_shotgun"
+            "MaxLiveChildren" "1"
+			
+            "OnSpawnNPC" "cmb9,assault,assault_3_1,-1"
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+"assault_rallypoint"
+        {
+        "origin" "1823 7526 110"
+        "angles" "0 -87 0"
+        "keyvalues"
+            {
+            "assaultdelay" "0"
+            "assaultpoint" "assault_2_2"
+            "priority"       "1"
+            "urgent"               "0"
+            "forcecrouch"          "0"
+            "targetname"           "assault_2_1"
+           }
+      }
+
+
+"assault_rallypoint"
+        {
+        "origin" "1823 7526 110"
+        "angles" "0 -87 0"
+        "keyvalues"
+            {
+            "assaultdelay" "0"
+            "assaultpoint" "assault_2_2"
+            "priority"       "1"
+            "urgent"               "0"
+            "forcecrouch"          "0"
+            "targetname"           "assault_2_1_1"
+           }
+      }
+
+
+"assault_rallypoint"
+        {
+        "origin" "1823 7526 110"
+        "angles" "0 -87 0"
+        "keyvalues"
+            {
+            "assaultdelay" "0"
+            "assaultpoint" "assault_2_2"
+            "priority"       "1"
+            "urgent"               "0"
+            "forcecrouch"          "0"
+            "targetname"           "assault_2_1_2"
+           }
+      }
+
+
+"assault_assaultpoint"
+        {
+        "origin" "1947 6092 118"
+        "angles" "0 -158 0"
+        "keyvalues"
+            {
+            "nevertimeout" "0"
+            "allowdiversion" "0"
+            "allowdiversionradius" "0"
+            "assaulttimeout"       "0"
+            "urgent"               "0"
+            "forcecrouch"          "0"
+            "targetname"           "assault_2_2"
+            "asssaulttolerance"    "126"
+            "strict"               "0"
+            "clearoncontact"       "0"
+            "nextassaultpoint"     "assault_2_3"
+           }
+      }
+
+
+"assault_assaultpoint"
+        {
+        "origin" "432 5087 128"
+        "angles" "0 -140 0"
+        "keyvalues"
+            {
+            "nevertimeout" "0"
+            "allowdiversion" "0"
+            "allowdiversionradius" "0"
+            "assaulttimeout"       "0"
+            "urgent"               "0"
+            "forcecrouch"          "0"
+            "targetname"           "assault_2_3"
+            "asssaulttolerance"    "126"
+            "strict"               "0"
+            "clearoncontact"       "0"
+            "nextassaultpoint"     "assault_2_4"
+           }
+      }
+
+"assault_assaultpoint"
+        {
+        "origin" "827 3791 262"
+        "angles" "0 -69 0"
+        "keyvalues"
+            {
+            "nevertimeout" "0"
+            "allowdiversion" "0"
+            "allowdiversionradius" "0"
+            "assaulttimeout"       "0"
+            "urgent"               "0"
+            "forcecrouch"          "0"
+            "targetname"           "assault_2_4"
+            "asssaulttolerance"    "126"
+            "strict"               "0"
+            "clearoncontact"       "0"
+            "nextassaultpoint"     "assault_2_5"
+           }
+      }
+
+"assault_assaultpoint"
+        {
+        "origin" "2424 1687 206"
+        "angles" "0 -86 0"
+        "keyvalues"
+            {
+            "nevertimeout" "0"
+            "allowdiversion" "0"
+            "allowdiversionradius" "0"
+            "assaulttimeout"       "0"
+            "urgent"               "0"
+            "forcecrouch"          "0"
+            "targetname"           "assault_2_5"
+            "asssaulttolerance"    "126"
+            "strict"               "0"
+            "clearoncontact"       "0"
+            "nextassaultpoint"     "assault_2_6"
+           }
+      }
+
+"assault_assaultpoint"
+        {
+        "origin" "2449 555 105"
+        "angles" "0 -91 0"
+        "keyvalues"
+            {
+            "nevertimeout" "0"
+            "allowdiversion" "0"
+            "allowdiversionradius" "0"
+            "assaulttimeout"       "0"
+            "urgent"               "0"
+            "forcecrouch"          "0"
+            "targetname"           "assault_2_6"
+            "asssaulttolerance"    "126"
+            "strict"               "0"
+            "clearoncontact"       "0"
+            "nextassaultpoint"     "assault_2_7"
+           }
+      }
+
+"assault_assaultpoint"
+        {
+        "origin" "1512 -713 48"
+        "angles" "0 -147 0"
+        "keyvalues"
+            {
+            "nevertimeout" "0"
+            "allowdiversion" "0"
+            "allowdiversionradius" "0"
+            "assaulttimeout"       "0"
+            "urgent"               "0"
+            "forcecrouch"          "0"
+            "targetname"           "assault_2_7"
+            "asssaulttolerance"    "126"
+            "strict"               "0"
+            "clearoncontact"       "0"
+            "nextassaultpoint"     "assault_2_8"
+           }
+      }
+
+"assault_assaultpoint"
+        {
+        "origin" "1481 -1837 143"
+        "angles" "0 -102 0"
+        "keyvalues"
+            {
+            "nevertimeout" "0"
+            "allowdiversion" "0"
+            "allowdiversionradius" "0"
+            "assaulttimeout"       "0"
+            "urgent"               "0"
+            "forcecrouch"          "0"
+            "targetname"           "assault_2_8"
+            "asssaulttolerance"    "126"
+            "strict"               "0"
+            "clearoncontact"       "0"
+            "nextassaultpoint"     "assault_2_9"
+           }
+      }
+
+"assault_assaultpoint"
+        {
+        "origin" "1036 -3292 1"
+        "angles" "0 175 0"
+        "keyvalues"
+            {
+            "nevertimeout" "0"
+            "allowdiversion" "0"
+            "allowdiversionradius" "0"
+            "assaulttimeout"       "0"
+            "urgent"               "0"
+            "forcecrouch"          "0"
+            "targetname"           "assault_2_9"
+            "asssaulttolerance"    "126"
+            "strict"               "0"
+            "clearoncontact"       "0"
+            "nextassaultpoint"     "assault_2_10"
+           }
+      }
+
+"assault_assaultpoint"
+        {
+        "origin" "448 -3790 -54"
+        "angles" "0 -143 0"
+        "keyvalues"
+            {
+            "nevertimeout" "0"
+            "allowdiversion" "0"
+            "allowdiversionradius" "0"
+            "assaulttimeout"       "0"
+            "urgent"               "0"
+            "forcecrouch"          "0"
+            "targetname"           "assault_2_10"
+            "asssaulttolerance"    "126"
+            "strict"               "0"
+            "clearoncontact"       "0"
+            "nextassaultpoint"     "assault_2_11"
+           }
+      }
+
+"assault_assaultpoint"
+        {
+        "origin" "-299 -4841 -143"
+        "angles" "0 18 0"
+        "keyvalues"
+            {
+            "nevertimeout" "0"
+            "allowdiversion" "0"
+            "allowdiversionradius" "0"
+            "assaulttimeout"       "0"
+            "urgent"               "0"
+            "forcecrouch"          "0"
+            "targetname"           "assault_2_11"
+            "asssaulttolerance"    "126"
+            "strict"               "0"
+            "clearoncontact"       "0"
+           }
+      }
+
+"npc_maker"
+        {
+        "origin" "1429 7841 145"
+        "angle" "0 -49.86 0.00"
+        "keyvalues"
+            {
+            "targetname" "cmb4spawner"
+            "NPCType"    "npc_combine_s"
+            "NPCTargetname" "cmb4"
+            "StartDisabled" "1"
+            "MaxNPCCount"   "9999"
+            "SpawnFrequency" "27"
+            "additionalequipment" "weapon_mp5"
+            "MaxLiveChildren" "1"
+			
+            "OnSpawnNPC" "cmb4,assault,assault_2_1,-1"
+            }
+        }
+
+"npc_maker"
+        {
+        "origin" "2219 7715 93"
+        "angle" "0 -115.86 0.00"
+        "keyvalues"
+            {
+            "targetname" "cmb5spawner"
+            "NPCType"    "npc_combine_s"
+            "NPCTargetname" "cmb5"
+            "StartDisabled" "1"
+            "MaxNPCCount"   "9999"
+            "SpawnFrequency" "43"
+            "MaxLiveChildren" "1"
+			 "additionalequipment" "weapon_ar2"
+		    "models" "models/combine_super_soldier.mdl||models/combine_soldier.mdl"
+            "OnSpawnNPC" "love,applyrelationship,,-1"
+            }
+        }
+
+"ai_relationship"
+        {
+        "origin" "-1096 231 -23"
+        "angle" "0 0 0"
+        "keyvalues"
+            {
+            "targetname"  "love"
+            "subject"        "npc_combine_s"
+            "target"       "npc_citizen"
+            "startactive" "1"
+            "disposition" "1"
+			"spawnflags" "1"
+            "rank" "9999"
+            }
+        }
+		
+
+"ai_relationship"
+        {
+        "origin" "-1096 231 -23"
+        "angle" "0 0 0"
+        "keyvalues"
+            {
+            "targetname"  "love"
+            "subject"        "npc_crabsynth_combat"
+            "target"       "npc_citizen"
+            "startactive" "1"
+            "disposition" "1"
+			"spawnflags" "1"
+            "rank" "9997"
+            }
+        }
+		
+		
+"npc_maker"
+        {
+        "origin" "-5061 6818 282"
+        "angle" "0 -67 0"
+        "keyvalues"
+            {
+            "targetname" "mortarsynth3"
+            "NPCType"    "npc_crabsynth_combat"
+            "NPCTargetname" "crabsynth"
+            "StartDisabled" "1"
+            "spawnflags" "160"
+            "MaxNPCCount"   "9999"
+            "SpawnFrequency" "172"
+				 "OnSpawnNPC" "love,applyrelationship,,-1"
+            "MaxLiveChildren" "1"
+         }
+       }
+
+
+"npc_maker"
+        {
+        "origin" "1833 7890 150"
+        "angle" "0 -81 0"
+        "keyvalues"
+            {
+            "targetname" "mortarsynth3"
+            "NPCType"    "npc_crabsynth_combat"
+            "NPCTargetname" "crabsynth2"
+            "StartDisabled" "1"
+            "spawnflags" "160"
+            "MaxNPCCount"   "9999"
+            "SpawnFrequency" "200"
+	 "OnSpawnNPC" "love,applyrelationship,,-1"
+            "MaxLiveChildren" "1"
+         }
+       }
+
+
+"npc_maker"
+        {
+        "origin" "-1458 5833 144"
+        "angle" "0 -81 0"
+        "keyvalues"
+            {
+            "targetname" "mortarsynth3"
+            "NPCType"    "npc_assaultsynth"
+            "NPCTargetname" "asynth"
+            "StartDisabled" "1"
+            "spawnflags" "160"
+            "MaxNPCCount"   "9999"
+            "SpawnFrequency" "45"
+			  "OnSpawnNPC" "love,applyrelationship,,-1"
+            "MaxLiveChildren" "2"
+         }
+       }
+	   
+
+		
+		"ai_relationship"
+        {
+        "origin" "-1096 231 -23"
+        "angle" "0 0 0"
+        "keyvalues"
+            {
+            "targetname"  "love"
+            "subject"        "npc_crabsynth_combat"
+            "target"       "!player"
+            "startactive" "1"
+            "disposition" "1"
+			"spawnflags" "1"
+            "rank" "9999"
+            }
+        }
+		
+		"ai_relationship"
+        {
+        "origin" "-1096 231 -23"
+        "angle" "0 0 0"
+        "keyvalues"
+            {
+            "targetname"  "love"
+            "subject"        "npc_crabsynth_combat"
+            "target"       "npc_vortigaunt"
+            "startactive" "1"
+            "disposition" "1"
+			"spawnflags" "1"
+            "rank" "9998"
+            }
+        }
+		
+		"ai_relationship"
+        {
+        "origin" "-1096 231 -23"
+        "angle" "0 0 0"
+        "keyvalues"
+            {
+            "targetname"  "love"
+            "subject"        "npc_assaultsynth"
+            "target"       "npc_citizen"
+            "startactive" "1"
+            "disposition" "1"
+			"spawnflags" "1"
+            "rank" "9997"
+            }
+        }
+		
+		"ai_relationship"
+        {
+        "origin" "-1096 231 -23"
+        "angle" "0 0 0"
+        "keyvalues"
+            {
+            "targetname"  "love"
+            "subject"        "npc_assaultsynth"
+            "target"       "!player"
+            "startactive" "1"
+            "disposition" "1"
+			"spawnflags" "1"
+            "rank" "9998"
+            }
+        }
+		
+		"ai_relationship"
+        {
+        "origin" "-1096 231 -23"
+        "angle" "0 0 0"
+        "keyvalues"
+            {
+            "targetname"  "love"
+            "subject"        "npc_assaultsynth"
+            "target"       "npc_vortigaunt"
+            "startactive" "1"
+            "disposition" "1"
+			"spawnflags" "1"
+            "rank" "9999"
+            }
+        }
+		
+"npc_maker"
+        {
+        "origin" "1375 7018 190"
+        "angle" "0 -112.86 0.00"
+        "keyvalues"
+            {
+            "targetname" "cmb6spawner"
+            "NPCType"    "npc_combine_s"
+            "NPCTargetname" "cmb6"
+            "StartDisabled" "1"
+            "MaxNPCCount"   "9999"
+            "SpawnFrequency" "34"
+            "additionalequipment" "weapon_ak47"
+            "MaxLiveChildren" "1"
+			
+            "OnSpawnNPC" "cmb6,assault,assault_2_1_1,-1"
+            }
+        }
+
+
+
+"ai_goal_assault"
+        {
+        "origin" "-5049 6767 311"
+        "angles" "0 -82 0"
+        "keyvalues"
+            {
+            "StartActive" "1"
+            "SearchType" "1"
+            "RallySelectMethod" "0"
+            "rallypoint"       "assault_rally"
+            "AssaultCue"               "3"
+            "actor"          "npc_combine_s"
+            "targetname"           "assault_1_start"
+
+           }
+      }
+
+
+
+
+
+"assault_rallypoint"
+        {
+        "origin" "-5049 6767 187"
+        "angles" "0 -82 0"
+        "keyvalues"
+            {
+            "assaultdelay" "0"
+            "assaultpoint" "assault_1_2"
+            "priority"       "1"
+            "urgent"               "0"
+            "forcecrouch"          "0"
+            "targetname"           "assault_1_1_1"
+           }
+      }
+
+
+
+
+"assault_rallypoint"
+        {
+        "origin" "-5049 6767 187"
+        "angles" "0 -82 0"
+        "keyvalues"
+            {
+            "assaultdelay" "0"
+            "assaultpoint" "assault_1_2"
+            "priority"       "1"
+            "urgent"               "0"
+            "forcecrouch"          "0"
+            "targetname"           "assault_1_1"
+           }
+      }
+
+
+"assault_assaultpoint"
+        {
+        "origin" "-4947 5880 238"
+        "angles" "0 -93 0"
+        "keyvalues"
+            {
+            "nevertimeout" "0"
+            "allowdiversion" "0"
+            "allowdiversionradius" "0"
+            "assaulttimeout"       "0"
+            "urgent"               "0"
+            "forcecrouch"          "0"
+            "targetname"           "assault_1_2"
+            "asssaulttolerance"    "126"
+            "strict"               "0"
+            "clearoncontact"       "0"
+            "nextassaultpoint"     "assault_1_3"
+           }
+      }
+
+
+"assault_assaultpoint"
+        {
+        "origin" "-4947 5880 242"
+        "angles" "0 -93 0"
+        "keyvalues"
+            {
+            "nevertimeout" "0"
+            "allowdiversion" "0"
+            "allowdiversionradius" "0"
+            "assaulttimeout"       "0"
+            "urgent"               "0"
+            "forcecrouch"          "0"
+            "targetname"           "assault_1_2_1"
+            "asssaulttolerance"    "126"
+            "strict"               "0"
+            "clearoncontact"       "0"
+            "nextassaultpoint"     "assault_1_3_1"
+           }
+      }
+
+
+"assault_assaultpoint"
+        {
+        "origin" "-5181 5099 246"
+        "angles" "0 -106 0"
+        "keyvalues"
+            {
+            "nevertimeout" "0"
+            "allowdiversion" "0"
+            "allowdiversionradius" "0"
+            "assaulttimeout"       "0"
+            "urgent"               "0"
+            "forcecrouch"          "0"
+            "targetname"           "assault_1_3"
+            "asssaulttolerance"    "126"
+            "strict"               "0"
+            "clearoncontact"       "0"
+            "nextassaultpoint"     "assault_1_4"
+           }
+      }
+
+"assault_assaultpoint"
+        {
+        "origin" "-5181 5099 246"
+        "angles" "0 -106 0"
+        "keyvalues"
+            {
+            "nevertimeout" "0"
+            "allowdiversion" "0"
+            "allowdiversionradius" "0"
+            "assaulttimeout"       "0"
+            "urgent"               "0"
+            "forcecrouch"          "0"
+            "targetname"           "assault_1_3_1"
+            "asssaulttolerance"    "126"
+            "strict"               "0"
+            "clearoncontact"       "0"
+            "nextassaultpoint"     "assault_1_4_1"
+           }
+      }
+
+
+"assault_assaultpoint"
+        {
+        "origin" "-5629 4036 245"
+        "angles" "0 -110 0"
+        "keyvalues"
+            {
+            "nevertimeout" "0"
+            "allowdiversion" "0"
+            "allowdiversionradius" "0"
+            "assaulttimeout"       "0"
+            "urgent"               "0"
+            "forcecrouch"          "0"
+            "targetname"           "assault_1_4_1"
+            "asssaulttolerance"    "126"
+            "strict"               "0"
+            "clearoncontact"       "0"
+            "nextassaultpoint"     "assault_1_5_1"
+           }
+      }
+
+"assault_assaultpoint"
+        {
+        "origin" "-5629 4036 245"
+        "angles" "0 -110 0"
+        "keyvalues"
+            {
+            "nevertimeout" "0"
+            "allowdiversion" "0"
+            "allowdiversionradius" "0"
+            "assaulttimeout"       "0"
+            "urgent"               "0"
+            "forcecrouch"          "0"
+            "targetname"           "assault_1_4"
+            "asssaulttolerance"    "126"
+            "strict"               "0"
+            "clearoncontact"       "0"
+            "nextassaultpoint"     "assault_1_5"
+           }
+      }
+
+"assault_assaultpoint"
+        {
+        "origin" "-5621 2830 216"
+        "angles" "0 -72 0"
+        "keyvalues"
+            {
+            "nevertimeout" "0"
+            "allowdiversion" "0"
+            "allowdiversionradius" "0"
+            "assaulttimeout"       "0"
+            "urgent"               "0"
+            "forcecrouch"          "0"
+            "targetname"           "assault_1_5_1"
+            "asssaulttolerance"    "126"
+            "strict"               "0"
+            "clearoncontact"       "0"
+            "nextassaultpoint"     "assault_1_6_1"
+           }
+      }
+
+"assault_assaultpoint"
+        {
+        "origin" "-5621 2830 216"
+        "angles" "0 -72 0"
+        "keyvalues"
+            {
+            "nevertimeout" "0"
+            "allowdiversion" "0"
+            "allowdiversionradius" "0"
+            "assaulttimeout"       "0"
+            "urgent"               "0"
+            "forcecrouch"          "0"
+            "targetname"           "assault_1_5"
+            "asssaulttolerance"    "126"
+            "strict"               "0"
+            "clearoncontact"       "0"
+            "nextassaultpoint"     "assault_1_6"
+           }
+      }
+
+"assault_assaultpoint"
+        {
+        "origin" "-5112 1893 208"
+        "angles" "0 -15 0"
+        "keyvalues"
+            {
+            "nevertimeout" "0"
+            "allowdiversion" "0"
+            "allowdiversionradius" "0"
+            "assaulttimeout"       "0"
+            "urgent"               "0"
+            "forcecrouch"          "0"
+            "targetname"           "assault_1_6_1"
+            "asssaulttolerance"    "126"
+            "strict"               "0"
+            "clearoncontact"       "0"
+            "nextassaultpoint"     "assault_1_7_1"
+           }
+      }
+
+
+"assault_assaultpoint"
+        {
+        "origin" "-5112 1893 208"
+        "angles" "0 -15 0"
+        "keyvalues"
+            {
+            "nevertimeout" "0"
+            "allowdiversion" "0"
+            "allowdiversionradius" "0"
+            "assaulttimeout"       "0"
+            "urgent"               "0"
+            "forcecrouch"          "0"
+            "targetname"           "assault_1_6"
+            "asssaulttolerance"    "126"
+            "strict"               "0"
+            "clearoncontact"       "0"
+            "nextassaultpoint"     "assault_1_7"
+           }
+      }
+
+
+"assault_assaultpoint"
+        {
+        "origin" "-3405 1895 101"
+        "angles" "0 5 0"
+        "keyvalues"
+            {
+            "nevertimeout" "0"
+            "allowdiversion" "0"
+            "allowdiversionradius" "0"
+            "assaulttimeout"       "0"
+            "urgent"               "0"
+            "forcecrouch"          "0"
+            "targetname"           "assault_1_7"
+            "asssaulttolerance"    "126"
+            "strict"               "0"
+            "clearoncontact"       "0"
+            "nextassaultpoint"     "assault_1_8"
+           }
+      }
+
+"assault_assaultpoint"
+        {
+        "origin" "-3405 1895 101"
+        "angles" "0 5 0"
+        "keyvalues"
+            {
+            "nevertimeout" "0"
+            "allowdiversion" "0"
+            "allowdiversionradius" "0"
+            "assaulttimeout"       "0"
+            "urgent"               "0"
+            "forcecrouch"          "0"
+            "targetname"           "assault_1_7_1"
+            "asssaulttolerance"    "126"
+            "strict"               "0"
+            "clearoncontact"       "0"
+            "nextassaultpoint"     "assault_1_8_1"
+           }
+      }
+
+
+"assault_assaultpoint"
+        {
+        "origin" "-2158 1358 112"
+        "angles" "0 5 0"
+        "keyvalues"
+            {
+            "nevertimeout" "0"
+            "allowdiversion" "0"
+            "allowdiversionradius" "0"
+            "assaulttimeout"       "0"
+            "urgent"               "0"
+            "forcecrouch"          "0"
+            "targetname"           "assault_1_8"
+            "asssaulttolerance"    "126"
+            "strict"               "0"
+            "clearoncontact"       "0"
+            "nextassaultpoint"     "assault_1_9"
+           }
+      }
+
+"assault_assaultpoint"
+        {
+        "origin" "-2158 1358 112"
+        "angles" "0 5 0"
+        "keyvalues"
+            {
+            "nevertimeout" "0"
+            "allowdiversion" "0"
+            "allowdiversionradius" "0"
+            "assaulttimeout"       "0"
+            "urgent"               "0"
+            "forcecrouch"          "0"
+            "targetname"           "assault_1_8_1"
+            "asssaulttolerance"    "126"
+            "strict"               "0"
+            "clearoncontact"       "0"
+            "nextassaultpoint"     "assault_1_9_1"
+           }
+      }
+
+
+"assault_assaultpoint"
+        {
+        "origin" "-1498 94 129"
+        "angles" "0 -52 0"
+        "keyvalues"
+            {
+            "nevertimeout" "0"
+            "allowdiversion" "0"
+            "allowdiversionradius" "0"
+            "assaulttimeout"       "0"
+            "urgent"               "0"
+            "forcecrouch"          "0"
+            "targetname"           "assault_1_9"
+            "asssaulttolerance"    "126"
+            "strict"               "0"
+            "clearoncontact"       "0"
+            "nextassaultpoint"     "assault_1_10"
+           }
+      }
+
+
+"assault_assaultpoint"
+        {
+        "origin" "-1498 94 129"
+        "angles" "0 -52 0"
+        "keyvalues"
+            {
+            "nevertimeout" "0"
+            "allowdiversion" "0"
+            "allowdiversionradius" "0"
+            "assaulttimeout"       "0"
+            "urgent"               "0"
+            "forcecrouch"          "0"
+            "targetname"           "assault_1_9_1"
+            "asssaulttolerance"    "126"
+            "strict"               "0"
+            "clearoncontact"       "0"
+            "nextassaultpoint"     "assault_1_10_1"
+           }
+      }
+
+
+"assault_assaultpoint"
+        {
+        "origin" "-456 -1166 94"
+        "angles" "0 -77 0"
+        "keyvalues"
+            {
+            "nevertimeout" "0"
+            "allowdiversion" "0"
+            "allowdiversionradius" "0"
+            "assaulttimeout"       "0"
+            "urgent"               "0"
+            "forcecrouch"          "0"
+            "targetname"           "assault_1_10"
+            "asssaulttolerance"    "126"
+            "strict"               "0"
+            "clearoncontact"       "0"
+            "nextassaultpoint"     "assault_1_11"
+           }
+      }
+
+
+"assault_assaultpoint"
+        {
+        "origin" "-456 -1166 94"
+        "angles" "0 -77 0"
+        "keyvalues"
+            {
+            "nevertimeout" "0"
+            "allowdiversion" "0"
+            "allowdiversionradius" "0"
+            "assaulttimeout"       "0"
+            "urgent"               "0"
+            "forcecrouch"          "0"
+            "targetname"           "assault_1_10_1"
+            "asssaulttolerance"    "126"
+            "strict"               "0"
+            "clearoncontact"       "0"
+            "nextassaultpoint"     "assault_1_11_1"
+           }
+      }
+
+
+"assault_assaultpoint"
+        {
+        "origin" "-470 -2167 17"
+        "angles" "0 -77 0"
+        "keyvalues"
+            {
+            "nevertimeout" "0"
+            "allowdiversion" "0"
+            "allowdiversionradius" "0"
+            "assaulttimeout"       "0"
+            "urgent"               "0"
+            "forcecrouch"          "0"
+            "targetname"           "assault_1_11"
+            "asssaulttolerance"    "126"
+            "strict"               "0"
+            "clearoncontact"       "0"
+            "nextassaultpoint"     "assault_1_12"
+           }
+      }
+
+
+"assault_assaultpoint"
+        {
+        "origin" "-470 -2167 17"
+        "angles" "0 -77 0"
+        "keyvalues"
+            {
+            "nevertimeout" "0"
+            "allowdiversion" "0"
+            "allowdiversionradius" "0"
+            "assaulttimeout"       "0"
+            "urgent"               "0"
+            "forcecrouch"          "0"
+            "targetname"           "assault_1_11_1"
+            "asssaulttolerance"    "126"
+            "strict"               "0"
+            "clearoncontact"       "0"
+            "nextassaultpoint"     "assault_1_12_1"
+           }
+      }
+
+"assault_assaultpoint"
+        {
+        "origin" "-1133 -3195 -44"
+        "angles" "0 -85 0"
+        "keyvalues"
+            {
+            "nevertimeout" "0"
+            "allowdiversion" "0"
+            "allowdiversionradius" "0"
+            "assaulttimeout"       "0"
+            "urgent"               "0"
+            "forcecrouch"          "0"
+            "targetname"           "assault_1_12"
+            "asssaulttolerance"    "126"
+            "strict"               "0"
+            "clearoncontact"       "0"
+            "nextassaultpoint"     "assault_1_13"
+           }
+      }
+
+
+"assault_assaultpoint"
+        {
+        "origin" "-1133 -3195 -44"
+        "angles" "0 -85 0"
+        "keyvalues"
+            {
+            "nevertimeout" "0"
+            "allowdiversion" "0"
+            "allowdiversionradius" "0"
+            "assaulttimeout"       "0"
+            "urgent"               "0"
+            "forcecrouch"          "0"
+            "targetname"           "assault_1_12_1"
+            "asssaulttolerance"    "126"
+            "strict"               "0"
+            "clearoncontact"       "0"
+            "nextassaultpoint"     "assault_1_13_1"
+           }
+      }
+
+
+"assault_assaultpoint"
+        {
+        "origin" "-666 -4322 -151"
+        "angles" "0 -52 0"
+        "keyvalues"
+            {
+            "nevertimeout" "0"
+            "allowdiversion" "0"
+            "allowdiversionradius" "0"
+            "assaulttimeout"       "0"
+            "urgent"               "0"
+            "forcecrouch"          "0"
+            "targetname"           "assault_1_13"
+            "asssaulttolerance"    "126"
+            "strict"               "0"
+            "clearoncontact"       "0"
+           }
+      }
+
+
+"assault_assaultpoint"
+        {
+        "origin" "-666 -4322 -151"
+        "angles" "0 -52 0"
+        "keyvalues"
+            {
+            "nevertimeout" "0"
+            "allowdiversion" "0"
+            "allowdiversionradius" "0"
+            "assaulttimeout"       "0"
+            "urgent"               "0"
+            "forcecrouch"          "0"
+            "targetname"           "assault_1_13_1"
+            "asssaulttolerance"    "126"
+            "strict"               "0"
+            "clearoncontact"       "0"
+           }
+      }
+
+
+"npc_maker"
+        {
+        "origin" "5338 6234 -88"
+        "angle" "0 78 0"
+        "keyvalues"
+            {
+            "targetname" "mortarsynth2"
+            "NPCType"    "npc_mortarsynth"
+            "NPCTargetname" "mortarsynthies"
+            "StartDisabled" "1"
+            "spawnflags" "160"
+            "MaxNPCCount"   "9999"
+            "SpawnFrequency" "40"
+            "MaxLiveChildren" "1"
+         }
+       }
+
+
+
+
+
+
+"npc_maker"
+        {
+        "origin" "-1458 5833 144"
+        "angle" "0 -81 0"
+        "keyvalues"
+            {
+            "targetname" "mortarsynth3"
+            "NPCType"    "npc_mortarsynth"
+            "NPCTargetname" "asynth"
+            "StartDisabled" "1"
+            "spawnflags" "160"
+            "MaxNPCCount"   "9999"
+            "SpawnFrequency" "45"
+			  "OnSpawnNPC" "love,applyrelationship,,-1"
+            "MaxLiveChildren" "2"
+         }
+       }
+	   
+
+
+"npc_maker"
+        {
+        "origin" "-4900 6932 215"
+        "angle" "0 -107.86 0.00"
+        "keyvalues"
+            {
+            "targetname" "cmb1spawner"
+            "NPCType"    "npc_combine_s"
+            "NPCTargetname" "cmb1"
+            "StartDisabled" "1"
+            "MaxNPCCount"   "9999"
+            "SpawnFrequency" "28"
+            "additionalequipment" "weapon_oicw"
+            "MaxLiveChildren" "1"
+			
+            "OnSpawnNPC" "cmb1,assault,assault_1_1,-1"
+            }
+        }
+
+
+
+"npc_maker"
+        {
+        "origin" "-5310 7007 249"
+        "angle" "0 -60.86 0.00"
+        "keyvalues"
+            {
+            "targetname" "cmb2spawner"
+            "NPCType"    "npc_combine_s"
+            "NPCTargetname" "cmb2"
+            "StartDisabled" "1"
+            "MaxNPCCount"   "9999"
+            "SpawnFrequency" "8"
+            "additionalequipment" "weapon_sg552"
+            "MaxLiveChildren" "1"
+			
+            "OnSpawnNPC" "cmb2,assault,assault_1_1,-1"
+            }
+        }
+
+
+"npc_maker"
+        {
+        "origin" "-4728 6461 186"
+        "angle" "0 -147.86 0.00"
+        "keyvalues"
+            {
+            "targetname" "cmb3spawner"
+            "NPCType"    "npc_combine_s"
+            "NPCTargetname" "cmb3"
+            "StartDisabled" "1"
+            "MaxNPCCount"   "35"
+            "SpawnFrequency" "52"
+            "additionalequipment" "weapon_combinesniper"
+			//"model" "models/combine_sniper_camo.mdl"
+            "MaxLiveChildren" "1"
+            "OnSpawnNPC" "cmb3,assault,assault_1_1_1,-1"
+            }
+        }
+
+
+
+"mapadd_trigger_once" {
+		"origin" "-699 -7171 -236"
+		"keyvalues" {
+			"radius"	"250"
+			"label"		"all"
+                        
+		}
+	}
+
+"mapadd_trigger_once" {
+		"origin" "-660 5149 168"
+		"keyvalues" {
+			"radius"	"425"
+			"label"		"vory_talk_start"
+                        
+		}
+	}
+
+"item_item_crate"
+	{
+		"origin"	"-1261 -3976 -55"
+		"angle"		"4 15 0"
+		"KeyValues"
+		{
+			"ItemClass"	"item_ammo_ion"
+			"ItemCount"		"4"
+
+		}
+	}
+
+"item_item_crate"
+	{
+		"origin"	"-3324 2538 192"
+		"angle"		"4 15 0"
+		"KeyValues"
+		{
+			"ItemClass"	"item_ammo_ion"
+			"ItemCount"		"4"
+
+		}
+	}
+
+"item_item_crate"
+	{
+		"origin"	"812 -2801 24"
+		"angle"		"4 15 0"
+		"KeyValues"
+		{
+			"ItemClass"	"item_ammo_ion"
+			"ItemCount"		"4"
+
+		}
+	}
+	
+	
+// Gunship (I don't think it actually supposed to be here,but whatever...)
+// 
+
+"event"
+	  {
+		"targetname"	"strider_7_west_maker"
+                "action"  "modifyentity"  
+                "OnSpawnNPC" "last_gunshipevermade,activate,,7"
+	  }
+	  
+"npc_combinegunship"
+        {
+        "origin" "-8512 8224 4"
+       
+        "angle" "0 0 0.00"
+        "keyvalues"
+            {
+            "spawnflags" "64"
+            "target" "gnp1"
+            "targetname" "last_gunshipevermade"
+			"AllowGroundAttack" "1"
+            }
+        }
+
+
+"path_track" {
+		"origin" "-8448 7168 3392"
+		"keyvalues" {
+			"targetname" "gnp1"
+                        "target"     "gnp10"
+						"OnPass" "last_gunshipevermade,settrack,gnp10,-1"
+              
+
+		}
+	}
+	
+"path_track" {
+		"origin" "576 -96 1792"
+		"keyvalues" {
+			"targetname" "gnp2"
+                        "target"     "gnp3"
+              
+
+		}
+	}
+
+"path_track" {
+		"origin" "2048 416 1792"
+		"keyvalues" {
+			"targetname" "gnp3"
+                        "target"     "gnp4"
+              
+
+		}
+	}
+
+
+"path_track" {
+		"origin" "4800 1408 1792"
+		"keyvalues" {
+			"targetname" "gnp4"
+                        "target"     "gnp5"
+              
+
+		}
+	}
+
+"path_track" {
+		"origin" "5440 4736 1792"
+		"keyvalues" {
+			"targetname" "gnp5"
+                        "target"     "gnp6"
+              
+
+		}
+	}
+
+"path_track" {
+		"origin" "2368 7040 1792"
+		"keyvalues" {
+			"targetname" "gnp6"
+                        "target"     "gnp7"
+              
+
+		}
+	}
+
+
+"path_track" {
+		"origin" "-224 6112 1792"
+		"keyvalues" {
+			"targetname" "gnp7"
+                        "target"     "gnp8"
+              
+
+		}
+	}
+
+"path_track" {
+		"origin" "-3360 5248 1792"
+		"keyvalues" {
+			"targetname" "gnp8"
+                        "target"     "gnp9"
+              
+
+		}
+	}
+	
+	"path_track" {
+		"origin" "-5056 3872 1792"
+		"keyvalues" {
+			"targetname" "gnp9"
+                        "target"     "gnp10"
+              
+
+		}
+	}
+	
+	"path_track" {
+		"origin" "-3872 2304 1792"
+		"keyvalues" {
+			"targetname" "gnp10"
+                        "target"     "gnp11"
+              
+
+		}
+	}
+	
+	"path_track" {
+		"origin" "-544 -896 1792"
+		"keyvalues" {
+			"targetname" "gnp11"
+                        "target"     "gnp2"
+              
+
+		}
+	}
+	
+}

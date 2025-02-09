@@ -1,0 +1,215 @@
+//	OverCharged Steam MAPADD Data
+//	Location: Citadel
+//      Game: Half-Life 2
+
+"precache"{
+}
+
+"randomspawn" {
+}
+
+
+"entities:weather" {
+
+	
+"event"
+	  {
+		"targetname"	"weather_relay"
+                "action"  "trigger"  
+	  }
+
+}
+
+"entities" {
+
+// Lite Start
+
+
+
+  "logic_auto"
+        {
+        "origin" "2813 7162 0" 
+		"angle"	"0 0 0"
+        "keyvalues"
+            {
+		     "OnNewGame" "vortigauntstillworkingonthis,command,oc_weapon_disable_dissolve 1,-1"
+            }
+        }
+
+	 "point_servercommand" {
+		"origin""-697 -7 1487"
+		"keyvalues" {
+                            "targetname" "vortigauntstillworkingonthis"
+	             }
+               }
+			   
+// Lite End
+
+"logic_relay"
+        {
+        "origin" "-949 1430 -765"
+        "angle" "0 0 0.00"
+        "keyvalues"
+            {
+			"OnTrigger"  "weather_display,showhudhint,,0.5"
+			"OnTrigger"  "weather_display,hidehudhint,,5.5"
+			"targetname" "Weather_relay"
+
+            }
+        }
+
+		"env_hudhint"
+        {
+        "origin" "2230 -1369 87"
+        "angle" "0 0 0.00"
+        "keyvalues"
+            {
+			"message" "          H.E.V MʎRK VI ASSISTANT 
+			|TIME: NO INFORMATION|
+			|WEATHER: NO INFORMATION|
+			|TEMPERATURE: 25°C|"
+				
+			"targetname" "Weather_Display"
+			"spawnflags" "1"
+            }
+        }
+		
+		"mapadd_trigger_once" {
+		"origin" "-5243 6640 2724"
+		"keyvalues" {
+			"radius"	"80"
+			"label"		"weather"
+		}
+	}
+
+	   "npc_combine_armored"
+        {
+        "origin" "1325 10494 2573"
+        "angle" "0 27 0"
+        "keyvalues"
+            {
+			"fademaxdist" "6700"      
+			"fademindist" "6600"
+			"skin" "1"
+			"spawnflags" "8192" 
+			"targetname" "friend"
+            "additionalequipment" "weapon_sg552" // weapon_ionrifle
+         }
+      }
+	  
+	     "npc_combine_armored"
+        {
+        "origin" "-2407 6072 2560"
+        "angle" "0 163 0"
+        "keyvalues"
+            {
+			"fademaxdist" "6700"      
+			"fademindist" "6600"
+			"skin" "1"
+			"spawnflags" "8192" 
+			"targetname" "friend"
+            "additionalequipment" "weapon_sg552" // weapon_ionrifle
+         }
+      }
+
+"ai_relationship"
+        {
+        "origin" "-2493 -1093 60"
+        "angle" "0 0 0"
+        "keyvalues"
+            {
+            "targetname"  "friends_4ever"
+            "subject"        "friend"
+            "target"       "!player"
+            "startactive" "1"
+            "disposition" "3"
+            "rank" "9999"
+            }
+        }
+
+"npc_mortarsynth"
+        {
+        "origin" "1616 7341 2904"
+        "angle" "0 -133 0"
+        "keyvalues"
+            {
+			"fademaxdist" "4700"     
+			"fademindist" "4600"
+            "targetname" "friend"
+            }
+        }
+
+"npc_combineguard"
+        {
+        "origin" "-2706 5397 2573"
+        "angle" "0 0 0"
+        "keyvalues"
+            {
+			"fademaxdist" "4700"     
+			"fademindist" "4600"
+            "targetname" "friend"
+            }
+        }
+
+"npc_combine_s"
+        {
+        "origin" "97 5694 2560"
+        "angle" "0 -31 0"
+        "keyvalues"
+            {
+            "targetname" "friend"
+             "model" "models/combine_skullbreaker_soldier.mdl"
+			"fademaxdist" "4700"     
+			"fademindist" "4600"
+			"skin" "2"
+            "additionalequipment" "weapon_autoshotgun"
+            }
+        }
+
+"npc_combine_s"
+        {
+        "origin" "938 5577 2560"
+        "angle" "0 158 0"
+        "keyvalues"
+            {
+            "targetname" "friend"
+			"skin" "2"
+             "model" "models/combine_skullbreaker_soldier.mdl"
+			"fademaxdist" "4700"     
+			"fademindist" "4600"
+            "additionalequipment" "weapon_autoshotgun"
+            }
+        }
+}
+
+
+"entities:steamupdate" {
+
+
+
+ "npc_assassin_alien"
+        {
+        "origin" "4114 11237 4288"
+        "angle" "0 -175 0"
+		  "keyvalues"
+            {
+			"fademaxdist" "4700"     
+			"fademindist" "4600"
+            "targetname" "friend"
+            }
+       }
+	   
+  "npc_assassin_alien"
+        {
+        "origin" "3570 11263 4288"
+        "angle" "0 -11 0"
+		  "keyvalues"
+            {
+			"fademaxdist" "4700"     
+			"fademindist" "4600"
+            "targetname" "friend"
+            }
+       }
+	   
+	   
+}

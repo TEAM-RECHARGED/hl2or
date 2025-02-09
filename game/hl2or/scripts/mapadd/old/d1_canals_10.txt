@@ -1,0 +1,27 @@
+"MapAdd"
+{
+    "1"
+    {
+        "entity"       "weapon_grapple"
+        "x"            "4782.827148"
+        "y"            "9615.409180"
+        "z"            "-47.968750"
+        "pitch"        "0"
+        "yaw"          "0"
+        "roll"         "0"
+        "Flags"
+        {
+            "spawnflags"    "1"
+        }
+    }
+    "2"
+    {
+        "entity"       "weapon_wrench"
+        "x"            "4782.827148"
+        "y"            "9615.409180"
+        "z"            "-47.968750"
+        "pitch"        "0"
+        "yaw"          "0"
+        "roll"         "0"
+    }
+}

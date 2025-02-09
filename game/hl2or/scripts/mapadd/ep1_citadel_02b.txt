@@ -1,0 +1,330 @@
+//	OverCharged Steam MAPADD Data
+//	Location: Citadel
+//  Game: Half-Life 2 Episode 1
+
+"precache" {
+}
+
+"entities" {
+
+// Lite Start
+
+  "logic_auto"
+        {
+        "origin" "2813 7162 0" 
+		"angle"	"0 0 0"
+        "keyvalues"
+            {
+			"OnMapSpawn" "combigaunt_1_essence,setparent,cmbgaunt1,1"
+			  "OnMapSpawn" "combigaunt_1_essence,setparentattachment,eyes,3"
+			  "OnMapSpawn" "combigaunt_2_essence,setparent,cmbgaunt2,1"
+			  "OnMapSpawn" "combigaunt_2_essence,setparentattachment,eyes,3"
+			  "OnMapSpawn" "combigaunt_3_essence,setparent,cmbgaunt3,1"
+			  "OnMapSpawn" "combigaunt_3_essence,setparentattachment,eyes,3"
+		     "OnNewGame" "vortigauntstillworkingonthis,command,oc_weapon_disable_dissolve 0,-1"
+            }
+        }
+
+	 "point_servercommand" {
+		"origin""-697 -7 1487"
+		"keyvalues" {
+                            "targetname" "vortigauntstillworkingonthis"
+	             }
+               }
+			   
+// Lite End
+
+
+		"npc_vortigaunt"
+        {
+        "origin" "4143 4554 -6637"
+        "angle" "0 155 0"
+        "keyvalues"
+            {
+              "spawnflags" "256"
+              "targetname" "cmbgaunt3"
+			  	"fademaxdist" "5700"     
+			"fademindist" "5600"
+              "model" "models/vortigaunt_slave.mdl"
+          
+            }
+        }
+		
+		
+"ai_relationship"
+        {
+        "origin" "-2493 -1093 60"
+        "angle" "0 0 0"
+        "keyvalues"
+            {
+            "targetname"  "end_boss_relation"
+            "subject"        "npc_combine_s"
+            "target"       "npc_vortigaunt"
+            "startactive" "1"
+            "disposition" "3"
+            "rank" "9999"
+            }
+        }
+
+"ai_relationship"
+        {
+        "origin" "-2493 -1093 60"
+        "angle" "0 0 0"
+        "keyvalues"
+            {
+            "targetname"  "end_boss_relation"
+            "subject"        "npc_vortigaunt"
+            "target"       "npc_combine_s"
+            "startactive" "1"
+            "disposition" "3"
+            "rank" "9999"
+            }
+        }
+		
+		"ai_relationship"
+        {
+        "origin" "-2493 -1093 60"
+        "angle" "0 0 0"
+        "keyvalues"
+            {
+            "targetname"  "end_boss_relation"
+            "subject"        "npc_assassin"
+            "target"       "npc_vortigaunt"
+            "startactive" "1"
+            "disposition" "3"
+            "rank" "9999"
+            }
+        }
+
+"ai_relationship"
+        {
+        "origin" "-2493 -1093 60"
+        "angle" "0 0 0"
+        "keyvalues"
+            {
+            "targetname"  "end_boss_relation"
+            "subject"        "npc_vortigaunt"
+            "target"       "npc_assassin"
+            "startactive" "1"
+            "disposition" "3"
+            "rank" "9999"
+            }
+        }
+		
+		"ai_relationship"
+        {
+        "origin" "-2493 -1093 60"
+        "angle" "0 0 0"
+        "keyvalues"
+            {
+            "targetname"  "end_boss_relation"
+            "subject"        "npc_assassin_alien"
+            "target"       "npc_vortigaunt"
+            "startactive" "1"
+            "disposition" "3"
+            "rank" "9999"
+            }
+        }
+
+"ai_relationship"
+        {
+        "origin" "-2493 -1093 60"
+        "angle" "0 0 0"
+        "keyvalues"
+            {
+            "targetname"  "end_boss_relation"
+            "subject"        "npc_vortigaunt"
+            "target"       "npc_assassin_alien"
+            "startactive" "1"
+            "disposition" "3"
+            "rank" "9999"
+            }
+        }
+		
+		"ai_relationship"
+        {
+        "origin" "-2493 -1093 60"
+        "angle" "0 0 0"
+        "keyvalues"
+            {
+            "targetname"  "end_boss_relation"
+            "subject"        "npc_combot"
+            "target"       "npc_vortigaunt"
+            "startactive" "1"
+            "disposition" "3"
+            "rank" "9999"
+            }
+        }
+
+"ai_relationship"
+        {
+        "origin" "-2493 -1093 60"
+        "angle" "0 0 0"
+        "keyvalues"
+            {
+            "targetname"  "end_boss_relation"
+            "subject"        "npc_vortigaunt"
+            "target"       "npc_combot"
+            "startactive" "1"
+            "disposition" "3"
+            "rank" "9999"
+            }
+        }
+		
+		"ai_relationship"
+        {
+        "origin" "-2493 -1093 60"
+        "angle" "0 0 0"
+        "keyvalues"
+            {
+            "targetname"  "end_boss_relation"
+            "subject"        "npc_alyx"
+            "target"       "npc_vortigaunt"
+            "startactive" "1"
+            "disposition" "1"
+            "rank" "9999"
+            }
+        }
+
+"ai_relationship"
+        {
+        "origin" "-2493 -1093 60"
+        "angle" "0 0 0"
+        "keyvalues"
+            {
+            "targetname"  "end_boss_relation"
+            "subject"        "npc_vortigaunt"
+            "target"       "npc_alyx"
+            "startactive" "1"
+            "disposition" "1"
+            "rank" "9999"
+            }
+        }
+		
+				"ai_relationship"
+        {
+        "origin" "-2493 -1093 60"
+        "angle" "0 0 0"
+        "keyvalues"
+            {
+            "targetname"  "end_boss_relation"
+            "subject"        "!player"
+            "target"       "npc_vortigaunt"
+            "startactive" "1"
+            "disposition" "1"
+            "rank" "9999"
+            }
+        }
+
+"ai_relationship"
+        {
+        "origin" "-2493 -1093 60"
+        "angle" "0 0 0"
+        "keyvalues"
+            {
+            "targetname"  "end_boss_relation"
+            "subject"        "npc_vortigaunt"
+            "target"       "!player"
+            "startactive" "1"
+            "disposition" "1"
+            "rank" "9999"
+            }
+        }
+		
+	   
+"npc_assassin"
+        {
+        "origin" "3979 4917 -1535"
+        "angle" "0 -152 0.00"
+		"keyvalues"
+		    {
+			 "fademaxdist" "4700"     
+			"fademindist" "4600"
+			"spawnflags" "256"
+			}
+        }
+		
+		
+"npc_assassin"
+        {
+        "origin" "4008 4567 -1535"
+        "angle" "0 175 0.00"
+		"keyvalues"
+		    {
+			 "fademaxdist" "4700"     
+			"fademindist" "4600"
+			"spawnflags" "256"
+			}
+        }
+		
+"npc_assassin"
+        {
+        "origin" "4055 4632 2368"
+        "angle" "0 175 0.00"
+		"keyvalues"
+		    {
+			 "fademaxdist" "4700"     
+			"fademindist" "4600"
+			"spawnflags" "256"
+			}
+        }
+		
+
+      
+
+        "npc_combine_s"
+        {
+        "origin" "4438.62 4662.98 -6632.01"
+        "angle" "0 178.86 0.00"
+		"keyvalues"
+		    {
+			 "skin" "2"
+			 "model" "models/combine_skullbreaker_soldier.mdl"
+			 "body" "1"
+		"tacticalvariant" "1"
+		"additionalequipment" "weapon_machinegun"
+			"fademaxdist" "7000"      
+			"fademindist" "6900"	
+			}
+        }
+}
+
+"entities:steamupdate" {
+
+
+"npc_combot"
+        {
+        "origin" "2225 4795 2575"
+        "angle" "0 -97 0.00"
+		"keyvalues"
+            {
+		    "fademaxdist" "4700"     
+			"fademindist" "4600"
+            }
+        }
+ 
+	     "npc_assassin_alien"
+        {
+        "origin" "2153 4869 2560"
+        "angle" "0 -90 0"
+		"keyvalues"
+            {
+		    "fademaxdist" "4700"     
+			"fademindist" "4600"
+            }
+       }
+	   
+	   
+	     "npc_assassin_alien"
+        {
+        "origin" "3310 4532 2570"
+        "angle" "0 171 0"
+		"keyvalues"
+            {
+		    "fademaxdist" "4700"     
+			"fademindist" "4600"
+            }
+       }
+	   
+	   
+}

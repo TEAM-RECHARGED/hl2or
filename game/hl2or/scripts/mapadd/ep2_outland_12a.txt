@@ -1,0 +1,514 @@
+//	OverCharged Steam MAPADD Data
+//	Location: White Forest
+//  Game: Half-Life 2 Episode Two
+"precache" {
+}
+
+"randomspawn" {
+
+"npc_cockroach" {
+           "count" "8"
+		   "values" "fademaxdist 700 fademindist 200"
+         }
+		 
+
+}
+
+"Init"
+{
+"Give_Equipment"
+	{
+	    "Ammo"
+		{
+		    "smokegrenade" "1"
+		    "flareround" "5"
+			"combinesniperround" "8"
+			"oicw" "60"
+			"ak47" "330"
+			"LaserPistol" "10"
+		}
+		"Item"
+		{
+		    "weapon" "ionrifle"
+		    "weapon" "beretta"
+			"weapon" "shockrifle"
+			"weapon" "smg2"
+			"weapon" "oicw"
+			"weapon" "mp5"
+			"weapon" "ak47"
+			"weapon" "ak47"
+			"weapon" "smokegrenade"
+			"weapon" "flashbang"
+			"weapon" "glock"		
+			"weapon" "combinesniper"
+			"weapon" "dual_pistols"
+		}
+	}
+}
+
+
+"entities:vital" {
+
+"event"
+	  {
+		"targetname"	"dog"
+                "action"  "modifyentity"  
+		"ondeath"	"never_ever_do_it_again,reload,,-1"
+
+	  }
+	  
+	  
+
+"event"
+	  {
+		"targetname"	"kleiner"
+                "action"  "modifyentity"  
+		"ondeath"	"never_ever_do_it_again,reload,,-1"
+
+	  }
+
+"event"
+	  {
+		"targetname"	"magnusson"
+                "action"  "modifyentity"  
+		"ondeath"	"never_ever_do_it_again,reload,,-1"
+
+	  }
+
+
+"event"
+	  {
+		"targetname"	"eli"
+                "action"  "modifyentity"  
+		"ondeath"	"never_ever_do_it_again,reload,,-1"
+
+	  }
+
+"event"
+	  {
+		"targetname"	"alyx"
+                "action"  "modifyentity"  
+		"gameendally"	"1"
+	  }
+
+
+}
+
+"entities:weather" {
+
+	
+"event"
+	  {
+		"targetname"	"weather_relay"
+                "action"  "trigger"  
+	  }
+
+}
+
+"entities" {
+
+
+"npc_boid_flocks"
+        {
+        "origin" "788 -3231 -1246"
+        "angle" "0 0 0.00"
+		 "keyvalues"
+            {
+            "fSize" "6"
+	        "fRadius" "128"
+            "spawnflags" "512"
+            }
+        }
+		
+		"npc_boid"
+        {
+        "origin" "-42 -2890 -848"
+        "angle" "0 0 0.00"
+		 "keyvalues"
+            {
+			"ModelType"  "1"
+            "fSize" "4"
+	        "fRadius" "128"
+            "spawnflags" "512"
+            }
+        }
+		
+"logic_relay"
+        {
+        "origin" "-949 1430 -765"
+        "angle" "0 0 0.00"
+        "keyvalues"
+            {
+			"OnTrigger"  "weather_display,showhudhint,,0.5"
+			"OnTrigger"  "weather_display,hidehudhint,,5.5"
+			"targetname" "Weather_relay"
+
+            }
+        }
+
+		"env_hudhint"
+        {
+        "origin" "2230 -1369 87"
+        "angle" "0 0 0.00"
+        "keyvalues"
+            {
+			"message" "          H.E.V MʎRK VI ASSISTANT 
+			|TIME: 18:31|
+			|WEATHER: MOSTLY-CLOUDY|
+			|TEMPERATURE: 17°C|"
+			"targetname" "Weather_Display"
+			"spawnflags" "1"
+            }
+        }
+		
+		"mapadd_trigger_once" {
+		"origin" "-366 -2085 -1119"
+		"keyvalues" {
+			"radius"	"100"
+			"label"		"weather"
+		}
+	}
+
+
+"event"
+	  {
+		"targetname"	"lcs_hangar"
+                "action"  "modifyentity"  
+		"OnTrigger11"	"last_problem,playsound,,-1"
+
+	  }
+	  
+	  	
+"ambient_generic" {
+          "origin" "0 0 30"
+          "keyvalues" {
+                  "message" "#music/over_ost_navilonsark_ravenholm.mp3"
+                  "health"  "8"
+                  "radius"  "9999"
+                  "spawnflags" "49"
+                  "targetname" "last_problem"
+                 }
+              }
+			
+	  
+// Lite Start
+
+  "logic_auto"
+        {
+        "origin" "2813 7162 0" 
+		"angle"	"0 0 0"
+        "keyvalues"
+            {
+		     "OnNewGame" "vortigauntstillworkingonthis,command,oc_weapon_disable_dissolve 1,-1"
+            }
+        }
+
+	 "point_servercommand" {
+		"origin" "-697 -7 1487"
+		"keyvalues" {
+                            "targetname" "vortigauntstillworkingonthis"
+	             }
+               }
+
+
+"prop_dynamic"
+        {
+        "origin" "-434 -1865 -938"
+        "angle" "0 180 0.00"
+        "keyvalues"
+            {
+            "modelscale" "3"
+			"disableshadows" "1"
+			"disablereceiveshadows" "1"
+			"fademaxdist" "2500"      "fademindist" "2000"      "model" "models/props_dev/plank_long_fat.mdl"
+			"targetname" "props_ep2_out12a_area1"
+            }
+        }
+		
+		"prop_dynamic"
+        {
+        "origin" "0 -1709 -939"
+        "angle" "0 90 0.00"
+        "keyvalues"
+            {
+            "modelscale" "2"
+			"disableshadows" "1"
+			"disablereceiveshadows" "1"
+			"fademaxdist" "2500"      "fademindist" "2000"      "model" "models/props_dev/plank_long_fat.mdl"
+			"targetname" "props_ep2_out12a_area1"
+            }
+        }
+		
+		"prop_dynamic"
+        {
+        "origin" "1766 -2372 -742"
+        "angle" "0 90 0.00"
+        "keyvalues"
+            {
+            "modelscale" "6"
+			"disableshadows" "1"
+			"disablereceiveshadows" "1"
+			"fademaxdist" "2500"      "fademindist" "2000"      "model" "models/props_dev/plank_long_fat.mdl"
+			"targetname" "props_ep2_out12a_area1"
+            }
+        }
+		
+		
+			"prop_dynamic"
+        {
+        "origin" "-438 -1792 -1090"
+        "angle" "0 0 0.00"
+        "keyvalues"
+            {
+            "modelscale" "3"
+			"disableshadows" "1"
+			"disablereceiveshadows" "1"
+			"fademaxdist" "2500"     
+			"fademindist" "2000"     
+			"model" "models/props_dev/plank_long_fat.mdl"
+			"targetname" "props_ep2_out12_area1"
+            }
+        }
+		
+			"prop_dynamic"
+        {
+        "origin" "-438 -1792 -1149"
+        "angle" "0 0 0.00"
+        "keyvalues"
+            {
+            "modelscale" "3"
+			"disableshadows" "1"
+			"disablereceiveshadows" "1"
+			"fademaxdist" "2500"     
+			"fademindist" "2000"     
+			"model" "models/props_dev/plank_long_fat.mdl"
+			"targetname" "props_ep2_out12_area1"
+            }
+        }
+		
+			"prop_dynamic"
+        {
+        "origin" "-469 -2040 -1185"
+        "angle" "0 0 0.00"
+        "keyvalues"
+            {
+            "modelscale" "2"
+			"disableshadows" "1"
+			"disablereceiveshadows" "1"
+			"fademaxdist" "2500"     
+			"fademindist" "2000"     
+			"model" "models/props_dev/plank_long_fat.mdl"
+			"targetname" "props_ep2_out12_area1"
+            }
+        }
+		
+			"prop_dynamic"
+        {
+        "origin" "-415 -1603 -1199"
+        "angle" "0 0 0.00"
+        "keyvalues"
+            {
+            "modelscale" "3"
+			"disableshadows" "1"
+			"disablereceiveshadows" "1"
+			"fademaxdist" "2500"     
+			"fademindist" "2000"     
+			"model" "models/props_dev/plank_long_fat.mdl"
+			"targetname" "props_ep2_out12_area1"
+            }
+        }
+		
+			"prop_dynamic"
+        {
+        "origin" "-465 -2067 -1134"
+        "angle" "0 0 0.00"
+        "keyvalues"
+            {
+            "modelscale" "3"
+			"disableshadows" "1"
+			"disablereceiveshadows" "1"
+			"fademaxdist" "2500"     
+			"fademindist" "2000"     
+			"model" "models/props_dev/plank_long_fat.mdl"
+			"targetname" "props_ep2_out12_area1"
+            }
+        }
+		
+			"prop_dynamic"
+        {
+        "origin" "50 -1921 -940"
+        "angle" "0 0 0.00"
+        "keyvalues"
+            {
+            "modelscale" "3"
+			"disableshadows" "1"
+			"disablereceiveshadows" "1"
+			"fademaxdist" "2500"     
+			"fademindist" "2000"     
+			"model" "models/props_dev/plank_long_fat.mdl"
+			"targetname" "props_ep2_out12_area1"
+            }
+        }
+		
+			"prop_dynamic"
+        {
+        "origin" "-467 -2007 -1030"
+        "angle" "0 0 90.00"
+        "keyvalues"
+            {
+            "modelscale" "2"
+			"disableshadows" "1"
+			"disablereceiveshadows" "1"
+			"fademaxdist" "2500"     
+			"fademindist" "2000"     
+			"model" "models/props_dev/plank_long_fat.mdl"
+			"targetname" "props_ep2_out12_area1"
+            }
+        }
+		
+			"prop_dynamic"
+        {
+        "origin" "-438 -1700 -1043"
+        "angle" "0 0 90.00"
+        "keyvalues"
+            {
+            "modelscale" "2"
+			"disableshadows" "1"
+			"disablereceiveshadows" "1"
+			"fademaxdist" "2500"     
+			"fademindist" "2000"     
+			"model" "models/props_dev/plank_long_fat.mdl"
+			"targetname" "props_ep2_out12_area1"
+            }
+        }
+		
+			"prop_dynamic"
+        {
+        "origin" "37 -2523 -1128"
+        "angle" "0 0 0.00"
+        "keyvalues"
+            {
+            "modelscale" "4"
+			"disableshadows" "1"
+			"disablereceiveshadows" "1"
+			"fademaxdist" "2500"     
+			"fademindist" "2000"     
+			"model" "models/props_dev/plank_long_fat.mdl"
+			"targetname" "props_ep2_out12_area1"
+            }
+        }
+"mapadd_trigger_once" {
+		"origin" "-372 -2089 -1119"
+		"keyvalues" {
+		       "radius"	  "100"
+	               "label"		"on"
+		}
+	}
+	
+// Lite End
+
+	"prop_dynamic" {
+                "origin" "989 -3463 -1100"
+                "angle"  "0 0 0"
+		"keyvalues" {
+			"solid" "0"
+			"model"		"models/props_wasteland/lights_industrialcluster01a.mdl"
+			 "fademaxdist" "2500"
+	        "fademindist" "2000"
+		}
+	}
+
+		"prop_dynamic" {
+                "origin" "262 -3463 -1100"
+                "angle"  "0 0 0"
+		"keyvalues" {
+			"solid" "0"
+			"model"		"models/props_wasteland/lights_industrialcluster01a.mdl"
+			 "fademaxdist" "2500"
+	        "fademindist" "2000"
+		}
+	}
+
+
+"mapadd_trigger_once" {
+		"origin" "-392 -1397 -1503"
+		"keyvalues" {
+		       "radius"	  "300"
+	               "label"		"vital"
+		}
+	}
+
+
+
+
+"player_loadsaved"
+        {
+        "origin" "-28 2876 -1215"
+        "angle" "0 0 0"
+        "keyvalues"
+            {
+            "targetname" "never_ever_do_it_again"
+            "duration" "2"
+            "loadtime" "2"
+            "holdtime" "2"
+            "renderamt"  "255"
+            "rendercolor" "0 0 0"
+         }
+      }
+
+
+
+
+"removeentity" {
+            "targetname" "music_ep2_song9"
+           }
+
+
+
+}
+
+"entities:on" {
+
+"removeentity" {
+            "classname" "env_sun"
+           }
+
+
+"env_sun"
+        {
+
+                "roll"  "20"  
+                "yaw"   "-90"
+                "pitch" "-125"
+
+                 "KeyValues"
+                {
+					"targetname" "riseandshine"
+					"use_angles"	"1"
+					"sunrays_intensity"	"2"
+					"sunrays_color.r"	"0.1"
+					"sunrays_color.g"	"0.15"
+					"sunrays_color.b"	"0.2"
+					"sunrays_color.a"	"1"
+					"sunrays_power"		"0.2"
+					"global_lightning_keyvalues"
+					{
+						"enabled" "1"
+						"enableshadows" "1"			
+						"distance" "7000"
+						"fov" "180"
+						"nearz" "0"
+						"northoffset" "0"
+						"eastoffset" "0"
+						"forwardoffset" "0"
+						"orthosize" "835"
+						"brightnessscale" "1"
+						"angles" "15 18 0"
+                        "targetname" "g_light"
+					}					
+                }
+        }
+
+
+}
+

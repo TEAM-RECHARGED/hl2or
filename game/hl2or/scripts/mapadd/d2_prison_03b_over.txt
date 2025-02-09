@@ -1,0 +1,103 @@
+//	OverCharged MAPADD Data
+//	Location: Nova Prospekt
+//  Game: Half-Life 2
+
+"precache" {
+}
+
+"Init"
+{
+"Give_Equipment"
+	{
+	    "Ammo"
+		{
+			"smokegrenade" "1"
+			"combinesniperround" "7"
+			"oicw" "45"
+		}
+		"Item"
+		{
+                    "item" "suit"
+		    "weapon" "stunstick"
+			"weapon" "shockrifle"
+			"weapon" "tau"
+			"weapon" "beretta"
+			"weapon" "mp5"
+			"weapon" "oicw"
+			"weapon" "glock"
+			"weapon" "dual_pistols"
+			"weapon" "cguard"
+			"weapon" "combinesniper"	
+            "weapon" "autoshotgun"			
+			"weapon" "flashbang"
+			"weapon" "m4"
+			"weapon" "smokegrenade"	
+		}
+	}
+}
+
+"randomspawn" {
+
+}
+
+
+
+"entities" {
+
+// Lite Start
+
+  "logic_auto"
+        {
+        "origin" "2813 7162 0" 
+		"angle"	"0 0 0"
+        "keyvalues"
+            {
+		     "OnNewGame" "vortigauntstillworkingonthis,command,oc_weapon_disable_dissolve 1,-1"
+            }
+        }
+
+	 "point_servercommand" {
+		"origin""-697 -7 1487"
+		"keyvalues" {
+                            "targetname" "vortigauntstillworkingonthis"
+	             }
+               }
+	
+
+
+	
+		"removeentity" {
+		"classname" "env_sun"
+	}
+
+	"env_sun"
+        {
+
+                "roll"  "52"  
+                "yaw"   "-40"
+                "pitch" "-15"
+
+                 "KeyValues"
+                {
+					"targetname" "riseandshine"
+					"DisableSprite"	"1"	
+					"use_angles"	"1"
+					"sunrays_intensity"	"2"	
+					"sunrays_color.r"	"0.1"
+					"sunrays_color.g"	"0.25"
+					"sunrays_color.b"	"0.3"
+					"sunrays_color.a"	"1"
+					"sunrays_power"		"0.17"
+							
+                }
+        }
+		
+		
+
+// Lite End
+
+
+
+}
+
+

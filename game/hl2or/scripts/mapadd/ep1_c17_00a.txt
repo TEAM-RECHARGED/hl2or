@@ -1,0 +1,555 @@
+//	OverCharged Steam MAPADD Data
+//	Location: Unknown
+//  Game: Half-Life 2 Episode 1
+
+"precache" {
+        "entity" "npc_cremator"
+        "entity" "weapon_immolator"
+		"entity" "npc_gonome"
+		"entity" "npc_zombie"
+		"entity" "npc_poisonzombie"
+		"entity" "npc_zombine"
+		"entity" "npc_fastzombie"
+		"entity" "npc_fastzombie_torso"
+}
+
+"Init"
+{
+"Give_Equipment"
+	{
+		"Item"
+		{
+		    "weapon" "dual_pistols"
+
+		}
+	}
+}
+
+
+"randomspawn" {
+
+"npc_headcrab" {
+               "count" "2"
+			   "values" "fademaxdist 2700 fademindist 2600"
+         }
+
+"npc_fastzombie" {
+               "count" "1"
+			   "values" "fademaxdist 2700 fademindist 2600"
+         }
+
+"npc_zombie" {
+               "count" "2"
+			   "values" "fademaxdist 2700 fademindist 2600"
+         }
+
+"npc_poisonzombie" {
+               "count" "1"
+			   "values" "fademaxdist 2700 fademindist 2600"
+         }
+
+"npc_gonome" {
+               "count" "1"
+			   "values" "fademaxdist 2700 fademindist 2600"
+         }
+
+}
+
+"entities:cremators" {
+
+
+
+        "npc_fastzombie"
+        {
+        "origin" "4014.62 3692.98 473.01"
+        "angle" "0 0.86 0.00"
+		"keyvalues"
+            {
+             "fademaxdist" "2700"     
+			"fademindist" "2600"  
+            }
+        }
+
+		  "npc_fastzombie_torso"
+        {
+        "origin" "4015 3304 472"
+        "angle" "0 43 0.00"
+		"keyvalues"
+            {
+             "fademaxdist" "2700"     
+			"fademindist" "2600"  
+            }
+        }
+
+
+        "npc_zombie"
+        {
+        "origin" "3864.62 3479.98 473.01"
+        "angle" "0 0.86 0.00"
+		"keyvalues"
+            {
+             "fademaxdist" "2700"     
+			"fademindist" "2600"  
+            }
+        }
+
+        "npc_gonome"
+        {
+        "origin" "4027.62 3213.98 473.01"
+        "angle" "0 150.86 0.00"
+		"keyvalues"
+            {
+             "fademaxdist" "2700"     
+			"fademindist" "2600"  
+            }
+        }
+
+        "npc_gonome"
+        {
+        "origin" "3554 3533 472"
+        "angle" "0 -19.86 0.00"
+		"keyvalues"
+            {
+             "fademaxdist" "2700"     
+			"fademindist" "2600"  
+            }
+        }
+
+  "npc_zombine"
+        {
+        "origin" "4010 3391 472"
+        "angle" "0 28 0.00"
+		"keyvalues"
+            {
+             "fademaxdist" "2700"     
+			"fademindist" "2600"  
+            }
+        }
+
+		"event" {
+		     "targetname" "sandvich"
+			 "action" "beginsequence"
+			 }
+			 
+			 
+			 
+// A13	 
+	    "npc_cremator"
+        {
+        "origin" "4338 3641 472"
+        "angle" "0 -151 0.00"
+		"keyvalues"
+            {
+			 "fademaxdist" "2700"     
+			"fademindist" "2600" 
+            "targetname" "FID_Cremator_1"
+            }
+        }
+		
+"npc_cremator"
+        {
+        "origin" "4368.62 3872.98 489.01"
+        "angle" "0 -146.86 0.00"
+		"keyvalues"
+            {
+			 "fademaxdist" "2700"     
+			"fademindist" "2600" 
+            "targetname" "FID_Cremator_2"
+            }
+        }
+
+	"npc_assaultsynth"
+        {
+        "origin" "4349.62 3405.98 472.01"
+        "angle" "0 -146.86 0.00"  
+          "keyvalues"
+            {
+			"fademaxdist" "2700"      
+			"fademindist" "2600"
+			"targetname" "FID_Cremator_3"
+         }		
+        }
+		
+}
+
+
+"entities:weather" {
+
+	
+"event"
+	  {
+		"targetname"	"weather_relay"
+                "action"  "trigger"  
+	  }
+
+}
+
+"entities:fix" {
+
+"event"
+	  {
+		"targetname"	"alyx_relay"
+                "action"  "trigger"  
+	  }
+
+}
+
+"entities" {
+
+"mapadd_trigger_once" {
+		"origin" "4596 3580 1905"
+		"keyvalues" {
+			"radius"	"100"
+			"label"		"fix"
+		}
+	}
+
+
+"logic_relay"
+        {
+        "origin" "-949 1430 -765"
+        "angle" "0 0 0.00"
+        "keyvalues"
+            {
+			"OnTrigger"  "alyx,addoutput,model models/alyx_ep1.mdl,,-1"
+			"targetname" "alyx_relay"
+
+            }
+        }
+
+"logic_relay"
+        {
+        "origin" "-949 1430 -765"
+        "angle" "0 0 0.00"
+        "keyvalues"
+            {
+			"OnTrigger"  "weather_display,showhudhint,,0.5"
+			"OnTrigger"  "weather_display,hidehudhint,,5.5"
+			"targetname" "Weather_relay"
+
+            }
+        }
+
+		"env_hudhint"
+        {
+        "origin" "2230 -1369 87"
+        "angle" "0 0 0.00"
+        "keyvalues"
+            {
+			"message" "          H.E.V MʎRK VI ASSISTANT 
+			|TIME: NO INFORMATION|
+			|WEATHER: NO INFORMATION|
+			|TEMPERATURE: 8°C|"
+			"targetname" "Weather_Display"
+			"spawnflags" "1"
+            }
+        }
+		
+		"mapadd_trigger_once" {
+		"origin" "1114 3051 436"
+		"keyvalues" {
+			"radius"	"120"
+			"label"		"weather"
+		}
+	}
+
+
+// Lite Start
+
+  "logic_auto"
+        {
+        "origin" "2813 7162 0" 
+		"angle"	"0 0 0"
+        "keyvalues"
+            {
+		     "OnNewGame" "vortigauntstillworkingonthis,command,oc_weapon_disable_dissolve 1,-1"
+			
+            }
+        }
+
+	 "point_servercommand" {
+		"origin""-697 -7 1487"
+		"keyvalues" {
+                            "targetname" "vortigauntstillworkingonthis"
+	             }
+               }
+
+"prop_ragdoll"
+        {
+        "origin" "1289 4057 643"
+        "angle" "33 51 0.00"
+        "keyvalues"
+            {
+             "fademaxdist" "2700"
+	        "fademindist" "2600"
+			"spawnflags" "260"
+            "model" "models/skeleton/skeleton_arm_l.mdl" 
+			"skin" "1"
+            }
+        }
+		
+"prop_ragdoll"
+        {
+        "origin" "1179 4004 693"
+        "angle" "32 58 0.00"
+        "keyvalues"
+            {
+             "fademaxdist" "2700"
+	        "fademindist" "2600"
+			"spawnflags" "260"
+            "model" "models/skeleton/skeleton_torso2.mdl" 
+			"skin" "1"
+            }
+        }
+
+	"event" 
+	{
+		"classname"	"worldspawn"
+		"keyvalues" 
+		 {
+		"detailmaterial" "detail/detailsprites_hl2"
+		 }
+	}
+
+"prop_dynamic"
+        {
+        "origin" "566 4583 524"
+        "angle" "25 47 0"
+        "keyvalues"
+            {
+            "spawnflags" "8"
+		    
+			"modelscale" "1"
+			"disableshadows" "1"
+			"targetname" "no_just_no"
+            "model" "models/props_vehicles/car001a_hatchback.mdl"
+            }
+        }
+
+"prop_ragdoll"
+        {
+        "origin" "1383 4281 372"
+        "angle" "153 75 210"
+        "keyvalues"
+            {
+            "spawnflags" "260"
+            "model" "models/humans/corpse1.mdl"
+            }
+        }
+
+// Lite End
+
+
+	"event" {
+		     "targetname" "ss_furniture_powerphy_1"
+			 "action" "modifyentity"
+			 "onendsequence" "gonome1,enable,,10"
+			 }
+			 
+"npc_maker"
+        {
+        "origin" "4447 3258 472"
+        "angle" "0 110 0"
+        "keyvalues"
+            {
+            "targetname" "gonome1"
+            "NPCType"    "npc_gonome"
+            "StartDisabled" "1"
+            "spawnflags" "160"
+            "MaxNPCCount"   "9999"
+            "SpawnFrequency" "20"
+            "MaxLiveChildren" "2"
+         }
+       }
+
+"item_ammo_snark"
+        {
+        "origin" "462 4410 665"
+        "angle" "0 -60 0.00"
+		"keyvalues"
+            {
+             "fademaxdist" "1100"     
+			"fademindist" "1000"  
+			"OnPlayerTouch" "vortigauntstillworkingonthis,command,give weapon_snark,,-1"
+            }
+        }
+		
+
+"item_ammo_snark"
+        {
+        "origin" "-90 4539 568"
+        "angle" "0 24 0.00"
+		"keyvalues"
+            {
+			"OnPlayerTouch" "vortigauntstillworkingonthis,command,give weapon_snark,,-1"
+             "fademaxdist" "1100"     
+			"fademindist" "1000"  
+            }
+        }
+		
+		
+
+		
+"npc_charger"
+        {
+        "origin" "88 3642 439"
+        "angle" "0 20 0.00"
+		"keyvalues"
+            {
+             "fademaxdist" "2700"     
+			"fademindist" "2600"  
+            }
+        }
+
+"npc_sporegenerator"
+        {
+        "origin" "3664 3420 582"
+        "angle" "90 90 0.00"
+		"keyvalues"
+            {
+             "fademaxdist" "1100"     
+			"fademindist" "1000"  
+            }
+        }
+		
+		
+"npc_sporegenerator"
+        {
+        "origin" "3862 3858 512"
+        "angle" "90 -90 0.00"
+		"keyvalues"
+            {
+             "fademaxdist" "1100"     
+			"fademindist" "1000"  
+            }
+        }
+		
+
+"npc_houndeye"
+        {
+        "origin" "-607 3598 564"
+        "angle" "0 -49.86 0.00"
+		"keyvalues"
+            {
+             "fademaxdist" "2700"     
+			"fademindist" "2600"  
+            }
+        }
+		
+		
+		"npc_houndeye"
+        {
+        "origin" "1380 4257 500"
+        "angle" "0 127.86 0.00"
+		"keyvalues"
+            {
+             "fademaxdist" "2700"     
+			"fademindist" "2600"  
+            }
+        }
+		
+		
+		
+"npc_pitdrone"
+        {
+        "origin" "1114 3175 436"
+        "angle" "0 -92.86 0.00"
+		"keyvalues"
+            {
+             "fademaxdist" "2700"     
+			"fademindist" "2600"  
+            }
+        }
+
+"npc_gonome"
+        {
+        "origin" "849.62 3790.98 692.01"
+        "angle" "0 -170.86 0.00"
+		"keyvalues"
+            {
+             "fademaxdist" "2700"     
+			"fademindist" "2600"  
+            }
+        }
+
+"weapon_flaregun" {
+                   "origin" "-623 3519 564"
+				   "keyvalues"
+                   {
+                    "fademaxdist" "700"     
+			        "fademindist" "600"  
+                   }
+                  }
+
+
+
+"weapon_grenadelauncher"
+	{
+		"origin"	"508 4510 571"
+		"angle"		"0 0 0"
+		"keyvalues"
+            {
+             "fademaxdist" "700"     
+			"fademindist" "600"  
+            }
+	}
+// It was in crate before
+
+"npc_gonome"
+        {
+        "origin" "4398 3664 1656"
+        "angle" "0 0 0.00"
+		"keyvalues" {
+		   "targetname" "eating"
+             "fademaxdist" "400"     
+			"fademindist" "300"  
+		   }
+        }
+		
+		
+  "scripted_sequence" {
+                "origin" "4398 3664 1656"
+		"keyvalues" { 
+		    "m_iszIdle" "eat_loop"
+			"m_iszPlay" "eat_loop"
+            "m_bLoopActionSequence" "1"
+			"m_iszEntity" "eating"
+			"m_fMoveTo" "0"
+			"spawnflags" "4720"
+			"targetname" "sandvich"
+		}
+	}
+
+"mapadd_trigger_once" {
+		"origin" "2755 4160 472"
+		"keyvalues" {
+			"radius"	"100"
+			"label"		"cremators"
+		}
+	}
+
+
+"mapadd_trigger_once" {
+		"origin" "1121 3040 436"
+		"keyvalues" {
+			"radius"	"100"
+			"label"		"fixalyx"
+		}
+	}
+
+
+}
+
+"entities:fixalyx" {
+
+"event" {
+		     "targetname" "alyx_3rdfloor_ss"
+			 "action" "cancelsequence"
+			 }
+			 
+"event" {
+		     "targetname" "alyx_follow"
+			 "action" "Activate"
+			 }
+
+}

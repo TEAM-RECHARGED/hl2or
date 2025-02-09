@@ -1,0 +1,628 @@
+//	OverCharged Steam MAPADD Data
+//	Location: Citadel
+//  Game: Half-Life 2 Episode 1
+
+"precache" {
+}
+
+"randomspawn" {
+
+"npc_combine_s" {
+               "count" "1"
+               "weapon" "weapon_oicw"
+			   "values" "fademaxdist 2700 fademindist 2600"
+         }
+
+"npc_combine_s" {
+               "count" "1"
+               "weapon" "weapon_shotgun"
+			   "values" "fademaxdist 2700 fademindist 2600"
+         }
+
+"npc_combine_s" {
+               "count" "1"
+               "weapon" "weapon_ar2"
+			   "values" "fademaxdist 2700 fademindist 2600"
+         }
+
+}
+
+"entities:dontmove" {
+
+"event"
+	  {
+		"targetname"	"body_combine"
+                "action"  "DisableMotion"  
+	  }
+	  
+
+
+
+}
+
+"entities:talk_alyx" {
+
+"event"
+	  {
+		"targetname"	"alyx_kick_seq_go"
+                "action"  "beginsequence"  
+	  }
+	  
+	  
+}
+
+"entities:cancel" {
+
+"event"
+	  {
+		"targetname"	"alyx_hate_soldier"
+                "action"  "cancel"  
+	  }
+	  
+
+}
+
+
+"entities:weather" {
+
+	
+"event"
+	  {
+		"targetname"	"weather_relay"
+                "action"  "trigger"  
+	  }
+
+}
+
+"entities" {
+
+
+
+
+"logic_relay"
+        {
+        "origin" "-949 1430 -765"
+        "angle" "0 0 0.00"
+        "keyvalues"
+            {
+			"OnTrigger"  "weather_display,showhudhint,,0.5"
+			"OnTrigger"  "weather_display,hidehudhint,,5.5"
+			"targetname" "Weather_relay"
+
+            }
+        }
+
+		"env_hudhint"
+        {
+        "origin" "2230 -1369 87"
+        "angle" "0 0 0.00"
+        "keyvalues"
+            {
+			"message" "          H.E.V MʎRK VI ASSISTANT 
+			|TIME: NO INFORMATION|
+			|WEATHER: NO INFORMATION
+			|TEMPERATURE: 15°C|"
+			"targetname" "Weather_Display"
+			"spawnflags" "1"
+            }
+        }
+		
+		"mapadd_trigger_once" {
+		"origin" "-7959 960 866"
+		"keyvalues" {
+			"radius"	"100"
+			"label"		"weather"
+		}
+	}
+
+
+// Lite Start
+
+  "logic_auto"
+        {
+        "origin" "2813 7162 0" 
+		"angle"	"0 0 0"
+        "keyvalues"
+            {
+		     "OnNewGame" "vortigauntstillworkingonthis,command,oc_weapon_disable_dissolve 0,-1"
+            }
+        }
+
+	 "point_servercommand" {
+		"origin""-697 -7 1487"
+		"keyvalues" {
+                            "targetname" "vortigauntstillworkingonthis"
+	             }
+               }
+	
+"prop_physics"
+        {
+        "origin" "1241 890 873"
+        "angle" "0 0 0"
+        "keyvalues"
+            {
+            "spawnflags" "8"
+			"rendermode" "10"
+			"disableshadows" "1"
+			"targetname" "invisible_wall"
+            "model" "models/props_wasteland/prison_heater001a.mdl"
+            }
+        }
+		
+		"prop_physics"
+        {
+        "origin" "1242 855 892"
+        "angle" "0 0 0"
+        "keyvalues"
+            {
+            "spawnflags" "8"
+			"rendermode" "10"
+			"disableshadows" "1"
+			"targetname" "invisible_wall"
+            "model" "models/props_wasteland/prison_heater001a.mdl"
+            }
+        }
+		
+		"prop_physics"
+        {
+        "origin" "1248 944 880"
+        "angle" "0 0 0"
+        "keyvalues"
+            {
+            "spawnflags" "8"
+			"rendermode" "10"
+			"disableshadows" "1"
+			"targetname" "invisible_wall"
+            "model" "models/props_wasteland/prison_heater001a.mdl"
+            }
+        }
+
+"prop_physics"
+        {
+        "origin" "1241 890 896"
+        "angle" "0 0 0"
+        "keyvalues"
+            {
+            "spawnflags" "8"
+			"rendermode" "10"
+			"disableshadows" "1"
+			"targetname" "invisible_wall"
+            "model" "models/props_wasteland/prison_heater001a.mdl"
+            }
+        }
+
+"mapadd_trigger_once" {
+		"origin" "1287 651 896"
+		"keyvalues" {
+			"radius"	"100"
+			"label"		"cancel"
+		}
+	}
+
+"info_target"
+        {
+        "origin" "1164 948 839"
+        "angle" "0 0 0"
+        "keyvalues"
+            {
+            "targetname" "mark_look_soldier_body_1"
+            }
+        }
+		
+		"info_target"
+        {
+        "origin" "1369 1204 855"
+        "angle" "0 0 0"
+        "keyvalues"
+            {
+            "targetname" "mark_al_soldier_body_2"
+            }
+        }
+
+"info_target"
+        {
+        "origin" "1149 934 839"
+        "angle" "0 0 0"
+        "keyvalues"
+            {
+            "targetname" "mark_al_soldier_ledge_1"
+            }
+        }
+		
+"info_target"
+        {
+        "origin" "1149 909 860"
+        "angle" "0 0 0"
+        "keyvalues"
+            {
+            "targetname" "mark_al_soldier_body_1"
+            }
+        }
+
+"logic_choreographed_scene"
+        {
+        "origin" "1149 909 896"
+        "keyvalues"
+            {
+            "targetname" "alyx_hate_soldier"
+            "busyactor" "0"
+            "scenefile" "scenes/episode_1/al_strippedsoldier_01.vcd"
+            "target1" "mark_al_soldier_body_1"
+			"target2" "mark_look_soldier_body_1"
+			"OnTrigger1"   "alyx_kick_seq,beginsequence,,-1"
+		
+            }
+        }
+
+"scripted_sequence" 
+        {
+        "origin" "1149 909 830"
+        "angle" "0 90 0"
+        "keyvalues"
+            {
+            "targetname" "alyx_kick_seq_go"
+            "m_iszEntity" "alyx"   
+            "m_iszPlay" "alyx_zombie_kick1"
+            "m_bLoopActionSequence" "0"
+            "m_fMoveTo" "2"    
+            "spawnflags" "96"   
+			"OnBeginSequence" "alyx_kick_seq_go,cancelsequence,,0.02"
+			"OnBeginSequence" "alyx_hate_soldier,start,,0.01"
+            }
+        }
+		
+"scripted_sequence" 
+        {
+        "origin" "1149 909 830"
+        "angle" "0 90 0"
+        "keyvalues"
+            {
+            "targetname" "alyx_kick_seq"
+            "m_iszEntity" "alyx"   
+            "m_iszPlay" "alyx_zombie_kick1"
+            "m_bLoopActionSequence" "0"
+            "m_fMoveTo" "2"    
+            "spawnflags" "96"   
+			"OnBeginSequence" "you_are_combine,explode,,0.5"
+			"OnBeginSequence" "body_combine,enablemotion,,0.5"
+			"OnEndSequence" "invisible_wall,kill,,-1"
+            }
+        }
+
+
+"mapadd_trigger_once" {
+		"origin" "1032 900 883"
+		"keyvalues" {
+			"radius"	"100"
+			"label"		"talk_alyx"
+		}
+	}
+	
+		   	
+"env_physexplosion"
+        {
+        "origin" "1191 909 836"
+        "keyvalues"
+            {
+            "targetname" "you_are_combine"
+            "magnitude" "80"
+            "targetentityname" "body_combine"
+            }
+        }
+
+
+"mapadd_trigger_once" {
+		"origin" "653 402 896"
+		"keyvalues" {
+			"radius"	"250"
+			"label"		"dontmove"
+		}
+	}
+	
+"prop_ragdoll"
+        {
+        "origin" "1220 912 877"
+        "angle" "90 150 0"
+        "keyvalues"
+            {
+			"targetname" "body_combine"
+            "spawnflags" "260"
+			"skin" "0"
+            "model" "models/combine_soldier.mdl"
+            }
+        }
+
+
+
+// Lite End
+
+
+
+  "npc_stalker"
+        {
+        "origin" "-6093 1129 864"
+        "angle" "0 -170 0"
+		 "keyvalues"
+            {
+		    "fademaxdist" "5700"     
+			"fademindist" "5600"
+			"spawnflags" "256"
+			"angryonspawn" "1"
+            "squadname" "John_and_his_friends"
+            }
+       }
+	 
+	      
+	     "npc_stalker"
+        {
+        "origin" "-5989	1628 884"
+        "angle" "0 -96 0"
+		 "keyvalues"
+            {
+			"fademaxdist" "5700"     
+			"fademindist" "5600"
+			"spawnflags" "256"
+			"angryonspawn" "1"
+            "squadname" "John_and_his_friends"
+            }
+       }
+	   
+	   
+  
+		"npc_assassin"
+        {
+        "origin" "-5557 1137 864"
+        "angle" "0 -144 0.00"
+				"keyvalues"
+            {
+		    "fademaxdist" "5700"     
+			"fademindist" "5600"
+            }
+        }
+
+		
+		
+		"item_healthvial"
+        {
+        "origin" "1178 899 896"
+        "angle" "0 82 0.00"
+				"keyvalues"
+            {
+		    "fademaxdist" "700"     
+			"fademindist" "600"
+            }
+        }
+		
+		
+		
+		
+"npc_assassin"
+        {
+        "origin" "-1297 180 895"
+        "angle" "0 90 0.00"
+		"keyvalues"
+		    {
+			 "fademaxdist" "5700"     
+			"fademindist" "5600"
+			"spawnflags" "256"
+			}
+        }
+			
+
+		
+	
+			"npc_combine_s"
+        {
+        "origin" "-3756 1249 858"
+        "angle" "0 85.86 0.00"
+        "keyvalues"
+            {
+            "spawnflags" "256"
+             "skin" "2"
+			 "model" "models/combine_skullbreaker_soldier.mdl"
+			 "fademaxdist" "5700"     
+			"fademindist" "5600"
+			"tacticalvariant" "1"
+			"physdamagescale" "0.5"
+            "additionalequipment" "weapon_vector"
+            }
+        }
+		
+			"npc_combine_s"
+        {
+        "origin" "-778 -307 896"
+        "angle" "0 93 0.00"
+        "keyvalues"
+            {
+            "spawnflags" "256"
+            "skin" "2"
+			 "model" "models/combine_skullbreaker_soldier.mdl"
+		 "fademaxdist" "5700"     
+			"fademindist" "5600"
+			"tacticalvariant" "1"
+			"physdamagescale" "0.5"
+            "additionalequipment" "weapon_vector"
+            }
+        }
+		
+
+
+//"item_item_crate"
+	//{
+	//	"origin"	"-3707 1093 858"
+	//	"angle"		"0 -30 0"
+	//	"KeyValues"
+	//	{
+		//	"ItemClass"		"weapon_hopwire"
+		//	"ItemCount"		"4"
+	//	}
+	//}
+
+"weapon_hopwire"
+	{
+		"origin"	"-3707 1093 858"
+			"keyvalues"
+            {
+		    "fademaxdist" "700"     
+			"fademindist" "600"
+            }
+	}
+	
+	"weapon_hopwire"
+	{
+		"origin"	"-3702 1098 877"
+			"keyvalues"
+            {
+		    "fademaxdist" "700"     
+			"fademindist" "600"
+            }
+	}
+	
+//"item_item_crate"
+//	{
+	//	"origin"	"1357 658 896"
+	//	"angle"		"0 -30 0"
+	//	"KeyValues"
+	//	{
+	//		"ItemClass"		"weapon_tripwire"
+	//		"ItemCount"		"2"
+	//	}
+	//}
+
+"weapon_tripwire"
+	{
+		"origin"	"1357 658 896"
+			"keyvalues"
+            {
+		    "fademaxdist" "700"     
+			"fademindist" "600"
+            }
+	}
+
+
+//"item_item_crate"
+	//{
+	//	"origin"	"-3832 614 858"
+	//	"angle"		"0 70 0"
+	//	"KeyValues"
+	//	{
+		//	"ItemClass"		"item_healthkit"
+		//	"ItemCount"		"2"
+	//	}
+	//}
+	
+	
+"item_healthkit"
+	{
+		"origin"	"-3832 614 858"
+		"angle"		"0 70 0"
+			"keyvalues"
+            {
+		    "fademaxdist" "700"     
+			"fademindist" "600"
+            }
+	}
+
+"item_battery"
+	{
+		"origin"	"-3745 686 948"
+		"angle"		"0 40 0"
+			"keyvalues"
+            {
+		    "fademaxdist" "700"     
+			"fademindist" "600"
+            }
+	}
+	
+//"item_item_crate"
+	//{
+	//	"origin"	"-3745 686 948"
+	//	"angle"		"0 40 0"
+	//	"KeyValues"
+	//	{
+    //		"ItemClass"		"item_battery"
+	//		"ItemCount"		"2"
+	//	}
+	//}
+    // Removed to replace with non-crates variant and less amount
+	
+
+}
+
+"entities:steamupdate" {
+
+
+
+	
+	"npc_assassin_alien"
+        {
+        "origin" "-5809 691 864"
+        "angle" "0 158 0"
+		"keyvalues"
+            {
+		    "fademaxdist" "5700"     
+			"fademindist" "5600"
+            }
+       }
+	   
+	   
+	     "npc_assassin_alien"
+        {
+        "origin" "-4142 571 858"
+        "angle" "0 128 0"
+				"keyvalues"
+            {
+		    "fademaxdist" "5700"     
+			"fademindist" "5600"
+            }
+       }
+	   
+	    
+	     "npc_assassin_alien"
+        {
+        "origin" "1725 393 896"
+        "angle" "0 177 0"
+				"keyvalues"
+            {
+		    "fademaxdist" "5700"     
+			"fademindist" "5600"
+            }
+       }
+	   
+	   
+
+"npc_combot"
+        {
+        "origin" "1332 351 921"
+        "angle" "0 117 0.00"
+			"keyvalues"
+            {
+		    "fademaxdist" "2700"     
+			"fademindist" "2600"
+            }
+        }
+	
+"npc_combot"
+        {
+        "origin" "-425 -879 945"
+        "angle" "0 169 0.00"
+		"keyvalues"
+            {
+		    "fademaxdist" "2700"     
+			"fademindist" "2600"
+            }
+        }
+
+"npc_combot"
+        {
+        "origin" "-1306 495 929"
+        "angle" "0 86 0.00"
+		"keyvalues"
+            {
+		    "fademaxdist" "2700"     
+			"fademindist" "2600"
+            }
+        }
+		
+		
+}

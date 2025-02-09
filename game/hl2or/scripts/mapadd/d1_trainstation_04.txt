@@ -1,0 +1,292 @@
+//	OverCharged Steam MAPADD Data
+//	Location: C17
+//      Game: Half-Life 2
+
+
+
+"entities" {
+
+// Lite Start
+
+  "logic_auto"
+        {
+        "origin" "2813 7162 0" 
+		"angle"	"0 0 0"
+        "keyvalues"
+            {
+		     "OnNewGame" "vortigauntstillworkingonthis,command,oc_weapon_disable_dissolve 1,-1"
+            }
+        }
+
+	 "point_servercommand" {
+		"origin""-697 -7 1487"
+		"keyvalues" {
+                            "targetname" "vortigauntstillworkingonthis"
+	             }
+               }
+			   
+	"npc_alyx"
+        {
+        "origin" "-7907 -6883 128"
+        "angle" "0 40 0"
+        "keyvalues"
+            {
+			"targetname" "alyx"
+			"model" "models/alyx_hl2.mdl"
+            "spawnflags" "12294"
+			"gameendally" "1"
+			"physdamagescale" "0"
+			"additionalequipment" "0"
+			"dontpickupweapons" "1"
+            }
+        }
+	  
+	  "event"
+    {
+    "targetname" "relay_knockout_player"
+    "action" "modifyentity"
+	"ontrigger" "it_is_important,teleport,,0.2"
+   }
+   
+   	"point_teleport"
+        {
+        "origin" "-7481 -3982 396"
+        "angle" "0 3 0"
+        "keyvalues"
+            {
+            "targetname" "it_is_important"
+            "target" "alyx"
+            }
+        }
+	  
+"event"
+    {
+    "targetname" "template_alyx"
+    "action" "kill"
+   }
+   
+	"event" 
+	{
+		"classname"	"worldspawn"
+		"keyvalues" 
+		 {
+		"detailmaterial" "detail/detailsprites_hl2"
+		 }
+	}
+
+"removeentity" {
+		"classname" "env_sun"
+	}
+
+	"env_sun"
+        {
+
+                "roll"  "20"  
+                "yaw"   "0"
+                "pitch" "-165"
+
+                "KeyValues"
+                {
+					"targetname" "riseandshine"
+					"rendercolor" "237 218 143"
+				"size" "16"
+					"disablesprite" "1"
+									"overlaysize" "22"
+					"use_angles"	"1"
+					"sunrays_intensity"	"2"
+					"sunrays_color.r"	"0.2"
+					"sunrays_color.g"	"0.2"
+					"sunrays_color.b"	"0.17"
+					"sunrays_color.a"	"1"
+					"sunrays_power"		"0.2"
+					"global_lightning_keyvalues"
+					{
+						"enabled" "1"
+						"enableshadows" "1"			
+						"distance" "20000"
+						"fov" "180"
+						"nearz" "4"
+						"northoffset" "0"
+						"eastoffset" "0"
+						"forwardoffset" "0"
+						"orthosize" "835"
+						"brightnessscale" "5"
+						"angles" "35 165 0"
+						"lightcolor" "237 218 143 800"
+						"targetname" "g_light"
+					}
+                }
+        }
+
+
+"event"
+	  {
+		"targetname"	"blackout"
+                "action"  "modifyentity"  
+		"model"	"models/blackout_hl2.mdl"
+	  }
+
+"prop_physics"
+        {
+        "origin" "-4336 -3326 676"
+        "angle" "0 0 0"
+        "keyvalues"
+            {
+		   "fademaxdist" "2700"      
+			"fademindist" "2600"		
+			"spawnflags" "1032"
+            "model" "models/props_wasteland/wood_fence01a.mdl"
+            }
+        }
+
+"prop_physics"
+        {
+        "origin" "-4142 -3326 676"
+        "angle" "0 0 0"
+        "keyvalues"
+            {
+			"spawnflags" "1032"
+			 "fademaxdist" "2700"      
+			"fademindist" "2600"
+            "model" "models/props_wasteland/wood_fence02a.mdl"
+            }
+        }
+		
+"prop_physics"
+        {
+        "origin" "-4222 -3323 676"
+        "angle" "0 0 0"
+        "keyvalues"
+            {
+			"spawnflags" "1032"
+			 "fademaxdist" "2700"      
+			"fademindist" "2600"
+            "model" "models/props_wasteland/wood_fence02a_board10a.mdl"
+            }
+        }
+
+"prop_physics"
+        {
+        "origin" "-4382 -3322 676"
+        "angle" "0 0 0"
+        "keyvalues"
+            {
+			 "fademaxdist" "2700"      
+			"fademindist" "2600"
+			"spawnflags" "1032"
+            "model" "models/props_wasteland/wood_fence02a_board01a.mdl"
+            }
+        }
+
+"prop_physics"
+        {
+        "origin" "-4097 -3322 676"
+        "angle" "0 0 0"
+        "keyvalues"
+            {
+			"spawnflags" "1032"
+			 "fademaxdist" "2700"      
+			"fademindist" "2600"
+            "model" "models/props_wasteland/wood_fence02a_board01a.mdl"
+            }
+        }
+		
+		"prop_physics"
+        {
+        "origin" "-4353 -3344 643"
+        "angle" "0 0 165"
+        "keyvalues"
+            {
+			 "fademaxdist" "2700"      
+			"fademindist" "2600"
+            "model" "models/props_wasteland/wood_fence02a_board09a.mdl"
+            }
+        }
+
+
+"prop_physics"
+        {
+        "origin" "-4020 -3326 676"
+        "angle" "0 0 0"
+        "keyvalues"
+            {
+			"spawnflags" "1032"
+			"skin" "1"
+			 "fademaxdist" "2700"      
+			"fademindist" "2600"
+            "model" "models/props_wasteland/wood_fence01a.mdl"
+            }
+        }
+
+	"prop_physics"
+        {
+        "origin" "-4466 -3538 607"
+        "angle" "3.00001 300 -90"
+        "keyvalues"
+            {
+			"skin" "4"
+			 "fademaxdist" "2700"      
+			"fademindist" "2600"
+            "model" "models/props_junk/plasticcrate01a.mdl"
+            }
+        }
+		
+			 "prop_dynamic" {
+	"origin" "-4515 -3506 586"  
+	"angle" "0 0 0"
+	"keyvalues" {
+        "solid" "6"
+        "disableshadows" "1"
+		 "fademaxdist" "2700"      
+			"fademindist" "2600"
+	"model" "models/props_rooftop/roof_vent001.mdl"
+	  }
+    }
+	
+		 "prop_dynamic" {
+	"origin" "-4497 -3521 589"  
+	"angle" "0 45 0"
+	"keyvalues" {
+        "solid" "6"
+        "disableshadows" "1"
+		 "fademaxdist" "2700"      
+			"fademindist" "2600"
+	"model" "models/props_rooftop/roof_vent003.mdl"
+	  }
+    }
+	
+	
+// Lite End
+
+		
+		"npc_combine_s"
+        {
+        "origin" "-9110 -5468 640"
+        "angle" "0 29 0"
+        "keyvalues"
+            {
+			"skin" "4"
+			"additionalequipment" "weapon_vector"
+            "targetname" "friend"
+            }
+        }
+		
+		
+			"ai_relationship"
+        {
+         "origin" "-2446 -4944 83"
+        "angle" "0 172 0.00"
+        "keyvalues"
+            {
+            "targetname"  "ghosts_from_c17"
+            "subject"        "friend"
+            "target"       "npc_*"
+            "startactive" "1"
+            "disposition" "3"
+            "rank" "9997"
+            }
+        }
+
+
+}
+

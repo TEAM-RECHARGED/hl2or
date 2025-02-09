@@ -1,0 +1,194 @@
+//	OverCharged Steam MAPADD Data
+//	Location: Citadel
+//  Game: Half-Life 2 Episode 1
+
+"precache" {
+}
+
+
+
+
+"entities:weather" {
+
+	
+"event"
+	  {
+		"targetname"	"weather_relay"
+                "action"  "trigger"  
+	  }
+
+}
+
+"entities" {
+
+
+
+"logic_relay"
+        {
+        "origin" "-949 1430 -765"
+        "angle" "0 0 0.00"
+        "keyvalues"
+            {
+			"OnTrigger"  "weather_display,showhudhint,,0.5"
+			"OnTrigger"  "weather_display,hidehudhint,,5.5"
+			"targetname" "Weather_relay"
+
+            }
+        }
+
+		"env_hudhint"
+        {
+        "origin" "2230 -1369 87"
+        "angle" "0 0 0.00"
+        "keyvalues"
+            {
+			"message" "          H.E.V MʎRK VI ASSISTANT 
+			|TIME: NO INFORMATION|
+			|WEATHER: NO INFORMATION|
+			|TEMPERATURE: 12°C|"
+				
+			"targetname" "Weather_Display"
+			"spawnflags" "1"
+            }
+        }
+		
+		"mapadd_trigger_once" {
+		"origin" "-4740 6974 2584"
+		"keyvalues" {
+			"radius"	"120"
+			"label"		"weather"
+		}
+	}
+
+// Lite Start
+
+
+
+"event"
+    {
+    "classname" "cycler"
+    "action" "modifyentity"
+    "model" "models/props_fix_allmaps/advisor.mdl"
+   }
+
+"prop_ragdoll"
+        {
+        "origin" "-2229 6353 2656"
+        "angle" "58 13.24 0.00"
+        "keyvalues"
+            {
+             "fademaxdist" "2700"
+	        "fademindist" "2600"
+			"skin" "2"
+			"spawnflags" "260"
+             "model" "models/combine_skullbreaker_soldier.mdl"
+            }
+        }
+  // Old Screenshots Soldier
+  
+"removeentity" {
+		"model" "models/props_combine/breenconsole.mdl"	
+	}
+
+	"prop_dynamic" {
+		"origin" "-4526 7728 2520"
+		"angle" "0 112.5 0"
+		"keyvalues" {
+            "disableshadows" "1"
+            "fademaxdist" "1400"
+            "fademindist" "1300"	
+			"model" "models/props_fix_allmaps/breenconsole.mdl"
+		}
+	}
+	
+
+"prop_physics"
+        {
+        "origin" "-4940 3530 2688"
+        "angle" "0 0 0"
+        "keyvalues"
+            {
+            "spawnflags" "8"
+		    "rendermode" "10"
+			"modelscale" "4"
+			"disableshadows" "1"
+			"targetname" "no_just_no"
+            "model" "models/props_wasteland/prison_heater001a.mdl"
+            }
+        }
+		
+		  "logic_auto"
+        {
+        "origin" "2813 7162 0" 
+		"angle"	"0 0 0"
+        "keyvalues"
+            {
+		     "OnNewGame" "vortigauntstillworkingonthis,command,oc_weapon_disable_dissolve 1,-1"
+            }
+        }
+
+	 "point_servercommand" {
+		"origin""-697 -7 1487"
+		"keyvalues" {
+                            "targetname" "vortigauntstillworkingonthis"
+	             }
+               }
+
+// Lite End
+
+
+//"item_item_crate"
+	//{
+	//	"origin"	"-1924 1355 2549"
+	//	"angle"		"0 45 0"
+	//	"KeyValues"
+	//	{
+	//		"ItemClass"		"weapon_flashbang"
+	//		"ItemCount"		"4"
+	//	}
+	//}
+
+//"item_item_crate"
+	//{
+	//	"origin"	"-1924 1350 2600"
+	//	"angle"		"0 0 0"
+	//	"KeyValues"
+	//	{
+	//		"ItemClass"		"weapon_smokegrenade"
+	//		"ItemCount"		"3"
+	//	}
+//	}
+// OverCharged Beta Content
+
+
+}
+
+"entities:steamupdate" {
+
+
+
+
+"npc_combot"
+        {
+        "origin" "-4908 6818 2584"
+        "angle" "0 -125 0.00"
+		"KeyValues"
+		{
+		    "fademaxdist" "2700"     
+			"fademindist" "2600"
+		}
+        }
+		
+		
+"npc_combot"
+        {
+        "origin" "-2466 6751 2560"
+        "angle" "0 75 0.00"
+		"KeyValues"
+		{
+		    "fademaxdist" "2700"     
+			"fademindist" "2600"
+		}
+        }
+		
+}

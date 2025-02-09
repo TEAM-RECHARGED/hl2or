@@ -8,8 +8,10 @@ Used:
     - https://developer.valvesoftware.com/wiki/Hand_Viewmodels <- Used for C_arms implementation.
     - https://developer.valvesoftware.com/wiki/Adding_an_inventory <- Unused Inventory system.
     - https://developer.valvesoftware.com/wiki/Ironsights <- Used for IronSights implementation.
+    - https://developer.valvesoftware.com/wiki/Category:SourceShaderEditor <- Used for -shadereditor arg
 - ModDB:
     - https://www.moddb.com/mods/hl2-overcharged <- Majority of scripts, models and materials have been used from the original overcharged
     - https://www.moddb.com/mods/entropy-zero <- Some code used to add NPC's.
 - GitHub:
     - https://github.com/entropy-zero/source-sdk-2013/ <- Some code used to add NPC's.
+    - https://github.com/ItzVladik/sourcefetch <- Used the code for FetchInfo aka neofetch command.

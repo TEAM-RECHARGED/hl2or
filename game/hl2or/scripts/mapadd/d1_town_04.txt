@@ -1,0 +1,427 @@
+//	OverCharged Steam MAPADD Data
+//	Location: Ravenholm
+//      Game: Half-Life 2
+
+
+"precache" {
+}
+
+"Init"
+{
+	"Give_Equipment"
+	{
+		"Item"
+		{
+		    "weapon" "stunstick"
+			"weapon" "beretta"
+			"weapon" "mp5"
+			"weapon" "dual_pistols"
+		}
+	}
+}
+
+"randomspawn" {
+
+   "npc_fastzombie_torso" {
+         "count" "2"
+		 "values" "fademaxdist 2500 fademindist 2400"
+         }
+
+		 
+
+}
+
+
+"entities:weather" {
+
+	
+"event"
+	  {
+		"targetname"	"weather_relay"
+                "action"  "trigger"  
+	  }
+
+}
+
+"entities" {
+
+"npc_zombie_hev"
+        {
+        "origin" "103 -2228 -3758"
+        "angle" "0 -47 0.00"
+		"keyvalues"
+            {
+             "fademaxdist" "2700"     
+			"fademindist" "2600"  
+            }
+        }
+
+
+"logic_relay"
+        {
+        "origin" "-949 1430 -765"
+        "angle" "0 0 0.00"
+        "keyvalues"
+            {
+			"OnTrigger"  "weather_display,showhudhint,,0.5"
+			"OnTrigger"  "weather_display,hidehudhint,,5.5"
+			"targetname" "Weather_relay"
+
+            }
+        }
+
+		"env_hudhint"
+        {
+        "origin" "2230 -1369 87"
+        "angle" "0 0 0.00"
+        "keyvalues"
+            {
+			"message" "          H.E.V MʎRK VI ASSISTANT 
+			|TIME: NO INFORMATION|
+			|WEATHER: NO INFORMATION|
+			|TEMPERATURE: 6°C|"
+				
+			"targetname" "Weather_Display"
+			"spawnflags" "1"
+            }
+        }
+		
+		"mapadd_trigger_once" {
+		"origin" "1345 -650 -4883"
+		"keyvalues" {
+			"radius"	"200"
+			"label"		"weather"
+		}
+	}
+
+// Lite Start
+
+  "logic_auto"
+        {
+        "origin" "2813 7162 0" 
+		"angle"	"0 0 0"
+        "keyvalues"
+            {
+		     "OnNewGame" "vortigauntstillworkingonthis,command,oc_weapon_disable_dissolve 1,-1"
+            }
+        }
+
+	 "point_servercommand" {
+		"origin""-697 -7 1487"
+		"keyvalues" {
+                            "targetname" "vortigauntstillworkingonthis"
+	             }
+               }
+			   
+	"event" 
+	{
+		"classname"	"worldspawn"
+		"keyvalues" 
+		 {
+		"detailmaterial" "detail/detailsprites_hl2"
+		 }
+	}
+
+	
+// Lite End
+
+	"npc_fastzombie"
+        {
+        "origin" "221 -778 -4863"
+        "angle" "0 -90 0.00"
+		 "keyvalues"
+            {
+				"fademaxdist" "2800"
+            "fademindist" "2700"
+            "spawnflags" "512"
+            }
+        }
+		
+				"npc_fastzombie"
+        {
+        "origin" "-1622 1063 -4997"
+        "angle" "0 11 0.00"
+		 "keyvalues"
+            {
+				"fademaxdist" "2800"
+            "fademindist" "2700"
+            "spawnflags" "512"
+            }
+        }
+		
+				"npc_zombine"
+        {
+        "origin" "-120 1212 -5496"
+        "angle" "0 15 0.00"
+		 "keyvalues"
+            {
+				"fademaxdist" "2800"
+            "fademindist" "2700"
+            "spawnflags" "512"
+            }
+        }
+		
+			"npc_zombine"
+        {
+        "origin" "1020 -2792 -3974"
+        "angle" "0 -33 0.00"
+		 "keyvalues"
+            {
+				"fademaxdist" "2800"
+            "fademindist" "2700"
+            "spawnflags" "512"
+            }
+        }
+		
+			"npc_gonome"
+        {
+        "origin" "610 -1703 -3998"
+        "angle" "0 -164 0.00"
+		 "keyvalues"
+            {
+				"fademaxdist" "2800"
+            "fademindist" "2700"
+            "spawnflags" "512"
+            }
+        }
+		
+			"npc_gonome"
+        {
+        "origin" "1239 1122 -5873"
+        "angle" "0 6 0.00"
+		 "keyvalues"
+            {
+				"fademaxdist" "2800"
+            "fademindist" "2700"
+            "spawnflags" "512"
+            }
+        }
+				"npc_zombine"
+        {
+        "origin" "-385 361 -5119"
+        "angle" "0 15 0.00"
+		 "keyvalues"
+            {
+				"fademaxdist" "2800"
+            "fademindist" "2700"
+            "spawnflags" "512"
+            }
+        }
+		
+			"npc_gonome"
+        {
+        "origin" "23 -445 -5118"
+        "angle" "0 -47 0.00"
+		 "keyvalues"
+            {
+				"fademaxdist" "2800"
+            "fademindist" "2700"
+            "spawnflags" "512"
+            }
+        }
+		
+				"npc_gonome"
+        {
+        "origin" "-2424 -334 -5033"
+        "angle" "0 66 0.00"
+		 "keyvalues"
+            {
+				"fademaxdist" "2800"
+            "fademindist" "2700"
+            "spawnflags" "512"
+            }
+        }
+		
+			"npc_zombie_torso"
+        {
+        "origin" "332 -1616 -4799"
+        "angle" "0 -147 0.00"
+		 "keyvalues"
+            {
+				"fademaxdist" "2800"
+            "fademindist" "2700"
+            "spawnflags" "512"
+            }
+        }
+		
+			"npc_gonome"
+        {
+        "origin" "1933 -103 -5102"
+        "angle" "0 -92 0.00"
+		 "keyvalues"
+            {
+				"fademaxdist" "2800"
+            "fademindist" "2700"
+            "spawnflags" "512"
+            }
+        }
+		
+
+"info_target"
+        {
+        "origin" "480 -1665 -4635"
+        "angle" "0 40 0"
+        "keyvalues"
+            {
+            "targetname" "disp_target"
+            }
+        }
+
+
+"weapon_extinguisher"
+        {
+        "origin" "377 -1635 -4615"
+        "angle" "0 173 0"
+		"keyvalues"
+            {
+            "fademaxdist" "700"      
+			"fademindist" "600"
+            }
+        }
+	
+"weapon_smokegrenade"
+        {
+        "origin" "377 -1664 -4615"
+        "angle" "0 135 0"
+		"keyvalues"
+            {
+            "fademaxdist" "700"      
+			"fademindist" "600"
+            }
+        }
+			
+
+"item_ammo_gauss"
+        {
+        "origin" "292 -1611 -4615"
+        "angle" "0 110 0"
+		"keyvalues"
+            {
+            "fademaxdist" "700"      
+			"fademindist" "600"
+            }
+        }
+		
+				
+// 1
+
+	
+
+// 2
+
+
+			  "scripted_sequence" 
+        {
+        "origin" "-274 -1133 -5122"
+        "angle" "0 9 0.00"
+        "keyvalues"
+            {
+            "targetname" "rising_zombie_2"
+            "m_iszEntity" "sleeping_zombie_1"
+            "m_iszIdle" "slump_b"     
+            "m_iszPlay" "slumprise_b"
+            "m_fMoveTo" "4"    
+            "spawnflags" "4112"   
+			"OnEndSequence" "!self,kill,,-1"
+            }
+        }
+
+
+	"mapadd_trigger_once" {
+		"origin" "-274 -1133 -5122"
+		"keyvalues" {
+			"radius"	"200"
+			"label"		"rising_zombie_2_trigger"
+		}
+	}
+
+		"npc_fastzombie"
+        {
+        "origin" "-274 -1133 -5055"
+        "angle" "0 9 0"
+		"keyvalues"
+            {
+			"targetname" "sleeping_zombie_1"
+            "fademaxdist" "2700"      
+			"fademindist" "2600"
+            }
+        }
+
+// 3
+
+		  "scripted_sequence" 
+        {
+        "origin" "214 -1660 -4801"
+        "angle" "0 90 0.00"
+        "keyvalues"
+            {
+            "targetname" "rising_zombie_3"
+            "m_iszEntity" "sleeping_zombie_3"
+            "m_iszIdle" "slump_b"     
+            "m_iszPlay" "slumprise_b"
+            "m_fMoveTo" "4"    
+            "spawnflags" "4112"   
+			"OnEndSequence" "!self,kill,,-1"
+            }
+        }
+
+
+	"mapadd_trigger_once" {
+		"origin" "214 -1660 -4735"
+		"keyvalues" {
+			"radius"	"400"
+			"label"		"rising_zombie_3_trigger"
+		}
+	}
+
+	
+		"npc_zombie"
+        {
+        "origin" "214 -1660 -4735"
+        "angle" "0 90 0"
+		"keyvalues"
+            {
+			"targetname" "sleeping_zombie_3"
+            "fademaxdist" "2700"      
+			"fademindist" "2600"
+            }
+        }
+		
+}
+
+"entities:rising_zombie_3_trigger" {
+
+	
+"event"
+	  {
+		"targetname"	"rising_zombie_3"
+                "action"  "beginsequence"  
+	  }
+
+}
+
+"entities:rising_zombie_2_trigger" {
+
+	
+"event"
+	  {
+		"targetname"	"rising_zombie_2"
+                "action"  "beginsequence"  
+	  }
+
+}
+
+
+"entities:rising_zombie_1_trigger" {
+
+	
+"event"
+	  {
+		"targetname"	"rising_zombie_1"
+                "action"  "beginsequence"  
+	  }
+
+}
+
+
+

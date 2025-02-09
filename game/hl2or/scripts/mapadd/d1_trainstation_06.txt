@@ -1,0 +1,505 @@
+//	OverCharged Steam MAPADD Data
+//	Location: C17
+//      Game: Half-Life 2
+
+"precache" {
+}
+
+"Init"
+{
+	"Give_Equipment"
+	{
+		"Item"
+		{
+		    "weapon" "stunstick"
+		}
+	}
+}
+
+"entities" {
+
+
+		
+"logic_choreographed_scene"
+        {
+        "origin" "-649 5266 255"
+        "keyvalues"
+            {
+            "targetname" "lcs_ba_heyGordon"
+            "busyactor" "0"
+            "scenefile" "scenes\trainyard/ba_heygordon.vcd"
+            //"target1" "vort"
+            }
+        }
+
+//"prop_physics"
+     //   {
+     //   "origin" "-8032 -2192 49"
+     //   "angle" "0 15 0.00"
+     //   "keyvalues"
+     //       {
+	//		"fademaxdist" "1500"     
+	//		"fademindist" "1400"
+     ///       "model" "models/props_lab/cactus.mdl"
+    //        }
+     //   }
+		
+		"prop_physics"
+        {
+        "origin" "-8024 -2112 16"
+        "angle" "0 210 0.00"
+        "keyvalues"
+            {
+			"fademaxdist" "1500"     
+			"fademindist" "1400"
+            "model" "models/props_lab/filecabinet02.mdl"
+            }
+        }
+
+	"prop_physics"
+        {
+        "origin" "-7830 -1192 -43"
+        "angle" "0 210 0.00"
+        "keyvalues"
+            {
+			"fademaxdist" "1500"     
+			"fademindist" "1400"
+            "model" "models/props_lab/dogobject_wood_crate001a_damagedmax.mdl"
+            }
+        }
+		
+		"prop_physics"
+        {
+        "origin" "-8080 -1056 -40"
+        "angle" "-10 300 90"
+        "keyvalues"
+            {
+			"fademaxdist" "1500"     
+			"fademindist" "1400"
+            "model" "models/props_debris/metal_panelchunk01a.mdl"
+            }
+        }
+		
+		"prop_physics"
+        {
+        "origin" "-9284 -3184 360"
+        "angle" "0 345 0"
+        "keyvalues"
+            {
+			"fademaxdist" "1500"     
+			"fademindist" "1400"
+            "model" "models/props_junk/PushCart01a.mdl"
+            }
+        }
+	
+	"prop_physics"
+        {
+        "origin" "-9259 -3306 353"
+        "angle" "0 185 0"
+        "keyvalues"
+            {
+			"fademaxdist" "1500"     
+			"fademindist" "1400"
+            "model" "models/props_junk/trashdumpster01a.mdl"
+            }
+        }
+		
+			"prop_physics"
+        {
+        "origin" "-9449 -3179 353"
+        "angle" "0 176 0"
+        "keyvalues"
+            {
+			"fademaxdist" "1500"     
+			"fademindist" "1400"
+            "model" "models/props_junk/ibeam01a_cluster01.mdl"
+            }
+        }
+		
+		"prop_dynamic"
+        {
+        "origin" "-8128 -1424 -64"
+        "angle" "0 7 0.00"
+        "keyvalues"
+            {
+			"solid" "6"
+			"fademaxdist" "1500"     
+			"fademindist" "1400"
+            "model" "models/props_lab/scrapyarddumpster.mdl"
+            }
+        }
+		
+			"prop_dynamic"
+        {
+        "origin" "-8112 -1216 -61"
+        "angle" "0 31 0.00"
+        "keyvalues"
+            {
+			"solid" "0"
+			"fademaxdist" "1500"     
+			"fademindist" "1400"
+            "model" "models/props_junk/garbage256_composite002a.mdl"
+            }
+        }
+
+	"prop_dynamic"
+        {
+        "origin" "-9575 -3058 337"
+        "angle" "0 0 0.00"
+        "keyvalues"
+            {
+			"solid" "0"
+			"fademaxdist" "1500"     
+			"fademindist" "1400"
+            "model" "models/props_trainstation/bench_indoor001a.mdl"
+            }
+        }
+		
+		"prop_dynamic"
+        {
+        "origin" "-9575 -2874 337"
+        "angle" "0 0 0.00"
+        "keyvalues"
+            {
+			"solid" "0"
+			"fademaxdist" "1500"     
+			"fademindist" "1400"
+            "model" "models/props_trainstation/bench_indoor001a.mdl"
+            }
+        }
+		
+		"prop_dynamic"
+        {
+        "origin" "-9221 -2181 352"
+        "angle" "0 0 0.00"
+        "keyvalues"
+            {
+			"solid" "0"
+			"fademaxdist" "3500"     
+			"fademindist" "3400"
+            "model" "models/props_silo/handrail_alley-upperdeck.mdl"
+            }
+        }
+		
+			"prop_dynamic"
+        {
+        "origin" "-9221 -2437 352"
+        "angle" "0 0 0.00"
+        "keyvalues"
+            {
+			"solid" "0"
+			"fademaxdist" "3500"     
+			"fademindist" "3400"
+            "model" "models/props_silo/handrail_alley-upperdeck.mdl"
+            }
+        }
+		
+			"prop_dynamic"
+        {
+        "origin" "-9221 -2693 352"
+        "angle" "0 0 0.00"
+        "keyvalues"
+            {
+			"solid" "0"
+			"fademaxdist" "3500"     
+			"fademindist" "3400"
+            "model" "models/props_silo/handrail_alley-upperdeck.mdl"
+            }
+        }
+		
+				"prop_dynamic"
+        {
+        "origin" "-9221 -2949 352"
+        "angle" "0 0 0.00"
+        "keyvalues"
+            {
+			"solid" "0"
+			"fademaxdist" "3500"     
+			"fademindist" "3400"
+            "model" "models/props_silo/handrail_alley-upperdeck.mdl"
+            }
+        }
+		
+			"prop_dynamic"
+        {
+        "origin" "-9221 -3062 352"
+        "angle" "0 0 0.00"
+        "keyvalues"
+            {
+			"solid" "0"
+			"fademaxdist" "3500"     
+			"fademindist" "3400"
+            "model" "models/props_silo/handrail_singlespan_128.mdl"
+            }
+        }
+
+
+		"prop_physics"
+        {
+        "origin" "-8112 -1424 0"
+        "angle" "20.2524 99.3262 -106.014"
+        "keyvalues"
+            {
+			"fademaxdist" "1500"     
+			"fademindist" "1400"
+            "model" "models/props_lab/kennel_physics.mdl"
+            }
+        }
+
+// Lite Start
+
+
+  "logic_auto"
+        {
+        "origin" "2813 7162 0" 
+		"angle"	"0 0 0"
+        "keyvalues"
+            {
+		     "OnNewGame" "vortigauntstillworkingonthis,command,oc_weapon_disable_dissolve 1,-1"
+            }
+        }
+
+	 "point_servercommand" {
+		"origin""-697 -7 1487"
+		"keyvalues" {
+                            "targetname" "vortigauntstillworkingonthis"
+	             }
+               }
+
+"event" {
+		"targetname"	"crowbar_prop"
+		"action"	"modifyentity"
+		"model"     "models/weapons/overcharged/world/w_crowbar.mdl"
+	}
+
+	"event" 
+	{
+		"classname"	"worldspawn"
+		"keyvalues" 
+		 {
+		"detailmaterial" "detail/detailsprites_hl2"
+		 }
+	}
+
+
+"event"
+	  {
+		"targetname"	"first_train_rl"
+        "action"  "modifyentity"  
+		"ontrigger"	"timer_crossing_lights,enable,,1"
+        "ontrigger"	"timer_crossing_lights,disable,,25"
+		"ontrigger"	"sprite_crossing_1,hidesprite,,26"
+        "ontrigger"	"sprite_crossing_2,hidesprite,,26"
+		"ontrigger"	"train_bell,playsound,,1"
+        "ontrigger"	"train_bell,stopsound,,25"
+	  }
+	  
+	"env_sprite"
+    {
+     "origin" "-8176 -2653 257"
+    "angle" "0 0 0"
+    "keyvalues" 
+        {
+        "model" "sprites/glow01.vmt"
+        "rendermode" "9"
+        "scale" "1"
+	    "rendercolor" "255 0 0"
+        "targetname" "sprite_crossing_1"
+        "renderamt" "255"
+        "framerate" "10"
+        "spawnflags" "0"
+        }
+    }
+	
+	"env_sprite"
+    {
+     "origin" "-8176 -2666 257"
+    "angle" "0 0 0"
+    "keyvalues" 
+        {
+        "model" "sprites/glow01.vmt"
+        "rendermode" "9"
+        "scale" "1"
+	    "rendercolor" "255 0 0"
+        "targetname" "sprite_crossing_2"
+        "renderamt" "255"
+        "framerate" "10"
+        "spawnflags" "0"
+        }
+    }
+	
+		"logic_timer"
+        {
+        "origin" "5814 6908 -409"
+        "angle" "0 0 0.00"
+        "keyvalues"
+            {
+			"targetname" "timer_crossing_lights"
+			"RefireTime" ".5"
+		    "startdisabled" "1"
+			"UseRandomTime" "0"
+			"ontimer" "sprite_crossing_1,ToggleSprite,,-1"
+			"ontimer" "sprite_crossing_2,ToggleSprite,,-1"
+            }
+        }
+		
+		
+			
+"ambient_generic" {
+          "origin" "-8196 -2659 214"
+          "keyvalues" {
+                  "message" "train_crossing_bell"
+                  "health"  "8"
+                  "radius"  "2174"
+                  "spawnflags" "16"
+                  "targetname" "train_bell"
+				  "spindown" "3"
+				  "fadeout" "5"
+                 }
+              }
+			  
+			  "removeentity" {
+		"classname" "env_sun"
+	}
+
+	"env_sun"
+        {
+
+                "roll"  "20"  
+                "yaw"   "0"
+                "pitch" "-160"
+
+                "KeyValues"
+                {
+					"targetname" "riseandshine"
+					"rendercolor" "237 218 143"
+				"size" "16"
+					"disablesprite" "1"
+									"overlaysize" "22"
+					"use_angles"	"1"
+					"sunrays_intensity"	"2"
+					"sunrays_color.r"	"0.2"
+					"sunrays_color.g"	"0.2"
+					"sunrays_color.b"	"0.17"
+					"sunrays_color.a"	"1"
+					"sunrays_power"		"0.2"
+					"global_lightning_keyvalues"
+					{
+						"enabled" "1"
+						"enableshadows" "1"			
+						"distance" "25000"
+						"fov" "180"
+						"nearz" "-1"
+						"northoffset" "0"
+						"eastoffset" "0"
+						"forwardoffset" "0"
+						"orthosize" "835"
+						"brightnessscale" "13"
+						"angles" "35 165 0"
+						"targetname" "g_light"
+						"lightcolor" "237 218 143 800"
+					}
+                }
+        }
+
+
+		"prop_dynamic"
+        {
+        "origin" "-9857 -3908 347"
+        "angle" "90 0 0.00"
+        "keyvalues"
+            {
+            "modelscale" "2"
+			"disableshadows" "1"
+			"disablereceiveshadows" "1"
+            "model" "models/props_dev/plank_long_fat.mdl"
+			"fademaxdist" "2500"      "fademindist" "2000"
+			"targetname" "props_d1_trainstation06_area1"
+            }
+        }
+
+// Lite End
+
+
+
+
+	"env_hudhint"
+        {
+        "origin" "2230 -1369 87"
+        "angle" "0 0 0.00"
+        "keyvalues"
+            {
+			"message" "          H.E.V MʎRK VI ASSISTANT 
+			|TIME: 9:47|
+			|WEATHER: CLOUDY|
+			|TEMPERATURE: 22°C|"
+			"targetname" "Weather_Display"
+			"spawnflags" "1"
+            }
+        }
+		
+
+
+"event"
+	  {
+		"targetname"	"music_trigger"
+                "action"  "modifyentity"  
+		"OnTrigger"	"Weather_Display,showhudhint,,0.5"
+		"OnTrigger"	"Weather_Display,hidehudhint,,4.5"
+	  }
+
+
+		"prop_physics"
+        {
+        "origin" "-8121 -969 -50"
+        "angle" "0 0 0"
+        "keyvalues"
+            {
+			 "fademaxdist" "1200"
+	        "fademindist" "1000"
+            "model" "models/props_c17/oildrum001_explosive.mdl"
+            }
+        }
+
+"item_item_crate"
+	{
+		"origin"	"-9574 -2965 384"
+		"angle"		"43 13 0"
+		"KeyValues"
+		{
+		"fademaxdist" "1700"      
+			"fademindist" "1600"	
+			"ItemClass"		"item_healthvial"
+			"ItemCount"		"100" // ??????????????????
+		}
+	}
+
+"npc_metropolice"
+	{
+		"origin"	"-6195 -2071 25"
+		"angle"		"0 -164 0"
+		"KeyValues"
+		{
+		"fademaxdist" "4700"      
+			"fademindist" "4600"	
+			"additionalequipment" "weapon_pistol"
+			"spawnflags" "256"
+		}
+	}
+
+
+"npc_houndeye"
+	{
+		"origin"	"-8153 -1204 -63"
+		"angle"		"0 -23 0"
+		"KeyValues"
+		{
+		"fademaxdist" "1700"      
+			"fademindist" "1600"	
+		}
+	}
+
+
+	
+
+}

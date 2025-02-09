@@ -1,0 +1,62 @@
+"MapAdd"
+{
+    "1"
+    {
+        "entity"       "weapon_glock"
+        "x"            "3970.565918"
+        "y"            "-1055.423340"
+        "z"            "-3759.968750"
+        "pitch"        "0"
+        "yaw"          "0"
+        "roll"         "0"
+        "KeyValues"
+        {
+            "model"    "models/weapons/overcharged/world/w_glock.mdl"
+            "additionalequipment" ""
+        }
+        "Flags"
+        {
+            "spawnflags"    "1"
+        }
+    }
+    "2"
+	{
+        "entity"       "weapon_annabelle"
+        "x"            "1780.597412"
+        "y"            "-1194.103516"
+        "z"            "-3729.770264"
+        "pitch"        "0"
+        "yaw"          "0"
+        "roll"         "0"
+    }
+    "3"
+	{
+        "entity"       "weapon_alyxgun"
+        "x"            "1780.597412"
+        "y"            "-1194.103516"
+        "z"            "-3729.770264"
+        "pitch"        "0"
+        "yaw"          "0"
+        "roll"         "0"
+    }
+    "4"
+	{
+        "entity"       "moster_houndeye"
+        "x"            "2366.371582"
+        "y"            "-1659.988770"
+        "z"            "-3711.968750"
+        "pitch"        "0"
+        "yaw"          "0"
+        "roll"         "0"
+    }
+     "5"
+	{
+        "entity"       "weapon_cgaurd"
+        "x"            "4385.287109"
+        "y"            "-1020.834595"
+        "z"            "-3775.968750"
+        "pitch"        "0"
+        "yaw"          "0"
+        "roll"         "0"
+    }
+}

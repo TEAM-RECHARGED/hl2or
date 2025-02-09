@@ -1,0 +1,1534 @@
+//	OverCharged Steam MAPADD Data
+//	Location: Caves
+//  Game: Half-Life 2 Episode 2
+
+"precache" {
+    "entity" "npc_antlion"
+    "entity" "npc_sporegenerator"
+    "sound" "ambient/levels/labs/teleport_alarm_loop1.wav"
+}
+
+"randomspawn" {
+}
+
+"Init"
+{
+"Give_Equipment"
+	{
+	    "Ammo"
+		{
+		    "flareround" "5"
+		}
+		"Item"
+		{
+		    "weapon" "flaregun"
+				"weapon" "shockrifle"
+			"weapon" "dual_pistols" 
+		}
+	}
+}
+
+
+"entities:weather" {
+
+	
+"event"
+	  {
+		"targetname"	"weather_relay"
+                "action"  "trigger"  
+	  }
+
+}
+
+
+"entities:nomoresun" {
+
+
+"event" {
+		"targetname"	"g_light"
+		KeyValues
+        {
+        "enabled" "0"
+        }
+	 }
+
+
+}
+
+"entities:yesmoresun" {
+
+
+"event" {
+		"targetname"	"g_light"
+		KeyValues
+        {
+        "enabled" "1"
+        }
+	 }
+
+
+}
+
+
+
+
+
+"entities:back_in_vort_style" {
+
+"removeentity" {
+            "classname" "env_sun"
+           }
+
+"env_sun"
+        {
+                "roll"  "0"  
+                "yaw"   "-90"
+                "pitch" "-150"
+
+                "KeyValues"
+                {
+					"targetname" "riseandshine"
+					"rendercolor" "237 218 143"
+				"size" "16"
+					"disablesprite" "1"
+									"overlaysize" "24"
+					"use_angles"	"1"
+					"sunrays_intensity"	"1"
+					"sunrays_color.r"	"0"
+					"sunrays_color.g"	"0.191"
+					"sunrays_color.b"	"0.255"
+					"sunrays_color.a"	"1"
+					"sunrays_power"		"0.10"
+					"global_lightning_keyvalues"
+					{
+						"enabled" "1"
+						"enableshadows" "1"			
+						"distance" "7000"
+						"fov" "270"
+						"nearz" "1"
+						"northoffset" "0"
+						"eastoffset" "0"
+						"forwardoffset" "0"
+						"orthosize" "850"
+						"brightnessscale" "2.5"
+						"angles" "70 135 0"
+						"lightcolor" "145 166 204 400"
+						"targetname" "g_light"
+						// 75 191 255 255
+					}
+                }
+        }
+		
+
+			"event"
+	  {
+		"targetname"	"vort_calvary_1"
+                "action"  "modifyentity"  
+		"ondeath"	"never_ever_do_it_again,reload,,-1"
+
+	  }
+
+		"event"
+	  {
+		"targetname"	"vort_calvary_2"
+                "action"  "modifyentity"  
+		"ondeath"	"never_ever_do_it_again,reload,,-1"
+
+	  }
+
+		"event"
+	  {
+		"targetname"	"vort_calvary_actor"
+                "action"  "modifyentity"  
+		"ondeath"	"never_ever_do_it_again,reload,,-1"
+
+	  }
+
+				"event"
+	  {
+		"targetname"	"vort_entrance_show_vort_1"
+                "action"  "modifyentity"  
+		"ondeath"	"never_ever_do_it_again,reload,,-1"
+
+	  }
+	  
+	  			"event"
+	  {
+		"targetname"	"vort_entrance_show_vort_2"
+                "action"  "modifyentity"  
+		"ondeath"	"never_ever_do_it_again,reload,,-1"
+
+	  }
+
+}
+
+"entities" {
+
+		"npc_antlion_acid"
+        {
+        "origin" "-548 -10254 -464"
+        "angle" "0 -1 0"
+        "keyvalues"
+            {
+			"fademaxdist" "2800"
+            "fademindist" "2700"  
+            }
+        }
+
+
+"event"
+	  {
+		"targetname"	"pointTemplate_vortCalvary"
+                "action"  "modifyentity"  
+		"OnEntitySpawned"	"vort_calvary_2,makegameendally,,0.1"
+	  }
+	  
+	  "event"
+	  {
+		"targetname"	"pointTemplate_vortCalvary"
+                "action"  "modifyentity"  
+		"OnEntitySpawned"	"vort_entrance_show_vort_1,makegameendally,,0.1"
+	  }
+
+"event"
+	  {
+		"targetname"	"pointTemplate_vortCalvary"
+                "action"  "modifyentity"  
+		"OnEntitySpawned"	"vort_entrance_show_vort_2,makegameendally,,0.1"
+	  }
+	  
+	  "event"
+	  {
+		"targetname"	"pointTemplate_vortCalvary"
+                "action"  "modifyentity"  
+		"OnEntitySpawned"	"vort_calvary_1,makegameendally,,0.1"
+	  }
+
+
+"event"
+	  {
+		"targetname"	"pointTemplate_vortCalvary"
+                "action"  "modifyentity"  
+		"OnEntitySpawned"	"vort_calvary_actor,makegameendally,,0.1"
+	  }
+
+
+
+// Lite Start
+
+  "logic_auto"
+        {
+        "origin" "2813 7162 0" 
+		"angle"	"0 0 0"
+        "keyvalues"
+            {
+	
+		     "OnNewGame" "vortigauntstillworkingonthis,command,oc_weapon_disable_dissolve 1,-1"
+            }
+        }
+
+	 "point_servercommand" {
+		"origin""-697 -7 1487"
+		"keyvalues" {
+                            "targetname" "vortigauntstillworkingonthis"
+	             }
+               }
+
+//"event"
+	//  {
+	//	"targetname"	"combine_mine_1"
+       //         "action"  "modifyentity"
+     //   "skin" "3"				
+	//  }
+
+//"event"
+	//  {
+//		"targetname"	"combine_mine_1"
+    //            "action"  "modifyentity"
+    //    "skin" "3"				
+//	  }
+
+//"event"
+//	  {
+//		"targetname"	"combine_mine_1"
+  //              "action"  "modifyentity"
+   //     "skin" "3"				
+//	  }
+
+//"event"
+//	  {
+//		"targetname"	"combine_mine_1"
+   //             "action"  "modifyentity"
+   //     "skin" "3"				
+	//  }
+
+// Third Skin Used in White Forest
+
+			"prop_dynamic"
+        {
+        "origin" "-2952 -8418 -378"
+        "angle" "0 0 0"
+        "keyvalues"
+            {
+            "modelscale" "3"
+			"disableshadows" "1"
+			"disablereceiveshadows" "1"
+            "model" "models/props_dev/plank_long_fat.mdl"
+			"fademaxdist" "2500"
+            "fademindist" "2000"
+			"targetname" "props_ep2_out2_area1"
+            }
+        }
+		
+			"prop_dynamic"
+        {
+        "origin" "-2782 -8244 -439"
+        "angle" "90 0 0"
+        "keyvalues"
+            {
+            "modelscale" "3"
+			"disableshadows" "1"
+			"disablereceiveshadows" "1"
+            "model" "models/props_dev/plank_long_fat.mdl"
+			"fademaxdist" "2500"
+            "fademindist" "2000"
+			"targetname" "props_ep2_out2_area1"
+            }
+        }
+		
+			"prop_dynamic"
+        {
+        "origin" "-2475 -8264 -267"
+        "angle" "0 90 0"
+        "keyvalues"
+            {
+            "modelscale" "3"
+			"disableshadows" "1"
+			"disablereceiveshadows" "1"
+            "model" "models/props_dev/plank_long_fat.mdl"
+			"fademaxdist" "2500"
+            "fademindist" "2000"
+			"targetname" "props_ep2_out2_area1"
+            }
+        }
+		
+		
+			"prop_dynamic"
+        {
+        "origin" "-2035 -8382 -381"
+        "angle" "0 0 0"
+        "keyvalues"
+            {
+            "modelscale" "3"
+			"disableshadows" "1"
+			"disablereceiveshadows" "1"
+            "model" "models/props_dev/plank_long_fat.mdl"
+			"fademaxdist" "2500"
+            "fademindist" "2000"
+			"targetname" "props_ep2_out2_area1"
+            }
+        }
+		
+				"prop_dynamic"
+        {
+        "origin" "-1467 -8336 -607"
+        "angle" "0 135 0"
+        "keyvalues"
+            {
+            "modelscale" "3"
+			"disableshadows" "1"
+			"disablereceiveshadows" "1"
+            "model" "models/props_dev/plank_long_fat.mdl"
+			"fademaxdist" "2500"
+            "fademindist" "2000"
+			"targetname" "props_ep2_out2_area1"
+            }
+        }
+		
+			"prop_dynamic"
+        {
+        "origin" "-2004 -8872 -646"
+        "angle" "0 135 0"
+        "keyvalues"
+            {
+            "modelscale" "3"
+			"disableshadows" "1"
+			"disablereceiveshadows" "1"
+            "model" "models/props_dev/plank_long_fat.mdl"
+			"fademaxdist" "2500"
+            "fademindist" "2000"
+			"targetname" "props_ep2_out2_area1"
+            }
+        } 
+		
+				"prop_dynamic"
+        {
+        "origin" "-2364 -8729 -593"
+        "angle" "0 135 0"
+        "keyvalues"
+            {
+            "modelscale" "4"
+			"disableshadows" "1"
+			"disablereceiveshadows" "1"
+            "model" "models/props_dev/plank_long_fat.mdl"
+			"fademaxdist" "2500"
+            "fademindist" "2000"
+			"targetname" "props_ep2_out2_area1"
+            }
+        }
+		
+				"prop_dynamic"
+        {
+        "origin" "-1601 -7962 -607"
+        "angle" "0 135 0"
+        "keyvalues"
+            {
+            "modelscale" "4"
+			"disableshadows" "1"
+			"disablereceiveshadows" "1"
+            "model" "models/props_dev/plank_long_fat.mdl"
+			"fademaxdist" "2500"
+            "fademindist" "2000"
+			"targetname" "props_ep2_out2_area1"
+            }
+        }
+		
+		"prop_dynamic"
+        {
+        "origin" "-2796 -10407 -640"
+        "angle" "90 0 0"
+        "keyvalues"
+            {
+            "modelscale" "3"
+			"disableshadows" "1"
+			"disablereceiveshadows" "1"
+            "model" "models/props_dev/plank_long_fat.mdl"
+			"fademaxdist" "2500"
+            "fademindist" "2000"
+			"targetname" "props_ep2_out2_area1"
+            }
+        }
+		
+		"prop_dynamic"
+        {
+        "origin" "-2798 -11172 -640"
+        "angle" "90 0 0"
+        "keyvalues"
+            {
+            "modelscale" "3"
+			"disableshadows" "1"
+			"disablereceiveshadows" "1"
+            "model" "models/props_dev/plank_long_fat.mdl"
+			"fademaxdist" "2500"
+            "fademindist" "2000"
+			"targetname" "props_ep2_out2_area1"
+            }
+        }
+		
+		"prop_dynamic"
+        {
+        "origin" "-2901 -11971 -553"
+        "angle" "90 90 0"
+        "keyvalues"
+            {
+            "modelscale" "3"
+			"disableshadows" "1"
+			"disablereceiveshadows" "1"
+            "model" "models/props_dev/plank_long_fat.mdl"
+			"fademaxdist" "2500"
+            "fademindist" "2000"
+			"targetname" "props_ep2_out2_area1"
+            }
+        }
+		
+		"prop_dynamic"
+        {
+        "origin" "-2796 -11688 -650"
+        "angle" "90 0 0"
+        "keyvalues"
+            {
+            "modelscale" "3"
+			"disableshadows" "1"
+			"disablereceiveshadows" "1"
+            "model" "models/props_dev/plank_long_fat.mdl"
+			"fademaxdist" "2500"
+            "fademindist" "2000"
+			"targetname" "props_ep2_out2_area1"
+            }
+        }
+		
+		"prop_dynamic"
+        {
+        "origin" "-3018 -11754 -514"
+        "angle" "0 90 0"
+        "keyvalues"
+            {
+            "modelscale" "3"
+			"disableshadows" "1"
+			"disablereceiveshadows" "1"
+            "model" "models/props_dev/plank_long_fat.mdl"
+			"fademaxdist" "2500"
+            "fademindist" "2000"
+			"targetname" "props_ep2_out2_area1"
+            }
+        }
+		
+		"prop_dynamic"
+        {
+        "origin" "775 -9793 -682"
+        "angle" "90 90 0"
+        "keyvalues"
+            {
+            "modelscale" "3"
+			"disableshadows" "1"
+			"disablereceiveshadows" "1"
+            "model" "models/props_dev/plank_long_fat.mdl"
+			"fademaxdist" "2500"
+            "fademindist" "2000"
+			"targetname" "props_ep2_out2_area1"
+            }
+        }
+		
+		"prop_dynamic"
+        {
+        "origin" "-895 -9793 -682"
+        "angle" "90 90 0"
+        "keyvalues"
+            {
+            "modelscale" "3"
+			"disableshadows" "1"
+			"disablereceiveshadows" "1"
+            "model" "models/props_dev/plank_long_fat.mdl"
+			"fademaxdist" "2500"
+            "fademindist" "2000"
+			"targetname" "props_ep2_out2_area1"
+            }
+        }
+		
+		"prop_dynamic"
+        {
+        "origin" "-78 -9793 -682"
+        "angle" "90 90 0"
+        "keyvalues"
+            {
+            "modelscale" "3"
+			"disableshadows" "1"
+			"disablereceiveshadows" "1"
+            "model" "models/props_dev/plank_long_fat.mdl"
+			"fademaxdist" "2500"
+            "fademindist" "2000"
+			"targetname" "props_ep2_out2_area1"
+            }
+        }
+		
+		"prop_dynamic"
+        {
+        "origin" "-1769 -9792 -651"
+        "angle" "90 90 0"
+        "keyvalues"
+            {
+            "modelscale" "3.5"
+			"disableshadows" "1"
+			"disablereceiveshadows" "1"
+            "model" "models/props_dev/plank_long_fat.mdl"
+			"fademaxdist" "2500"
+            "fademindist" "2000"
+			"targetname" "props_ep2_out2_area1"
+            }
+        }
+		
+		"prop_dynamic"
+        {
+        "origin" "-2827 -9777 1839"
+        "angle" "0 90 0"
+        "keyvalues"
+            {
+            "modelscale" "3.5"
+			"disableshadows" "1"
+			"disablereceiveshadows" "1"
+            "model" "models/props_dev/plank_long_fat.mdl"
+			"fademaxdist" "2500"
+            "fademindist" "2000"
+			"targetname" "props_ep2_out2_area1"
+            }
+        }
+		
+		"prop_dynamic"
+        {
+        "origin" "13 -9414 -634"
+        "angle" "90 90 0"
+        "keyvalues"
+            {
+            "modelscale" "3.5"
+			"disableshadows" "1"
+			"disablereceiveshadows" "1"
+            "model" "models/props_dev/plank_long_fat.mdl"
+			"fademaxdist" "2500"
+            "fademindist" "2000"
+			"targetname" "props_ep2_out2_area1"
+            }
+        }
+		
+			"prop_dynamic"
+        {
+        "origin" "-318 -10246 -408"
+        "angle" "0 90 0"
+        "keyvalues"
+            {
+            "modelscale" "3"
+			"disableshadows" "1"
+			"disablereceiveshadows" "1"
+            "model" "models/props_dev/plank_long_fat.mdl"
+			"fademaxdist" "2500"
+            "fademindist" "2000"
+			"targetname" "props_ep2_out2_area1"
+            }
+        }
+		
+			"prop_dynamic"
+        {
+        "origin" "-67 -9983 -463"
+        "angle" "0 0 0"
+        "keyvalues"
+            {
+            "modelscale" "2"
+			"disableshadows" "1"
+			"disablereceiveshadows" "1"
+            "model" "models/props_dev/plank_long_fat.mdl"
+			"fademaxdist" "2500"
+            "fademindist" "2000"
+			"targetname" "props_ep2_out2_area1"
+            }
+        }
+		
+			"prop_dynamic"
+        {
+        "origin" "7 -9988 -530"
+        "angle" "0 0 0"
+        "keyvalues"
+            {
+            "modelscale" "2"
+			"disableshadows" "1"
+			"disablereceiveshadows" "1"
+            "model" "models/props_dev/plank_long_fat.mdl"
+			"fademaxdist" "2500"
+            "fademindist" "2000"
+			"targetname" "props_ep2_out2_area1"
+            }
+        }
+		
+			"prop_dynamic"
+        {
+        "origin" "-2286 -9415 -405"
+        "angle" "0 0 90"
+        "keyvalues"
+            {
+            "modelscale" "2"
+			"disableshadows" "1"
+			"disablereceiveshadows" "1"
+            "model" "models/props_dev/plank_long_fat.mdl"
+			"fademaxdist" "2500"
+            "fademindist" "2000"
+			"targetname" "props_ep2_out2_area1"
+            }
+        }
+		
+			"prop_dynamic"
+        {
+        "origin" "-2366 -9075 -425"
+        "angle" "0 48 0"
+        "keyvalues"
+            {
+            "modelscale" "2"
+			"disableshadows" "1"
+			"disablereceiveshadows" "1"
+            "model" "models/props_dev/plank_long_fat.mdl"
+			"fademaxdist" "2500"
+            "fademindist" "2000"
+			"targetname" "props_ep2_out2_area1"
+            }
+        }
+		
+			"prop_dynamic"
+        {
+        "origin" "-2366 -9075 -271"
+        "angle" "0 48 0"
+        "keyvalues"
+            {
+            "modelscale" "2"
+			"disableshadows" "1"
+			"disablereceiveshadows" "1"
+            "model" "models/props_dev/plank_long_fat.mdl"
+			"fademaxdist" "2500"
+            "fademindist" "2000"
+			"targetname" "props_ep2_out2_area1"
+            }
+        }
+		
+			"prop_dynamic"
+        {
+        "origin" "-2666 -8904 -270"
+        "angle" "0 90 0"
+        "keyvalues"
+            {
+            "modelscale" "2"
+			"disableshadows" "1"
+			"disablereceiveshadows" "1"
+            "model" "models/props_dev/plank_long_fat.mdl"
+			"fademaxdist" "2500"
+            "fademindist" "2000"
+			"targetname" "props_ep2_out2_area1"
+            }
+        }
+		
+			"prop_dynamic"
+        {
+        "origin" "-3354 -9873 -269"
+        "angle" "90 45 0"
+        "keyvalues"
+            {
+            "modelscale" "2"
+			"disableshadows" "1"
+			"disablereceiveshadows" "1"
+            "model" "models/props_dev/plank_long_fat.mdl"
+			"fademaxdist" "2500"
+            "fademindist" "2000"
+			"targetname" "props_ep2_out2_area1"
+            }
+        }
+		
+				"prop_dynamic"
+        {
+        "origin" "-3354 -9873 -649"
+        "angle" "90 45 0"
+        "keyvalues"
+            {
+            "modelscale" "2"
+			"disableshadows" "1"
+			"disablereceiveshadows" "1"
+            "model" "models/props_dev/plank_long_fat.mdl"
+			"fademaxdist" "2500"
+            "fademindist" "2000"
+			"targetname" "props_ep2_out2_area1"
+            }
+        }
+		
+				"prop_dynamic"
+        {
+        "origin" "-3434 -9607 -269"
+        "angle" "0 0 0"
+        "keyvalues"
+            {
+            "modelscale" "2"
+			"disableshadows" "1"
+			"disablereceiveshadows" "1"
+            "model" "models/props_dev/plank_long_fat.mdl"
+			"fademaxdist" "2500"
+            "fademindist" "2000"
+			"targetname" "props_ep2_out2_area1"
+            }
+        }
+		
+			"prop_dynamic"
+        {
+        "origin" "-2293 -9508 -269"
+        "angle" "0 0 0"
+        "keyvalues"
+            {
+            "modelscale" "2"
+			"disableshadows" "1"
+			"disablereceiveshadows" "1"
+            "model" "models/props_dev/plank_long_fat.mdl"
+			"fademaxdist" "2500"
+            "fademindist" "2000"
+			"targetname" "props_ep2_out2_area1"
+            }
+        }
+		
+			"prop_dynamic"
+        {
+        "origin" "-2899 -10042 -269"
+        "angle" "0 90 0"
+        "keyvalues"
+            {
+            "modelscale" "2"
+			"disableshadows" "1"
+			"disablereceiveshadows" "1"
+            "model" "models/props_dev/plank_long_fat.mdl"
+			"fademaxdist" "2500"
+            "fademindist" "2000"
+			"targetname" "props_ep2_out2_area1"
+            }
+        }
+		
+			"prop_dynamic"
+        {
+        "origin" "-2840 -9784 -1911"
+        "angle" "0 90 0"
+        "keyvalues"
+            {
+            "modelscale" "4"
+			"disableshadows" "1"
+			"disablereceiveshadows" "1"
+            "model" "models/props_dev/plank_long_fat.mdl"
+			"fademaxdist" "2500"
+            "fademindist" "2000"
+			"targetname" "props_ep2_out2_area1"
+            }
+        }
+		
+			"prop_dynamic"
+        {
+        "origin" "-2553 -9558 -1920"
+        "angle" "0 0 0"
+        "keyvalues"
+            {
+            "modelscale" "2"
+			"disableshadows" "1"
+			"disablereceiveshadows" "1"
+            "model" "models/props_dev/plank_long_fat.mdl"
+			"fademaxdist" "2500"
+            "fademindist" "2000"
+			"targetname" "props_ep2_out2_area1"
+            }
+        }
+		
+		
+			"prop_dynamic"
+        {
+        "origin" "-3411 -9522 181"
+        "angle" "90 90 0"
+        "keyvalues"
+            {
+            "modelscale" "3"
+			"disableshadows" "1"
+			"disablereceiveshadows" "1"
+            "model" "models/props_dev/plank_long_fat.mdl"
+			"fademaxdist" "2500"
+            "fademindist" "2000"
+			"targetname" "props_ep2_out2_area1"
+            }
+        }
+		
+			"prop_dynamic"
+        {
+        "origin" "-3786 -9534 178"
+        "angle" "90 90 0"
+        "keyvalues"
+            {
+            "modelscale" "3"
+			"disableshadows" "1"
+			"disablereceiveshadows" "1"
+            "model" "models/props_dev/plank_long_fat.mdl"
+			"fademaxdist" "2500"
+            "fademindist" "2000"
+			"targetname" "props_ep2_out2_area1"
+            }
+        }
+		
+			"prop_dynamic"
+        {
+        "origin" "-3835 -8746 267"
+        "angle" "0 0 0"
+        "keyvalues"
+            {
+            "modelscale" "3"
+			"disableshadows" "1"
+			"disablereceiveshadows" "1"
+            "model" "models/props_dev/plank_long_fat.mdl"
+			"fademaxdist" "2500"
+            "fademindist" "2000"
+			"targetname" "props_ep2_out2_area1"
+            }
+        }
+			"prop_dynamic"
+        {
+        "origin" "-4080 -8753 325"
+        "angle" "0 0 0"
+        "keyvalues"
+            {
+            "modelscale" "3"
+			"disableshadows" "1"
+			"disablereceiveshadows" "1"
+            "model" "models/props_dev/plank_long_fat.mdl"
+			"fademaxdist" "2500"
+            "fademindist" "2000"
+			"targetname" "props_ep2_out2_area1"
+            }
+        }
+		
+			"prop_dynamic"
+        {
+        "origin" "-3790 -9233 299"
+        "angle" "0 90 0"
+        "keyvalues"
+            {
+            "modelscale" "3"
+			"disableshadows" "1"
+			"disablereceiveshadows" "1"
+            "model" "models/props_dev/plank_long_fat.mdl"
+			"fademaxdist" "2500"
+            "fademindist" "2000"
+			"targetname" "props_ep2_out2_area1"
+            }
+        }
+		
+			"prop_dynamic"
+        {
+        "origin" "-4108 -9419 288"
+        "angle" "0 0 0"
+        "keyvalues"
+            {
+            "modelscale" "2.4"
+			"disableshadows" "1"
+			"disablereceiveshadows" "1"
+            "model" "models/props_dev/plank_long_fat.mdl"
+			"fademaxdist" "2500"
+            "fademindist" "2000"
+			"targetname" "props_ep2_out2_area1"
+            }
+        }
+		
+			"prop_dynamic"
+        {
+        "origin" "-3491 -9379 252"
+        "angle" "0 90 0"
+        "keyvalues"
+            {
+            "modelscale" "2"
+			"disableshadows" "1"
+			"disablereceiveshadows" "1"
+            "model" "models/props_dev/plank_long_fat.mdl"
+			"fademaxdist" "2500"
+            "fademindist" "2000"
+			"targetname" "props_ep2_out2_area1"
+            }
+        }
+		
+			"prop_dynamic"
+        {
+        "origin" "-3785 -9406 287"
+        "angle" "0 0 0"
+        "keyvalues"
+            {
+            "modelscale" "3"
+			"disableshadows" "1"
+			"disablereceiveshadows" "1"
+            "model" "models/props_dev/plank_long_fat.mdl"
+			"fademaxdist" "2500"
+            "fademindist" "2000"
+			"targetname" "props_ep2_out2_area1"
+            }
+        }
+		
+			"prop_dynamic"
+        {
+        "origin" "-3936 -9813 313"
+        "angle" "90 0 0"
+        "keyvalues"
+            {
+            "modelscale" "3"
+			"disableshadows" "1"
+			"disablereceiveshadows" "1"
+            "model" "models/props_dev/plank_long_fat.mdl"
+			"fademaxdist" "2500"
+            "fademindist" "2000"
+			"targetname" "props_ep2_out2_area1"
+            }
+        }
+			"prop_dynamic"
+        {
+        "origin" "-2998 -8903 -269"
+        "angle" "0 0 0"
+        "keyvalues"
+            {
+            "modelscale" "3"
+			"disableshadows" "1"
+			"disablereceiveshadows" "1"
+            "model" "models/props_dev/plank_cube01.mdl"
+			"fademaxdist" "2500"
+            "fademindist" "2000"
+			"targetname" "props_ep2_out2_area1"
+            }
+        }
+		
+			"prop_dynamic"
+        {
+        "origin" "-3303 -9481 239"
+        "angle" "0 0 0"
+        "keyvalues"
+            {
+            "modelscale" "3"
+			"disableshadows" "1"
+			"disablereceiveshadows" "1"
+            "model" "models/props_dev/plank_cube01.mdl"
+			"fademaxdist" "2500"
+            "fademindist" "2000"
+			"targetname" "props_ep2_out2_area1"
+            }
+        }
+		
+		"prop_dynamic"
+        {
+        "origin" "-3476 -9481 239"
+        "angle" "0 0 0"
+        "keyvalues"
+            {
+            "modelscale" "3"
+			"disableshadows" "1"
+			"disablereceiveshadows" "1"
+            "model" "models/props_dev/plank_cube01.mdl"
+			"fademaxdist" "2500"
+            "fademindist" "2000"
+			"targetname" "props_ep2_out2_area1"
+            }
+        }
+		
+		"prop_dynamic"
+        {
+        "origin" "-3156 -8905 -270"
+        "angle" "0 0 0"
+        "keyvalues"
+            {
+            "modelscale" "3"
+			"disableshadows" "1"
+			"disablereceiveshadows" "1"
+            "model" "models/props_dev/plank_cube01.mdl"
+			"fademaxdist" "2500"
+            "fademindist" "2000"
+			"targetname" "props_ep2_out2_area1"
+            }
+        }
+		
+		"prop_dynamic"
+        {
+        "origin" "-3245 -8980 -269"
+        "angle" "0 0 0"
+        "keyvalues"
+            {
+            "modelscale" "3"
+			"disableshadows" "1"
+			"disablereceiveshadows" "1"
+            "model" "models/props_dev/plank_cube01.mdl"
+			"fademaxdist" "2500"
+            "fademindist" "2000"
+			"targetname" "props_ep2_out2_area1"
+            }
+        }
+"removeentity" {
+            "classname" "env_sun"
+           }
+
+"env_sun"
+        {
+                "roll"  "0"  
+                "yaw"   "-90"
+                "pitch" "-150"
+
+                "KeyValues"
+                {
+					"targetname" "riseandshine"
+					"rendercolor" "237 218 143"
+				"size" "16"
+					"disablesprite" "1"
+									"overlaysize" "24"
+					"use_angles"	"1"
+					"sunrays_intensity"	"1"
+					"sunrays_color.r"	"0"
+					"sunrays_color.g"	"0.191"
+					"sunrays_color.b"	"0.255"
+					"sunrays_color.a"	"1"
+					"sunrays_power"		"0.10"
+					"global_lightning_keyvalues"
+					{
+						"enabled" "1"
+						"enableshadows" "1"			
+						"distance" "7000"
+						"fov" "270"
+						"nearz" "0"
+						"northoffset" "0"
+						"eastoffset" "0"
+						"forwardoffset" "0"
+						"orthosize" "850"
+						"brightnessscale" "2.5"
+						"angles" "70 135 0"
+						"lightcolor" "145 166 204 400"
+						"targetname" "g_light"
+						// 75 191 255 255
+					}
+                }
+        }
+		
+		  "mapadd_trigger_once" {
+        "origin" "-2237 -8867 -651"
+        "keyvalues" {
+              "label" "new_and_new"
+              "radius" "120"
+       }  
+  }
+  
+  	
+			  "mapadd_trigger_once" {
+        "origin" "-3128 -9483 -1637"
+        "keyvalues" {
+              "label" "back_in_vort_style"
+              "radius" "100"
+       }  
+  }
+  
+		
+
+  "mapadd_trigger_multiple" {
+        "origin" "-214 -10252 -497"
+        "keyvalues" {
+              "label" "nomoresun"
+              "radius" "80"
+			  "wait" "0.1"
+			"delay" "0.1"
+			"limit" "9999"
+       }  
+  }
+  
+  	  "mapadd_trigger_multiple" {
+        "origin" "-80 -9812 -597"
+        "keyvalues" {
+              "label" "yesmoresun"
+              "radius" "80"
+			  "wait" "0.1"
+			"delay" "0.1"
+			"limit" "9999"
+       }  
+  }
+  
+  
+  "mapadd_trigger_multiple" {
+        "origin" "-4052 -9535 215"
+        "keyvalues" {
+              "label" "nomoresun"
+              "radius" "80"
+			  "wait" "0.1"
+			"delay" "0.1"
+			"limit" "9999"
+       }  
+  }
+  
+    "mapadd_trigger_multiple" {
+        "origin" "-3821 -9319 183"
+        "keyvalues" {
+              "label" "yesmoresun"
+              "radius" "105"
+			  "wait" "0.1"
+			"delay" "0.1"
+			"limit" "9999"
+       }  
+  }
+// Lite End
+
+
+
+"npc_boid_flocks"
+        {
+        "origin" "-2834 -9585 -495"
+        "angle" "0 0 0.00"
+		 "keyvalues"
+            {
+            "fSize" "5"
+	        "fRadius" "128"
+            "spawnflags" "512"
+            }
+        }
+		
+
+
+"logic_relay"
+        {
+        "origin" "-949 1430 -765"
+        "angle" "0 0 0.00"
+        "keyvalues"
+            {
+			"OnTrigger"  "weather_display,showhudhint,,0.5"
+			"OnTrigger"  "weather_display,hidehudhint,,5.5"
+			"targetname" "Weather_relay"
+
+            }
+        }
+
+		"env_hudhint"
+        {
+        "origin" "2230 -1369 87"
+        "angle" "0 0 0.00"
+        "keyvalues"
+            {
+			"message" "          H.E.V MʎRK VI ASSISTANT 
+			|TIME: NO INFORMATION|
+			|WEATHER: NO INFORMATION|
+			|TEMPERATURE: 8°C|"
+			"targetname" "Weather_Display"
+			"spawnflags" "1"
+            }
+        }
+		
+		"mapadd_trigger_once" {
+		"origin" "-2056 -8645 -651"
+		"keyvalues" {
+			"radius"	"80"
+			"label"		"weather"
+		}
+	}
+
+
+
+		
+		
+
+
+
+	
+
+"mapadd_trigger_once" {
+        "origin" "-2015 -8571 -426"
+        "keyvalues" {
+              "label" "workershere"
+              "radius" "100"
+       }  
+   }
+   
+"ai_relationship"
+        {
+        "origin" "-2979.29 -10006.94 -715.34"
+        "angle" "0 0 0"
+        "keyvalues"
+            {
+            "targetname"  "buddy_love_third"
+            "subject"        "turret_buddy_3"
+            "target"       "!player"
+            "startactive" "1"
+            "disposition" "3"
+            "rank" "9999"
+            }
+        }
+		
+		"ai_relationship"
+        {
+        "origin" "-2979.29 -10006.94 -715.34"
+        "angle" "0 0 0"
+        "keyvalues"
+            {
+            "targetname"  "buddy_love_third"
+            "subject"        "turret_buddy_3"
+            "target"       "npc_citizen"
+            "startactive" "1"
+            "disposition" "3"
+            "rank" "9999"
+            }
+        }
+		
+		"ai_relationship"
+        {
+        "origin" "-2979.29 -10006.94 -715.34"
+        "angle" "0 0 0"
+        "keyvalues"
+            {
+            "targetname"  "buddy_love_third"
+            "subject"        "turret_buddy_3"
+            "target"       "npc_vortigaunt"
+            "startactive" "1"
+            "disposition" "3"
+            "rank" "9999"
+            }
+        }
+		
+		"ai_relationship"
+        {
+        "origin" "-2979.29 -10006.94 -715.34"
+        "angle" "0 0 0"
+        "keyvalues"
+            {
+            "targetname"  "buddy_love_third"
+            "subject"        "turret_buddy_3"
+            "target"       "npc_alyx"
+            "startactive" "1"
+            "disposition" "3"
+            "rank" "9999"
+            }
+        }
+		
+		"ai_relationship"
+        {
+        "origin" "-2979.29 -10006.94 -715.34"
+        "angle" "0 0 0"
+        "keyvalues"
+            {
+            "targetname"  "buddy_love_third"
+            "subject"        "npc_citizen"
+            "target"       "turret_buddy_3"
+            "startactive" "1"
+            "disposition" "3"
+            "rank" "9999"
+            }
+        }
+		
+		"ai_relationship"
+        {
+        "origin" "-2979.29 -10006.94 -715.34"
+        "angle" "0 0 0"
+        "keyvalues"
+            {
+            "targetname"  "buddy_love_third"
+            "subject"        "npc_vortigaunt"
+            "target"       "turret_buddy_3"
+            "startactive" "1"
+            "disposition" "3"
+            "rank" "9999"
+            }
+        }
+
+		"ai_relationship"
+        {
+        "origin" "-2979.29 -10006.94 -715.34"
+        "angle" "0 0 0"
+        "keyvalues"
+            {
+            "targetname"  "buddy_love_third"
+            "subject"        "npc_alyx"
+            "target"       "turret_buddy_3"
+            "startactive" "1"
+            "disposition" "3"
+            "rank" "9999"
+            }
+        }
+		
+"npc_turret_floor"
+	{
+		"origin"		"-2979.29 -10006.94 -715.34"
+		"angle"		"0.25 -90.85 0.62"
+		"keyvalues"
+		{
+		    "skin" "3"
+			"targetname"		"turret_buddy_3"
+			"model"		"models/combine_turrets/floor_turret.mdl"
+			//"spawnflags" "768"
+		}
+	}
+	// Better it to be like Combine
+
+
+		
+			"material_modify_control"
+        {
+        "origin" "-2167 -12060 -1907"
+        "angle" "0 270 0.00"
+		"keyvalues"
+            {
+             "materialName" "Models/Vortigaunt/vortigaunt_blue.vmt"
+			 "materialvar" "$emissiveBlendScrollVector"
+			 "parentname" "vort_calvary_1"
+			 "targetname" "matcontrol_timestop"
+            }
+        }
+		
+			"material_modify_control"
+        {
+        "origin" "-2167 -12060 -1907"
+        "angle" "0 270 0.00"
+		"keyvalues"
+            {
+             "materialName" "Models/Vortigaunt/vortigaunt_blue.vmt"
+			 "materialvar" "$emissiveBlendScrollVector"
+			 "parentname" "vort_calvary_actor"
+			 "targetname" "matcontrol_timestop"
+            }
+        }
+		
+		 "npc_maker"
+        {
+        "origin" "-2958 -10669 -638"
+        "angle" "0 -179 0"
+        "keyvalues"
+            {
+            "targetname" "racex_24"
+            "NPCType"    "npc_antlion_worker"
+            "StartDisabled" "1"
+            "spawnflags" "16"
+            "MaxNPCCount"   "9999"
+            "SpawnFrequency" "15"
+            "MaxLiveChildren" "1"
+         }
+       }
+	   
+	   	 "npc_maker"
+        {
+        "origin" "-2162 -8790 -651"
+        "angle" "0 -135 0"
+        "keyvalues"
+            {
+            "targetname" "xenx_24"
+            "NPCType"    "npc_antlion_worker"
+            "StartDisabled" "1"
+            "spawnflags" "16"
+            "MaxNPCCount"   "9999"
+            "SpawnFrequency" "15"
+            "MaxLiveChildren" "1"
+         }
+       }
+	   
+	   "event"
+	  {
+		"targetname"	"caseHandler_easy"
+        "action"  "modifyentity"  
+	    "OnCase02" "racex_relay,trigger,,-1"
+        "OnCase03" "racex_relay,trigger,,-1"
+		 "OnCase03" "racex_relay,trigger,,-1"
+	  }
+	  
+"event"
+	  {
+		"targetname"	"caseHandler_medium"
+        "action"  "modifyentity"  
+		"OnCase01" "racex_relay,trigger,,-1"
+		"OnCase02" "racex_relay,trigger,,-1"
+        "OnCase03" "racex_relay,trigger,,-1"
+		"OnCase04" "racex_relay,trigger,,-1"
+		 "OnCase02" "racex_relay,trigger,,-1"
+	  }
+	  
+
+	  
+
+	  "logic_relay"
+        {
+		"origin" "-3209 -9938 -651"
+        "keyvalues"
+            {
+			"targetname" "racex_relay"
+			"OnTrigger" "racex_24,enable,,15"
+			"OnTrigger" "xenx_24,enable,,15"
+			"OnTrigger" "xenx_24,disable,,55"
+			"OnTrigger" "racex_24,disable,,55"
+            }
+        }
+		
+"event"
+	  {
+		"targetname"	"griggs_sheckley_template"
+        "action"  "modifyentity"  
+		"OnEntitySpawned"	"griggs,giveweapon,weapon_shotgun,0.5"
+                "OnEntitySpawned"	"sheckley,giveweapon,weapon_mp5k,0.5"
+		"OnEntitySpawned"	"vortigauntstillworkingonthis,command,ent_remove_all weapon_smg1,0.6"
+                "OnEntitySpawned"	"griggs,makegameendally,,0.5"
+                "OnEntitySpawned"	"sheckley,makegameendally,,0.5"   
+	  }
+
+
+"npc_sporegenerator"
+        {
+        "origin" "-3222 -9629 -899"
+        "angle" "0 0.86 0.00"
+        }
+
+ "npc_sporegenerator"
+        {
+        "origin" "-3247 -9553 -899"
+        "angle" "0 107 0.00"
+        }
+
+ "npc_sporegenerator"
+        {
+        "origin" "-2747 -10043 -651"
+        "angle" "0 180 90.00"
+        }
+
+
+        "weapon_beretta"
+        {
+        "origin" "-2895 -8216 -441"
+        }
+		
+		
+ "weapon_mp5k"
+        {
+        "origin" "-3239 -9328 -835"
+        }
+		
+		
+
+	   
+	   "item_item_crate"
+	{
+		"origin"	"-1793 -8374 -647"
+		"angle"		"0 145 0"
+		"KeyValues"
+		{
+			"ItemClass"	"item_box_flare_rounds"
+			"ItemCount"		"4"
+
+		}
+	}
+	
+		   "item_item_crate"
+	{
+		"origin"	"-3372 -9598 -587"
+		"angle"		"0 -43 0"
+		"KeyValues"
+		{
+			"ItemClass"	"item_healthkit"
+			"ItemCount"		"4"
+
+		}
+	}
+	
+	
+		 "item_item_crate"
+	{
+		"origin"	"-3157 -8990 -629"
+		"angle"		"0 -83 0"
+		"KeyValues"
+		{
+			"ItemClass"	"item_battery"
+			"ItemCount"		"4"
+
+		}
+	}
+	
+		 "item_healthvial"
+	{
+		"origin"	"-3157 -8990 -611"
+		"angle"		"0 -83 0"
+	}
+	
+	 "item_item_crate"
+	{
+		"origin"	"-2448 -9809 -643"
+		"angle"		"0 46 0"
+		"KeyValues"
+		{
+			"ItemClass"	"item_healthkit"
+			"ItemCount"		"4"
+
+		}
+	}
+	
+	
+		  "mapadd_trigger_once" {
+        "origin" "-3121 -9465 -1218"
+        "keyvalues" {
+              "label" "goawayrightnow"
+              "radius" "120"
+       }  
+  }
+
+
+}
+
+"entities:goawayrightnow" {
+
+
+
+
+"event" {
+		"targetname"	"turret_buddy_3"
+		"action" "kill"
+	 }
+
+
+}

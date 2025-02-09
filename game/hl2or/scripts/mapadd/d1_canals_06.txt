@@ -1,0 +1,775 @@
+//	OverCharged Steam MAPADD Data
+//	Location: C17
+//      Game: Half-Life 2
+
+"precache" {
+    "entity" "npc_headcrab"
+	"entity" "npc_bullsquid"
+}
+"randomspawn" {
+
+//"npc_pitdrone" {
+       //     "count" "3"
+		//	"values" "fademaxdist 3700 fademindist 3600"
+           // }
+}
+
+"Init"
+{
+	"Give_Equipment"
+	{
+		"Item"
+		{
+		    "weapon" "stunstick"
+			"weapon" "beretta"
+			"weapon" "dual_pistols"
+		}
+	}
+}
+
+"entities:idling" {
+
+
+	 
+"event" {
+      "targetname" "houndeye_patrol_1_seq"
+      "action"     "beginsequence"
+     }
+
+}
+
+
+"entities:food" {
+
+	"npc_bullsquid"
+        {
+        "origin" "403.94 9144.71 -46.63"
+        "angle" "0 172.51 0.00"
+        "keyvalues"
+            {
+			"fademaxdist" "4700"
+	        "fademindist" "4600"
+            "spawnflags" "768"
+            }
+        }
+
+"npc_bullsquid"
+        {
+        "origin" "70.18 10351 -91.10"
+        "angle" "0 -112.97 0.00"
+        "keyvalues"
+            {
+			"fademaxdist" "4700"
+	        "fademindist" "4600"
+            "spawnflags" "768"
+            }
+        }
+
+"npc_headcrab"
+        {
+        "origin" "-284 10455 -126"
+        "angle" "0 -15 0.00"
+        "keyvalues"
+            {
+			"fademaxdist" "4700"
+	        "fademindist" "4600"
+			"targetname" "head_food"
+            "spawnflags" "768"
+            }
+        }
+
+"npc_headcrab"
+        {
+        "origin" "-141 10276 -146"
+        "angle" "0 12 0.00"
+        "keyvalues"
+            {
+			"fademaxdist" "4700"
+	        "fademindist" "4600"
+			"targetname" "head_food"
+            "spawnflags" "768"
+            }
+        }
+
+"npc_headcrab"
+        {
+        "origin" "153 10031 -132"
+        "angle" "0 110 0.00"
+        "keyvalues"
+            {
+			"fademaxdist" "4700"
+	        "fademindist" "4600"
+			"targetname" "head_food"
+            "spawnflags" "768"
+            }
+        }
+
+"npc_headcrab"
+        {
+        "origin" "236 9376 -118"
+        "angle" "0 -50 0.00"
+        "keyvalues"
+            {
+			"fademaxdist" "4700"
+	        "fademindist" "4600"
+			"targetname" "head_food"
+            "spawnflags" "768"
+            }
+        }
+
+"npc_headcrab"
+        {
+        "origin" "184 9118 -109"
+        "angle" "0 8 0.00"
+        "keyvalues"
+            {
+			"fademaxdist" "4700"
+	        "fademindist" "4600"
+			"targetname" "head_food"
+            "spawnflags" "768"
+            }
+        }
+		
+"npc_headcrab"
+        {
+        "origin" "219 8884 -105"
+        "angle" "0 51 0.00"
+        "keyvalues"
+            {
+			"fademaxdist" "4700"
+	        "fademindist" "4600"
+			"targetname" "head_food"
+            "spawnflags" "768"
+            }
+        }
+		
+			 
+
+}
+
+
+"entities:weather" {
+
+	
+"event"
+	  {
+		"targetname"	"weather_relay"
+                "action"  "trigger"  
+	  }
+
+}
+
+"entities" {
+
+"prop_ragdoll"
+        {
+        "origin" "6330 8092 -247"
+        "angle" "18 213 0.00"
+        "keyvalues"
+            {
+             "fademaxdist" "2700"
+	        "fademindist" "2600"
+			"spawnflags" "260"
+			"skin" "3"
+            "model" "models/skeleton/skeleton_whole.mdl" 
+            }
+        }
+		
+		"prop_ragdoll"
+        {
+        "origin" "-35 5104 -325"
+        "angle" "11 116 0.00"
+        "keyvalues"
+            {
+             "fademaxdist" "2700"
+	        "fademindist" "2600"
+			"spawnflags" "260"
+            "model" "models/skeleton/skeleton_whole.mdl" 
+            }
+        }
+		
+		"prop_ragdoll"
+        {
+        "origin" "-8181 13386 -9"
+        "angle" "28 197 0.00"
+        "keyvalues"
+            {
+             "fademaxdist" "2700"
+	        "fademindist" "2600"
+			"spawnflags" "260"
+            "model" "models/skeleton/skeleton_torso.mdl" 
+			"skin" "2"
+            }
+        }
+		
+"logic_relay"
+        {
+        "origin" "-949 1430 -765"
+        "angle" "0 0 0.00"
+        "keyvalues"
+            {
+			"OnTrigger"  "weather_display,showhudhint,,0.5"
+			"OnTrigger"  "weather_display,hidehudhint,,5.5"
+			"targetname" "Weather_relay"
+
+            }
+        }
+
+		"env_hudhint"
+        {
+        "origin" "2230 -1369 87"
+        "angle" "0 0 0.00"
+        "keyvalues"
+            {
+			"message" "          H.E.V MʎRK VI ASSISTANT 
+			|TIME: 12:34|
+			|WEATHER: PARTLY-SUNNY|
+			|TEMPERATURE: 23°C|"
+				
+			"targetname" "Weather_Display"
+			"spawnflags" "1"
+            }
+        }
+		
+		"mapadd_trigger_once" {
+		"origin" "7043 8325 -432"
+		"keyvalues" {
+			"radius"	"250"
+			"label"		"weather"
+		}
+	}
+
+
+// Lite Start
+
+
+"game_text"
+        {
+        "origin" "-3624 2284 60"
+        "angle" "0 -138.16 0.01"
+        "keyvalues"
+            {
+            "targetname"    "sign_of_found_coast"
+            "channel"       "1"
+            "color"         "100 100 100"
+            "y"             "0.6"
+            "color2"        "240 110 0"
+            "message"       "#Overcharged_Chapter4_Title"
+            "x"             "-1"       
+            "effect"        "2"
+            "fadein"        "0.10"
+            "fadeout"       "0.10"
+            "holdtime"      "9"
+            "fxtime"        "0.25"
+            }
+        }
+
+
+
+  "logic_auto"
+        {
+        "origin" "2813 7162 0" 
+		"angle"	"0 0 0"
+        "keyvalues"
+            {
+			 "OnMapTransition" "sign_of_found_coast,display,,-1"
+			 "OnNewGame" "sign_of_found_coast,display,,-1"
+		     "OnNewGame" "vortigauntstillworkingonthis,command,oc_weapon_disable_dissolve 1,-1"
+            }
+        }
+
+	 "point_servercommand" {
+		"origin""-697 -7 1487"
+		"keyvalues" {
+                            "targetname" "vortigauntstillworkingonthis"
+	             }
+               }
+			   
+	"event" 
+	{
+		"classname"	"worldspawn"
+		"keyvalues" 
+		 {
+		"detailmaterial" "detail/detailsprites_hl2"
+		 }
+	}
+
+
+
+"removeentity" {
+		"classname" "env_sun"
+	}
+
+		"env_sun"
+        {
+
+                "roll"  "-15"  
+                "yaw"   "-70"
+                "pitch" "-135"
+
+                "KeyValues"
+                {
+					"targetname" "riseandshine"
+					"rendercolor" "237 218 143"
+				"size" "16"
+					"disablesprite" "1"
+					"use_angles"	"1"
+					"sunrays_intensity"	"2"
+					"sunrays_color.r"	"0.2"
+					"sunrays_color.g"	"0.2"
+					"sunrays_color.b"	"0.17"
+					"sunrays_color.a"	"1"
+					"sunrays_power"		"0.575"
+					"global_lightning_keyvalues"
+					{
+						"enabled" "1"
+						"enableshadows" "1"			
+						"distance" "14500"
+						"fov" "180"
+						"nearz" "4.45"
+						"northoffset" "0"
+						"eastoffset" "0"
+						"forwardoffset" "0"
+						"orthosize" "835"
+						"brightnessscale" "3"
+						"angles" "35 104 0"
+						"targetname" "g_light"
+						"lightcolor" "248 233 186 860"
+					}					
+                }
+        }
+
+// Lite End
+
+"mapadd_trigger_once" {
+		"origin" "309 6241 -9"
+		"keyvalues" {
+		    "targetname" "food_trigger"
+			"radius"	"500"
+			"label"		"food"
+		}
+	}
+
+
+
+
+		
+"ai_relationship"
+        {
+        "origin" "4555 6476 -255"
+        "angle" "0 0 0"
+        "keyvalues"
+            {
+            "targetname"  "help_him"
+            "subject"        "npc_helicopter"
+            "target"       "npc_*"
+            "startactive" "1"
+            "disposition" "3"
+            "rank" "9999"
+            }
+        }
+
+	"ai_relationship"
+        {
+        "origin" "4555 6476 -255"
+        "angle" "0 0 0"
+        "keyvalues"
+            {
+            "targetname"  "help_him"
+            "subject"        "npc_bullsquid"
+            "target"       "npc_hydra"
+            "startactive" "1"
+            "disposition" "3"
+            "rank" "9999"
+            }
+        }
+		
+			"ai_relationship"
+        {
+        "origin" "4555 6476 -255"
+        "angle" "0 0 0"
+        "keyvalues"
+            {
+            "targetname"  "help_him"
+            "subject"        "npc_bullsquid"
+            "target"       "npc_cscanner"
+            "startactive" "1"
+            "disposition" "3"
+            "rank" "9999"
+            }
+        }
+		
+			"ai_relationship"
+        {
+        "origin" "4555 6476 -255"
+        "angle" "0 0 0"
+        "keyvalues"
+            {
+            "targetname"  "help_him"
+            "subject"        "npc_bullsquid"
+            "target"       "npc_citizen"
+            "startactive" "1"
+            "disposition" "3"
+            "rank" "9999"
+            }
+        }
+		
+		"ai_relationship"
+        {
+        "origin" "4555 6476 -255"
+        "angle" "0 0 0"
+        "keyvalues"
+            {
+            "targetname"  "help_him"
+            "subject"        "npc_pitdrone"
+            "target"       "npc_gman"
+            "startactive" "1"
+            "disposition" "3"
+            "rank" "9999"
+            }
+        }
+		
+"ai_relationship"
+        {
+        "origin" "4555 6476 -255"
+        "angle" "0 0 0"
+        "keyvalues"
+            {
+            "targetname"  "help_him"
+            "subject"        "npc_bullsquid"
+            "target"       "npc_gman"
+            "startactive" "1"
+            "disposition" "3"
+            "rank" "9999"
+            }
+        }
+		
+	
+
+  "scripted_sequence" {
+                "origin" "4417 5991 -123"
+		"keyvalues" { 
+			"m_iszPlay" "eat_loop"
+            "m_bLoopActionSequence" "1"
+			"m_iszEntity" "Gonomeeatsomeone"
+			"m_fMoveTo" "0"
+			"targetname" "es"
+		}
+	}
+
+"prop_physics"
+        {
+        "origin" "5771 9494 -352"
+        "angle" "0 0 0"
+        "keyvalues"
+            {
+            "targetname" "crateforeatingguy"
+            "fademaxdist" "3700"
+	        "fademindist" "3600"
+            "model" "models/props_junk/wood_crate001a.mdl"
+            "OnBreak" "es,beginsequence,1,,-1"
+            }
+        }
+
+
+"prop_physics"
+        {
+        "origin" "-3463 -2892 -201"
+        "angle" "0 0 0"
+        "keyvalues"
+            {
+            "targetname" "crate2foreatingguy"
+            "fademaxdist" "3700"
+	        "fademindist" "3600"
+            "model" "models/props_junk/wood_crate001a.mdl"
+            "OnBreak" "es,cancelsequence,1,,-1"
+            }
+        }
+
+
+"prop_ragdoll"
+        {
+        "origin" "-8265 13860 16"
+        "angle" "342 153 0"
+        "keyvalues"
+            {
+            "fademaxdist" "3700"
+	        "fademindist" "3600"
+            "model" "models/humans/corpse1.mdl"
+            }
+        }
+
+"prop_ragdoll"
+        {
+        "origin" "-3456 10397 -124"
+        "angle" "342 153 0"
+        "keyvalues"
+            {
+            "spawnflags" "260"
+			"fademaxdist" "3700"
+	        "fademindist" "3600"
+            "model" "models/police.mdl"
+            }
+        }
+		
+		"weapon_smg1"
+        {
+        "origin" "-3417 10399 -122"
+		"keyvalues"
+            {
+             "fademaxdist" "700"
+	        "fademindist" "600"
+            }	
+        }
+		
+		
+				
+"prop_ragdoll"
+        {
+        "origin" "-9799 8791 -60"
+        "angle" "342 153 0"
+        "keyvalues"
+            {
+            "spawnflags" "260"
+			"fademaxdist" "2700"
+	        "fademindist" "2600"
+            "model" "models/bullsquid.mdl"
+            }
+        }
+
+		
+"prop_ragdoll"
+        {
+        "origin" "-3349 10048 -130"
+        "angle" "342 153 0"
+        "keyvalues"
+            {
+            "spawnflags" "260"
+			"fademaxdist" "2700"
+	        "fademindist" "2600"
+            "model" "models/houndeye.mdl"
+            }
+        }
+
+
+"prop_ragdoll"
+        {
+        "origin" "4383 5977 -123"
+        "angle" "145 60 0"
+        "keyvalues"
+            {
+            "targetname" "biscuitsforeatingguy"
+            "fademaxdist" "2700"
+	        "fademindist" "2600"
+            "model" "models/humans/corpse1.mdl"
+            }
+        }
+
+"item_item_crate"
+	{
+		"origin"	"6301 853 -251"
+		"angle"		"0 0 0"
+		"KeyValues"
+		{
+		  "fademaxdist" "2700"
+	        "fademindist" "2600"
+			"ItemClass"		"item_battery"
+			"ItemCount"		"2"
+		}
+	}
+
+"item_healthkit" {
+		"origin" "-324 10460 -115"
+		"keyvalues"
+            {
+             "fademaxdist" "700"
+	        "fademindist" "600"
+            }	
+		}
+
+
+"mapadd_trigger_once" {
+		"origin" "10280 9092 -159"
+		"keyvalues" {
+			"radius"	"250"
+			"label"		"idling"
+		}
+	}
+
+
+"mapadd_trigger_once" {
+		"origin" "10179 9087 -169"
+		"keyvalues" {
+			"radius"	"250"
+			"label"		"gonomeeatbiscuits"
+		}
+	}
+
+"mapadd_trigger_once" {
+		"origin" "4353 5979 -145"
+		"keyvalues" {
+			"radius"	"150"
+			"label"		"gonomeeatbiscuits2"
+		}
+	}
+	
+"npc_gonome"
+        {
+        "origin" "4351 5988 -118"
+        "angle" "0 1.31 0"
+        "keyvalues"
+            {
+			"fademaxdist" "3700"
+	        "fademindist" "3600"
+            "targetname" "Gonomeeatsomeone"
+            "spawnflags" "128"
+            }
+        }
+
+
+
+			"prop_ragdoll"
+        {
+        "origin" "3881 898 -369"
+        "angle" "0 0 0.00"
+        "keyvalues"
+            {
+			"fademaxdist" "1500"
+            "fademindist" "1000"
+			"spawnflags" "260"
+            "model" "models/headcrabclassic.mdl"
+            }
+        }
+		
+		"prop_ragdoll"
+        {
+        "origin" "3647 1025 -374"
+        "angle" "50 130 0.00"
+        "keyvalues"
+            {
+			"fademaxdist" "1500"
+            "fademindist" "1000"
+			"spawnflags" "260"
+            "model" "models/headcrabclassic.mdl"
+            }
+        }
+		
+
+	"npc_bullsquid"
+        {
+        "origin" "5240 7323 -352"
+        "angle" "0 2 0.00"
+		 "keyvalues"
+            {
+				"fademaxdist" "3800"
+            "fademindist" "3700"
+            "spawnflags" "512"
+            }
+        }
+		
+		"npc_bullsquid"
+        {
+        "origin" "5423 4183 -393"
+        "angle" "0 93 0.00"
+		 "keyvalues"
+            {
+				"fademaxdist" "3800"
+            "fademindist" "3700"
+            "spawnflags" "512"
+            }
+        }
+		
+		"npc_bullsquid"
+        {
+        "origin" "3662 1102 -362"
+        "angle" "0 69 0.00"
+		 "keyvalues"
+            {
+				"fademaxdist" "3800"
+            "fademindist" "3700"
+            "spawnflags" "512"
+            }
+        }
+		
+		"npc_bullsquid"
+        {
+        "origin" "-8931 8370 -98"
+        "angle" "0 178 0.00"
+		 "keyvalues"
+            {
+				"fademaxdist" "3800"
+            "fademindist" "3700"
+            "spawnflags" "512"
+            }
+        }
+		
+			"npc_bullsquid"
+        {
+        "origin" "-7100 5422 -140"
+        "angle" "0 87 0.00"
+		 "keyvalues"
+            {
+				"fademaxdist" "3800"
+            "fademindist" "3700"
+            "spawnflags" "512"
+            }
+        }
+		
+		"npc_pitdrone"
+        {
+        "origin" "-1983 6014 -100"
+        "angle" "0 -21 0.00"
+		 "keyvalues"
+            {
+				"fademaxdist" "1800"
+            "fademindist" "1700"
+			"squadname" "drones"
+            "spawnflags" "512"
+            }
+        }
+		
+			"npc_headcrab"
+        {
+        "origin" "4554 5973 124"
+        "angle" "0 -168 0.00"
+		 "keyvalues"
+            {
+				"fademaxdist" "3800"
+            "fademindist" "3700"
+            "spawnflags" "512"
+            }
+        }
+		
+			"npc_pitdrone"
+        {
+        "origin" "-1981 5851 -104"
+        "angle" "0 24 0.00"
+		 "keyvalues"
+            {
+				"fademaxdist" "1800"
+            "fademindist" "1700"
+			"squadname" "drones"
+            "spawnflags" "512"
+            }
+        }
+}
+
+"entities:gonomeeatbiscuits" {
+
+"event" {
+      "targetname" "crateforeatingguy"
+      "action"     "Break"
+      "value"      "1"
+     }
+
+}
+
+"entities:gonomeeatbiscuits2" {
+
+"event" {
+      "targetname" "crate2foreatingguy"
+      "action"     "Break"
+      "value"      "1"
+     }
+
+}

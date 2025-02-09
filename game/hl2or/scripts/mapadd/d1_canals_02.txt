@@ -1,0 +1,721 @@
+//	OverCharged Steam MAPADD Data
+//	Location: C17
+//      Game: Half-Life 2
+// Houndeyes are SLEEPY, SHHHHHHHHHH!
+
+"precache" {
+   "entity" "npc_houndeye"
+
+}
+"randomspawn" {
+
+	//"npc_metropolice" {
+	//	"count"		"6"
+	//	"weapon"	"weapon_pistol"
+	//}
+    // OverCharged Beta Content
+}
+
+"Init"
+{
+	"Give_Equipment"
+	{
+		"Item"
+		{
+			"weapon" "stunstick"
+			"weapon" "dual_pistols"
+		}
+	}
+}
+
+"entities:sleepy_dogs_spawn" {
+
+
+ "npc_houndeye"
+        {
+        "origin" "-20 1681 -703"
+        "angle" "0 -83 0.00"
+        "keyvalues"
+            {
+			"fademaxdist" "900"
+            "fademindist" "800"
+			  "body" "1"
+			 "OnFoundPlayer" "doggy_is_asleep_1,cancelsequence,,-1"
+			 "OnFoundPlayer" "doggy_is_asleep_2,beginsequence,,-1"
+			  "OnFoundPlayer" "doggy_is_asleep_3,beginsequence,,-1"
+			 "OnFoundEnemy"  "doggy_is_asleep_1,cancelsequence,,-1"
+			 "OnFoundEnemy"  "doggy_is_asleep_2,beginsequence,,-1"
+			 "OnFoundEnemy"  "doggy_is_asleep_3,beginsequence,,-1"
+             "targetname" "sleepy_dog_1"
+            }
+        }
+
+  "event" 
+       {
+       "targetname" "doggy_is_asleep_1"
+       "action" "beginsequence"
+  
+      }
+
+		  "npc_houndeye"
+        {
+        "origin" "-37 1356 -703"
+        "angle" "0 73.85 0.00"
+        "keyvalues"
+            {
+			"body" "0"
+			"fademaxdist" "900"
+            "fademindist" "800"
+			  "onhearcombat"  "doggy_is_asleep_2,beginsequence,,-1"
+             "targetname" "sleepy_dog_2"
+            }
+        }
+
+
+
+  "npc_houndeye_explode"
+        {
+        "origin" "-20.36 1235.77 -703.97"
+        "angle" "0 87.85 0.00"
+        "keyvalues"
+            {
+			"body" "0"
+			"fademaxdist" "900"
+            "fademindist" "800"
+			 "onhearcombat"  "doggy_is_asleep_3,beginsequence,,-1"
+             "targetname" "sleepy_dog_3"
+            }
+        }
+		
+		
+
+}
+
+"entities:where_to_shoot" {
+
+	
+"event"
+	  {
+		"targetname"	"hydra_relay"
+             //   "action"  "trigger"  
+	  }
+
+}
+
+"entities:weather" {
+
+	
+"event"
+	  {
+		"targetname"	"weather_relay"
+                "action"  "trigger"  
+	  }
+
+}
+
+"entities" {
+
+"logic_relay"
+        {
+        "origin" "2230 -1369 87"
+        "angle" "0 0 0.00"
+        "keyvalues"
+            {
+			"OnTrigger"  "hydra_display,showhudhint,,0.5"
+			"OnTrigger"  "hydra_display,hidehudhint,,7.5"
+			"targetname" "hydra_relay"
+
+            }
+        }
+
+
+"logic_relay"
+        {
+        "origin" "2230 -1369 87"
+        "angle" "0 0 0.00"
+        "keyvalues"
+            {
+			"OnTrigger"  "weather_display,showhudhint,,0.5"
+			"OnTrigger"  "weather_display,hidehudhint,,5.5"
+			"targetname" "Weather_relay"
+
+            }
+        }
+
+		"env_hudhint"
+        {
+        "origin" "2230 -1369 87"
+        "angle" "0 0 0.00"
+        "keyvalues"
+            {
+			"message" "          H.E.V MʎRK VI ASSISTANT 
+			|TIME: 11:19|
+			|WEATHER: PARTLY-CLOUDY|
+			|TEMPERATURE: 25°C|"
+				
+			"targetname" "Weather_Display"
+			"spawnflags" "1"
+            }
+        }
+		
+	
+		
+		
+		"mapadd_trigger_once" {
+		"origin" "2899 -1150 -575"
+		"keyvalues" {
+			"radius"	"200"
+			"label"		"weather"
+		}
+	}
+	
+		
+		"mapadd_trigger_once" {
+		"origin" "489 -1228 -815"
+		"keyvalues" {
+			"radius"	"200"
+			"label"		"where_to_shoot"
+		}
+	}
+	
+	"npc_sporegenerator"
+        {
+        "origin" "-16 -982 -1032"
+        "angle" "90 180 0.00"
+		"keyvalues"
+            {
+             "fademaxdist" "1700"     
+			"fademindist" "1600"  
+            }
+        }	
+	
+	"npc_sporegenerator"
+        {
+        "origin" "983 -796 -816"
+        "angle" "90 101 0.00"
+		"keyvalues"
+            {
+             "fademaxdist" "1700"     
+			"fademindist" "1600"  
+            }
+        }
+		
+		"npc_sporegenerator"
+        {
+        "origin" "560 -1236 -827"
+        "angle" "90 180 0.00"
+		"keyvalues"
+            {
+             "fademaxdist" "1700"     
+			"fademindist" "1600"  
+            }
+        }
+		
+		"npc_sporegenerator"
+        {
+        "origin" "-720 -1170 -706"
+        "angle" "60 270 -90"
+		"keyvalues"
+            {
+             "fademaxdist" "1700"     
+			"fademindist" "1600"  
+            }
+        }
+		
+		
+		
+		"npc_sporegenerator"
+        {
+        "origin" "-371 -368 -725"
+        "angle" "90 270 0"
+		"keyvalues"
+            {
+             "fademaxdist" "1700"     
+			"fademindist" "1600"  
+            }
+        }
+		
+		"npc_sporegenerator"
+        {
+        "origin" "-13 1952 -726"
+        "angle" "90 270 0"
+		"keyvalues"
+            {
+             "fademaxdist" "1700"     
+			"fademindist" "1600"  
+            }
+        }
+		
+// Lite Start
+
+  "logic_auto"
+        {
+        "origin" "2813 7162 0" 
+		"angle"	"0 0 0"
+        "keyvalues"
+            {
+		     "OnNewGame" "vortigauntstillworkingonthis,command,oc_weapon_disable_dissolve 1,-1"
+            }
+        }
+
+	 "point_servercommand" {
+		"origin""-697 -7 1487"
+		"keyvalues" {
+                            "targetname" "vortigauntstillworkingonthis"
+	             }
+               }
+			   
+	"event" 
+	{
+		"classname"	"worldspawn"
+		"keyvalues" 
+		 {
+		"detailmaterial" "detail/detailsprites_hl2"
+		 }
+	}
+
+		
+"removeentity" {
+		"classname" "env_sun"
+	}
+
+	"env_sun"
+        {
+
+                "roll"  "35"  
+                "yaw"   "167"
+                "pitch" "-165"
+
+                "KeyValues"
+                {
+					"targetname" "riseandshine"
+					"rendercolor" "237 218 143"
+				"size" "16"
+					"disablesprite" "1"
+					"use_angles"	"1"
+					"sunrays_intensity"	"2"
+					"sunrays_color.r"	"0.2"
+					"sunrays_color.g"	"0.2"
+					"sunrays_color.b"	"0.17"
+					"sunrays_color.a"	"1"
+					"sunrays_power"		"0.275"
+					"global_lightning_keyvalues"
+					{
+						"enabled" "1"
+						"enableshadows" "1"			
+							"distance" "10000"
+						"fov" "180"
+						"nearz" "3.1"
+						"northoffset" "0"
+						"eastoffset" "0"
+						"forwardoffset" "0"
+						"orthosize" "835"
+						"brightnessscale" "2"
+						"targetname" "g_light"
+						"angles" "55 165 0"
+						"lightcolor" "248 234 205 1000"
+					}					
+                }
+        }
+ 
+		
+		
+// Lite End
+
+
+	"ai_relationship"
+        {
+         "origin" "4309 -196 96"
+        "angle" "0 172 0.00"
+        "keyvalues"
+            {
+            "subject"        "npc_helicopter"
+            "target"       "npc_bullsquid"
+            "startactive" "1"
+            "disposition" "3"
+            "rank" "9999"
+            }
+        }
+		
+			"ai_relationship"
+        {
+         "origin" "4309 -196 96"
+        "angle" "0 172 0.00"
+        "keyvalues"
+            {
+            "subject"        "npc_helicopter"
+            "target"       "npc_houndeye"
+            "startactive" "1"
+            "disposition" "3"
+            "rank" "9999"
+            }
+        }
+		
+			"ai_relationship"
+        {
+         "origin" "4309 -196 96"
+        "angle" "0 172 0.00"
+        "keyvalues"
+            {
+            "subject"        "npc_helicopter"
+            "target"       "npc_hydra"
+            "startactive" "1"
+            "disposition" "3"
+            "rank" "9999"
+            }
+        }
+
+		"npc_cockroach"
+        {
+        "origin" "142 -1201 -703"
+        "angle" "0 141 0.00"
+		 "keyvalues"
+            {
+			"fademaxdist" "800"
+            "fademindist" "700"
+            }
+        }
+		
+		"npc_cockroach"
+        {
+        "origin" "-49 1477 -703"
+        "angle" "0 141 0.00"
+		"keyvalues"
+            {
+			"fademaxdist" "800"
+            "fademindist" "700"
+            }
+        }
+		
+		"npc_cockroach"
+        {
+        "origin" "-92 1924 -711"
+        "angle" "0 141 0.00"
+		"keyvalues"
+            {
+			"fademaxdist" "800"
+            "fademindist" "700"
+            }
+        }
+//
+
+"scripted_sequence" 
+        {
+        "origin" "-20 1681 -765"
+        "angle" "0 -90 0"
+        "keyvalues"
+            {
+            "targetname" "doggy_is_asleep_1"
+            "m_iszEntity" "sleepy_dog_1"   
+            "m_iszIdle" "leaderlook"
+			"m_iszPlay" "leaderlook"
+            "m_bLoopActionSequence" "0"
+            "m_fMoveTo" "4"    
+            "spawnflags" "4223"   
+            }
+        }
+		
+
+
+
+"scripted_sequence" 
+        {
+        "origin" "-37 1356 -765"
+        "angle" "0 90 0"
+        "keyvalues"
+            {
+            "targetname" "doggy_is_asleep_2"
+            "m_iszEntity" "sleepy_dog_2"   
+            "m_iszIdle" "sleep"
+            "m_iszPlay" "wakefast"
+            "m_bLoopActionSequence" "0"
+            "m_fMoveTo" "4"    
+            "spawnflags" "176"   
+            }
+        }
+		
+		
+"scripted_sequence" 
+        {
+        "origin" "-20 1235 -765"
+        "angle" "0 24 0"
+        "keyvalues"
+            {
+            "targetname" "doggy_is_asleep_3"
+            "m_iszEntity" "sleepy_dog_3"   
+            "m_iszIdle" "sleep"
+            "m_iszPlay" "sleeptostand"
+            "m_bLoopActionSequence" "0"
+            "m_fMoveTo" "4"    
+            "spawnflags" "176"   
+            }
+        }
+		
+		
+		"mapadd_trigger_once" {
+		"origin" "227 1439 -719"
+		"keyvalues" {
+			"radius"	"70"
+			"label"		"sleepy_dogs_spawn"
+		}
+	}
+
+	
+	//
+"ai_relationship"
+        {
+        "origin" "159.80 -1110.97 -703.97"
+        "angle" "0 0 0"
+        "keyvalues"
+            {
+            "targetname"  "hydra_loves_talk"
+            "subject"        "npc_hydra"
+            "target"       "npc_bullsquid"
+            "startactive" "1"
+            "disposition" "3"
+            "rank" "9999"
+            }
+        }
+
+"ai_relationship"
+        {
+        "origin" "159.80 -1110.97 -703.97"
+        "angle" "0 0 0"
+        "keyvalues"
+            {
+            "targetname"  "hydra_loves_talk"
+            "subject"        "npc_bullsquid"
+            "target"       "npc_hydra"
+            "startactive" "1"
+            "disposition" "3"
+            "rank" "9999"
+            }
+        }
+		
+		"ai_relationship"
+        {
+        "origin" "159.80 -1110.97 -703.97"
+        "angle" "0 0 0"
+        "keyvalues"
+            {
+            "targetname"  "hydra_loves_talk"
+            "subject"        "npc_hydra"
+            "target"       "npc_houndeye"
+            "startactive" "1"
+            "disposition" "3"
+            "rank" "9999"
+            }
+        }
+
+
+   // "npc_metropolice"
+     //   {
+      //  "origin" "159.80 -1110.97 -730.97"
+      //  "angle" "0 35.80 0.00"
+      //  "keyvalues"
+      //      {
+      //      "additionalequipment" "weapon_pistol"
+       //     "spawnflags" "512"
+       //     }
+       // }
+	   
+	    // "npc_metropolice"
+       // {
+      //  "origin" "765.90 -77.33 344.07"
+      //  "angle" "0 -93.10 0"
+       // "keyvalues"
+       //     {
+       //     "additionalequipment" "weapon_pistol"
+       //     "spawnflags" "512"
+       //     }
+      //  }
+// They don't fit to this place,wild-life is better..	
+		
+		//
+
+"prop_physics"
+        {
+        "origin" "3050 -1566 -575"
+        "angle" "0 0 0"
+        "keyvalues"
+            {
+            "fademaxdist" "2800"
+            "fademindist" "2700"
+            "model" "models/props_junk/wood_crate001a.mdl"
+            }
+        }
+
+
+
+
+
+
+
+"prop_physics"
+        {
+        "origin" "700 -458 -587"
+        "angle" "0 0 0"
+        "keyvalues"
+            {
+			"fademaxdist" "2800"
+            "fademindist" "2700"
+            "model" "models\props_c17\oildrum001.mdl"
+            }
+        }
+
+
+
+"npc_houndeye"
+        {
+        "origin" "244 -387 -888"
+        "angle" "0 -14 0.00"
+		 "keyvalues"
+            {
+				"fademaxdist" "1800"
+            "fademindist" "1700"
+            "spawnflags" "512"
+            }
+        }
+
+
+"npc_houndeye"
+        {
+        "origin" "310 -1021 -890"
+        "angle" "0 39 0.00"
+		 "keyvalues"
+            {
+				"fademaxdist" "1800"
+            "fademindist" "1700"
+            "spawnflags" "512"
+            }
+        }
+		
+		
+"npc_houndeye"
+        {
+        "origin" "364 -1539 -893"
+        "angle" "0 80 0.00"
+		 "keyvalues"
+            {
+				"fademaxdist" "1800"
+            "fademindist" "1700"
+            "spawnflags" "512"
+            }
+        }
+		
+		
+"npc_houndeye"
+        {
+        "origin" "-481 -1076 -771"
+        "angle" "0 92 0.00"
+		 "keyvalues"
+            {
+				"fademaxdist" "1800"
+            "fademindist" "1700"
+            "spawnflags" "512"
+			"squadname" "hnd1"
+            }
+        }
+
+
+"npc_houndeye"
+        {
+        "origin" "-578 -1063 -781"
+        "angle" "0 58 0.00"
+		 "keyvalues"
+            {
+				"fademaxdist" "1800"
+            "fademindist" "1700"
+            "spawnflags" "512"
+			"squadname" "hnd1"
+            }
+        }
+		
+		"npc_houndeye"
+        {
+        "origin" "-523 -574 -774"
+        "angle" "0 -43 0.00"
+		 "keyvalues"
+            {
+				"fademaxdist" "1800"
+            "fademindist" "1700"
+            "spawnflags" "512"
+			"squadname" "hnd1"
+            }
+        }
+	
+"npc_cockroach" // Hydra
+        {
+        "origin" "484 123 -867"
+        "angle" "0 -104 0.00"
+        "keyvalues"
+            {
+				"fademaxdist" "1800"
+            "fademindist" "1700"
+           // "Hydra_blinking"	"3"
+			//"Hydra_blinking_type"	"2"
+            }
+        }
+	
+"npc_houndeye"
+        {
+        "origin" "3154 -1802 -575"
+        "angle" "0 171 0.00"
+		 "keyvalues"
+            {
+				"fademaxdist" "1800"
+            "fademindist" "1700"
+            "spawnflags" "512"
+            }
+        }
+// This houndeye had a long story before he was fully added
+// First time he was added in 2019 in October,but then he was removed because (I don't remember why)
+// Second time he was added in 2020 in June,but then he was removed again because coordinates got messed up
+// And third time he succeded,Congratulations for this houndeye!!!
+
+		 "npc_xenlight"
+        {
+        "origin" "-515 -658 -780"
+        "angle" "0 -82 0.00"
+		"keyvalues"
+            {
+			"sleepstate" "4"
+            "fademaxdist" "1000"      
+			"fademindist" "900"
+            }
+        }
+		
+		"item_healthkit"
+        {
+        "origin" "414 -1364 -881"
+        "angle" "0 32 0.00"
+		"keyvalues"
+            {
+             "fademaxdist" "700"
+	        "fademindist" "600"
+            }	
+        }
+		
+		"item_healthkit"
+        {
+        "origin" "62 1849 -730"
+        "angle" "0 32 0.00"
+		"keyvalues"
+            {
+             "fademaxdist" "700"
+	        "fademindist" "600"
+            }	
+        }
+
+// "npc_xenlight"
+     //   {
+      //  "origin" "1434 -707 -855"
+      //  "angle" "0 45 0.00"
+       // }
+		
+		// "npc_xenlight"
+       // {
+       // "origin" "-56 1917 -774"
+       // "angle" "0 -116 0.00"
+       // }
+}

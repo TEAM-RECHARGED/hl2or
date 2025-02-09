@@ -1,0 +1,1004 @@
+//	OverCharged Steam MAPADD Data
+//	Location: Ravenholm
+//      Game: Half-Life 2
+
+"precache" {
+	"entity"	"npc_gonome"
+	"model" "models/props_c17/TrapPropeller_Blade.mdl"
+}
+
+"Init"
+{
+	"Give_Equipment"
+	{
+		"Item"
+		{
+		    "weapon" "stunstick"
+			"weapon" "beretta"
+			"weapon" "mp5"
+			"weapon" "dual_pistols"
+		}
+	}
+}
+
+"randomspawn" {
+
+         "npc_zombie" {
+         "count" "1"
+		 "values" "fademaxdist 2700 fademindist 2600"
+         }
+
+         "npc_fastzombie_torso" {
+         "count" "2"
+		 "values" "fademaxdist 2700 fademindist 2600"
+         }
+
+
+       
+}
+
+"entities:weather" {
+
+	
+"event"
+	  {
+		"targetname"	"weather_relay"
+                "action"  "trigger"  
+	  }
+
+}
+
+
+"entities:this_is_must_be_portal_back_to_home" {
+
+
+
+"prop_physics"
+	{
+		"origin"	"-1918 -1315 -3628"
+		"angle"		"0 0 0"
+		"KeyValues"
+		{
+		 "fademaxdist" "2300"      
+			"fademindist" "2200"
+			"spawnflags" "0"
+			"targetname" "propeller_02"
+			"damagetype" "1"
+			"model"		"models/props_c17/TrapPropeller_Blade.mdl"
+		}
+	}
+	
+ "phys_hinge"
+        {
+        "origin" "-1918 -1315 -3614"
+        "angle" "0 0 0"
+        "keyvalues"
+            {
+            "targetname" "propeller_02_hinge"
+            "attach1" "propeller_02"
+            "hingeaxis" "-1917.5 -1314.5 -3624.5"
+			"spawnflags" "1"
+         }
+      }
+	  
+	   "phys_motor"
+        {
+        "origin" "-1918 -1315 -3614"
+        "angle" "0 0 0"
+        "keyvalues"
+            {
+            "targetname" "propeller_02_motor"
+            "attach1" "propeller_02"
+			"inertiafactor" "5"
+			"spawnflags" "2"
+            "axis" "-1917.5 -1314.49 -3639.445"
+			"speed" "-1200"
+			"spinup" "1"
+			
+         }
+      }
+
+}
+
+"entities" {
+
+"event"
+	  {
+		"targetname"	"propeller_02"
+                "action"  "kill"  
+	  }
+	  
+	  "event"
+	  {
+		"targetname"	"propeller_02_motor"
+                "action"  "kill"  
+	  }
+	  
+	  "event"
+	  {
+		"targetname"	"propeller_02_hinge"
+                "action"  "kill"  
+	  }
+	  
+"logic_relay"
+        {
+        "origin" "-949 1430 -765"
+        "angle" "0 0 0.00"
+        "keyvalues"
+            {
+			"OnTrigger"  "weather_display,showhudhint,,0.5"
+			"OnTrigger"  "weather_display,hidehudhint,,5.5"
+			"targetname" "Weather_relay"
+
+            }
+        }
+
+		"env_hudhint"
+        {
+        "origin" "2230 -1369 87"
+        "angle" "0 0 0.00"
+        "keyvalues"
+            {
+			"message" "          H.E.V MʎRK VI ASSISTANT 
+			|TIME: 00:51|
+			|WEATHER: CLEAN|
+			|TEMPERATURE: 9°C|"
+				
+			"targetname" "Weather_Display"
+			"spawnflags" "1"
+            }
+        }
+		
+		"mapadd_trigger_once" {
+		"origin" "-3595 -827 -3518"
+		"keyvalues" {
+			"radius"	"120"
+			"label"		"weather"
+		}
+	}
+
+
+// Lite Start
+
+  "logic_auto"
+        {
+        "origin" "2813 7162 0" 
+		"angle"	"0 0 0"
+        "keyvalues"
+            {
+		     "OnNewGame" "vortigauntstillworkingonthis,command,oc_weapon_disable_dissolve 1,-1"
+            }
+        }
+
+	 "point_servercommand" {
+		"origin""-697 -7 1487"
+		"keyvalues" {
+                            "targetname" "vortigauntstillworkingonthis"
+	             }
+               }
+
+"mapadd_trigger_once" {
+		"origin" "-3581 -813 -3518"
+		"keyvalues" {
+			"radius"	"100"
+			"label"		"this_is_must_be_portal_back_to_home"
+		}
+	}
+
+
+	"prop_dynamic"
+        {
+        "origin" "-3707 -574 -3520"
+        "angle" "90 180 0.00"
+        "keyvalues"
+            {
+            "modelscale" "3"
+			"disableshadows" "1"
+			"disablereceiveshadows" "1"
+            "model" "models/props_dev/plank_long_fat.mdl"
+			"fademaxdist" "2500"      "fademindist" "2000"
+			"targetname" "props_d1_town03_area1"
+          	}
+        }
+		
+		"prop_dynamic"
+        {
+        "origin" "-3838 -832 -3529"
+        "angle" "90 90 0.00"
+        "keyvalues"
+            {
+            "modelscale" "2"
+			"disableshadows" "1"
+			"disablereceiveshadows" "1"
+            "model" "models/props_dev/plank_long_fat.mdl"
+			"fademaxdist" "2500"      "fademindist" "2000"
+			"targetname" "props_d1_town03_area1"
+          	}
+        }
+		
+		"prop_dynamic"
+        {
+        "origin" "-3573 -1100 -3528"
+        "angle" "90 75 0.00"
+        "keyvalues"
+            {
+            "modelscale" "4"
+			"disableshadows" "1"
+			"disablereceiveshadows" "1"
+            "model" "models/props_dev/plank_long_fat.mdl"
+			"fademaxdist" "2500"      "fademindist" "2000"
+			"targetname" "props_d1_town03_area1"
+          	}
+        }
+		
+		"prop_dynamic"
+        {
+        "origin" "-3837 -1084 -3556"
+        "angle" "90 90 0.00"
+        "keyvalues"
+            {
+            "modelscale" "3"
+			"disableshadows" "1"
+			"disablereceiveshadows" "1"
+            "model" "models/props_dev/plank_long_fat.mdl"
+			"fademaxdist" "2500"      "fademindist" "2000"
+			"targetname" "props_d1_town03_area1"
+          	}
+        }
+
+	"prop_dynamic"
+        {
+        "origin" "-2462 -707 -3386"
+        "angle" "0 90 0.00"
+        "keyvalues"
+            {
+            "modelscale" "2"
+			"disableshadows" "1"
+			"disablereceiveshadows" "1"
+            "model" "models/props_dev/plank_long_fat.mdl"
+			"fademaxdist" "2500"      "fademindist" "2000"
+			"targetname" "props_d1_town03_area1"
+          	}
+        }
+		
+		"prop_dynamic"
+        {
+        "origin" "-2068 -329 -3539"
+        "angle" "0 180 0.00"
+        "keyvalues"
+            {
+            "modelscale" "3.5"
+			"disableshadows" "1"
+			"disablereceiveshadows" "1"
+            "model" "models/props_dev/plank_long_fat.mdl"
+			"fademaxdist" "2500"      "fademindist" "2000"
+			"targetname" "props_d1_town03_area1"
+          	}
+        }
+		
+		"prop_dynamic"
+        {
+        "origin" "-2068 -329 -3649"
+        "angle" "0 180 0.00"
+        "keyvalues"
+            {
+            "modelscale" "3.5"
+			"disableshadows" "1"
+			"disablereceiveshadows" "1"
+            "model" "models/props_dev/plank_long_fat.mdl"
+			"fademaxdist" "2500"      "fademindist" "2000"
+			"targetname" "props_d1_town03_area1"
+          	}
+        }
+		
+			"prop_dynamic"
+        {
+        "origin" "-3453 -1881 -3567"
+        "angle" "90 180 0.00"
+        "keyvalues"
+            {
+            "modelscale" "3.5"
+			"disableshadows" "1"
+			"disablereceiveshadows" "1"
+            "model" "models/props_dev/plank_long_fat.mdl"
+			"fademaxdist" "2500"      "fademindist" "2000"
+			"targetname" "props_d1_town03_area1"
+          	}
+        }
+		
+			"prop_dynamic"
+        {
+        "origin" "-3341 -1962 -3378"
+        "angle" "90 180 0.00"
+        "keyvalues"
+            {
+            "modelscale" "3.5"
+			"disableshadows" "1"
+			"disablereceiveshadows" "1"
+            "model" "models/props_dev/plank_cube01.mdl"
+			"fademaxdist" "2500"      "fademindist" "2000"
+			"targetname" "props_d1_town03_area1"
+          	}
+        }
+		
+			"prop_dynamic"
+        {
+        "origin" "-3401 -1287 -3578"
+        "angle" "90 155 0.00"
+        "keyvalues"
+            {
+            "modelscale" "2.5"
+			"disableshadows" "1"
+			"disablereceiveshadows" "1"
+            "model" "models/props_dev/plank_long_fat.mdl"
+			"fademaxdist" "2500"      "fademindist" "2000"
+			"targetname" "props_d1_town03_area1"
+          	}
+        }
+		
+			"prop_dynamic"
+        {
+        "origin" "-1811 -2058 -3158"
+        "angle" "0 0 0.00"
+        "keyvalues"
+            {
+            "modelscale" "2.5"
+			"disableshadows" "1"
+			"disablereceiveshadows" "1"
+            "model" "models/props_dev/plank_long_fat.mdl"
+			"fademaxdist" "2500"      "fademindist" "2000"
+			"targetname" "props_d1_town03_area1"
+          	}
+        }
+		
+				"prop_dynamic"
+        {
+        "origin" "-1811 -1779 -3226"
+        "angle" "0 90 0.00"
+        "keyvalues"
+            {
+            "modelscale" "2.5"
+			"disableshadows" "1"
+			"disablereceiveshadows" "1"
+            "model" "models/props_dev/plank_long_fat.mdl"
+			"fademaxdist" "2500"      "fademindist" "2000"
+			"targetname" "props_d1_town03_area1"
+          	}
+        }
+		
+				"prop_dynamic"
+        {
+        "origin" "-1798 -1624 -3281"
+        "angle" "0 90 0.00"
+        "keyvalues"
+            {
+            "modelscale" "4"
+			"disableshadows" "1"
+			"disablereceiveshadows" "1"
+            "model" "models/props_dev/plank_cube01.mdl"
+			"fademaxdist" "2500"      "fademindist" "2000"
+			"targetname" "props_d1_town03_area1"
+          	}
+        }
+		
+				"prop_dynamic"
+        {
+        "origin" "-1741 -1045 -3355"
+        "angle" "90 135 0.00"
+        "keyvalues"
+            {
+            "modelscale" "2.5"
+			"disableshadows" "1"
+			"disablereceiveshadows" "1"
+            "model" "models/props_dev/plank_long_fat.mdl"
+			"fademaxdist" "2500"      "fademindist" "2000"
+			"targetname" "props_d1_town03_area1"
+          	}
+        }
+		
+				"prop_dynamic"
+        {
+        "origin" "-2105 -1638 -3489"
+        "angle" "0 0 0.00"
+        "keyvalues"
+            {
+            "modelscale" "1.5"
+			"disableshadows" "1"
+			"disablereceiveshadows" "1"
+            "model" "models/props_dev/plank_long_fat.mdl"
+			"fademaxdist" "2500"      "fademindist" "2000"
+			"targetname" "props_d1_town03_area1"
+          	}
+        }
+		
+				"prop_dynamic"
+        {
+        "origin" "-2299 -2049 -3645"
+        "angle" "0 0 0.00"
+        "keyvalues"
+            {
+            "modelscale" "1.5"
+			"disableshadows" "1"
+			"disablereceiveshadows" "1"
+            "model" "models/props_dev/plank_long_fat.mdl"
+			"fademaxdist" "2500"      "fademindist" "2000"
+			"targetname" "props_d1_town03_area1"
+          	}
+        }
+		
+				"prop_dynamic"
+        {
+        "origin" "-3563 -1299 -3310"
+        "angle" "90 220 0.00"
+        "keyvalues"
+            {
+            "modelscale" "2.5"
+			"disableshadows" "1"
+			"disablereceiveshadows" "1"
+            "model" "models/props_dev/plank_long_fat.mdl"
+			"fademaxdist" "2500"      "fademindist" "2000"
+			"targetname" "props_d1_town03_area1"
+          	}
+        }
+		
+				"prop_dynamic"
+        {
+        "origin" "-3793 -1214 -3264"
+        "angle" "90 90 0.00"
+        "keyvalues"
+            {
+            "modelscale" "2"
+			"disableshadows" "1"
+			"disablereceiveshadows" "1"
+            "model" "models/props_dev/plank_long_fat.mdl"
+			"fademaxdist" "2500"      "fademindist" "2000"
+			"targetname" "props_d1_town03_area1"
+          	}
+        }
+		
+				"prop_dynamic"
+        {
+        "origin" "-3839 -1165 -3265"
+        "angle" "90 180 0.00"
+        "keyvalues"
+            {
+            "modelscale" "2"
+			"disableshadows" "1"
+			"disablereceiveshadows" "1"
+            "model" "models/props_dev/plank_long_fat.mdl"
+			"fademaxdist" "2500"      "fademindist" "2000"
+			"targetname" "props_d1_town03_area1"
+          	}
+        }
+		
+				"prop_dynamic"
+        {
+        "origin" "-3956 -1081 -3292"
+        "angle" "0 0 0.00"
+        "keyvalues"
+            {
+            "modelscale" "5"
+			"disableshadows" "1"
+			"disablereceiveshadows" "1"
+            "model" "models/props_dev/plank_cube01.mdl"
+			"fademaxdist" "2500"      "fademindist" "2000"
+			"targetname" "props_d1_town03_area1"
+          	}
+        }
+		
+				"prop_dynamic"
+        {
+        "origin" "-3966 -854 -3576"
+        "angle" "0 0 0.00"
+        "keyvalues"
+            {
+            "modelscale" "5"
+			"disableshadows" "1"
+			"disablereceiveshadows" "1"
+            "model" "models/props_dev/plank_cube01.mdl"
+			"fademaxdist" "2500"      "fademindist" "2000"
+			"targetname" "props_d1_town03_area1"
+          	}
+        }
+		
+				"prop_dynamic"
+        {
+        "origin" "-4027 -932 -3577"
+        "angle" "0 0 0.00"
+        "keyvalues"
+            {
+            "modelscale" "5"
+			"disableshadows" "1"
+			"disablereceiveshadows" "1"
+            "model" "models/props_dev/plank_cube01.mdl"
+			"fademaxdist" "2500"      "fademindist" "2000"
+			"targetname" "props_d1_town03_area1"
+          	}
+        }
+		
+				"prop_dynamic"
+        {
+        "origin" "-4046 -1028 -3585"
+        "angle" "0 0 0.00"
+        "keyvalues"
+            {
+            "modelscale" "5"
+			"disableshadows" "1"
+			"disablereceiveshadows" "1"
+            "model" "models/props_dev/plank_cube01.mdl"
+			"fademaxdist" "2500"      "fademindist" "2000"
+			"targetname" "props_d1_town03_area1"
+          	}
+        }
+		
+				"prop_dynamic"
+        {
+        "origin" "-3854 -833 -3326"
+        "angle" "90 90 0.00"
+        "keyvalues"
+            {
+            "modelscale" "2"
+			"disableshadows" "1"
+			"disablereceiveshadows" "1"
+            "model" "models/props_dev/plank_long_fat.mdl"
+			"fademaxdist" "2500"      "fademindist" "2000"
+			"targetname" "props_d1_town03_area1"
+          	}
+        }
+		
+				"prop_dynamic"
+        {
+        "origin" "-3685 -660 -3116"
+        "angle" "0 90 0.00"
+        "keyvalues"
+            {
+            "modelscale" "4"
+			"disableshadows" "1"
+			"disablereceiveshadows" "1"
+            "model" "models/props_dev/plank_long_fat.mdl"
+			"fademaxdist" "2500"      "fademindist" "2000"
+			"targetname" "props_d1_town03_area1"
+          	}
+        }
+		
+				"prop_dynamic"
+        {
+        "origin" "-3958 -561 -3304"
+        "angle" "90 180 0.00"
+        "keyvalues"
+            {
+            "modelscale" "4"
+			"disableshadows" "1"
+			"disablereceiveshadows" "1"
+            "model" "models/props_dev/plank_long_fat.mdl"
+			"fademaxdist" "2500"      "fademindist" "2000"
+			"targetname" "props_d1_town03_area1"
+          	}
+        }
+		
+				"prop_dynamic"
+        {
+        "origin" "-3722 -187 -3262"
+        "angle" "90 180 0.00"
+        "keyvalues"
+            {
+            "modelscale" "4"
+			"disableshadows" "1"
+			"disablereceiveshadows" "1"
+            "model" "models/props_dev/plank_long_fat.mdl"
+			"fademaxdist" "2500"      "fademindist" "2000"
+			"targetname" "props_d1_town03_area1"
+          	}
+        }
+		
+				"prop_dynamic"
+        {
+        "origin" "-3877 94 -3391"
+        "angle" "90 90 0.00"
+        "keyvalues"
+            {
+            "modelscale" "4"
+			"disableshadows" "1"
+			"disablereceiveshadows" "1"
+            "model" "models/props_dev/plank_long_fat.mdl"
+			"fademaxdist" "2500"      "fademindist" "2000"
+			"targetname" "props_d1_town03_area1"
+          	}
+        }
+		
+		
+				"prop_dynamic"
+        {
+        "origin" "-2555 -1736 -3628"
+        "angle" "90 90 0.00"
+        "keyvalues"
+            {
+            "modelscale" "1.3"
+			"disableshadows" "1"
+			"disablereceiveshadows" "1"
+            "model" "models/props_dev/plank_long_fat.mdl"
+			"fademaxdist" "2500"      "fademindist" "2000"
+			"targetname" "props_d1_town03_area1"
+          	}
+        }
+		
+				"prop_dynamic"
+        {
+        "origin" "-2024 -2061 -3590"
+        "angle" "0 90 0.00"
+        "keyvalues"
+            {
+            "modelscale" "2"
+			"disableshadows" "1"
+			"disablereceiveshadows" "1"
+            "model" "models/props_dev/plank_long_fat.mdl"
+			"fademaxdist" "2500"      "fademindist" "2000"
+			"targetname" "props_d1_town03_area1"
+          	}
+        }
+		
+			"prop_dynamic"
+        {
+        "origin" "-2024 -2061 -3225"
+        "angle" "0 90 0.00"
+        "keyvalues"
+            {
+            "modelscale" "2"
+			"disableshadows" "1"
+			"disablereceiveshadows" "1"
+            "model" "models/props_dev/plank_long_fat.mdl"
+			"fademaxdist" "2500"      "fademindist" "2000"
+			"targetname" "props_d1_town03_area1"
+          	}
+        }
+		
+			"prop_dynamic"
+        {
+        "origin" "-2024 -2061 -3443"
+        "angle" "0 90 0.00"
+        "keyvalues"
+            {
+            "modelscale" "2"
+			"disableshadows" "1"
+			"disablereceiveshadows" "1"
+            "model" "models/props_dev/plank_long_fat.mdl"
+			"fademaxdist" "2500"      "fademindist" "2000"
+			"targetname" "props_d1_town03_area1"
+          	}
+        }
+		
+		"prop_dynamic"
+        {
+        "origin" "-3800 -10 -3208"
+        "angle" "0 90 0.00"
+        "keyvalues"
+            {
+            "modelscale" "2"
+			"disableshadows" "1"
+			"disablereceiveshadows" "1"
+            "model" "models/props_dev/plank_long_fat.mdl"
+			"fademaxdist" "2500"      "fademindist" "2000"
+			"targetname" "props_d1_town03_area1"
+          	}
+        }
+		
+		
+		
+				"prop_dynamic"
+        {
+        "origin" "-3754 -371 -3213"
+        "angle" "0 0 0.00"
+        "keyvalues"
+            {
+            "modelscale" "2"
+			"disableshadows" "1"
+			"disablereceiveshadows" "1"
+            "model" "models/props_dev/plank_cube01.mdl"
+			"fademaxdist" "2500"      "fademindist" "2000"
+			"targetname" "props_d1_town03_area1"
+          	}
+        }
+		
+				"prop_dynamic"
+        {
+        "origin" "-3754 -12 -3213"
+        "angle" "0 0 0.00"
+        "keyvalues"
+            {
+            "modelscale" "2"
+			"disableshadows" "1"
+			"disablereceiveshadows" "1"
+            "model" "models/props_dev/plank_cube01.mdl"
+			"fademaxdist" "2500"      "fademindist" "2000"
+			"targetname" "props_d1_town03_area1"
+          	}
+        }
+		
+				"prop_dynamic"
+        {
+        "origin" "-3327 -1963 -3344"
+        "angle" "0 0 0.00"
+        "keyvalues"
+            {
+            "modelscale" "2"
+			"disableshadows" "1"
+			"disablereceiveshadows" "1"
+            "model" "models/props_dev/plank_cube01.mdl"
+			"fademaxdist" "2500"      "fademindist" "2000"
+			"targetname" "props_d1_town03_area1"
+          	}
+        }
+		
+"removeentity" {
+		"classname" "env_sun"
+	}
+
+	"env_sun"
+        {
+
+                  "roll"  "42"  
+                "yaw"   "155"
+                "pitch" "-15"
+
+                  "KeyValues"
+                {
+					"targetname" "riseandshine"
+					//"angle"	"42"
+					"use_angles"	"1"
+					"DisableSprite"	"1"							
+					"sunrays_intensity"	"2"	
+					"sunrays_color.r"	"0.1"
+					"sunrays_color.g"	"0.25"
+					"sunrays_color.b"	"0.3"
+					"sunrays_color.a"	"1"
+					"sunrays_power"		"0.13"
+					"global_lightning_keyvalues"
+					{
+						"enabled" "1"
+						"enableshadows" "1"			
+						"distance" "12000"
+						"fov" "270"
+						"nearz" "2"
+						"northoffset" "0"
+						"eastoffset" "0"
+						"forwardoffset" "0"
+						"orthosize" "1300"
+						"brightnessscale" "0.25"
+						"angles" "45 12 0"
+						"lightcolor" "175 230 239 50"
+						"targetname" "g_light"
+					}
+                }
+        }
+
+	
+	"event" 
+	{
+		"classname"	"worldspawn"
+		"keyvalues" 
+		 {
+		"detailmaterial" "detail/detailsprites_hl2"
+		 }
+	}
+
+	
+// Lite End
+
+"item_ammo_alyxgun"
+	{
+		"origin"	"-1419 -1406 -3391"
+		"keyvalues"
+            {
+            "fademaxdist" "700"      
+			"fademindist" "600"
+            }
+	}
+	
+	"item_ammo_alyxgun"
+	{
+		"origin"	"-1277 -1293 -3391"
+		"keyvalues"
+            {
+            "fademaxdist" "700"      
+			"fademindist" "600"
+            }
+	}
+	
+"item_item_crate"
+	{
+		"origin"	"-3718 -615 -3282"
+		"angle"		"0 0 0"
+		"KeyValues"
+		{
+		"fademaxdist" "1700"      
+			"fademindist" "1600"
+			"ItemClass"		"item_ammo_alyxgun"
+			"ItemCount"		"4"
+		}
+	}
+	
+	"npc_poisonzombie"
+        {
+        "origin" "-3816 -972 -3527"
+        "angle" "0 25 0.00"
+		 "keyvalues"
+            {
+				"fademaxdist" "2800"
+            "fademindist" "2700"
+            "spawnflags" "512"
+            }
+        }
+		
+			
+	"npc_poisonzombie"
+        {
+        "origin" "-3796 -723 -3295"
+        "angle" "0 -33 0.00"
+		 "keyvalues"
+            {
+				"fademaxdist" "2800"
+            "fademindist" "2700"
+            "spawnflags" "512"
+            }
+        }
+		
+			"npc_fastzombie"
+        {
+        "origin" "-2248 -1946 -3598"
+        "angle" "0 74 0.00"
+		 "keyvalues"
+            {
+				"fademaxdist" "2800"
+            "fademindist" "2700"
+            "spawnflags" "512"
+            }
+        }
+		
+			"npc_fastzombie"
+        {
+        "origin" "-3900 -242 -3265"
+        "angle" "0 -83 0.00"
+		 "keyvalues"
+            {
+				"fademaxdist" "2800"
+            "fademindist" "2700"
+            "spawnflags" "512"
+            }
+        }
+		
+			"npc_fastzombie"
+        {
+        "origin" "-3726 -672 -3295"
+        "angle" "0 -74 0.00"
+		 "keyvalues"
+            {
+				"fademaxdist" "2800"
+            "fademindist" "2700"
+            "spawnflags" "512"
+            }
+        }
+		
+		
+			"npc_zombie"
+        {
+        "origin" "-1885 -1655 -3439"
+        "angle" "0 -43 0.00"
+		 "keyvalues"
+            {
+				"fademaxdist" "2800"
+            "fademindist" "2700"
+            "spawnflags" "512"
+            }
+        }
+		
+		
+		
+		"npc_gonome"
+        {
+        "origin" "-1659 -1777 -3630"
+        "angle" "0 99 0.00"
+		 "keyvalues"
+            {
+				"fademaxdist" "2800"
+            "fademindist" "2700"
+            "spawnflags" "512"
+            }
+        }
+	
+		"npc_headcrab_black"
+        {
+        "origin" "-1805 -1203 -3327"
+        "angle" "0 15 0.00"
+		 "keyvalues"
+            {
+				"fademaxdist" "2800"
+            "fademindist" "2700"
+            "spawnflags" "512"
+            }
+        }
+		
+"npc_gonome"
+        {
+        "origin" "-3061 -780 -3523"
+        "angle" "0 -96 0.00"
+		 "keyvalues"
+            {
+				"fademaxdist" "2800"
+            "fademindist" "2700"
+            "spawnflags" "512"
+            }
+        }
+
+"npc_headcrab_fast"
+        {
+        "origin" "-1796 -1310 -3586"
+        "angle" "0 161.01 0.00"
+		"keyvalues"
+            {
+            "fademaxdist" "2700"      
+			"fademindist" "2600"
+            }
+        }
+
+
+"npc_headcrab_fast"
+        {
+        "origin" "-1678 -1089 -3297"
+        "angle" "0 2.01 0.00"
+		"keyvalues"
+            {
+            "fademaxdist" "2700"      
+			"fademindist" "2600"
+            }
+        }
+
+"npc_headcrab_fast"
+        {
+        "origin" "-2151 -1173 -3327"
+        "angle" "0 -3.77 0.00"
+		"keyvalues"
+            {
+            "fademaxdist" "2700"      
+			"fademindist" "2600"
+            }
+        }
+
+"npc_headcrab_black"
+        {
+        "origin" "-2483 -1248 -3328"
+        "angle" "0 17.01 0.00"
+		"keyvalues"
+            {
+            "fademaxdist" "2700"      
+			"fademindist" "2600"
+            }
+        }
+
+"npc_headcrab_black"
+        {
+        "origin" "-2852 -1286 -3415"
+        "angle" "0 -2.01 0.00"
+		"keyvalues"
+            {
+            "fademaxdist" "2700"      
+			"fademindist" "2600"
+            }
+        }
+
+
+"info_target"
+        {
+        "origin" "-2459 -1236 -3484"
+        "angle" "0 -3 0"
+        "keyvalues"
+            {
+            "targetname" "disp_target"
+            }
+        }
+		
+		
+		
+		
+
+}
+

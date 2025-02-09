@@ -1,0 +1,1023 @@
+//	OverCharged Steam MAPADD Data
+//	Location: Unknown
+//  Game: Half-Life 2 Episode 1
+"precache" {
+   "entity" "npc_houndeye"
+   "entity" "npc_pitdrone"
+   "model" "models/props_fix_allmaps/breenconsole.mdl"
+}
+
+
+
+"randomspawn" {
+
+
+"npc_headcrab" {
+               "count" "1"
+			   "values" "fademaxdist 2700 fademindist 2600"
+         }
+
+
+"npc_fastzombie_torso" {
+               "count" "1"
+			   "values" "fademaxdist 2700 fademindist 2600"
+         }
+
+"npc_zombie" {
+               "count" "2"
+			   "values" "fademaxdist 2700 fademindist 2600"
+         }
+
+
+"npc_poisonzombie" {
+               "count" "1"
+			   "values" "fademaxdist 2700 fademindist 2600"
+         }
+
+}
+
+"entities:npcs1" {
+
+"npc_pitdrone"
+        {
+        "origin" "3130 1733 204"
+        "angle" "0 -50.86 0.00"
+		"keyvalues"
+            {
+             "fademaxdist" "2700"     
+			"fademindist" "2600"  
+            }
+        }
+
+			"npc_houndeye"
+        {
+        "origin" "1839 -227 204"
+        "angle" "0 -10.86 0.00"
+		"keyvalues"
+            {
+             "fademaxdist" "2700"     
+			"fademindist" "2600"  
+            }
+        }
+
+		
+	"npc_houndeye_explode"
+        {
+        "origin" "1406 592 204"
+        "angle" "0 102.86 0.00"
+		"keyvalues"
+            {
+             "fademaxdist" "2700"     
+			"fademindist" "2600"  
+            }
+        }
+
+		
+		
+		
+"npc_houndeye"
+        {
+        "origin" "1224 841 204"
+        "angle" "0 67.86 0.00"
+		"keyvalues"
+            {
+             "fademaxdist" "2700"     
+			"fademindist" "2600"  
+            }
+        }
+
+		
+"npc_pitdrone"
+        {
+        "origin" "1554 1196 204"
+        "angle" "0 12.86 0.00"
+		"keyvalues"
+            {
+             "fademaxdist" "2700"     
+			"fademindist" "2600"  
+            }
+        }
+		
+
+		
+		
+"npc_pitdrone"
+        {
+        "origin" "2364 1705 204"
+        "angle" "0 -54.86 0.00"
+		"keyvalues"
+            {
+             "fademaxdist" "2700"     
+			"fademindist" "2600"  
+            }
+        }
+
+
+		
+}
+
+
+"entities:weather" {
+
+	
+"event"
+	  {
+		"targetname"	"weather_relay"
+                "action"  "trigger"  
+	  }
+
+}
+
+
+"entities:core_status" {
+
+	
+"event"
+	  {
+		"targetname"	"core_relay"
+                "action"  "trigger"  
+	  }
+
+}
+
+
+"entities:proj_disable" {
+
+"event" {
+		"targetname"	"projected_master"
+		"action"	"turnoff"
+	}
+}
+
+
+"entities:proj_enable" {
+
+"event" {
+		"targetname"	"projected_master"
+		"action"	"turnon"
+	}
+}
+
+// Lite Start
+
+"entities:help_me_to_fight_breenconsoles" {
+
+"removeentity" {
+		"model" "models/props_combine/breenconsole.mdl"	
+	}
+	
+	"mapadd_trigger_once" {
+		"origin" "4290 -4122 -55"
+		"keyvalues" {
+			"radius"	"200"
+			"label"		"you_fighting_wrong_side"
+		}
+	}
+
+}
+
+"entities:you_fighting_wrong_side" {
+
+"removeentity" {
+		"model" "models/props_combine/breenconsole.mdl"	
+	}
+
+	"prop_dynamic" {
+		"origin" "5072 -6101 46"
+		"angle" "-56.7741 294.146 -28.1868"
+		"keyvalues" {
+            "disableshadows" "1"
+            "fademaxdist" "1400"
+            "fademindist" "1300"	
+			"model" "models/props_fix_allmaps/breenconsole.mdl"
+		}
+	}
+	
+	
+	"prop_physics_override" {
+		"origin" "4058 -316 -111"
+		"angle" "0 180 0"
+		"keyvalues" {
+            "disableshadows" "1"
+            "fademaxdist" "1900"
+            "fademindist" "1800"	
+			"spawnflags" "778"
+			"model" "models/props_fix_allmaps/breenconsole.mdl"
+		}
+	}
+	
+		"prop_physics_override" {
+		"origin" "3728 -288 -110"
+		"angle" "0 90 0"
+		"keyvalues" {
+            "disableshadows" "1"
+            "fademaxdist" "1900"
+            "fademindist" "1800"	
+			"spawnflags" "778"
+			"model" "models/props_fix_allmaps/breenconsole.mdl"
+		}
+	}
+	
+	
+}
+
+"entities" {
+
+
+"npc_panthereye"
+	{
+		"origin"	"4464 156 -59"
+		"angle"		"0 -140 0"
+		"KeyValues"
+		{
+		"fademaxdist" "3700"      
+			"fademindist" "3600"	
+		}
+	}
+				
+	"npc_floater"
+        {
+        "origin" "3600 1510 248"
+        "angle" "0 -177 0.00"
+		"keyvalues"
+            {
+             "fademaxdist" "2700"     
+			"fademindist" "2600"  
+            }
+        }
+		
+"npc_stbat"
+        {
+        "origin" "4432 -2909 -55"
+        "angle" "0 -140.86 0.00"
+		"keyvalues"
+            {
+             "fademaxdist" "2700"     
+			"fademindist" "2600"  
+            }
+        }
+		
+
+		"mapadd_trigger_once" {
+		"origin" "4290 -4122 -55"
+		"keyvalues" {
+			"radius"	"100"
+			"label"		"help_me_to_fight_breenconsoles"
+		}
+	}
+
+"removeentity" {
+		"model" "models/props_combine/breenconsole.mdl"	
+	}
+
+
+	
+"prop_ragdoll"
+        {
+        "origin" "3928 -1679 14"
+        "angle" "88 13 0.00"
+        "keyvalues"
+            {
+             "fademaxdist" "2700"
+	        "fademindist" "2600"
+			"spawnflags" "260"
+            "model" "models/skeleton/skeleton_torso3.mdl" 
+			"skin" "4"
+            }
+        }
+		
+"prop_ragdoll"
+        {
+        "origin" "4111 -5043 -27"
+        "angle" "69 88 0.00"
+        "keyvalues"
+            {
+             "fademaxdist" "2700"
+	        "fademindist" "2600"
+			"spawnflags" "260"
+            "model" "models/skeleton/skeleton_whole.mdl" 
+			"skin" "0"
+            }
+        }
+
+	"event" 
+	{
+		"classname"	"worldspawn"
+		"keyvalues" 
+		 {
+		"detailmaterial" "detail/detailsprites_hl2"
+		 }
+	}
+	
+	
+		
+//"event"
+	//  {
+	//	"targetname"	"lcs_duckdown"
+    //            "action"  "modifyentity"
+   //     "SceneFile" "scenes/episode_1/c17/al_tunnel_01a.vcd"				
+	//  }
+	  
+	  	"prop_dynamic" {
+        "origin" "-9123 -9480 192"
+        "angle"  "0 90 0"
+		"keyvalues" {
+			"solid" "6"
+			"model"		"models/props_wasteland/interior_fence002b.mdl"
+			 "fademaxdist" "2500"
+	        "fademindist" "2000"
+		}
+	}
+	
+"game_text"
+        {
+        "origin" "-3624 2284 60"
+        "angle" "0 -138.16 0.01"
+        "keyvalues"
+            {
+            "targetname"    "sign_of_found_coast"
+            "channel"       "1"
+            "color"         "100 100 100"
+            "y"             "0.6"
+            "color2"        "240 110 0"
+            "message"       "#Overcharged_Chapter16_Title"
+            "x"             "-1"       
+            "effect"        "2"
+            "fadein"        "0.10"
+            "fadeout"       "0.10"
+            "holdtime"      "9"
+            "fxtime"        "0.25"
+            }
+        }
+
+
+
+  "logic_auto"
+        {
+        "origin" "2813 7162 0" 
+		"angle"	"0 0 0"
+        "keyvalues"
+            {
+			 "OnMapTransition" "sign_of_found_coast,display,,-1"
+			 "OnNewGame" "sign_of_found_coast,display,,-1"
+		     "OnNewGame" "vortigauntstillworkingonthis,command,oc_weapon_disable_dissolve 1,-1"
+            }
+        }
+
+	 "point_servercommand" {
+		"origin""-697 -7 1487"
+		"keyvalues" {
+                            "targetname" "vortigauntstillworkingonthis"
+	             }
+               }
+
+// Lite End
+
+"logic_relay"
+        {
+        "origin" "-949 1430 -765"
+        "angle" "0 0 0.00"
+        "keyvalues"
+            {
+			"OnTrigger"  "weather_display,showhudhint,,0.5"
+			"OnTrigger"  "weather_display,hidehudhint,,5.5"
+			"targetname" "Weather_relay"
+            }
+        }
+
+
+"logic_relay"
+        {
+        "origin" "-949 1430 -765"
+        "angle" "0 0 0.00"
+        "keyvalues"
+            {
+			"OnTrigger"  "snarks_are_cute,enable,,-1"
+			"targetname" "snarks_are_cutere"
+            }
+        }
+
+
+		
+		"env_hudhint"
+        {
+        "origin" "2230 -1369 87"
+        "angle" "0 0 0.00"
+        "keyvalues"
+            {
+			"message" "          H.E.V MʎRK VI ASSISTANT 
+			|TIME: NO INFORMATION|
+			|WEATHER: NO INFORMATION|
+			|TEMPERATURE: 7°C|"
+				
+			"targetname" "Weather_Display"
+			"spawnflags" "1"
+            }
+        }
+		
+			"logic_relay"
+        {
+        "origin" "-949 1430 -765"
+        "angle" "0 0 0.00"
+        "keyvalues"
+            {
+			"OnTrigger"  "core_display,showhudhint,,0.5"
+			"OnTrigger"  "core_display,hidehudhint,,9.5"
+			"targetname" "core_relay"
+
+            }
+        }
+		
+				"mapadd_trigger_once" {
+		"origin" "3048 1698 204"
+		"keyvalues" {
+			"radius"	"200"
+			"label"		"core_status"
+		}
+	}
+
+"prop_dynamic" {
+	"origin" "1325 1160 288"   
+	"angle" "-15 90 -180"
+	"keyvalues" {
+        "solid" "0"
+		"fademaxdist" "1500"
+        "fademindist" "1000"
+	    "model" "models/props_combine/combine_light001a.mdl"
+	  }
+    }
+
+	"env_projectedtexture"
+        {
+        "origin" "1325 1157 249"
+        "angle" "30 -90 0"
+        "keyvalues"
+            {
+			"spawnflags" "0"
+			"nearz" "2"
+			"lightworld" "1"
+			"lightfov" "50"
+			"farz" "500"
+			"cameraspace" "0"
+			"shadowquality" "0"
+			"enableshadows" "1"
+			"lightcolor" "147 226 240"
+            "targetname" "projected_master"
+            }
+        }
+
+"env_hudhint"
+        {
+        "origin" "2230 -1369 87"
+        "angle" "0 0 0.00"
+        "keyvalues"
+            {
+			"message" "                H.E.V MʎRK VI ASSISTANT 
+			|INFORMATION UPDATE|
+			|CORE INTEGRITY: 40 PERCENT|
+			|REACTOR CONTAINMENT SYSTEM = 60 PERCENT|"
+				
+			"targetname" "Core_Display"
+			"spawnflags" "1"
+            }
+        }
+		
+		"mapadd_trigger_once" {
+		"origin" "3803 -5708 -53"
+		"keyvalues" {
+			"radius"	"300"
+			"label"		"weather"
+		}
+	}
+
+		"mapadd_trigger_multiple" {
+		"origin" "3038 1695 204"
+		"keyvalues" {
+			"radius"	"100"
+			"label"		"proj_enable"
+			"wait" "0.1"
+			"delay" "0.1"
+			"limit" "9999"
+		}
+	}
+	
+		"mapadd_trigger_multiple" {
+		"origin" "2017 -324 204"
+		"keyvalues" {
+			"radius"	"100"
+			"label"		"proj_enable"
+			"wait" "0.1"
+			"delay" "0.1"
+			"limit" "9999"
+		}
+	}
+	
+		"mapadd_trigger_multiple" {
+		"origin" "3444 1494 204"
+		"keyvalues" {
+			"radius"	"100"
+			"label"		"proj_disable"
+			"wait" "0.1"
+			"delay" "0.1"
+			"limit" "9999"
+		}
+	}
+
+	"mapadd_trigger_multiple" {
+		"origin" "1875 -139 204"
+		"keyvalues" {
+			"radius"	"100"
+			"label"		"proj_disable"
+			"wait" "0.1"
+			"delay" "0.1"
+			"limit" "9999"
+		}
+	}
+
+   "weapon_wrench"
+        {
+        "origin" "4113 -4587 15"
+		"KeyValues"
+		{
+			 "fademaxdist" "700"     
+			"fademindist" "600"
+		}
+        }
+		
+  //"npc_maker"
+     //     {
+      //    "origin" "4557 -2525 30"
+      //    "angle" "0 -90 0"
+       //   "keyvalues"
+         //     {
+        //      "targetname" "snarks_are_cute"
+         //     "NPCType"    "npc_snark"
+        //      "StartDisabled" "1"
+          //    "MaxNPCCount"   "3"
+         //     "SpawnFrequency" "0.7"
+         //     "MaxLiveChildren" "1"
+         //  }
+      //   }
+	   
+	   "npc_maker"
+        {
+        "origin" "4557 -2625 28"
+        "angle" "0 -90 0"
+        "keyvalues"
+            {
+            "targetname" "snarks_are_cute"
+            "NPCType"    "npc_snark"
+            "StartDisabled" "1"
+            "MaxNPCCount"   "5"
+            "SpawnFrequency" "0.7"
+            "MaxLiveChildren" "1"
+         }
+       }
+	   
+	  //   "npc_maker"
+       //   {
+       //   "origin" "4558 -2575 26"
+       //   "angle" "0 -90 0"
+       //   "keyvalues"
+       //       {
+       //       "targetname" "snarks_are_cute"
+         //     "NPCType"    "npc_snark"
+         //     "StartDisabled" "1"
+         //     "MaxNPCCount"   "3"
+         //     "SpawnFrequency" "0.7"
+         //     "MaxLiveChildren" "1"
+    //       }
+        // }
+	   
+	  //   "npc_maker"
+      //    {
+       //   "origin" "4554 -2595 23"
+       //   "angle" "0 -90 0"
+        //  "keyvalues"
+          //    {
+           //   "targetname" "snarks_are_cute"
+           //   "NPCType"    "npc_snark"
+          //    "StartDisabled" "1"
+           //   "MaxNPCCount"   "4"
+           //   "SpawnFrequency" "0.7"
+          //    "MaxLiveChildren" "1"
+          // }
+     //    }
+	   
+
+"item_ammo_snark"
+        {
+         "origin" "4557 -2525 37"
+        "angle" "0 42 0.00"
+		"keyvalues"
+            {
+             "fademaxdist" "1100"     
+			"fademindist" "1000"  
+			"OnPlayerTouch" "vortigauntstillworkingonthis,command,give weapon_snark,,-1"
+			"onplayertouch" "snarks_are_cute,disable,,-1"
+			"onplayertouch" "snarks_are_cute,kill,,0.1"
+            }
+        }
+		
+	
+"item_ammo_snark"
+        {
+        "origin" "4079 1670 -10"
+        "angle" "0 28 0.00"
+		"keyvalues"
+            {
+			"OnPlayerTouch" "vortigauntstillworkingonthis,command,give weapon_snark,,-1"
+             "fademaxdist" "1100"     
+			"fademindist" "1000"  
+            }
+        }
+			
+		
+"npc_charger"
+        {
+        "origin" "4332 -1224 -59"
+        "angle" "0 131 0.00"
+		"keyvalues"
+            {
+             "fademaxdist" "2700"     
+			"fademindist" "2600"  
+            }
+        }
+
+"npc_voltigore_baby"
+        {
+        "origin" "4529 1928 -59"
+        "angle" "0 -128 0.00"
+		"keyvalues"
+            {
+             "fademaxdist" "2700"     
+			"fademindist" "2600"  
+            }
+        }
+
+"npc_voltigore_baby"
+        {
+        "origin" "3913 -1047 -57"
+        "angle" "0 -20 0.00"
+		"keyvalues"
+            {
+             "fademaxdist" "2700"     
+			"fademindist" "2600"  
+            }
+        }
+
+
+
+"npc_fastzombie_torso"
+        {
+        "origin" "4342 -4258 -55"
+        "angle" "0 91 0.00"
+		"keyvalues"
+            {
+             "fademaxdist" "2700"     
+			"fademindist" "2600"  
+            }
+        }
+
+
+//"weapon_barnacle"
+    //    {
+      //  "origin" "4477 1145 -62"
+       // "angle" "0 0 0.00"
+	//	"keyvalues"
+       //     {
+       //      "fademaxdist" "1100"     
+		//	"fademindist" "1000"  
+       //     }
+      //  }
+		
+"npc_sporegenerator"
+        {
+        "origin" "1247 -879 196"
+        "angle" "90 90 0.00"
+		"keyvalues"
+            {
+             "fademaxdist" "1700"     
+			"fademindist" "1600"  
+            }
+        }
+		
+
+"npc_sporegenerator"
+        {
+        "origin" "4361 -459 136"
+        "angle" "180 75 0.00"
+		"keyvalues"
+            {
+             "fademaxdist" "1700"     
+			"fademindist" "1600"  
+            }
+        }
+
+"npc_sporegenerator"
+        {
+        "origin" "3971 -2174 40"
+        "angle" "180 45 0.00"
+		"keyvalues"
+            {
+             "fademaxdist" "1700"     
+			"fademindist" "1600"  
+            }
+        }
+
+"npc_sporegenerator"
+        {
+        "origin" "3984 -3383 -14"
+        "angle" "90 0 0.00"
+		"keyvalues"
+            {
+             "fademaxdist" "1700"     
+			"fademindist" "1600"  
+            }
+        }
+		
+
+"npc_sporegenerator"
+        {
+        "origin" "4288 -4307 -59"
+        "angle" "90 180 0.00"
+		"keyvalues"
+            {
+             "fademaxdist" "1700"     
+			"fademindist" "1600"  
+            }
+        }
+		
+
+"npc_sporegenerator"
+        {
+        "origin" "3864 -5155 71"
+        "angle" "180 23 0.00"
+		"keyvalues"
+            {
+             "fademaxdist" "1700"     
+			"fademindist" "1600"  
+            }
+        }
+		
+		"npc_sporegenerator"
+        {
+        "origin" "3647.90 -5411 -22"
+        "angle" "90 0 0.00"
+		"keyvalues"
+            {
+             "fademaxdist" "1700"     
+			"fademindist" "1600"  
+            }
+        }
+
+
+"npc_cockroach"
+        {
+        "origin" "4621 -5942 -51"
+        "angle" "0 141 0.00"
+		"keyvalues"
+            {
+             "fademaxdist" "700"     
+			"fademindist" "600"  
+            }
+        }
+
+"npc_cockroach"
+        {
+        "origin" "3910 -5699 -55"
+        "angle" "0 141 0.00"
+		"keyvalues"
+            {
+             "fademaxdist" "700"     
+			"fademindist" "600"  
+            }
+        }
+		
+
+		"npc_cockroach"
+        {
+        "origin" "1307 730 204"
+        "angle" "0 141 0.00"
+		"keyvalues"
+            {
+             "fademaxdist" "700"     
+			"fademindist" "600"  
+            }
+        }
+	"prop_physics"
+        {
+        "origin" "4126 -4589 16"
+        "angle" "0 0 0.00"
+        "keyvalues"
+            {
+			"fademaxdist" "1500"
+            "fademindist" "1000"
+            "model" "models\combine_cremator_headprop.mdl"
+            }
+        }
+		
+	"prop_physics"
+        {
+        "origin" "4080 -5561 -52"
+        "angle" "0 0 0.00"
+        "keyvalues"
+            {
+			"fademaxdist" "1500"
+            "fademindist" "1000"
+            "model" "models\combine_cremator_headprop.mdl"
+            }
+        }
+		
+
+		
+
+
+"npc_antlion_grub"
+    {
+    "origin" "4008 -985 -59"
+    "angle"  "0 -49 0"
+	"keyvalues"
+            {
+             "fademaxdist" "1700"     
+			"fademindist" "1600"  
+            }
+    }
+	
+	"npc_antlion_grub"
+    {
+    "origin" "4044 254 -59"
+    "angle"  "0 -68 0"
+	"keyvalues"
+            {
+             "fademaxdist" "1700"     
+			"fademindist" "1600"  
+            }
+    }
+
+	"npc_antlion_grub"
+    {
+    "origin" "4477 951 -59"
+    "angle"  "0 -113 0"
+	"keyvalues"
+            {
+             "fademaxdist" "1700"     
+			"fademindist" "1600"  
+            }
+    }
+	
+	"npc_antlion_grub"
+    {
+    "origin" "2171 1169 204"
+    "angle"  "0 152 0"
+	"keyvalues"
+            {
+             "fademaxdist" "1700"     
+			"fademindist" "1600"  
+            }
+    }
+
+
+
+	"npc_antlion_grub"
+    {
+    "origin" "4091 -496 -51"
+    "angle"  "0 -27 0"
+	"keyvalues"
+            {
+             "fademaxdist" "1700"     
+			"fademindist" "1600"  
+            }
+    }
+
+
+"npc_zombie_hev"
+        {
+        "origin" "4355 -2626 -55"
+        "angle" "0 -45 0.00"
+		"keyvalues"
+            {
+             "fademaxdist" "2700"     
+			"fademindist" "2600"  
+            }
+        }
+
+"npc_houndeye"
+        {
+        "origin" "4565 -635 -58"
+        "angle" "0 -101.86 0.00"
+		"keyvalues"
+            {
+             "fademaxdist" "2700"     
+			"fademindist" "2600"  
+            }
+        }
+		
+
+"mapadd_trigger_once" {
+        "origin" "3497 1375 156"
+        "keyvalues" {
+              "label" "npcs1"
+              "radius" "100"
+       }  
+ }
+
+"npc_bullsquid"
+        {
+        "origin" "4225 -1660 -59"
+        "angle" "0 -133.86 0.00"
+		"keyvalues"
+            {
+             "fademaxdist" "2700"     
+			"fademindist" "2600"  
+            }
+        }
+		
+		
+
+			
+		"npc_pitdrone"
+        {
+        "origin" "3911 1752 -71"
+        "angle" "0 91.86 0.00"
+		"keyvalues"
+            {
+             "fademaxdist" "2700"     
+			"fademindist" "2600"  
+            }
+        }
+			
+		"npc_pitdrone"
+        {
+        "origin" "3769 1228 -51"
+        "angle" "0 -2.86 0.00"
+		"keyvalues"
+            {
+             "fademaxdist" "2700"     
+			"fademindist" "2600"  
+            }
+        }
+		
+
+		
+
+"npc_gonome"
+        {
+        "origin" "4350.62 -3065.98 -33.01"
+        "angle" "0 -91.86 0.00"
+		"keyvalues"
+            {
+             "fademaxdist" "2700"     
+			"fademindist" "2600"  
+            }
+        }
+
+
+//"npc_gonome"
+       // {
+        //"origin" "1386.62 598.98 204.01"
+     //   "angle" "0 110.86 0.00"
+       // "keyvalues"
+       //     {
+       //     
+        //    }
+       // }
+	   
+	   // OverCharged Beta Content
+
+
+"npc_gonome"
+        {
+        "origin" "1355.62 -691.98 204.01"
+        "angle" "0 110.86 0.00"
+		"keyvalues"
+            {
+             "fademaxdist" "2700"     
+			"fademindist" "2600"  
+            }
+        }
+
+
+		  "mapadd_trigger_once" {
+        "origin" "4555 -2798 7"
+        "keyvalues" {
+              "label" "snarks_creator"
+              "radius" "25"
+       }  
+  }
+  
+}
+
+"entities:snarks_creator" {
+
+  "event" 
+       {
+       "targetname" "snarks_are_cutere"
+       "action" "trigger"
+   
+      }
+
+
+
+}
+

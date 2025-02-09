@@ -1,0 +1,683 @@
+//	OverCharged Steam MAPADD Data
+//	Location: Nova Prospekt
+//  Game: Half-Life 2
+
+"precache" {
+}
+
+"Init"
+{
+"Give_Equipment"
+	{
+	    "Ammo"
+		{
+			"smokegrenade" "1"
+			"combinesniperround" "7"
+			"oicw" "65"
+		}
+		"Item"
+		{
+		    "weapon" "stunstick"
+			"weapon" "beretta"
+			"weapon" "mp5"
+			"weapon" "sg552"
+			"weapon" "glock"
+			"weapon" "tau"
+			"weapon" "deagle"
+			"weapon" "machinegun"
+			"weapon" "shockrifle"
+			"weapon" "smg2"
+			"weapon" "snark"
+			"weapon" "dual_pistols"
+			"weapon" "cguard"
+			"weapon" "combinesniper"	
+            "weapon" "autoshotgun"			
+			"weapon" "flashbang"
+			"weapon" "vector"
+			"weapon" "smokegrenade"	
+		}
+	}
+}
+
+"randomspawn" {
+	
+       
+"weapon_tripwire" {
+		"count"		"4"
+		"values" "fademaxdist 700 fademindist 600"
+	}
+
+
+}
+
+"entities:proj_enable" {
+
+"event" {
+		"targetname"	"projected_master"
+		"action"	"turnon"
+	}
+}
+
+"entities:modify" {
+
+"event" {
+		"targetname"	"logic_first_attack_wave_start_1"
+		"action"	"modifyentity"
+		"OnTrigger"	"mortarsynth1,enable,,-1"
+	}
+	
+
+
+}
+
+"entities:weather" {
+
+	
+"event"
+	  {
+		"targetname"	"weather_relay"
+                "action"  "trigger"  
+	  }
+
+}
+
+"entities:trigger_remove_but_trigger" {
+
+		
+"event" {
+		"sphere_location" "1350 3505 -924"
+		"sphere_radius" "100"
+		"action" "kill"
+	}
+
+}
+
+"entities" {
+
+"logic_relay"
+        {
+        "origin" "-949 1430 -765"
+        "angle" "0 0 0.00"
+        "keyvalues"
+            {
+			"OnTrigger"  "weather_display,showhudhint,,0.5"
+			"OnTrigger"  "weather_display,hidehudhint,,5.5"
+			"targetname" "Weather_relay"
+
+            }
+        }
+
+		"env_hudhint"
+        {
+        "origin" "2230 -1369 87"
+        "angle" "0 0 0.00"
+        "keyvalues"
+            {
+			"message" "          H.E.V MʎRK VI ASSISTANT 
+			|TIME: 04:00|
+			|WEATHER: CLOUDY|
+			|TEMPERATURE: 14°C|"
+				
+			"targetname" "Weather_Display"
+			"spawnflags" "1"
+            }
+        }
+		
+		"mapadd_trigger_once" {
+		"origin" "-1208 1235 1152"
+		"keyvalues" {
+			"radius"	"100"
+			"label"		"weather"
+		}
+	}
+
+
+// Lite Start
+
+	  
+"event"
+	  {
+		"targetname"	"mossman"
+                "action"  "modifyentity"
+        "model" "models/props_fix_allmaps/mossman.mdl"
+     		
+	  }
+
+
+  "logic_auto"
+        {
+        "origin" "2813 7162 0" 
+		"angle"	"0 0 0"
+        "keyvalues"
+            {
+		     "OnNewGame" "vortigauntstillworkingonthis,command,oc_weapon_disable_dissolve 1,-1"
+            }
+        }
+
+	 "point_servercommand" {
+		"origin""-697 -7 1487"
+		"keyvalues" {
+                            "targetname" "vortigauntstillworkingonthis"
+	             }
+               }
+
+"event"
+	  {
+		"targetname"	"spawn_alyx"
+        "action"  "kill"  
+		
+	  }
+	  
+	  
+	
+	"mapadd_trigger_once" {
+		"origin" "-2156 2518 1024"
+		"keyvalues" {
+			"radius"	"130"
+			"label"		"trigger_remove_but_trigger"
+		}
+	}
+		
+		"logic_auto"
+        {
+        "keyvalues"
+            {
+		    "OnNewGame" "alyx_updated,addoutput,targetname alyx,-1"
+			"OnNewGame" "it_is_important,teleport,,0.01"
+            }
+        }
+		
+"npc_alyx"
+        {
+        "origin" "1350 3505 -924"
+        "angle" "0 326 0"
+        "keyvalues"
+            {
+			"targetname" "alyx_updated"
+			"model" "models/alyx_hl2.mdl"
+            "spawnflags" "4100"
+			"physdamagescale" "0"
+			"gameendally" "1"
+			"additionalequipment" "weapon_alyxgun"
+			"dontpickupweapons" "1"
+            }
+        }
+	  	
+			"point_teleport"
+        {
+        "origin" "-2497 2997 998"
+        "angle" "0 326 0"
+        "keyvalues"
+            {
+            "targetname" "it_is_important"
+            "target" "alyx"
+            }
+        }
+
+
+
+	"event" 
+	{
+		"classname"	"worldspawn"
+		"keyvalues" 
+		 {
+		"detailmaterial" "detail/detailsprites_hl2"
+		 }
+	}
+	
+"event" {
+		"targetname"	"mossman"
+		"action"	"modifyentity"
+		"ondeath"	"never_ever_do_it_again,reload,,-1"
+	}
+
+
+   
+"event" {
+		"targetname"	"eli"
+		"action"	"modifyentity"
+		"ondeath"	"never_ever_do_it_again,reload,,-1"
+		 "model"  "models/props_fix_allmaps/eli.mdl"
+	}
+	
+	"player_loadsaved"
+        {
+        "origin" "-999 1285 1024"
+        "angle" "0 0 0"
+        "keyvalues"
+            {
+            "targetname" "never_ever_do_it_again"
+            "duration" "2"
+            "loadtime" "2"
+            "holdtime" "2"
+            "renderamt"  "255"
+            "rendercolor" "0 0 0"
+         }
+      }
+
+	//"env_projectedtexture"
+      //  {
+      //  "origin" "-228 20 1252"
+      //  "angle" "15 30 0"
+      //  "keyvalues"
+        //    {
+		//	"spawnflags" "0"
+		//	"nearz" "2"
+		//	"lightworld" "1"
+		//	"lightfov" "90"
+		//	"farz" "900"
+		//	"cameraspace" "0"
+		//	"shadowquality" "0"
+		//	"enableshadows" "1"
+		//	"lightcolor" "147 226 240"
+        //    "targetname" "projected_master"
+        //    }
+        //}
+		
+		"prop_ragdoll"
+        {
+        "origin" "-908 1081 1024"
+        "angle" "0 103 43.00"
+        "keyvalues"
+            {
+			"spawnflags" "260"
+			"skin" "3"
+			"fademaxdist" "1700"      
+			  "fademindist" "1600"
+            "model"		"models/antlion.mdl"
+            }
+        }
+		
+"prop_ragdoll"
+        {
+        "origin" "-999 1285 1024"
+        "angle" "0 46 25.00"
+        "keyvalues"
+            {
+			"spawnflags" "260"
+			"skin" "4"
+			"fademaxdist" "1700"      
+			  "fademindist" "1600"
+            "model"		"models/antlion.mdl"
+            }
+        }
+		
+"prop_ragdoll"
+        {
+        "origin" "-821 1288 1024"
+        "angle" "0 161 33.00"
+        "keyvalues"
+            {
+			"spawnflags" "260"
+			"skin" "2"
+			"fademaxdist" "1700"      
+			  "fademindist" "1600"
+            "model"		"models/antlion.mdl"
+            }
+        }
+
+// Lite End
+
+	
+"ai_relationship"
+        {
+        "origin" "1018 -3922 -231"
+        "angle" "0 0 0"
+        "keyvalues"
+            {
+            "subject"        "npc_turret_floor"
+            "target"       "npc_mortarsynth"
+            "startactive" "1"
+            "disposition" "1"
+            "rank" "9999"
+            }
+        }
+
+
+	
+"ai_relationship"
+        {
+        "origin" "1018 -3922 -231"
+        "angle" "0 0 0"
+        "keyvalues"
+            {
+            "subject"        "npc_turret_floor"
+            "target"       "npc_assassin"
+            "startactive" "1"
+            "disposition" "1"
+            "rank" "9999"
+            }
+        }
+
+
+//"mapadd_trigger_once" {
+	//	"origin" "-272 554 992"
+	//	"keyvalues" {
+	//	       "radius"	  "100"
+	  //             "label"	  "proj_enable"
+		//}
+	//}
+	
+
+	"mapadd_trigger_once" {
+		"origin" "-1201 1229 1152"
+		"keyvalues" {
+		       "radius"	  "75"
+	               "label"	  "modify"
+		}
+	}
+	
+	
+"npc_maker"
+        {
+        "origin" "770 723 1024"
+        "angle" "0 153 0"
+        "keyvalues"
+            {
+            "targetname" "mortarsynth1"
+            "NPCType"    "npc_assassin"
+            "StartDisabled" "1"
+            "spawnflags" "160"
+            "MaxNPCCount"   "9999"
+            "SpawnFrequency" "26"
+            "MaxLiveChildren" "2"
+         }
+       }
+
+"npc_maker"
+        {
+        "origin" "-197 248 1308"
+        "angle" "0 1 0"
+        "keyvalues"
+            {
+            "targetname" "mortarsynth1"
+            "NPCType"    "npc_mortarsynth"
+            "NPCTargetname" "mortarsynthies"
+            "StartDisabled" "1"
+            "spawnflags" "160"
+            "MaxNPCCount"   "9999"
+            "SpawnFrequency" "45"
+            "MaxLiveChildren" "1"
+         }
+       }
+
+
+	
+	  "item_item_crate"
+	{
+		"origin" "-279 813 1027"
+		"angle" "0 -46 0"
+		"keyvalues"
+		{
+		"fademaxdist" "1700"      
+			  "fademindist" "1600"
+			"ItemClass"		"weapon_slam"
+			"ItemCount"		"4"
+		}
+	}
+
+  "item_item_crate"
+	{
+		"origin" "-472 61 1280"
+		"angle" "0 33 0"
+		"keyvalues"
+		{
+		"fademaxdist" "1700"      
+			  "fademindist" "1600"
+			"ItemClass"		"weapon_sg552"
+			"ItemCount"		"3"
+		}
+	}
+
+
+
+"npc_combine_s"
+        {
+        "origin" "1138.57 716.60 1024.03"
+        "angle" "0 177.16 0.00"
+        "keyvalues"
+            {
+			"fademaxdist" "2700"      
+			  "fademindist" "2600"
+            "model" "models/combine_soldier_prisonguard.mdl"
+            "additionalequipment" "weapon_sg552"
+            }
+        }
+
+
+        "npc_combine_s"
+        {
+        "origin" "-2402.57 2466.60 1023.03"
+        "angle" "0 -20.16 0.00"
+        "keyvalues"
+            {
+			"fademaxdist" "2700"      
+			  "fademindist" "2600"
+            "model" "models/combine_soldier_prisonguard.mdl"
+            "additionalequipment" "weapon_smg2"
+            }
+        }
+
+        "npc_combine_s"
+        {
+        "origin" "-2320.57 1271.60 1023.03"
+        "angle" "0 176.16 0.00"
+        "keyvalues"
+            {
+			"fademaxdist" "2700"      
+			  "fademindist" "2600"
+            "model" "models/combine_soldier_prisonguard.mdl"
+            "additionalequipment" "weapon_sg552"
+            }
+        }
+
+        "npc_combine_s"
+        {
+        "origin" "-1915.57 1481.60 1023.03"
+        "angle" "0 176.16 0.00"
+        "keyvalues"
+            {
+			"fademaxdist" "2700"      
+			  "fademindist" "2600"
+            "model" "models/combine_soldier_prisonguard.mdl"
+            "additionalequipment" "weapon_smg1"
+            }
+        }
+		
+"item_ammo_m249"
+	{
+		"origin"		"-879.11 1495.11 1284.53"
+		"angle"		"87.13 106.10 127.85"
+		"keyvalues"
+		{
+		    "fademaxdist" "700"      
+			"fademindist" "600"
+		}
+	}
+	"item_ammo_m249"
+	{
+		"origin"		"-832 1496 1291"
+		"angle"		"0 0 0"
+		"keyvalues"
+		{
+		    "fademaxdist" "700"      
+			"fademindist" "600"
+		}
+	}
+	
+     
+	 	"item_suitcharger"
+	{
+		"origin"	"-385 -75 1264"
+		"angle"		"0 0 0"
+		"keyvalues"
+		{
+		    "fademaxdist" "2700"      
+			"fademindist" "2600"
+		}
+	}
+	
+	 	"item_healthcharger"
+	{
+		"origin"	"-385 -25 1264"
+		"angle"		"0 0 0"
+		"keyvalues"
+		{
+		    "fademaxdist" "2700"      
+			"fademindist" "2600"
+		}
+	}
+	
+		"mapadd_trigger_once" {
+		"origin" "-1471 1178 1152"
+		"keyvalues" {
+		       "radius"	  "75"
+	               "label"	  "disp_target_maker"
+		}
+	}
+	
+	"mapadd_trigger_once" {
+		"origin" "-213 561 992"
+		"keyvalues" {
+		       "radius"	  "75"
+	               "label"	  "disp_target_maker_2"
+		}
+	}
+	
+	"prop_dynamic"
+        {
+        "origin" "-518 141 1279"
+        "angle" "0 -90 0.00"
+        "keyvalues"
+            {
+			"solid" "6"
+            "modelscale" "0.75"
+		    "fademaxdist" "1700"      
+			"fademindist" "1600"
+            "model" "models/props_combine/combine_door01.mdl"
+            }
+        }
+		// Where is door hall?
+		// It's right there
+		
+		"prop_physics"
+        {
+        "origin" "-296 112 1215"
+        "angle" "0 180 0.00"
+        "keyvalues"
+            {
+			"spawnflags"			"8"
+            "modelscale" "1"
+			 "fademaxdist" "1700"      
+			"fademindist" "1600"
+            "model" "models/props_combine/combine_interface001.mdl"
+            }
+        }
+	
+	
+	"event" {
+		"targetname"	"logic_door_comb_1_open"
+		"action"	"modifyentity"
+		"OnTrigger"	"disp_target,kill,,-1"
+	}
+	
+	"event" {
+		"targetname"	"trigger_teleport_player_enter_1"
+		"action"	"modifyentity"
+		"OnTrigger"	"disp_target,kill,,-1"
+	}
+	
+	
+	 "item_item_crate"
+	{
+		"origin" "-434 184 1280"
+		"angle" "0 -58 0"
+		"keyvalues"
+		{
+		 "fademaxdist" "1700"      
+			"fademindist" "1600"
+			"ItemClass"		"item_ammo_pistol"
+			"ItemCount"		"2"
+		}
+	}
+	
+	 "item_ammo_ar2_altfire"
+	{
+		"origin" "-431 180 1304"
+		"angle" "0 -46 0"
+		"keyvalues"
+		{
+		 "fademaxdist" "1700"      
+			"fademindist" "1600"
+		}
+	}
+	
+	"item_item_crate"
+	{
+		"origin"	"-1188 1121 1175"
+		"angle"		"0 151 0"
+		"KeyValues"
+		{
+		"fademaxdist" "1700"      
+			"fademindist" "1600"
+			"ItemClass"		"item_ammo_uranium"
+			"ItemCount"		"3"
+		}
+	}
+
+	
+	
+}
+
+"entities:disp_target_maker" {
+
+
+   "info_target"
+        {
+        "origin" "-813 1285 1326"
+        "angle" "0 90 0"
+        "keyvalues"
+            {
+            "targetname" "disp_target"
+            }
+        }
+
+}
+
+"entities:disp_target_maker_2" {
+
+
+   "info_target"
+        {
+        "origin" "-226 -169 1280"
+        "angle" "0 42 0"
+        "keyvalues"
+            {
+            "targetname" "disp_target"
+            }
+        }
+
+}
+
+"entities:steamupdate" {
+
+
+
+"npc_maker"
+        {
+        "origin" "597 -287 1024"
+        "angle" "0 125 0"
+        "keyvalues"
+            {
+            "targetname" "mortarsynth1"
+            "NPCType"    "npc_assassin_alien"
+            "StartDisabled" "1"
+            "spawnflags" "160"
+            "MaxNPCCount"   "9999"
+            "SpawnFrequency" "35"
+            "MaxLiveChildren" "1"
+         }
+       }
+
+
+}
