@@ -21,6 +21,7 @@
 *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 *  SOFTWARE.
 *********************************************************************************/
+#include "cbase.h"
 #include "imgui_impl_source.h"
 
 #include "KeyValues.h"
@@ -238,21 +239,22 @@ void ImGui_ImplSource_InvalidateDeviceObjects()
 
 // The following functions are declared in imconfig_source.h and must not be renamed
 
-ImFileHandle ImFileOpen( const char *filename, const char *mode )
-{
-	Assert( g_pFullFileSystem );
-	return g_pFullFileSystem->Open( filename, mode );
-}
+// Do we need File opener in a Source Mod???? - GuestSneezePlayZ
+//ImFileHandle ImFileOpen( const char *filename, const char *mode )
+//{
+//	Assert( g_pFullFileSystem );
+//	return g_pFullFileSystem->Open( filename, mode );
+//}
 
-bool ImFileClose( ImFileHandle f )
-{
-	if ( f == nullptr )
-		return false;
-
-	Assert( g_pFullFileSystem );
-	g_pFullFileSystem->Close( f );
-	return true;
-}
+///bool ImFileClose( ImFileHandle f )
+//{
+//	if ( f == nullptr )
+//		return false;
+//
+//	Assert( g_pFullFileSystem );
+//	g_pFullFileSystem->Close( f );
+//	return true;
+//}
 
 uint64 ImFileGetSize( ImFileHandle f )
 {
